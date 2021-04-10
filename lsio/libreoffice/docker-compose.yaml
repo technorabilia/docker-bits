@@ -1,0 +1,25 @@
+# [LibreOffice]({{ project_url }}) is a free and powerful office suite, and a
+# successor to OpenOffice.org (commonly known as OpenOffice). Its clean
+# interface and feature-rich tools help you unleash your creativity and enhance
+# your productivity.
+
+---
+version: "2.1"
+services:
+  libreoffice:
+    image: ghcr.io/linuxserver/libreoffice
+    container_name: libreoffice
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores program settings and documents
+      - ${BASEDIR:-/volume1/docker}/libreoffice/config:/config
+    ports:
+      # LibreOffice desktop gui.
+      - 3000:3000
+    restart: unless-stopped

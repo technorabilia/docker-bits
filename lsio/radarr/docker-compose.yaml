@@ -1,0 +1,26 @@
+# Radarr - A fork of Sonarr to work with movies à la Couchpotato.
+
+---
+version: "2.1"
+services:
+  radarr:
+    image: ghcr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Database and Radarr configs
+      - ${BASEDIR:-/volume1/docker}/radarr/config:/config
+      # Location of Movie library on disk (See note in Application setup)
+      - ${BASEDIR:-/volume1/docker}/radarr/movies:/movies
+      # Location of download managers output directory (See note in Application setup)
+      - ${BASEDIR:-/volume1/docker}/radarr/downloads:/downloads
+    ports:
+      # The port for the Radarr webinterface
+      - 7878:7878
+    restart: unless-stopped

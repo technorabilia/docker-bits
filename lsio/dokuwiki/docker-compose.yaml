@@ -1,0 +1,30 @@
+# Dokuwiki is a simple to use and highly versatile Open Source wiki software
+# that doesn't require a database. It is loved by users for its clean and
+# readable syntax. The ease of maintenance, backup and integration makes it an
+# administrator's favorite. Built in access controls and authentication
+# connectors make DokuWiki especially useful in the enterprise context and the
+# large number of plugins contributed by its vibrant community allow for a broad
+# range of use cases beyond a traditional wiki.
+
+---
+version: "2.1"
+services:
+  dokuwiki:
+    image: ghcr.io/linuxserver/dokuwiki
+    container_name: dokuwiki
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/dokuwiki/config:/config
+    ports:
+      # Application HTTP Port
+      - 80:80
+      # #optional Application HTTPS Port
+      - 443:443 # optional
+    restart: unless-stopped

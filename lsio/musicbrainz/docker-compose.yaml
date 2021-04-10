@@ -1,0 +1,21 @@
+This container needs special attention. Please check https://hub.docker.com/r/linuxserver/musicbrainz for details.
+---
+version: "2.1"
+services:
+  musicbrainz:
+    image: ghcr.io/linuxserver/musicbrainz
+    container_name: musicbrainz
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/musicbrainz/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped

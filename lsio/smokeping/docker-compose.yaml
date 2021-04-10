@@ -1,0 +1,26 @@
+# Smokeping keeps track of your network latency. For a full example of what this
+# application is capable of visit [UCDavis](http://smokeping.ucdavis.edu/cgi-
+# bin/smokeping.fcgi).
+
+---
+version: "2.1"
+services:
+  smokeping:
+    image: ghcr.io/linuxserver/smokeping
+    container_name: smokeping
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configure the `Targets` file here
+      - ${BASEDIR:-/volume1/docker}/smokeping/config:/config
+      # Storage location for db and application data (graphs etc)
+      - ${BASEDIR:-/volume1/docker}/smokeping/data:/data
+    ports:
+      # Allows HTTP access to the internal webserver.
+      - 80:80
+    restart: unless-stopped

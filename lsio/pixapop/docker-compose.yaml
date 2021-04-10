@@ -1,0 +1,29 @@
+# Pixapop is an open-source single page application to view your photos in the
+# easiest way possible.
+
+---
+version: "2.1"
+services:
+  pixapop:
+    image: ghcr.io/linuxserver/pixapop
+    container_name: pixapop
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Specify a username to enable authentication.
+      - APP_USERNAME=admin # optional
+      # Specify a password to enable authentication.
+      - APP_PASSWORD=admin # optional
+    volumes:
+      # Stores config and logs for nginx base.
+      - ${BASEDIR:-/volume1/docker}/pixapop/config:/config
+      # Your local folder of photos.
+      - ${BASEDIR:-/volume1/docker}/pixapop/photos:/photos
+    ports:
+      # WebUI
+      - 80:80
+    restart: unless-stopped

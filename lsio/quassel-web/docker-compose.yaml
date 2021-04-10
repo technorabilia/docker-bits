@@ -1,0 +1,28 @@
+# Quassel-web is a web client for Quassel.  Note that a Quassel-Core instance is
+# required, we have a container available
+# [here.](https://hub.docker.com/r/linuxserver/quassel-core/)
+
+---
+version: "2.1"
+services:
+  quassel-web:
+    image: ghcr.io/linuxserver/quassel-web
+    container_name: quassel-web
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # specify the URL or IP address of your Quassel Core instance
+      - QUASSEL_CORE=192.168.1.10
+      # specify the port of your Quassel Core instance
+      - QUASSEL_PORT=4242
+      # Specify a url-base in reverse proxy setups ie. `/quassel`
+      - URL_BASE=/quassel # optional
+    volumes:
+      # this will store config on the docker host
+      - ${BASEDIR:-/volume1/docker}/quassel-web/config:/config
+    ports:
+      # will map the container's port 64080 to port 64080 on the host
+      - 64080:64080
+    restart: unless-stopped

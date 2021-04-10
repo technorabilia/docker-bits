@@ -1,0 +1,32 @@
+# Pylon is a web based integrated development environment built with Node.js as
+# a backend and with a supercharged JavaScript/HTML5 frontend, licensed under
+# GPL version 3. This project originates from Cloud9 v2 project.
+
+---
+version: "2.1"
+services:
+  pylon:
+    image: ghcr.io/linuxserver/pylon
+    container_name: pylon
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Specify a git repo to checkout on first startup
+      - GITURL=https://github.com/linuxserver/docker-pylon.git # optional
+      # Specify a basic auth user.
+      - PYUSER=myuser # optional
+      # Specify a basic auth password.
+      - PYPASS=mypass # optional
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/pylon/config:/config
+      # Optionally if you want the bind mount your own code and have changes survive container upgrades.
+      - ${BASEDIR:-/volume1/docker}/pylon/code:/code # optional
+    ports:
+      # The port for the Pylon web interface
+      - 3131:3131
+    restart: unless-stopped

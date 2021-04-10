@@ -1,0 +1,27 @@
+# Photoshow is gallery software at its easiest, it doesn't even require a
+# database.
+
+---
+version: "2.1"
+services:
+  photoshow:
+    image: ghcr.io/linuxserver/photoshow
+    container_name: photoshow
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Stores config and logs for nginx base.
+      - ${BASEDIR:-/volume1/docker}/photoshow/config:/config
+      # Your local folder of photos you wish to share.
+      - ${BASEDIR:-/volume1/docker}/photoshow/Pictures:ro:/Pictures:ro
+      # Local folder to store thumbnails of your images.
+      - ${BASEDIR:-/volume1/docker}/photoshow/Thumbs:/Thumbs
+    ports:
+      # WebUI
+      - 80:80
+    restart: unless-stopped

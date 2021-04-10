@@ -1,0 +1,32 @@
+# [BOINC]({{ project_url }}) is a platform for high-throughput computing on a
+# large scale (thousands or millions of computers). It can be used for volunteer
+# computing (using consumer devices) or grid computing (using organizational
+# resources). It supports virtualized, parallel, and GPU-based applications.
+
+---
+version: "2.1"
+services:
+  boinc:
+    image: ghcr.io/linuxserver/boinc
+    container_name: boinc
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Username for the BOINC desktop gui.
+      - GUAC_USER=abc # optional
+      # Password's md5 hash for the BOINC desktop gui.
+      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 # optional
+    volumes:
+      # Where BOINC should store its database and config.
+      - ${BASEDIR:-/volume1/docker}/boinc/config:/config
+    ports:
+      # Boinc desktop gui.
+      - 8080:8080
+    devices:
+      # Only needed if you want to use your Intel GPU (vaapi).
+      - /dev/dri:/dev/dri # optional
+    restart: unless-stopped

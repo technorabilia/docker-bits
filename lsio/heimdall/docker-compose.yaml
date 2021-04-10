@@ -1,0 +1,27 @@
+# Heimdall is a way to organise all those links to your most used web sites and
+# web applications in a simple way. Simplicity is the key to Heimdall. Why not
+# use it as your browser start page? It even has the ability to include a search
+# bar using either Google, Bing or DuckDuckGo.
+
+---
+version: "2.1"
+services:
+  heimdall:
+    image: ghcr.io/linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/heimdall/config:/config
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped

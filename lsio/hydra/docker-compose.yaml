@@ -1,0 +1,26 @@
+# Hydra is a meta search for NZB indexers and the "spiritual successor" to
+# NZBmegasearcH. It provides easy access to a number of raw and newznab based
+# indexers.
+
+---
+version: "2.1"
+services:
+  hydra:
+    image: ghcr.io/linuxserver/hydra
+    container_name: hydra
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where hydra should store config files.
+      - ${BASEDIR:-/volume1/docker}/hydra/config:/config
+      # NZB download folder.
+      - ${BASEDIR:-/volume1/docker}/hydra/downloads:/downloads
+    ports:
+      # WebUI
+      - 5075:5075
+    restart: unless-stopped

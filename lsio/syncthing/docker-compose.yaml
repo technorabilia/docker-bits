@@ -1,0 +1,35 @@
+# Syncthing replaces proprietary sync and cloud services with something open,
+# trustworthy and decentralized. Your data is your data alone and you deserve to
+# choose where it is stored, if it is shared with some third party and how it's
+# transmitted over the Internet.
+
+---
+version: "2.1"
+services:
+  syncthing:
+    image: ghcr.io/linuxserver/syncthing
+    container_name: syncthing
+    # Optionally the hostname can be defined.
+    hostname: {{ project_name }} # optional
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/syncthing/config:/config
+      # Data1
+      - ${BASEDIR:-/volume1/docker}/syncthing/data1:/data1
+      # Data2
+      - ${BASEDIR:-/volume1/docker}/syncthing/data2:/data2
+    ports:
+      # Application WebUI
+      - 8384:8384
+      # Listening port
+      - 22000:22000
+      # Protocol discovery
+      - 21027:21027/udp
+    restart: unless-stopped

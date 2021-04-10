@@ -1,0 +1,25 @@
+# Homeassistant is open source home automation that puts local control and
+# privacy first. Powered by a worldwide community of tinkerers and DIY
+# enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+
+---
+version: "2.1"
+services:
+  homeassistant:
+    image: ghcr.io/linuxserver/homeassistant
+    container_name: homeassistant
+    network_mode: host
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Home Assistant config storage path.
+      - ${BASEDIR:-/volume1/docker}/homeassistant/config:/config
+    devices:
+      # For passing through USB, serial or gpio devices.
+      - /path/to/device:/path/to/device
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+# [DB Browser for SQLite]({{ project_url }}) is a high quality, visual, open
+# source tool to create, design, and edit database files compatible with SQLite.
+
+---
+version: "2.1"
+services:
+  sqlitebrowser:
+    image: ghcr.io/linuxserver/sqlitebrowser
+    container_name: sqlitebrowser
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores program settings and potentially dump files.
+      - ${BASEDIR:-/volume1/docker}/sqlitebrowser/config:/config
+    ports:
+      # Sqlitebrowser desktop gui, only use this if you are not using host mode and sniffing Docker network traffic.
+      - 3000:3000
+    restart: unless-stopped

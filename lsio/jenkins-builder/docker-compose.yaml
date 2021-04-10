@@ -1,0 +1,21 @@
+This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.
+---
+version: "2.1"
+services:
+  jenkins-builder:
+    image: ghcr.io/linuxserver/jenkins-builder
+    container_name: jenkins-builder
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/jenkins-builder/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped

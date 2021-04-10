@@ -1,0 +1,33 @@
+# [{{ project_name }}]({{ project_url }}) is a personal music streaming server.
+# You can use mStream to stream your music from your home computer to any
+# device, anywhere.  There are mobile apps available for both Android and
+# iPhone.
+
+---
+version: "2.1"
+services:
+  mstream:
+    image: ghcr.io/linuxserver/mstream
+    container_name: mstream
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Set username to login
+      - USER=admin
+      # Set password for user
+      - PASSWORD=password
+      # Run mStream using the config specified at `/config/config.json`, note this will mean user/password is defined in `config.json`
+      - USE_JSON=true/false
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # mStream config
+      - ${BASEDIR:-/volume1/docker}/mstream/config:/config
+      # Music location
+      - ${BASEDIR:-/volume1/docker}/mstream/music:/music
+    ports:
+      # The port for the mStream webinterface
+      - 3000:3000
+    restart: unless-stopped

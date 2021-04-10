@@ -1,0 +1,31 @@
+# Ipfs - A peer-to-peer hypermedia protocol designed to make the web faster,
+# safer, and more open.
+
+---
+version: "2.1"
+services:
+  ipfs:
+    image: ghcr.io/linuxserver/ipfs
+    container_name: ipfs
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # IPFS storage and config files/logs
+      - ${BASEDIR:-/volume1/docker}/ipfs/config:/config
+    ports:
+      # The port for the IPFS web UI
+      - 80:80
+      # Peering port, this is the only port you should expose to the internet
+      - 4001:4001
+      # API port, the clientside webUI needs to be able to talk to this from whatever machine your web browser is on
+      - 5001:5001
+      # Gateway Port, actually serves IPFS content
+      - 8080:8080
+      # HTTPS port for web UI
+      - 443:443 # optional
+    restart: unless-stopped

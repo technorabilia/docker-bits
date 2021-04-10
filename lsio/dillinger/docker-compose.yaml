@@ -1,0 +1,23 @@
+# Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered
+# HTML5 Markdown editor.
+
+---
+version: "2.1"
+services:
+  dillinger:
+    image: ghcr.io/linuxserver/dillinger
+    container_name: dillinger
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Dillinger plugin config files
+      - ${BASEDIR:-/volume1/docker}/dillinger/config:/config
+    ports:
+      # The port for the Dillinger web interface
+      - 8080:8080
+    restart: unless-stopped

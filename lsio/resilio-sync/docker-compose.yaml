@@ -1,0 +1,32 @@
+# Resilio-sync (formerly BitTorrent Sync) uses the BitTorrent protocol to sync
+# files and folders between all of your devices. There are both free and paid
+# versions, this container supports both. There is an official sync image but we
+# created this one as it supports user mapping to simplify permissions for
+# volumes.
+
+---
+version: "2.1"
+services:
+  resilio-sync:
+    image: ghcr.io/linuxserver/resilio-sync
+    container_name: resilio-sync
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where resilio-sync should store its config file.
+      - ${BASEDIR:-/volume1/docker}/resilio-sync/config:/config
+      # Folder for downloads/cache.
+      - ${BASEDIR:-/volume1/docker}/resilio-sync/downloads:/downloads
+      # Sync folders root.
+      - ${BASEDIR:-/volume1/docker}/resilio-sync/sync:/sync
+    ports:
+      # WebUI
+      - 8888:8888
+      # Sync Port.
+      - 55555:55555
+    restart: unless-stopped

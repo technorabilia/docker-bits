@@ -1,0 +1,44 @@
+# Lychee is a free photo-management tool, which runs on your server or web-
+# space. Installing is a matter of seconds. Upload, manage and share photos like
+# from a native application. Lychee comes with everything you need and all your
+# photos are stored securely."  ### UPGRADE WARNING  Please note that the
+# upgrade process resets ALL password-protected albums. Any albums that were
+# made public with a password will need to be re-secured.
+
+version: "3"
+services:
+  mariadb:
+    image: ghcr.io/linuxserver/mariadb:latest
+    container_name: lychee_mariadb
+    restart: always
+    volumes:
+      - /path/to/mariadb/data:/config
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=lychee
+      - MYSQL_USER=lychee
+      - MYSQL_PASSWORD=dbpassword
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+  lychee:
+    image: ghcr.io/linuxserver/lychee:latest
+    container_name: lychee
+    restart: always
+    depends_on:
+      - mariadb
+    volumes:
+      - /path/to/config:/config
+      - /path/to/pictures:/pictures
+    environment:
+      - DB_HOST=mariadb
+      - DB_USER=lychee
+      - DB_PASS=dbpassword
+      - DB_NAME=lychee
+      - DB_PORT=3306
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+    ports:
+      - 80:80
+

@@ -1,0 +1,28 @@
+# Beets is a music library manager and not, for the most part, a music player.
+# It does include a simple player plugin and an experimental Web-based player,
+# but it generally leaves actual sound-reproduction to specialized tools.
+
+---
+version: "2.1"
+services:
+  beets:
+    image: ghcr.io/linuxserver/beets
+    container_name: beets
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/beets/config:/config
+      # Music library
+      - ${BASEDIR:-/volume1/docker}/beets/music:/music
+      # Non processed music
+      - ${BASEDIR:-/volume1/docker}/beets/downloads:/downloads
+    ports:
+      # Application WebUI
+      - 8337:8337
+    restart: unless-stopped

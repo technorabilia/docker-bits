@@ -1,0 +1,27 @@
+# Rdesktop - Ubuntu based containers containing full desktop environments in
+# officially supported flavors accessible via RDP.
+
+---
+version: "2.1"
+services:
+  rdesktop:
+    image: ghcr.io/linuxserver/rdesktop
+    container_name: rdesktop
+    privileged: true # optional
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Docker Socket on the system, if you want to use Docker in the container
+      - ${BASEDIR:-/volume1/docker}/rdesktop/var/run/docker.sock:/var/run/docker.sock # optional
+      # abc users home directory
+      - ${BASEDIR:-/volume1/docker}/rdesktop/config:/config # optional
+    ports:
+      # RDP access port
+      - 3389:3389
+    shm_size: "1gb" # optional
+    restart: unless-stopped

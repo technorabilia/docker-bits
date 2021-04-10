@@ -1,0 +1,26 @@
+# [darktable]({{ project_url }}) is an open source photography workflow
+# application and raw developer. A virtual lighttable and darkroom for
+# photographers. It manages your digital negatives in a database, lets you view
+# them through a zoomable lighttable and enables you to develop raw images and
+# enhance them.
+
+---
+version: "2.1"
+services:
+  darktable:
+    image: ghcr.io/linuxserver/darktable
+    container_name: darktable
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores program settings and images
+      - ${BASEDIR:-/volume1/docker}/darktable/config:/config
+    ports:
+      # Darktable desktop gui.
+      - 3000:3000
+    restart: unless-stopped

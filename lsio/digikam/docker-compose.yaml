@@ -1,0 +1,24 @@
+# [digiKam]({{ project_url }}): Professional Photo Management with the Power of
+# Open Source
+
+---
+version: "2.1"
+services:
+  digikam:
+    image: ghcr.io/linuxserver/digikam
+    container_name: digikam
+    network_mode: host
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores database.
+      - ${BASEDIR:-/volume1/docker}/digikam/config:/config
+    ports:
+      # digiKam desktop gui
+      - 3000:3000 # optional
+    restart: unless-stopped

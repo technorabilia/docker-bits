@@ -1,0 +1,24 @@
+# Embystat is a personal web server that can calculate all kinds of statistics
+# from your (local) Emby server. Just install this on your server and let him
+# calculate all kinds of fun stuff.
+
+---
+version: "2.1"
+services:
+  embystat:
+    image: ghcr.io/linuxserver/embystat
+    container_name: embystat
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/embystat/config:/config
+    ports:
+      # web gui
+      - 6555:6555
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+# Raneto - is an open source Knowledgebase platform that uses static Markdown
+# files to power your Knowledgebase.
+
+---
+version: "2.1"
+services:
+  raneto:
+    image: ghcr.io/linuxserver/raneto
+    container_name: raneto
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Raneto config and Markdown files
+      - ${BASEDIR:-/volume1/docker}/raneto/config:/config
+    ports:
+      # The port for the Raneto web interface
+      - 3000:3000
+    restart: unless-stopped

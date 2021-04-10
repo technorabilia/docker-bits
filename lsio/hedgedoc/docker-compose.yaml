@@ -1,0 +1,42 @@
+# [HedgeDoc]({{ project_url }}) gives you access to all your files wherever you
+# are.  HedgeDoc is a real-time, multi-platform collaborative markdown note
+# editor.  This means that you can write notes with other people on your
+# desktop, tablet or even on the phone.  You can sign-in via multiple auth
+# providers like Facebook, Twitter, GitHub and many more on the homepage.
+
+version: "3"
+services:
+  mariadb:
+    image: ghcr.io/linuxserver/mariadb:latest
+    container_name: hedgedoc_mariadb
+    restart: always
+    volumes:
+      - path/to/mariadb/data:/config
+    environment:
+      - MYSQL_ROOT_PASSWORD=<secret password>
+      - MYSQL_DATABASE=hedgedoc
+      - MYSQL_USER=hedgedoc
+      - MYSQL_PASSWORD=<secret password>
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+  hedgedoc:
+    image: ghcr.io/linuxserver/hedgedoc:latest
+    container_name: hedgedoc
+    restart: always
+    depends_on:
+      - mariadb
+    volumes:
+      - /path/to/config:/config
+    environment:
+      - DB_HOST=mariadb
+      - DB_USER=hedgedoc
+      - DB_PASS=<secret password>
+      - DB_NAME=hedgedoc
+      - DB_PORT=3306
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+    ports:
+      - "3000:3000"
+

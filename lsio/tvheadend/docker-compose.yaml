@@ -1,0 +1,38 @@
+# Tvheadend works as a proxy server: is a TV streaming server and recorder for
+# Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC,
+# ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. Tvheadend offers the HTTP
+# (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming. Multiple EPG sources
+# are supported (over-the-air DVB and ATSC including OpenTV DVB extensions,
+# XMLTV, PyXML).
+
+---
+version: "2.1"
+services:
+  tvheadend:
+    image: ghcr.io/linuxserver/tvheadend
+    container_name: tvheadend
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Optionally specify additional arguments to be passed. See Additional runtime parameters.
+      - RUN_OPTS=<run options here> # optional
+    volumes:
+      # Where TVHeadend show store it's config files.
+      - ${BASEDIR:-/volume1/docker}/tvheadend/config:/config
+      # Where you want the PVR to store recordings.
+      - ${BASEDIR:-/volume1/docker}/tvheadend/recordings:/recordings
+    ports:
+      # WebUI
+      - 9981:9981
+      # HTSP server port.
+      - 9982:9982
+    devices:
+      # Only needed if you want to use your AMD/Intel GPU for hardware accelerated video encoding (vaapi).
+      - /dev/dri:/dev/dri # optional
+      # Only needed if you want to pass through a DVB card to the container. If you use IPTV or HDHomeRun you can leave it out.
+      - /dev/dvb:/dev/dvb # optional
+    restart: unless-stopped

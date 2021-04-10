@@ -1,0 +1,33 @@
+# Jackett works as a proxy server: it translates queries from apps (Sonarr,
+# SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries,
+# parses the html response, then sends results back to the requesting software.
+# This allows for getting recent uploads (like RSS) and performing searches.
+# Jackett is a single repository of maintained indexer scraping & translation
+# logic - removing the burden from other apps.
+
+---
+version: "2.1"
+services:
+  jackett:
+    image: ghcr.io/linuxserver/jackett
+    container_name: jackett
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)
+      - AUTO_UPDATE=true # optional
+      # Optionally specify additional arguments to be passed.
+      - RUN_OPTS=<run options here> # optional
+    volumes:
+      # Where Jackett should store its config file.
+      - ${BASEDIR:-/volume1/docker}/jackett/config:/config
+      # Path to torrent blackhole.
+      - ${BASEDIR:-/volume1/docker}/jackett/downloads:/downloads
+    ports:
+      # WebUI
+      - 9117:9117
+    restart: unless-stopped

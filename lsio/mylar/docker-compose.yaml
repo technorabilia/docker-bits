@@ -1,0 +1,25 @@
+# Mylar is an automated Comic Book downloader (cbr/cbz) for use with SABnzbd,
+# NZBGet and torrents.
+
+---
+version: "2.1"
+services:
+  mylar:
+    image: ghcr.io/linuxserver/mylar
+    container_name: mylar
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+    volumes:
+      # Where mylar should store config files.
+      - ${BASEDIR:-/volume1/docker}/mylar/config:/config
+      # Map to your comics folder.
+      - ${BASEDIR:-/volume1/docker}/mylar/comics:/comics
+      # Map to your downloads folder.
+      - ${BASEDIR:-/volume1/docker}/mylar/downloads:/downloads
+    ports:
+      # WebUI
+      - 8090:8090
+    restart: unless-stopped

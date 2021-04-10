@@ -1,0 +1,29 @@
+# Rsnapshot is a filesystem snapshot utility based on rsync. rsnapshot makes it
+# easy to make periodic snapshots of local machines, and remote machines over
+# ssh. The code makes extensive use of hard links whenever possible, to greatly
+# reduce the disk space required."
+
+---
+version: "2.1"
+services:
+  rsnapshot:
+    image: ghcr.io/linuxserver/rsnapshot
+    container_name: rsnapshot
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/rsnapshot/config:/config
+      # Storage location for all snapshots.
+      - ${BASEDIR:-/volume1/docker}/rsnapshot/.snapshots:/.snapshots # optional
+      # Storage location for data to be backed up.
+      - ${BASEDIR:-/volume1/docker}/rsnapshot/data:/data # optional
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+# The Qbittorrent project aims to provide an open-source software alternative to
+# µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar
+# library.
+
+---
+version: "2.1"
+services:
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # for changing the port of the webui, see below for explanation
+      - WEBUI_PORT=8080
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/qbittorrent/config:/config
+      # Location of downloads on disk.
+      - ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads
+    ports:
+      # tcp connection port
+      - 6881:6881
+      # udp connection port
+      - 6881:6881/udp
+      # http gui
+      - 8080:8080
+    restart: unless-stopped

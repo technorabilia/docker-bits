@@ -1,0 +1,26 @@
+# [Remmina]({{ project_url }}) is a remote desktop client written in GTK, aiming
+# to be useful for system administrators and travellers, who need to work with
+# lots of remote computers in front of either large or tiny screens. Remmina
+# supports multiple network protocols, in an integrated and consistent user
+# interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.
+
+---
+version: "2.1"
+services:
+  remmina:
+    image: ghcr.io/linuxserver/remmina
+    container_name: remmina
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores program settings.
+      - ${BASEDIR:-/volume1/docker}/remmina/config:/config
+    ports:
+      # Remmina desktop gui.
+      - 3000:3000
+    restart: unless-stopped

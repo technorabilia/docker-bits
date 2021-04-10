@@ -1,0 +1,22 @@
+# Htpcmanager is a front end for many htpc related applications.
+
+---
+version: "2.1"
+services:
+  htpcmanager:
+    image: ghcr.io/linuxserver/htpcmanager
+    container_name: htpcmanager
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/htpcmanager/config:/config
+    ports:
+      # Application WebUI
+      - 8085:8085
+    restart: unless-stopped

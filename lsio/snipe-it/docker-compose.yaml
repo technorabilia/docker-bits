@@ -1,0 +1,38 @@
+# Snipe-it makes asset management easy. It was built by people solving real-
+# world IT and asset management problems, and a solid UX has always been a top
+# priority. Straightforward design and bulk actions mean getting things done
+# faster.
+
+version: "3"
+services:
+  mysql:
+    image: mysql:5
+    container_name: snipe_mysql
+    restart: always
+    volumes:
+      - <path to mysql data>:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=<secret password>
+      - MYSQL_USER=snipe
+      - MYSQL_PASSWORD=<secret user password>
+      - MYSQL_DATABASE=snipe
+  snipeit:
+    image: linuxserver/snipe-it:latest
+    container_name: snipe-it
+    restart: always
+    depends_on:
+      - mysql
+    volumes:
+      - <path to data>:/config
+    environment:
+      - APP_URL=< your application URL IE 192.168.10.1:8080>
+      - MYSQL_PORT_3306_TCP_ADDR=mysql
+      - MYSQL_PORT_3306_TCP_PORT=3306
+      - MYSQL_DATABASE=snipe
+      - MYSQL_USER=snipe
+      - MYSQL_PASSWORD=<secret user password>
+      - PGID=1000
+      - PUID=1000
+    ports:
+      - "8080:80"
+

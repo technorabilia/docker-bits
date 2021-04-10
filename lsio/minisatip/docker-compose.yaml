@@ -1,0 +1,33 @@
+# Minisatip is a multi-threaded satip server version 1.2 that runs under Linux
+# and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and
+# ISDB-T cards.
+
+---
+version: "2.1"
+services:
+  minisatip:
+    image: ghcr.io/linuxserver/minisatip
+    container_name: minisatip
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Specify specific run params for minisatip
+      - RUN_OPTS=<parameter>
+    volumes:
+      # Configuration files and minisatip data
+      - ${BASEDIR:-/volume1/docker}/minisatip/config:/config
+    ports:
+      # Status Page WebUI
+      - 8875:8875
+      # RTSP Port
+      - 554:554
+      # App Discovery
+      - 1900:1900/udp
+    devices:
+      # For passing through Tv-cards
+      - /dev/dvb:/dev/dvb
+    restart: unless-stopped

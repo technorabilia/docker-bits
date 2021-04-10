@@ -1,0 +1,30 @@
+# Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can
+# monitor multiple RSS feeds for new episodes of your favorite shows and will
+# grab, sort and rename them. It can also be configured to automatically upgrade
+# the quality of files already downloaded when a better quality format becomes
+# available.
+
+---
+version: "2.1"
+services:
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Database and sonarr configs
+      - ${BASEDIR:-/volume1/docker}/sonarr/config:/config
+      # Location of TV library on disk (See note in Application setup)
+      - ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv
+      # Location of download managers output directory (See note in Application setup)
+      - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads
+    ports:
+      # The port for the Sonarr webinterface
+      - 8989:8989
+    restart: unless-stopped

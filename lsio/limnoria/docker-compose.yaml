@@ -1,0 +1,23 @@
+# Limnoria A robust, full-featured, and user/programmer-friendly Python IRC bot,
+# with many existing plugins. Successor of the well-known Supybot.
+
+---
+version: "2.1"
+services:
+  limnoria:
+    image: ghcr.io/linuxserver/limnoria
+    container_name: limnoria
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where Limnoria config is stored.
+      - ${BASEDIR:-/volume1/docker}/limnoria/config:/config
+    ports:
+      # Port for Limnoria's web interface.
+      - 8080:8080
+    restart: unless-stopped

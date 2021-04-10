@@ -1,0 +1,27 @@
+# Medusa is an automatic Video Library Manager for TV Shows. It watches for new
+# episodes of your favorite shows, and when they are posted it does its magic.
+
+---
+version: "2.1"
+services:
+  medusa:
+    image: ghcr.io/linuxserver/medusa
+    container_name: medusa
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Medusa config
+      - ${BASEDIR:-/volume1/docker}/medusa/config:/config
+      # Download location
+      - ${BASEDIR:-/volume1/docker}/medusa/downloads:/downloads
+      # TV Shows location
+      - ${BASEDIR:-/volume1/docker}/medusa/tv:/tv
+    ports:
+      # The port for the Medusa webui
+      - 8081:8081
+    restart: unless-stopped

@@ -1,0 +1,26 @@
+# Mylar3 is an automated Comic Book downloader (cbr/cbz) for use with NZB and
+# torrents written in python. It supports SABnzbd, NZBGET, and many torrent
+# clients in addition to DDL.
+
+---
+version: "2.1"
+services:
+  mylar3:
+    image: ghcr.io/linuxserver/mylar3
+    container_name: mylar3
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+    volumes:
+      # Where mylar should store config files.
+      - ${BASEDIR:-/volume1/docker}/mylar3/config:/config
+      # Map to your comics folder.
+      - ${BASEDIR:-/volume1/docker}/mylar3/comics:/comics
+      # Map to your downloads folder.
+      - ${BASEDIR:-/volume1/docker}/mylar3/downloads:/downloads
+    ports:
+      # WebUI
+      - 8090:8090
+    restart: unless-stopped

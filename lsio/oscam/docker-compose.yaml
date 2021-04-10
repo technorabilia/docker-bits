@@ -1,0 +1,27 @@
+# Oscam is an Open Source Conditional Access Module software used for
+# descrambling DVB transmissions using smart cards. It's both a server and a
+# client.
+
+---
+version: "2.1"
+services:
+  oscam:
+    image: ghcr.io/linuxserver/oscam
+    container_name: oscam
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where oscam should store config files and logs.
+      - ${BASEDIR:-/volume1/docker}/oscam/config:/config
+    ports:
+      # WebUI
+      - 8888:8888
+    devices:
+      # For passing through smart card readers.
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    restart: unless-stopped

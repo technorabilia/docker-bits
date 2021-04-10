@@ -1,0 +1,27 @@
+# [MySQL Workbench]({{ project_url }}) is a unified visual tool for database
+# architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL
+# development, and comprehensive administration tools for server configuration,
+# user administration, backup, and much more.
+
+---
+version: "2.1"
+services:
+  mysql-workbench:
+    image: ghcr.io/linuxserver/mysql-workbench
+    container_name: mysql-workbench
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Users home directory in the container, stores program settings.
+      - ${BASEDIR:-/volume1/docker}/mysql-workbench/config:/config
+    ports:
+      # Mysql Workbench desktop gui.
+      - 3000:3000
+    cap_add:
+      - IPC_LOCK
+    restart: unless-stopped

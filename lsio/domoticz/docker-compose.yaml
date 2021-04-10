@@ -1,0 +1,34 @@
+# Domoticz is a Home Automation System that lets you monitor and configure
+# various devices like: Lights, Switches, various sensors/meters like
+# Temperature, Rain, Wind, UV, Electra, Gas, Water and much more.
+# Notifications/Alerts can be sent to any mobile device.
+
+---
+version: "2.1"
+services:
+  domoticz:
+    image: ghcr.io/linuxserver/domoticz
+    container_name: domoticz
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.
+      - WEBROOT=domoticz # optional
+    volumes:
+      # Where Domoticz stores config files and data.
+      - ${BASEDIR:-/volume1/docker}/domoticz/config:/config
+    ports:
+      # WebUI
+      - 8080:8080
+      # Domoticz communication port.
+      - 6144:6144
+      # Domoticz communication port.
+      - 1443:1443
+    devices:
+      # For passing through USB devices.
+      - <path to device>:<path to device>
+    restart: unless-stopped

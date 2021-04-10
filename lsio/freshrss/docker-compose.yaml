@@ -1,0 +1,22 @@
+# Freshrss is a free, self-hostable aggregator for rss feeds.
+
+---
+version: "2.1"
+services:
+  freshrss:
+    image: ghcr.io/linuxserver/freshrss
+    container_name: freshrss
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Local storage for freshrss site files.
+      - ${BASEDIR:-/volume1/docker}/freshrss/config:/config
+    ports:
+      # WebUI
+      - 80:80
+    restart: unless-stopped

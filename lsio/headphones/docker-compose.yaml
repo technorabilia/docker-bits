@@ -1,0 +1,27 @@
+# Headphones is an automated music downloader for NZB and Torrent, written in
+# Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
+
+---
+version: "2.1"
+services:
+  headphones:
+    image: ghcr.io/linuxserver/headphones
+    container_name: headphones
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/headphones/config:/config
+      # ISOs.
+      - ${BASEDIR:-/volume1/docker}/headphones/downloads:/downloads
+      # Your music directory.
+      - ${BASEDIR:-/volume1/docker}/headphones/music:/music
+    ports:
+      # Application WebUI
+      - 8181:8181
+    restart: unless-stopped

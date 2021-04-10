@@ -1,0 +1,23 @@
+# Tautulli is a python based web application for monitoring, analytics and
+# notifications for Plex Media Server.
+
+---
+version: "2.1"
+services:
+  tautulli:
+    image: ghcr.io/linuxserver/tautulli
+    container_name: tautulli
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Contains tautulli config and database.
+      - ${BASEDIR:-/volume1/docker}/tautulli/config:/config
+    ports:
+      # WebUI
+      - 8181:8181
+    restart: unless-stopped

@@ -1,0 +1,23 @@
+# [{{ project_name_short|capitalize }}]({{ project_url }}) short description
+# goes here.
+
+---
+version: "2.1"
+services:
+  name:
+    image: ghcr.io/linuxserver/name
+    container_name: name
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/name/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped

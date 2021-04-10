@@ -1,0 +1,30 @@
+# Rutorrent is a popular rtorrent client with a webui for ease of use.
+
+---
+version: "2.1"
+services:
+  rutorrent:
+    image: ghcr.io/linuxserver/rutorrent
+    container_name: rutorrent
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # where ruTorrent should store it's config files
+      - ${BASEDIR:-/volume1/docker}/rutorrent/config:/config
+      # path to your downloads folder
+      - ${BASEDIR:-/volume1/docker}/rutorrent/downloads:/downloads
+    ports:
+      # ruTorrent Web UI
+      - 80:80
+      # scgi port
+      - 5000:5000
+      # Bit-torrent port
+      - 51413:51413
+      # Bit-torrent port
+      - 6881:6881/udp
+    restart: unless-stopped

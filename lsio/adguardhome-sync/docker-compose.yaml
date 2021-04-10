@@ -1,0 +1,25 @@
+# Adguardhome-sync is a tool to synchronize AdGuardHome config to replica
+# instances.
+
+---
+version: "2.1"
+services:
+  adguardhome-sync:
+    image: ghcr.io/linuxserver/adguardhome-sync
+    container_name: adguardhome-sync
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Set a custom config file.
+      - CONFIGFILE=/config/adguardhome-sync.yaml # optional
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/adguardhome-sync/config:/config
+    ports:
+      # Port for AdGuardHome Sync's web API.
+      - 8080:8080
+    restart: unless-stopped

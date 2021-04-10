@@ -1,0 +1,25 @@
+# Deluge is a lightweight, Free Software, cross-platform BitTorrent client.  *
+# Full Encryption * WebUI * Plugin System * Much more...
+
+---
+version: "2.1"
+services:
+  deluge:
+    image: ghcr.io/linuxserver/deluge
+    container_name: deluge
+    network_mode: host
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # set the loglevel output when running Deluge, default is info for deluged and warning for delgued-web
+      - DELUGE_LOGLEVEL=error # optional
+    volumes:
+      # deluge configs
+      - ${BASEDIR:-/volume1/docker}/deluge/config:/config
+      # torrent download directory
+      - ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads
+    restart: unless-stopped

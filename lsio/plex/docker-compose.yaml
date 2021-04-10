@@ -1,0 +1,29 @@
+# Plex organizes video, music and photos from personal media libraries and
+# streams them to smart TVs, streaming boxes and mobile devices. This container
+# is packaged as a standalone Plex Media Server. has always been a top priority.
+# Straightforward design and bulk actions mean getting things done faster.
+
+---
+version: "2.1"
+services:
+  plex:
+    image: ghcr.io/linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Set whether to update plex or not - see Application Setup section.
+      - VERSION=docker
+      # Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.
+      - PLEX_CLAIM= # optional
+    volumes:
+      # Plex library location. *This can grow very large, 50gb+ is likely for a large collection.*
+      - ${BASEDIR:-/volume1/docker}/plex/config:/config
+      # Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.
+      - ${BASEDIR:-/volume1/docker}/plex/tv:/tv
+      # Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.
+      - ${BASEDIR:-/volume1/docker}/plex/movies:/movies
+    restart: unless-stopped

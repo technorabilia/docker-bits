@@ -1,0 +1,24 @@
+# Muximux is a lightweight portal to view & manage your HTPC apps without having
+# to run anything more than a PHP enabled webserver. With Muximux you don't need
+# to keep multiple tabs open, or bookmark the URL to all of your apps.
+
+---
+version: "2.1"
+services:
+  muximux:
+    image: ghcr.io/linuxserver/muximux
+    container_name: muximux
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where muximux should store its files.
+      - ${BASEDIR:-/volume1/docker}/muximux/config:/config
+    ports:
+      # WebUI
+      - 80:80
+    restart: unless-stopped

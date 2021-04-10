@@ -1,0 +1,30 @@
+# Lidarr is a music collection manager for Usenet and BitTorrent users. It can
+# monitor multiple RSS feeds for new tracks from your favorite artists and will
+# grab, sort and rename them. It can also be configured to automatically upgrade
+# the quality of files already downloaded when a better quality format becomes
+# available.
+
+---
+version: "2.1"
+services:
+  lidarr:
+    image: ghcr.io/linuxserver/lidarr
+    container_name: lidarr
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Configuration files for Lidarr.
+      - ${BASEDIR:-/volume1/docker}/lidarr/config:/config
+      # Music files (See note in Application setup).
+      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music
+      # Path to your download folder for music (See note in Application setup).
+      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads
+    ports:
+      # Application WebUI
+      - 8686:8686
+    restart: unless-stopped

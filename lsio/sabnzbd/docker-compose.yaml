@@ -1,0 +1,31 @@
+# Sabnzbd makes Usenet as simple and streamlined as possible by automating
+# everything we can. All you have to do is add an .nzb. SABnzbd takes over from
+# there, where it will be automatically downloaded, verified, repaired,
+# extracted and filed away with zero human interaction.
+
+---
+version: "2.1"
+services:
+  sabnzbd:
+    image: ghcr.io/linuxserver/sabnzbd
+    container_name: sabnzbd
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Local path for sabnzbd config files.
+      - ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config
+      # Local path for finished downloads.
+      - ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads
+      # Local path for incomplete-downloads.
+      - ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads # optional
+    ports:
+      # HTTP port for the WebUI.
+      - 8080:8080
+      # HTTPS port for the WebUI.
+      - 9090:9090
+    restart: unless-stopped

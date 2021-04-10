@@ -1,0 +1,24 @@
+# Snapdrop A local file sharing in your browser. Inspired by Apple's Airdrop.
+
+---
+version: "2.1"
+services:
+  snapdrop:
+    image: ghcr.io/linuxserver/snapdrop
+    container_name: snapdrop
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Persistent configs and logs.
+      - ${BASEDIR:-/volume1/docker}/snapdrop/config:/config
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped

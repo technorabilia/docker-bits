@@ -1,0 +1,28 @@
+# Pyload is a Free and Open Source download manager written in Python and
+# designed to be extremely lightweight, easily extensible and fully manageable
+# via web.
+
+---
+version: "2.1"
+services:
+  pyload:
+    image: ghcr.io/linuxserver/pyload
+    container_name: pyload
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # pyLoad Configuration and files database
+      - ${BASEDIR:-/volume1/docker}/pyload/config:/config
+      # Destination of pyLoad downloads
+      - ${BASEDIR:-/volume1/docker}/pyload/downloads:/downloads
+    ports:
+      # Allows HTTP access to the application
+      - 8000:8000
+      # pyLoad control port
+      - 7227:7227 # optional
+    restart: unless-stopped

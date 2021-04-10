@@ -1,0 +1,40 @@
+# The Unifi-controller Controller software is a powerful, enterprise wireless
+# software engine ideal for high-density client deployments requiring low
+# latency and high uptime performance.
+
+---
+version: "2.1"
+services:
+  unifi-controller:
+    image: ghcr.io/linuxserver/unifi-controller
+    container_name: unifi-controller
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Optionally change the Java memory limit (-Xmx) (default is 1024M).
+      - MEM_LIMIT=1024M # optional
+    volumes:
+      # All Unifi data stored here
+      - ${BASEDIR:-/volume1/docker}/unifi-controller/config:/config
+    ports:
+      # Unifi STUN port
+      - 3478:3478/udp
+      # Required for AP discovery
+      - 10001:10001/udp
+      # Required for device communication
+      - 8080:8080
+      # Unifi web admin port
+      - 8443:8443
+      # Required for `Make controller discoverable on L2 network` option
+      - 1900:1900/udp # optional
+      # Unifi guest portal HTTPS redirect port
+      - 8843:8843 # optional
+      # Unifi guest portal HTTP redirect port
+      - 8880:8880 # optional
+      # For mobile throughput test
+      - 6789:6789 # optional
+      # Remote syslog port
+      - 5514:5514/udp # optional
+    restart: unless-stopped

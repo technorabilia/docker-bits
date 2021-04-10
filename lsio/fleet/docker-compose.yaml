@@ -1,0 +1,31 @@
+# Fleet provides an online web interface which displays a set of maintained
+# images from one or more owned repositories.
+
+---
+version: "2.1"
+services:
+  fleet:
+    image: ghcr.io/linuxserver/fleet
+    container_name: fleet
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES.
+      - fleet_admin_authentication_type=DATABASE
+      # The full JDBC connection string to the Fleet database
+      - fleet_database_url=jdbc:mariadb://<url>:3306/fleet
+      # The username with the relevant GRANT permissions for the database
+      - fleet_database_username=fleet_user
+      # The database user's password.
+      - fleet_database_password=dbuserpassword
+      # A string used as part of the password key derivation process.
+      - fleet_admin_secret=randomstring # optional
+    volumes:
+      # The primary config file and rolling log files.
+      - ${BASEDIR:-/volume1/docker}/fleet/config:/config
+    ports:
+      # Http port
+      - 8080:8080
+    restart: unless-stopped

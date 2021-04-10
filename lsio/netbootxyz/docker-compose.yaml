@@ -1,0 +1,34 @@
+# Netbootxyz is a way to PXE boot various operating system installers or
+# utilities from one place within the BIOS without the need of having to go
+# retrieve the media to run the tool. iPXE is used to provide a user friendly
+# menu from within the BIOS that lets you easily choose the operating system you
+# want along with any specific types of versions or bootable flags.
+
+---
+version: "2.1"
+services:
+  netbootxyz:
+    image: ghcr.io/linuxserver/netbootxyz
+    container_name: netbootxyz
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a specific version of boot files you want to use from NETBOOT.XYZ (unset pulls latest)
+      - MENU_VERSION=1.9.9 # optional
+      # Specify the port range tftp will use for data transfers [(see Wikipedia)](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol#Details)
+      - PORT_RANGE=30000:30010 # optional
+    volumes:
+      # Storage for boot menu files and web application config
+      - ${BASEDIR:-/volume1/docker}/netbootxyz/config:/config
+      # Storage for NETBOOT.XYZ bootable assets (live CDs and other files)
+      - ${BASEDIR:-/volume1/docker}/netbootxyz/assets:/assets # optional
+    ports:
+      # Web configuration interface.
+      - 3000:3000
+      # TFTP Port.
+      - 69:69/udp
+      # NGINX server for hosting assets.
+      - 8080:80 # optional
+    restart: unless-stopped

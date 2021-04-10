@@ -1,0 +1,26 @@
+# Grocy is an ERP system for your kitchen! Cut down on food waste, and manage
+# your chores with this brilliant utility.  Keep track of your purchases, how
+# much food you are wasting, what chores need doing and what batteries need
+# charging with this proudly Open Source tool  For more information on grocy
+# visit their website and check it out: https://grocy.info
+
+---
+version: "2.1"
+services:
+  grocy:
+    image: ghcr.io/linuxserver/grocy
+    container_name: grocy
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # this will store any uploaded data on the docker host
+      - ${BASEDIR:-/volume1/docker}/grocy/config:/config
+    ports:
+      # will map the container's port 80 to port 9283 on the host
+      - 9283:80
+    restart: unless-stopped

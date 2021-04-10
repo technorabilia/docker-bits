@@ -1,0 +1,24 @@
+# Wikijs A modern, lightweight and powerful wiki app built on NodeJS.
+
+---
+version: "2.1"
+services:
+  wikijs:
+    image: ghcr.io/linuxserver/wikijs
+    container_name: wikijs
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where Wiki.js config is stored.
+      - ${BASEDIR:-/volume1/docker}/wikijs/config:/config
+      # Where Wiki.js data is stored.
+      - ${BASEDIR:-/volume1/docker}/wikijs/data:/data
+    ports:
+      # Port for Wiki.js's web interface.
+      - 3000:3000
+    restart: unless-stopped

@@ -1,0 +1,25 @@
+# Minetest (server) is a near-infinite-world block sandbox game and a game
+# engine, inspired by InfiniMiner, Minecraft, and the like.
+
+---
+version: "2.1"
+services:
+  minetest:
+    image: ghcr.io/linuxserver/minetest
+    container_name: minetest
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Optionally specify any [CLI variables](https://wiki.minetest.net/Command_line) you want to launch the app with
+      - CLI_ARGS="--gameid minetest" # optional
+    volumes:
+      # Where minetest stores config files and maps etc.
+      - ${BASEDIR:-/volume1/docker}/minetest/config/.minetest:/config/.minetest
+    ports:
+      # Port Minetest listens on.
+      - 30000:30000/udp
+    restart: unless-stopped

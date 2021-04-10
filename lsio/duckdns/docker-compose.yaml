@@ -1,0 +1,27 @@
+# Duckdns is a free service which will point a DNS (sub domains of duckdns.org)
+# to an IP of your choice. The service is completely free, and doesn't require
+# reactivation or forum posts to maintain its existence.
+
+---
+version: "2.1"
+services:
+  duckdns:
+    image: ghcr.io/linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024} # optional
+      # for UserID
+      - PGID=${PGID:-100} # optional
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # multiple subdomains allowed, comma separated, no spaces
+      - SUBDOMAINS=subdomain1,subdomain2
+      # DuckDNS token
+      - TOKEN=token
+      # Set to `true` to log to file (also need to map /config).
+      - LOG_FILE=false # optional
+    volumes:
+      # Used in conjunction with logging to file.
+      - ${BASEDIR:-/volume1/docker}/duckdns/config:/config # optional
+    restart: unless-stopped

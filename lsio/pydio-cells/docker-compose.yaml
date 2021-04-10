@@ -1,0 +1,32 @@
+# Pydio-cells is the nextgen file sharing platform for organizations. It is a
+# full rewrite of the Pydio project using the Go language following a micro-
+# service architecture.
+
+---
+version: "2.1"
+services:
+  pydio-cells:
+    image: ghcr.io/linuxserver/pydio-cells
+    container_name: pydio-cells
+    # Pydio Cells uses the hostname to verify local files. This setting is required and should not be changed after it has been set.
+    hostname: {{ project_name }}
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # The external url you would like to use to access Pydio Cells (Can be https://domain.url or https://IP:PORT).
+      - EXTERNALURL=yourdomain.url
+      # Enter the LAN IP of the docker server. Required for local access by IP, added to self signed cert as SAN (not required if accessing only through reverse proxy).
+      - SERVER_IP=0.0.0.0 # optional
+    volumes:
+      # All the config files reside here.
+      - ${BASEDIR:-/volume1/docker}/pydio-cells/config:/config
+    ports:
+      # Http port
+      - 8080:8080
+      # gRPC port (required for CellsSync).
+      - 33060:33060 # optional
+    restart: unless-stopped

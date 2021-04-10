@@ -1,0 +1,28 @@
+# THIS IMAGE IS DEPRECATED, IT WILL NO LONGER RECEIVE UPDATES. Gazee is a WebApp
+# Comic Reader for your favorite digital comics. Reach and read your comic
+# library from any web connected device with a modern web browser.
+
+---
+version: "2.1"
+services:
+  gazee:
+    image: ghcr.io/linuxserver/gazee
+    container_name: gazee
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+    volumes:
+      # Where Gazee should store config files.
+      - ${BASEDIR:-/volume1/docker}/gazee/config:/config
+      # Path to comics folder.
+      - ${BASEDIR:-/volume1/docker}/gazee/comics:/comics
+      # Path to Mylar DB.
+      - ${BASEDIR:-/volume1/docker}/gazee/mylar:/mylar
+      # Where SSL certs should be stored.
+      - ${BASEDIR:-/volume1/docker}/gazee/certs:/certs
+    ports:
+      # WebUI
+      - 4242:4242
+    restart: unless-stopped

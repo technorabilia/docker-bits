@@ -1,0 +1,42 @@
+# Codimd gives you access to all your files wherever you are.  CodiMD is a real-
+# time, multi-platform collaborative markdown note editor.  This means that you
+# can write notes with other people on your desktop, tablet or even on the
+# phone.  You can sign-in via multiple auth providers like Facebook, Twitter,
+# GitHub and many more on the homepage.
+
+version: "3"
+services:
+  mariadb:
+    image: linuxserver/mariadb:latest
+    container_name: codimd_mariadb
+    restart: always
+    volumes:
+      - <path to mariadb data>:/config
+    environment:
+      - MYSQL_ROOT_PASSWORD=<secret password>
+      - MYSQL_DATABASE=codimd
+      - MYSQL_USER=codimd
+      - MYSQL_PASSWORD=<secret password>
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+  codimd:
+    image: linuxserver/codimd:latest
+    container_name: codimd
+    restart: always
+    depends_on:
+      - mariadb
+    volumes:
+      - <path to config>:/config
+    environment:
+      - DB_HOST=mariadb
+      - DB_USER=codimd
+      - DB_PASS=<secret password>
+      - DB_NAME=codimd
+      - DB_PORT=3306
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+    ports:
+      - "3000:3000"
+

@@ -1,0 +1,25 @@
+# Znc is an IRC network bouncer or BNC. It can detach the client from the actual
+# IRC server, and also from selected channels. Multiple clients from different
+# locations can connect to a single ZNC account simultaneously and therefore
+# appear under the same nickname on IRC.
+
+---
+version: "2.1"
+services:
+  znc:
+    image: ghcr.io/linuxserver/znc
+    container_name: znc
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where local ZNC data is stored.
+      - ${BASEDIR:-/volume1/docker}/znc/config:/config
+    ports:
+      # Port ZNC listens on.
+      - 6501:6501
+    restart: unless-stopped

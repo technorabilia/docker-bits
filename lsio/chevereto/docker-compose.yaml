@@ -1,0 +1,28 @@
+# Chevereto is an image hosting software that allows you to create a beautiful
+# and full-featured image hosting website on your own server. It's your hosting
+# and your rules, so say goodbye to closures and restrictions.
+
+---
+version: "2.1"
+services:
+  chevereto:
+    image: ghcr.io/linuxserver/chevereto
+    container_name: chevereto
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # config directory volume mapping
+      - ${BASEDIR:-/volume1/docker}/chevereto/config:/config
+      # data directory volume mapping
+      - ${BASEDIR:-/volume1/docker}/chevereto/data:/data
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped

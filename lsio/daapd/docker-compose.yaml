@@ -1,0 +1,23 @@
+# Daapd (iTunes) media server with support for AirPlay devices, Apple Remote
+# (and compatibles), Chromecast, MPD and internet radio.
+
+---
+version: "2.1"
+services:
+  daapd:
+    image: ghcr.io/linuxserver/daapd
+    container_name: daapd
+    network_mode: host
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+    volumes:
+      # Where daapd server stores its config and dbase files.
+      - ${BASEDIR:-/volume1/docker}/daapd/config:/config
+      # Map to your music folder.
+      - ${BASEDIR:-/volume1/docker}/daapd/music:/music
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+# Quassel-core is a modern, cross-platform, distributed IRC client, meaning that
+# one (or multiple) client(s) can attach to and detach from a central core.
+# This container handles the IRC connection (quasselcore) and requires a desktop
+# client (quasselclient) to be used and configured. It is designed to be always
+# on and will keep your identity present in IRC even when your clients cannot be
+# online. Backlog (history) is downloaded by your client upon reconnection
+# allowing infinite scrollback through time.
+
+---
+version: "2.1"
+services:
+  quassel-core:
+    image: ghcr.io/linuxserver/quassel-core
+    container_name: quassel-core
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=Europe/Amsterdam
+      # Custom CLI options for Quassel
+      - RUN_OPTS=--config-from-environment # optional
+    volumes:
+      # Database and quassel-core configuration storage.
+      - ${BASEDIR:-/volume1/docker}/quassel-core/config:/config
+    ports:
+      # The port quassel-core listens for connections on.
+      - 4242:4242
+      # Optional Ident Port
+      - 113:10113 # optional
+    restart: unless-stopped
