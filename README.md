@@ -6,6 +6,6 @@ The scripts are based on data provided by the [LinuxServer.io GitHub repositorie
 
 Please keep the following in mind.
 * The scripts are not supported by LinuxServer.io
-* The scripts are being generated so I cannot accept requests to add templates
+* The scripts are being generated so I cannot accept requests to add scripts
 
 Detailed information about installing and using the templates and more can be found [here](https://www.technorabilia.com/docker-scripts-for-linuxserver-io-docker-containers).
