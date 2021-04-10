@@ -1,6 +1,3 @@
-# docker-bits
-Various Docker bits
-
 # Docker scripts for LinuxServer.io Docker containers
 
 These scripts can be used to easily deploy [LinuxServer.io Docker containers](https://hub.docker.com/u/linuxserver/) with predefined settings.
