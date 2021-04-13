@@ -14,7 +14,7 @@ docker run -d \
   -e DB_USER=codimd `# Database user` \
   -e DB_PASS=<secret password> `# Database password` \
   -e DB_NAME=codimd `# Database name` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 3000:3000 `# If you wish to access this container from http://{IP}:${PORT}` this *must* be left unchanged.` \
   -v ${BASEDIR:-/volume1/docker}/codimd/config:/config `# CodiMD config and configurable files` \
   --restart unless-stopped \

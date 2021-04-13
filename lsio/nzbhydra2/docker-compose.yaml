@@ -20,7 +20,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where nzbhydra2 should store config files.
       - ${BASEDIR:-/volume1/docker}/nzbhydra2/config:/config

@@ -16,7 +16,7 @@ docker run -d \
   --name=organizr \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 9983:80 `# will map the container's port 80 to port 9983 on the host` \
   -v ${BASEDIR:-/volume1/docker}/organizr/config:/config `# this is where your user data and logs will live` \
   --restart unless-stopped \

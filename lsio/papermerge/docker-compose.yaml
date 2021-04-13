@@ -16,7 +16,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify an external redis instance to use. Can optionally include a port (`redis:6379`) and/or db (`redis/foo`). If left blank or not included, will use a built-in redis instance. If changed after initial setup will also require manual modification of /config/settings.py
       - REDIS_URL= # optional
     volumes:

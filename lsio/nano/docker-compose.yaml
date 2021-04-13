@@ -15,7 +15,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Default peer host (can be overidden with an array by command line options)
       - PEER_HOST=localhost # optional
       # Genesis block public key

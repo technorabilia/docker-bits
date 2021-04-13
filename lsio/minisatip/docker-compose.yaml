@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify specific run params for minisatip
       - RUN_OPTS=<parameter>
     volumes:

@@ -11,7 +11,7 @@ docker run -d \
   --name=jellyfin \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e JELLYFIN_PublishedServerUrl=192.168.0.5 `# optional` `# Set the autodiscovery response domain or IP address.` \
   -p 8096:8096 `# Http webUI.` \
   -p 8920:8920 `# optional` `# Optional - Https webUI (you need to set up your own certificate).` \

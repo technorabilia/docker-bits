@@ -9,7 +9,7 @@ docker run -d \
   --name=calibre-web \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DOCKER_MODS=linuxserver/calibre-web:calibre `# #optional & **x86-64 only** Adds the ability to perform ebook conversion` \
   -p 8083:8083 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \

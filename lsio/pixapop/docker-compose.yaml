@@ -13,7 +13,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify a username to enable authentication.
       - APP_USERNAME=admin # optional
       # Specify a password to enable authentication.

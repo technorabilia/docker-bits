@@ -9,7 +9,7 @@ docker run -d \
     --hostname={{ project_name }} `# optional` `# Optionally the hostname can be defined.` \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8384:8384 `# Application WebUI` \
   -p 22000:22000 `# Listening port` \
   -p 21027:21027/udp `# Protocol discovery` \

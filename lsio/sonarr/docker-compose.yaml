@@ -16,7 +16,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Database and sonarr configs
       - ${BASEDIR:-/volume1/docker}/sonarr/config:/config

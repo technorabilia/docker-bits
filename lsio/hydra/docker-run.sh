@@ -7,7 +7,7 @@ docker run -d \
   --name=hydra \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 5075:5075 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/hydra/config:/config `# Where hydra should store config files.` \
   -v ${BASEDIR:-/volume1/docker}/hydra/downloads:/downloads `# NZB download folder.` \

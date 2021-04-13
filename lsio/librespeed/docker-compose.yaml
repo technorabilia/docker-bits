@@ -13,7 +13,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Set the password for the results database.
       - PASSWORD=PASSWORD
       # (optional) set to `true` to enable custom results page in `/config/www/results/index.php`.

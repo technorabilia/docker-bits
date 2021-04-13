@@ -8,7 +8,7 @@ docker run -d \
   --name=znc \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 6501:6501 `# Port ZNC listens on.` \
   -v ${BASEDIR:-/volume1/docker}/znc/config:/config `# Where local ZNC data is stored.` \
   --restart unless-stopped \

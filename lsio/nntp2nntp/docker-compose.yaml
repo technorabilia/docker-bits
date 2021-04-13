@@ -28,7 +28,7 @@ services:
       # specify your GID
       - PGID=<yourGID>
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # this will store config on the docker host
       - ${BASEDIR:-/volume1/docker}/nntp2nntp/config:/config

@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # pyLoad Configuration and files database
       - ${BASEDIR:-/volume1/docker}/pyload/config:/config

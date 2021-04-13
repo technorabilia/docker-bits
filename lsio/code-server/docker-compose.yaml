@@ -18,7 +18,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.
       - PASSWORD=password # optional
       # Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.

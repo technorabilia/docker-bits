@@ -16,7 +16,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # this will store any uploaded data on the docker host
       - ${BASEDIR:-/volume1/docker}/grocy/config:/config

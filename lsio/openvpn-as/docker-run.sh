@@ -12,7 +12,7 @@ docker run -d \
   --cap-add=NET_ADMIN \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e INTERFACE=eth0 `# optional` `# With bridge networking, leave it as eth0 (or don't include at all), if host or macvlan, set it to your host's network interface, found by running `ifconfig`` \
   -p 943:943 `# Admin GUI port.` \
   -p 9443:9443 `# TCP port.` \

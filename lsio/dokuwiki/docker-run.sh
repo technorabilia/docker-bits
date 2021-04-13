@@ -11,7 +11,7 @@ docker run -d \
   --name=dokuwiki \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 80:80 `# Application HTTP Port` \
   -p 443:443 `# optional` `# #optional Application HTTPS Port` \
   -v ${BASEDIR:-/volume1/docker}/dokuwiki/config:/config `# Configuration files.` \

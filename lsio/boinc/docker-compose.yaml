@@ -15,7 +15,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Username for the BOINC desktop gui.
       - GUAC_USER=abc # optional
       # Password's md5 hash for the BOINC desktop gui.

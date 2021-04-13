@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # To set maximum upload size (in MB), default if unset is 5000.
       - MAX_UPLOAD=<5000>
     volumes:

@@ -7,7 +7,7 @@ docker run -d \
   --net=host `# Shares host networking with container.` \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -v ${BASEDIR:-/volume1/docker}/daapd/config:/config `# Where daapd server stores its config and dbase files.` \
   -v ${BASEDIR:-/volume1/docker}/daapd/music:/music `# Map to your music folder.` \
   --restart unless-stopped \

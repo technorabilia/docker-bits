@@ -7,7 +7,7 @@ docker run -d \
   --name=ubooquity \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e MAXMEM=<maxmem> `# To set the maximum memory. ( ex: set '1024' for 1GB )` \
   -p 2202:2202 `# The library port.` \
   -p 2203:2203 `# The admin port.` \

@@ -21,7 +21,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Users home directory in the container, stores program settings and potentially dump files.
       - ${BASEDIR:-/volume1/docker}/wireshark/config:/config

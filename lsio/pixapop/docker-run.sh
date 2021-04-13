@@ -6,7 +6,7 @@ docker run -d \
   --name=pixapop \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e APP_USERNAME=admin `# optional` `# Specify a username to enable authentication.` \
   -e APP_PASSWORD=admin `# optional` `# Specify a password to enable authentication.` \
   -p 80:80 `# WebUI` \

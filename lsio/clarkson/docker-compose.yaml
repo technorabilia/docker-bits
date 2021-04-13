@@ -24,7 +24,7 @@ services:
       # **Defaults to _false_.** If set to _true_, allows new users to register.
       - ENABLE_REGISTRATIONS=<true/false>
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     ports:
       # WebUI
       - 3000:3000

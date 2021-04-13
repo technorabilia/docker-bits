@@ -28,7 +28,7 @@ services:
       # Key used to secure communication.
       - SEC_KEY=<Your Key To Encrypt Security Data>
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where HABridge stores config files and data.
       - ${BASEDIR:-/volume1/docker}/habridge/config:/config

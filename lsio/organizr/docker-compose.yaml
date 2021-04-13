@@ -23,7 +23,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # this is where your user data and logs will live
       - ${BASEDIR:-/volume1/docker}/organizr/config:/config

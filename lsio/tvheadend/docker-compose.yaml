@@ -17,7 +17,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Optionally specify additional arguments to be passed. See Additional runtime parameters.
       - RUN_OPTS=<run options here> # optional
     volumes:

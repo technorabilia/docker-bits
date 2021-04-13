@@ -27,7 +27,7 @@ docker run -d \
   -e REMOTE_AUTH_AUTO_CREATE_USER=<REMOTE_AUTH_AUTO_CREATE_USER> `# If true, NetBox will automatically create local accounts for users authenticated via a remote service (optional, default: False` \
   -e REMOTE_AUTH_DEFAULT_GROUPS=<REMOTE_AUTH_DEFAULT_GROUPS> `# The list of groups to assign a new user account when created using remote authentication (optional, default: []` \
   -e REMOTE_AUTH_DEFAULT_PERMISSIONS=<REMOTE_AUTH_DEFAULT_PERMISSIONS> `# A mapping of permissions to assign a new user account when created using remote authentication (optional, default: {}` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
   -v ${BASEDIR:-/volume1/docker}/netbox/config:/config `# config directory volume mapping` \
   --restart unless-stopped \

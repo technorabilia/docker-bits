@@ -18,7 +18,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where Folding@home should store its database and config.
       - ${BASEDIR:-/volume1/docker}/foldingathome/config:/config

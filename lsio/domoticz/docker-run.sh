@@ -8,7 +8,7 @@ docker run -d \
   --name=domoticz \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e WEBROOT=domoticz `# optional` `# Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.` \
   -p 8080:8080 `# WebUI` \
   -p 6144:6144 `# Domoticz communication port.` \

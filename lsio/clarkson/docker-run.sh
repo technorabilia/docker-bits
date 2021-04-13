@@ -13,7 +13,7 @@ docker run -d \
   -e MYSQL_USERNAME=<mysql_username> `# The user with access to the _clarkson_ schema.` \
   -e MYSQL_PASSWORD=<mysql_password> `# The password for the user.` \
   -e ENABLE_REGISTRATIONS=<true/false> `# **Defaults to _false_.** If set to _true_, allows new users to register.` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 3000:3000 `# WebUI` \
   --restart unless-stopped \
   ghcr.io/linuxserver/clarkson

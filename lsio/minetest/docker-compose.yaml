@@ -13,7 +13,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Optionally specify any [CLI variables](https://wiki.minetest.net/Command_line) you want to launch the app with
       - CLI_ARGS="--gameid minetest" # optional
     volumes:

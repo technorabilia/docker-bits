@@ -11,7 +11,7 @@ docker run -d \
   --name=nextcloud \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 443:443 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/nextcloud/config:/config `# Nextcloud configs.` \
   -v ${BASEDIR:-/volume1/docker}/nextcloud/data:/data `# Your personal data.` \

@@ -8,7 +8,7 @@ docker run -d \
   --name=couchpotato \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 5050:5050 `# http gui` \
   -v ${BASEDIR:-/volume1/docker}/couchpotato/config:/config `# Couchpotato Application Data.` \
   -v ${BASEDIR:-/volume1/docker}/couchpotato/downloads:/downloads `# Downloads Folder.` \

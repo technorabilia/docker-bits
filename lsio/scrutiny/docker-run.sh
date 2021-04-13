@@ -9,7 +9,7 @@ docker run -d \
   --cap-add=SYS_ADMIN `# optional` \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SCRUTINY_API_ENDPOINT=http://localhost:8080 `# # optional - API endpoint of the scrutiny UI. Do not change unless using as a remote collector` \
   -e SCRUTINY_WEB=true `# # optional - Run the web service.` \
   -e SCRUTINY_COLLECTOR=true `# # optional - Run the metrics collector.` \

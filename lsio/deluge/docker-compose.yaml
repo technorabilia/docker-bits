@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # set the loglevel output when running Deluge, default is info for deluged and warning for delgued-web
       - DELUGE_LOGLEVEL=error # optional
     volumes:

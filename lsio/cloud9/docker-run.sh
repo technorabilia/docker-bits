@@ -6,7 +6,7 @@ docker run -d \
   --name=cloud9 \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e GITURL=https://github.com/linuxserver/docker-cloud9.git `# optional` `# Specify a git repo to checkout on first startup` \
   -e USERNAME= `# optional` `# Optionally specify a username for http auth` \
   -e PASSWORD= `# optional` `# Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)` \

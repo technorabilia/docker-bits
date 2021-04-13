@@ -18,7 +18,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Optional ssh public key, which will automatically be added to authorized_keys.
       - PUBLIC_KEY=yourpublickey # optional
       # Optionally specify a file containing the public key (works with docker secrets).

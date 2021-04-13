@@ -6,7 +6,7 @@ docker run -d \
   --name=tautulli \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8181:8181 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/tautulli/config:/config `# Contains tautulli config and database.` \
   --restart unless-stopped \

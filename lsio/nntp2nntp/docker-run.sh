@@ -19,7 +19,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for UserID` \
   -e PUID=<yourUID> `# specify your UID` \
   -e PGID=<yourGID> `# specify your GID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 1563:1563 `# will map the container's port 1563 to port 1563 on the host` \
   -v ${BASEDIR:-/volume1/docker}/nntp2nntp/config:/config `# this will store config on the docker host` \
   --restart unless-stopped \

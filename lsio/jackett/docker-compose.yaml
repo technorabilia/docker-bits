@@ -17,7 +17,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)
       - AUTO_UPDATE=true # optional
       # Optionally specify additional arguments to be passed.

@@ -15,7 +15,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.
       - WEBROOT=domoticz # optional
     volumes:

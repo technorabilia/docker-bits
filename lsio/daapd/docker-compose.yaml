@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where daapd server stores its config and dbase files.
       - ${BASEDIR:-/volume1/docker}/daapd/config:/config

@@ -16,7 +16,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify an alternative UI options are `/combustion-release/`, `/transmission-web-control/`, and `/kettu/` .
       - TRANSMISSION_WEB_HOME=/combustion-release/ # optional
       # Specify an optional username for the interface

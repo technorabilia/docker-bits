@@ -17,7 +17,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # # optional - API endpoint of the scrutiny UI. Do not change unless using as a remote collector
       - SCRUTINY_API_ENDPOINT=http://localhost:8080
       # # optional - Run the web service.

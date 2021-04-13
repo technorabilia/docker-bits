@@ -7,7 +7,7 @@ docker run -d \
   --name=booksonic \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CONTEXT_PATH=url-base `# Base url for use with reverse proxies etc.` \
   -p 4040:4040 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/booksonic/config:/config `# Configuration files.` \

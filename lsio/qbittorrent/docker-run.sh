@@ -7,7 +7,7 @@ docker run -d \
   --name=qbittorrent \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e WEBUI_PORT=8080 `# for changing the port of the webui, see below for explanation` \
   -p 6881:6881 `# tcp connection port` \
   -p 6881:6881/udp `# udp connection port` \

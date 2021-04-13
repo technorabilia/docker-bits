@@ -9,7 +9,7 @@ docker run -d \
   --name=libresonic \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CONTEXT_PATH=<URL_BASE> `# optional` `# For setting url-base in reverse proxy setups.` \
   -p 4040:4040 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/libresonic/config:/config `# Configuration file location.` \

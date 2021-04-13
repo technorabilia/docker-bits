@@ -9,7 +9,7 @@ docker run -d \
   --name=resilio-sync \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8888:8888 `# WebUI` \
   -p 55555:55555 `# Sync Port.` \
   -v ${BASEDIR:-/volume1/docker}/resilio-sync/config:/config `# Where resilio-sync should store its config file.` \

@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Docker Socket on the system, if you want to use Docker in the container
       - ${BASEDIR:-/volume1/docker}/rdesktop/var/run/docker.sock:/var/run/docker.sock # optional

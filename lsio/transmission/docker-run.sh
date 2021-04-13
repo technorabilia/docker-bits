@@ -9,7 +9,7 @@ docker run -d \
   --name=transmission \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e TRANSMISSION_WEB_HOME=/combustion-release/ `# optional` `# Specify an alternative UI options are `/combustion-release/`, `/transmission-web-control/`, and `/kettu/` .` \
   -e USER=username `# optional` `# Specify an optional username for the interface` \
   -e PASS=password `# optional` `# Specify an optional password for the interface` \

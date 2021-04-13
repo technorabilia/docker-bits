@@ -8,7 +8,7 @@ docker run -d \
   --name=heimdall \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/heimdall/config:/config `# Contains all relevant configuration files.` \

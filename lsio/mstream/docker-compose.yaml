@@ -21,7 +21,7 @@ services:
       # Run mStream using the config specified at `/config/config.json`, note this will mean user/password is defined in `config.json`
       - USE_JSON=true/false
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # mStream config
       - ${BASEDIR:-/volume1/docker}/mstream/config:/config

@@ -6,7 +6,7 @@ docker run -d \
   --name=librespeed \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e PASSWORD=PASSWORD `# Set the password for the results database.` \
   -e CUSTOM_RESULTS=false `# optional` `# (optional) set to `true` to enable custom results page in `/config/www/results/index.php`.` \
   -e DB_TYPE=sqlite `# optional` `# Defaults to `sqlite`, can also be set to `mysql` or `postgresql`.` \

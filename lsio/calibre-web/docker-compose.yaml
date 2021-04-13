@@ -16,7 +16,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # #optional & **x86-64 only** Adds the ability to perform ebook conversion
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:

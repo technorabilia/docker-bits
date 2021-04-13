@@ -13,7 +13,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify a git repo to checkout on first startup
       - GITURL=https://github.com/linuxserver/docker-cloud9.git # optional
       # Optionally specify a username for http auth

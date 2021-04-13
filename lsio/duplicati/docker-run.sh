@@ -7,7 +7,7 @@ docker run -d \
   --name=duplicati \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CLI_ARGS= `# optional` `# Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with` \
   -p 8200:8200 `# http gui` \
   -v ${BASEDIR:-/volume1/docker}/duplicati/config:/config `# Contains all relevant configuration files.` \

@@ -14,7 +14,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # To set the maximum memory. ( ex: set '1024' for 1GB )
       - MAXMEM=<maxmem>
     volumes:

@@ -11,7 +11,7 @@ docker run -d \
   --name=quassel-core \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e RUN_OPTS=--config-from-environment `# optional` `# Custom CLI options for Quassel` \
   -p 4242:4242 `# The port quassel-core listens for connections on.` \
   -p 113:10113 `# optional` `# Optional Ident Port` \

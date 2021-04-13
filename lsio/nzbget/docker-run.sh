@@ -6,7 +6,7 @@ docker run -d \
   --name=nzbget \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e VERSION=latest `# optional` `# Supported values are LATEST, PLEXPASS or a specific version number.` \
   -p 6789:6789 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/nzbget/config:/config `# NZBGet App data.` \

@@ -15,7 +15,7 @@ services:
       # Set this to root password for installation (minimum 4 characters).
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
       # Specify the name of a database to be created on image startup.
       - MYSQL_DATABASE=USER_DB_NAME # optional
       # This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).

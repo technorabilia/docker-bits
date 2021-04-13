@@ -17,7 +17,7 @@ services:
       # for UserID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/syncthing/config:/config

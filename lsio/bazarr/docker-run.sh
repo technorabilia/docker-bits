@@ -7,7 +7,7 @@ docker run -d \
   --name=bazarr \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 6767:6767 `# Allows HTTP access to the internal webserver.` \
   -v ${BASEDIR:-/volume1/docker}/bazarr/config:/config `# Bazarr data` \
   -v ${BASEDIR:-/volume1/docker}/bazarr/movies:/movies `# optional` `# Location of your movies` \

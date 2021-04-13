@@ -7,7 +7,7 @@ docker run -d \
   --name=minisatip \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e RUN_OPTS=<parameter> `# Specify specific run params for minisatip` \
   -p 8875:8875 `# Status Page WebUI` \
   -p 554:554 `# RTSP Port` \

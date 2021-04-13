@@ -10,7 +10,7 @@ docker run -d \
   --name=tvheadend \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
-  -e TZ=Europe/Amsterdam `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e RUN_OPTS=<run options here> `# optional` `# Optionally specify additional arguments to be passed. See Additional runtime parameters.` \
   -p 9981:9981 `# WebUI` \
   -p 9982:9982 `# HTSP server port.` \
