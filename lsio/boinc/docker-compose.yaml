@@ -16,10 +16,8 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
-      # Username for the BOINC desktop gui.
-      - GUAC_USER=abc # optional
-      # Password's md5 hash for the BOINC desktop gui.
-      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 # optional
+      # Optionally set a password for the gui.
+      - PASSWORD= # optional
     volumes:
       # Where BOINC should store its database and config.
       - ${BASEDIR:-/volume1/docker}/boinc/config:/config

@@ -9,9 +9,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
-  -e GUAC_USER=abc `# optional` `# Username for the calibre desktop gui.` \
-  -e GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 `# optional` `# Password's md5 hash for the calibre desktop gui.` \
-  -e UMASK_SET=022 `# optional` `# for umask setting of Calibre, default if left unset is 022.` \
+  -e PASSWORD= `# optional` `# Optionally set a password for the gui.` \
   -e CLI_ARGS= `# optional` `# Optionally pass cli start arguments to calibre.` \
   -p 8080:8080 `# Calibre desktop gui.` \
   -p 8081:8081 `# Calibre webserver gui.` \

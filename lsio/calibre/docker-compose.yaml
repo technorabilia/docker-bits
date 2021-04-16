@@ -16,12 +16,8 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
-      # Username for the calibre desktop gui.
-      - GUAC_USER=abc # optional
-      # Password's md5 hash for the calibre desktop gui.
-      - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 # optional
-      # for umask setting of Calibre, default if left unset is 022.
-      - UMASK_SET=022 # optional
+      # Optionally set a password for the gui.
+      - PASSWORD= # optional
       # Optionally pass cli start arguments to calibre.
       - CLI_ARGS= # optional
     volumes:
