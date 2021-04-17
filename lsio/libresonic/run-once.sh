@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
-source ./.env
+. ./.env
 mkdir -p ${BASEDIR:-/volume1/docker}/libresonic/config
 mkdir -p ${BASEDIR:-/volume1/docker}/libresonic/music
 mkdir -p ${BASEDIR:-/volume1/docker}/libresonic/playlists

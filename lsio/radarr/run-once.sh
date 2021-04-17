@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
-source ./.env
+. ./.env
 mkdir -p ${BASEDIR:-/volume1/docker}/radarr/config
 mkdir -p ${BASEDIR:-/volume1/docker}/radarr/movies
 mkdir -p ${BASEDIR:-/volume1/docker}/radarr/downloads

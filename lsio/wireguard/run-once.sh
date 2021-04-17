@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
-source ./.env
+. ./.env
 mkdir -p ${BASEDIR:-/volume1/docker}/wireguard/config
 mkdir -p ${BASEDIR:-/volume1/docker}/wireguard/lib/modules
