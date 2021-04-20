@@ -1,0 +1,27 @@
+# [Firefox]({{ project_url }}) Browser, also known as Mozilla Firefox or simply
+# Firefox, is a free and open-source web browser developed by the Mozilla
+# Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko
+# layout engine to render web pages, which implements current and anticipated
+# web standards.
+
+---
+version: "2.1"
+services:
+  firefox:
+    image: ghcr.io/linuxserver/firefox
+    container_name: firefox
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/firefox/config:/config
+    ports:
+      # Firefox desktop gui.
+      - 3000:3000
+    shm_size: "1gb"
+    restart: unless-stopped
