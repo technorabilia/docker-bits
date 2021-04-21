@@ -1,6 +1,6 @@
-# Duplicati works with standard protocols like FTP, SSH, WebDAV as well as
-# popular services like Microsoft OneDrive, Amazon Cloud Drive & S3, Google
-# Drive, box.com, Mega, hubiC and many others.
+# [Duplicati](https://www.duplicati.com/) works with standard protocols like
+# FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon
+# Cloud Drive & S3, Google Drive, box.com, Mega, hubiC and many others.
 
 ---
 version: "2.1"

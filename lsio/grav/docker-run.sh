@@ -1,4 +1,5 @@
-# Grav is a Fast, Simple, and Flexible, file-based Web-platform.
+# [Grav](https://github.com/getgrav/grav/) is a Fast, Simple, and Flexible,
+# file-based Web-platform.
 
 source ./.env
 docker run -d \

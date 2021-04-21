@@ -1,4 +1,5 @@
-# Htpcmanager is a front end for many htpc related applications.
+# [Htpcmanager](https://github.com/HTPC-Manager/HTPC-Manager) is a front end for
+# many htpc related applications.
 
 source ./.env
 docker run -d \

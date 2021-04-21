@@ -1,6 +1,7 @@
-# THIS IMAGE IS DEPRECATED, IT WILL NO LONGER RECEIVE UPDATES. Gazee is a WebApp
-# Comic Reader for your favorite digital comics. Reach and read your comic
-# library from any web connected device with a modern web browser.
+# THIS IMAGE IS DEPRECATED, IT WILL NO LONGER RECEIVE UPDATES.
+# [Gazee](https://github.com/hubbcaps/gazee) is a WebApp Comic Reader for your
+# favorite digital comics. Reach and read your comic library from any web
+# connected device with a modern web browser.
 
 source ./.env
 docker run -d \

@@ -1,8 +1,8 @@
-# Transmission is designed for easy, powerful use. Transmission has the features
-# you want from a BitTorrent client: encryption, a web interface, peer exchange,
-# magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support,
-# watch directories, tracker editing, global and per-torrent speed limits, and
-# more.
+# [Transmission](https://www.transmissionbt.com/) is designed for easy, powerful
+# use. Transmission has the features you want from a BitTorrent client:
+# encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and
+# NAT-PMP port forwarding, webseed support, watch directories, tracker editing,
+# global and per-torrent speed limits, and more.
 
 source ./.env
 docker run -d \

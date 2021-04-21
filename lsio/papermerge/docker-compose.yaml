@@ -1,8 +1,8 @@
-# Papermerge is an open source document management system (DMS) primarily
-# designed for archiving and retrieving your digital documents. Instead of
-# having piles of paper documents all over your desk, office or drawers - you
-# can quickly scan them and configure your scanner to directly upload to
-# Papermerge DMS."
+# [Papermerge](https://www.papermerge.com/) is an open source document
+# management system (DMS) primarily designed for archiving and retrieving your
+# digital documents. Instead of having piles of paper documents all over your
+# desk, office or drawers - you can quickly scan them and configure your scanner
+# to directly upload to Papermerge DMS.'
 
 ---
 version: "2.1"

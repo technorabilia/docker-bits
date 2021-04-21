@@ -1,5 +1,5 @@
-# Mylar is an automated Comic Book downloader (cbr/cbz) for use with SABnzbd,
-# NZBGet and torrents.
+# [Mylar](https://github.com/evilhero/mylar) is an automated Comic Book
+# downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents.
 
 source ./.env
 docker run -d \

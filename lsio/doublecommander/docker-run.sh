@@ -1,6 +1,6 @@
-# [Double Commander]({{ project_url }}) is a free cross platform open source
-# file manager with two panels side by side. It is inspired by Total Commander
-# and features some new ideas.
+# [Double Commander](https://doublecmd.sourceforge.io/) is a free cross platform
+# open source file manager with two panels side by side. It is inspired by Total
+# Commander and features some new ideas.
 
 source ./.env
 docker run -d \

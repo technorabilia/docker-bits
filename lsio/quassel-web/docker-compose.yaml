@@ -1,6 +1,7 @@
-# Quassel-web is a web client for Quassel.  Note that a Quassel-Core instance is
-# required, we have a container available
-# [here.](https://hub.docker.com/r/linuxserver/quassel-core/)
+# [Quassel-web](https://github.com/magne4000/quassel-webserver) is a web client
+# for Quassel. Note that a Quassel-Core instance is required, we have a
+# container available [here.](https://hub.docker.com/r/linuxserver/quassel-
+# core/)
 
 ---
 version: "2.1"

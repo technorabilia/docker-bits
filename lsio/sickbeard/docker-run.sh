@@ -1,5 +1,5 @@
-# [{{ project_name_short|capitalize }}]({{ project_url }}) short description
-# goes here.
+# [{{ project_name_short|capitalize }}](https://url.com/) short description goes
+# here.
 
 source ./.env
 docker run -d \

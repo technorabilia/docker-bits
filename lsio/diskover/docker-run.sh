@@ -1,6 +1,6 @@
-# [{{ project_name }}]({{ project_url }}) is a file system crawler and disk
-# space usage software that uses Elasticsearch to index and manage data across
-# heterogeneous storage systems.
+# [Diskover](https://github.com/shirosaidev/diskover) is a file system crawler
+# and disk space usage software that uses Elasticsearch to index and manage data
+# across heterogeneous storage systems.
 
 source ./.env
 docker run -d \

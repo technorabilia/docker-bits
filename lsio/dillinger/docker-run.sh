@@ -1,5 +1,5 @@
-# Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered
-# HTML5 Markdown editor.
+# [Dillinger](https://github.com/joemccann/dillinger) is a cloud-enabled,
+# mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
 
 source ./.env
 docker run -d \

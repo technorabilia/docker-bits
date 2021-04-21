@@ -1,5 +1,5 @@
-# Ipfs - A peer-to-peer hypermedia protocol designed to make the web faster,
-# safer, and more open.
+# [Ipfs](https://ipfs.io/) - A peer-to-peer hypermedia protocol designed to make
+# the web faster, safer, and more open.
 
 source ./.env
 docker run -d \

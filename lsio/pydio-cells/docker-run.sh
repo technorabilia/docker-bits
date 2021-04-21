@@ -1,6 +1,6 @@
-# Pydio-cells is the nextgen file sharing platform for organizations. It is a
-# full rewrite of the Pydio project using the Go language following a micro-
-# service architecture.
+# [Pydio-cells](https://pydio.com/) is the nextgen file sharing platform for
+# organizations. It is a full rewrite of the Pydio project using the Go language
+# following a micro-service architecture.
 
 source ./.env
 docker run -d \

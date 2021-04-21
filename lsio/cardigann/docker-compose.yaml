@@ -1,10 +1,10 @@
 # THIS IMAGE IS DEPRECATED. We will no longer be making updates or rebuilding
 # this image. The Dockerhub endpoint will stay online with the current tags for
 # this software. We recommend current users switch to linuxserver/jackett.
-# Cardigann a server for adding extra indexers to Sonarr, SickRage and
-# CouchPotato via Torznab and TorrentPotato proxies. Behind the scenes Cardigann
-# logs in and runs searches and then transforms the results into a compatible
-# format.
+# [Cardigann](https://github.com/cardigann/cardigann) a server for adding extra
+# indexers to Sonarr, SickRage and CouchPotato via Torznab and TorrentPotato
+# proxies. Behind the scenes Cardigann logs in and runs searches and then
+# transforms the results into a compatible format.
 
 ---
 version: "2.1"

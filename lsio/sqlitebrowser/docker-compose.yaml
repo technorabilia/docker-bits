@@ -1,5 +1,6 @@
-# [DB Browser for SQLite]({{ project_url }}) is a high quality, visual, open
-# source tool to create, design, and edit database files compatible with SQLite.
+# [DB Browser for SQLite](https://sqlitebrowser.org/) is a high quality, visual,
+# open source tool to create, design, and edit database files compatible with
+# SQLite.
 
 ---
 version: "2.1"

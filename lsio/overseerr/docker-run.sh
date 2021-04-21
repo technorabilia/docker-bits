@@ -1,5 +1,5 @@
-# Overseerr is a free and open source software application for managing requests
-# for your media library.
+# [Overseerr](https://overseerr.dev/) is a free and open source software
+# application for managing requests for your media library.
 
 source ./.env
 docker run -d \

@@ -1,5 +1,5 @@
-# Rdesktop - Ubuntu based containers containing full desktop environments in
-# officially supported flavors accessible via RDP.
+# [Rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop
+# environments in officially supported flavors accessible via RDP.
 
 source ./.env
 docker run -d \

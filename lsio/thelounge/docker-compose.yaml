@@ -1,5 +1,5 @@
-# Thelounge (a fork of shoutIRC) is a web IRC client that you host on your own
-# server.
+# [Thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC
+# client that you host on your own server.
 
 ---
 version: "2.1"

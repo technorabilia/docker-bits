@@ -1,7 +1,7 @@
 # THIS IMAGE IS DEPRECATED. PLEASE MIGRATE TO CLOUD9 IF POSSIBLE
-# `linuxserver/cloud9` Codiad is a web-based IDE framework with a small
-# footprint and minimal requirements. We have added a few plugins. More can be
-# added in the marketplace in the WebUI.
+# `linuxserver/cloud9` [Codiad](http://codiad.com/) is a web-based IDE framework
+# with a small footprint and minimal requirements. We have added a few plugins.
+# More can be added in the marketplace in the WebUI.
 
 source ./.env
 docker run -d \

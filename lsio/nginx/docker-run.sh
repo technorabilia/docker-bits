@@ -1,5 +1,5 @@
-# Nginx is a simple webserver with php support. The config files reside in
-# `/config` for easy user customization.
+# [Nginx](https://nginx.org/) is a simple webserver with php support. The config
+# files reside in `/config` for easy user customization.
 
 source ./.env
 docker run -d \

@@ -1,5 +1,5 @@
-# Photoshow is gallery software at its easiest, it doesn't even require a
-# database.
+# [Photoshow](https://github.com/thibaud-rohmer/PhotoShow) is gallery software
+# at its easiest, it doesn't even require a database.
 
 ---
 version: "2.1"

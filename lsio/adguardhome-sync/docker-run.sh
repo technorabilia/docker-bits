@@ -1,5 +1,5 @@
-# Adguardhome-sync is a tool to synchronize AdGuardHome config to replica
-# instances.
+# [Adguardhome-sync](https://github.com/bakito/adguardhome-sync/) is a tool to
+# synchronize AdGuardHome config to replica instances.
 
 source ./.env
 docker run -d \

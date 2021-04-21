@@ -1,5 +1,5 @@
-# Fleet provides an online web interface which displays a set of maintained
-# images from one or more owned repositories.
+# [Fleet](https://github.com/linuxserver/fleet) provides an online web interface
+# which displays a set of maintained images from one or more owned repositories.
 
 source ./.env
 docker run -d \

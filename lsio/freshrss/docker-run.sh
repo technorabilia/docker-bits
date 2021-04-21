@@ -1,4 +1,5 @@
-# Freshrss is a free, self-hostable aggregator for rss feeds.
+# [Freshrss](https://freshrss.org/) is a free, self-hostable aggregator for rss
+# feeds.
 
 source ./.env
 docker run -d \

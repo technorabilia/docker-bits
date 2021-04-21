@@ -1,5 +1,6 @@
-# Cloud9 Cloud9 is a complete web based IDE with terminal access. This container
-# is for running their core SDK locally and developing plugins.
+# [Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with
+# terminal access. This container is for running their core SDK locally and
+# developing plugins.
 
 ---
 version: "2.1"

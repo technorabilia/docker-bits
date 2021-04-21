@@ -1,4 +1,4 @@
-# Sickrage has been deprecated.  Please use
+# [Sickrage](https://sick-rage.github.io/) has been deprecated. Please use
 # [linuxserver/sickchill](https://github.com/linuxserver/docker-sickchill)
 # instead
 

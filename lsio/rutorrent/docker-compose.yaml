@@ -1,4 +1,5 @@
-# Rutorrent is a popular rtorrent client with a webui for ease of use.
+# [Rutorrent](https://github.com/Novik/ruTorrent) is a popular rtorrent client
+# with a webui for ease of use.
 
 ---
 version: "2.1"

@@ -1,6 +1,6 @@
-# Hydra is a meta search for NZB indexers and the "spiritual successor" to
-# NZBmegasearcH. It provides easy access to a number of raw and newznab based
-# indexers.
+# [Hydra](https://github.com/theotherp/nzbhydra) is a meta search for NZB
+# indexers and the 'spiritual successor' to NZBmegasearcH. It provides easy
+# access to a number of raw and newznab based indexers.
 
 source ./.env
 docker run -d \

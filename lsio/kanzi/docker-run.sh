@@ -1,7 +1,8 @@
-# Kanzi, formerly titled Kodi-Alexa, this custom skill is the ultimate voice
-# remote control for navigating Kodi. It can do anything you can think of (100+
-# intents).  This container also contains lexigram-cli to setup Kanzi with an
-# Amazon Developer Account and automatically deploy it to Amazon.
+# [Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is
+# the ultimate voice remote control for navigating Kodi. It can do anything you
+# can think of (100+ intents). This container also contains lexigram-cli to
+# setup Kanzi with an Amazon Developer Account and automatically deploy it to
+# Amazon.
 
 source ./.env
 docker run -d \

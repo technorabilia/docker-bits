@@ -1,4 +1,5 @@
-# Radarr - A fork of Sonarr to work with movies à la Couchpotato.
+# [Radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with
+# movies à la Couchpotato.
 
 source ./.env
 docker run -d \

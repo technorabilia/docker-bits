@@ -1,5 +1,5 @@
-# [Audacity]({{ project_url }}) is an easy-to-use, multi-track audio editor and
-# recorder. Developed by a group of volunteers as open source.
+# [Audacity](https://www.audacityteam.org/) is an easy-to-use, multi-track audio
+# editor and recorder. Developed by a group of volunteers as open source.
 
 ---
 version: "2.1"

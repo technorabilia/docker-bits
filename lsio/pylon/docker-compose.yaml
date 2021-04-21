@@ -1,6 +1,7 @@
-# Pylon is a web based integrated development environment built with Node.js as
-# a backend and with a supercharged JavaScript/HTML5 frontend, licensed under
-# GPL version 3. This project originates from Cloud9 v2 project.
+# [Pylon](https://github.com/pylonide/pylon) is a web based integrated
+# development environment built with Node.js as a backend and with a
+# supercharged JavaScript/HTML5 frontend, licensed under GPL version 3. This
+# project originates from Cloud9 v2 project.
 
 ---
 version: "2.1"

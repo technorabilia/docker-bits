@@ -1,5 +1,5 @@
-# Mariadb is one of the most popular database servers. Made by the original
-# developers of MySQL.
+# [Mariadb](https://mariadb.org/) is one of the most popular database servers.
+# Made by the original developers of MySQL.
 
 source ./.env
 docker run -d \
