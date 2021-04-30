@@ -20,6 +20,8 @@ services:
       - MENU_VERSION=1.9.9 # optional
       # Specify the port range tftp will use for data transfers [(see Wikipedia)](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol#Details)
       - PORT_RANGE=30000:30010 # optional
+      # Specify a sobfolder if running this behind a reverse proxy (IE /proxy/)
+      - SUBFOLDER=/ # optional
     volumes:
       # Storage for boot menu files and web application config
       - ${BASEDIR:-/volume1/docker}/netbootxyz/config:/config
