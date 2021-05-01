@@ -28,7 +28,7 @@ services:
     volumes:
       - <path to data>:/config
     environment:
-      - APP_URL=< your application URL IE 192.168.10.1:8080>
+      - NGINX_APP_URL=< your application URL IE 192.168.10.1:8080>
       - MYSQL_PORT_3306_TCP_ADDR=mysql
       - MYSQL_PORT_3306_TCP_PORT=3306
       - MYSQL_DATABASE=snipe
