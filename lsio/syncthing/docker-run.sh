@@ -11,10 +11,12 @@ docker run -d \
   -e PGID=${PGID:-100} `# for UserID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8384:8384 `# Application WebUI` \
-  -p 22000:22000 `# Listening port` \
+  -p 22000:22000/tcp `# Listening port (TCP)` \
+  -p 22000:22000/udp `# Listening port (UDP)` \
   -p 21027:21027/udp `# Protocol discovery` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/config:/config `# Configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data1:/data1 `# Data1` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data2:/data2 `# Data2` \
+  --sysctl="net.core.rmem_max=2097152" \
   --restart unless-stopped \
   ghcr.io/linuxserver/syncthing
