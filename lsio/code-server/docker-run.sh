@@ -16,7 +16,7 @@ docker run -d \
   -e HASHED_PASSWORD= `# optional` `# Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.` \
   -e SUDO_PASSWORD=password `# optional` `# If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.` \
   -e SUDO_PASSWORD_HASH= `# optional` `# Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.` \
-  -e PROXY_DOMAIN=code-server.my.domain `# optional` `# If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/doc/FAQ.md#sub-domains)` \
+  -e PROXY_DOMAIN=code-server.my.domain `# optional` `# If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)` \
   -p 8443:8443 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/code-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
