@@ -12,7 +12,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8989:8989 `# The port for the Sonarr webinterface` \
   -v ${BASEDIR:-/volume1/docker}/sonarr/config:/config `# Database and sonarr configs` \
-  -v ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv `# Location of TV library on disk (See note in Application setup)` \
-  -v ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads `# Location of download managers output directory (See note in Application setup)` \
+  -v ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv `# optional` `# Location of TV library on disk (See note in Application setup)` \
+  -v ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads `# optional` `# Location of download managers output directory (See note in Application setup)` \
   --restart unless-stopped \
   ghcr.io/linuxserver/sonarr
