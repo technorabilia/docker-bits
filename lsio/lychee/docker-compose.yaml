@@ -33,9 +33,9 @@ services:
       - /path/to/pictures:/pictures
     environment:
       - DB_HOST=mariadb
-      - DB_USER=lychee
-      - DB_PASS=dbpassword
-      - DB_NAME=lychee
+      - DB_USERNAME=lychee
+      - DB_PASSWORD=dbpassword
+      - DB_DATABASE=lychee
       - DB_PORT=3306
       - PGID=1000
       - PUID=1000

@@ -20,7 +20,7 @@ services:
       # Local path for sabnzbd config files.
       - ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config
       # Local path for finished downloads.
-      - ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads
+      - ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads # optional
       # Local path for incomplete-downloads.
       - ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads # optional
     ports:
