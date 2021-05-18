@@ -13,6 +13,6 @@ docker run -d \
   -e DOCKER_MODS=linuxserver/calibre-web:calibre `# #optional & **x86-64 only** Adds the ability to perform ebook conversion` \
   -p 8083:8083 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \
-  -v ${BASEDIR:-/volume1/docker}/calibre-web/books:/books `# Where your preexisting calibre database is locate.` \
+  -v ${BASEDIR:-/volume1/docker}/calibre-web/books:/books `# Where your preexisting calibre database is located.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/calibre-web

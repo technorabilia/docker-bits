@@ -22,7 +22,7 @@ services:
     volumes:
       # Where calibre-web stores the internal database and config.
       - ${BASEDIR:-/volume1/docker}/calibre-web/config:/config
-      # Where your preexisting calibre database is locate.
+      # Where your preexisting calibre database is located.
       - ${BASEDIR:-/volume1/docker}/calibre-web/books:/books
     ports:
       # WebUI
