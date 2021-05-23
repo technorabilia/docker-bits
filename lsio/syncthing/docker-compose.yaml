@@ -34,6 +34,4 @@ services:
       - 22000:22000/udp
       # Protocol discovery
       - 21027:21027/udp
-    sysctls:
-      - net.core.rmem_max=2097152
     restart: unless-stopped

@@ -17,6 +17,5 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/syncthing/config:/config `# Configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data1:/data1 `# Data1` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data2:/data2 `# Data2` \
-  --sysctl="net.core.rmem_max=2097152" \
   --restart unless-stopped \
   ghcr.io/linuxserver/syncthing

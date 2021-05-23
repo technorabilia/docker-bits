@@ -18,6 +18,8 @@ services:
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/piwigo/config:/config
+      # Image, plugin, & theme storage for Piwigo
+      - ${BASEDIR:-/volume1/docker}/piwigo/gallery:/gallery
     ports:
       # Application WebUI
       - 80:80
