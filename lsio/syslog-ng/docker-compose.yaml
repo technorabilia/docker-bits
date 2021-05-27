@@ -1,0 +1,30 @@
+# [syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/)
+# allows you to flexibly collect, parse, classify, rewrite and correlate logs
+# from across your infrastructure and store or route them to log analysis tools.
+
+---
+version: "2.1"
+services:
+  syslog-ng:
+    image: ghcr.io/linuxserver/syslog-ng
+    container_name: syslog-ng
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Stores config and application files
+      - ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config
+      # Stores logs collected by the syslog-ng service
+      - ${BASEDIR:-/volume1/docker}/syslog-ng/var/log:/var/log # optional
+    ports:
+      # Syslog UDP
+      - 514:5514
+      # Syslog TCP
+      - 601:6601
+      # Syslog TLS
+      - 6514:6514
+    restart: unless-stopped
