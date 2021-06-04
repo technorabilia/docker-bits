@@ -13,12 +13,6 @@ services:
       - PUID=${PUID:-1024}
       # for UserID
       - PGID=${PGID:-100}
-      # Set username to login
-      - USER=admin
-      # Set password for user
-      - PASSWORD=password
-      # Run mStream using the config specified at `/config/config.json`, note this will mean user/password is defined in `config.json`
-      - USE_JSON=true/false
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
