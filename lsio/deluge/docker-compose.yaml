@@ -8,7 +8,6 @@ services:
   deluge:
     image: ghcr.io/linuxserver/deluge
     container_name: deluge
-    network_mode: host
     environment:
       # for GroupID
       - PUID=${PUID:-1024}
@@ -23,4 +22,11 @@ services:
       - ${BASEDIR:-/volume1/docker}/deluge/config:/config
       # torrent download directory
       - ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads
+    ports:
+      # Port for webui
+      - 8112:8112
+      # Inbound torrent traffic (See App Setup)
+      - 6881:6881
+      # Inbound torrent traffic (See App Setup)
+      - 6881/udp:6881/udp
     restart: unless-stopped
