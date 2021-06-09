@@ -14,6 +14,7 @@ docker run -d \
   -e MAXLINES=32 `# optional` `# The length of each line is randomized. This controls the maximum length of each line. Shorter lines may keep clients on for longer if they give up after a certain number of bytes.` \
   -e MAXCLIENTS=4096 `# optional` `# Maximum number of connections to accept at a time. Connections beyond this are not immediately rejected, but will wait in the queue.` \
   -e LOGFILE=false `# optional` `# By default, the app logs to container log. If this is set to `true`, the log will be output to file under `/config/logs/endlessh` (`/config` needs to be mapped).` \
+  -e BINDFAMILY= `# optional` `# By default, the app binds to IPv4 and IPv6 addresses. Set it to `4` or `6` to bind to IPv4 only or IPv6 only, respectively. Leave blank to bind to both.` \
   -p 22:2222 `# ssh port` \
   -v ${BASEDIR:-/volume1/docker}/endlessh/config:/config `# optional` `# Required if `LOGFILE` is set to `true`.` \
   --restart unless-stopped \
