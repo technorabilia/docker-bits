@@ -8,6 +8,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
   -e MEM_LIMIT=1024M `# optional` `# Optionally change the Java memory limit (-Xmx) (default is 1024M).` \
+  -e MEM_STARTUP=1024M `# optional` `# Optionally change the Java initial memory (-Xms) (default is 1024M).` \
   -p 3478:3478/udp `# Unifi STUN port` \
   -p 10001:10001/udp `# Required for AP discovery` \
   -p 8080:8080 `# Required for device communication` \
