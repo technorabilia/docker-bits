@@ -24,7 +24,7 @@ services:
       # Download location
       - ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads:/downloads
       # Books location
-      - ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books
+      - ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books # optional
     ports:
       # The port for the LazyLibrarian webinterface
       - 5299:5299

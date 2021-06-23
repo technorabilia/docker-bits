@@ -1,0 +1,20 @@
+# [Babybuddy](https://github.com/babybuddy/babybuddy) is a buddy for babies!
+# Helps caregivers track sleep, feedings, diaper changes, tummy time and more to
+# learn about and predict baby's needs without (as much) guess work.
+
+---
+version: "2.1"
+services:
+  babybuddy:
+    image: ghcr.io/linuxserver/babybuddy
+    container_name: babybuddy
+    environment:
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Contains all relevant configuration and data.
+      - ${BASEDIR:-/volume1/docker}/babybuddy/config:/config
+    ports:
+      # the port for the web ui
+      - 8000:8000
+    restart: unless-stopped

@@ -13,6 +13,6 @@ docker run -d \
   -p 5299:5299 `# The port for the LazyLibrarian webinterface` \
   -v ${BASEDIR:-/volume1/docker}/lazylibrarian/config:/config `# LazyLibrarian config` \
   -v ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads:/downloads `# Download location` \
-  -v ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books `# Books location` \
+  -v ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books `# optional` `# Books location` \
   --restart unless-stopped \
   ghcr.io/linuxserver/lazylibrarian
