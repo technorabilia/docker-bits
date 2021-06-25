@@ -18,7 +18,9 @@ services:
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # #optional & **x86-64 only** Adds the ability to perform ebook conversion
-      - DOCKER_MODS=linuxserver/calibre-web:calibre
+      - DOCKER_MODS=linuxserver/calibre-web:calibre # optional
+      # Optionally set this to allow Google OAUTH to work
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 # optional
     volumes:
       # Where calibre-web stores the internal database and config.
       - ${BASEDIR:-/volume1/docker}/calibre-web/config:/config

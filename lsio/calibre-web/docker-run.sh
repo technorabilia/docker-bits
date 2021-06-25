@@ -10,7 +10,8 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
-  -e DOCKER_MODS=linuxserver/calibre-web:calibre `# #optional & **x86-64 only** Adds the ability to perform ebook conversion` \
+  -e DOCKER_MODS=linuxserver/calibre-web:calibre `# optional` `# #optional & **x86-64 only** Adds the ability to perform ebook conversion` \
+  -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 `# optional` `# Optionally set this to allow Google OAUTH to work` \
   -p 8083:8083 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/books:/books `# Where your preexisting calibre database is located.` \
