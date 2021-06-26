@@ -16,6 +16,8 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
+      - SUBFOLDER=/ # optional
     volumes:
       # abc users home directory
       - ${BASEDIR:-/volume1/docker}/webtop/config:/config
