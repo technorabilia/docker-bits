@@ -20,6 +20,9 @@ services:
     volumes:
       # Home Assistant config storage path.
       - ${BASEDIR:-/volume1/docker}/homeassistant/config:/config
+    ports:
+      # Application WebUI, only use this if you are not using host mode.
+      - 8123:8123 # optional
     devices:
       # For passing through USB, serial or gpio devices.
       - /path/to/device:/path/to/device
