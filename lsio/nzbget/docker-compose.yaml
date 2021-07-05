@@ -21,7 +21,7 @@ services:
       # NZBGet App data.
       - ${BASEDIR:-/volume1/docker}/nzbget/config:/config
       # Location of downloads on disk.
-      - ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads
+      - ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads # optional
     ports:
       # WebUI
       - 6789:6789

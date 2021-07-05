@@ -11,6 +11,6 @@ docker run -d \
   -e VERSION=latest `# optional` `# Supported values are LATEST, PLEXPASS or a specific version number.` \
   -p 6789:6789 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/nzbget/config:/config `# NZBGet App data.` \
-  -v ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads `# Location of downloads on disk.` \
+  -v ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads `# optional` `# Location of downloads on disk.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/nzbget
