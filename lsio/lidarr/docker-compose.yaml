@@ -21,9 +21,9 @@ services:
       # Configuration files for Lidarr.
       - ${BASEDIR:-/volume1/docker}/lidarr/config:/config
       # Music files (See note in Application setup).
-      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music
+      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music # optional
       # Path to your download folder for music (See note in Application setup).
-      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads
+      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads # optional
     ports:
       # Application WebUI
       - 8686:8686
