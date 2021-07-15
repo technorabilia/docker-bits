@@ -22,7 +22,7 @@ services:
       # abc users home directory
       - ${BASEDIR:-/volume1/docker}/webtop/config:/config
       # Docker Socket on the system, if you want to use Docker in the container
-      - ${BASEDIR:-/volume1/docker}/webtop/var/run/docker.sock:/var/run/docker.sock # optional
+      - /var/run/docker.sock:/var/run/docker.sock # optional
     ports:
       # Web Desktop GUI
       - 3000:3000

@@ -17,7 +17,7 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Docker Socket on the system, if you want to use Docker in the container
-      - ${BASEDIR:-/volume1/docker}/rdesktop/var/run/docker.sock:/var/run/docker.sock # optional
+      - /var/run/docker.sock:/var/run/docker.sock # optional
       # abc users home directory
       - ${BASEDIR:-/volume1/docker}/rdesktop/config:/config # optional
     ports:

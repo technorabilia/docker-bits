@@ -12,6 +12,6 @@ source ./.env
 docker run -d \
   --name=taisun \
   -p 3000:3000 `# Taisun WebUI.` \
-  -v ${BASEDIR:-/volume1/docker}/taisun/var/run/docker.sock:/var/run/docker.sock `# Docker Socket on the system` \
+  -v /var/run/docker.sock:/var/run/docker.sock `# Docker Socket on the system` \
   --restart unless-stopped \
   ghcr.io/linuxserver/taisun

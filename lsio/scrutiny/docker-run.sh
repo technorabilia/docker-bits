@@ -16,7 +16,7 @@ docker run -d \
   -e SCRUTINY_COLLECTOR=true `# # optional - Run the metrics collector.` \
   -p 8080:8080 `# Port for scrutiny's web interface and API.` \
   -v ${BASEDIR:-/volume1/docker}/scrutiny/config:/config `# Where config is stored.` \
-  -v ${BASEDIR:-/volume1/docker}/scrutiny/run/udev:ro:/run/udev:ro `# Provides necessary metadata to Scrutiny.` \
+  -v /run/udev:ro:/run/udev:ro `# Provides necessary metadata to Scrutiny.` \
   --device /dev/sda:/dev/sda `# This is how Scrutiny accesses drives. Optionally supply `/dev:/dev` instead for all devices.` \
   --device /dev/sdb:/dev/sdb `# A second drive.` \
   --device /dev/nvme1n1:/dev/nvme1n1 `# An NVMe drive. NVMe requires `--cap-add=SYS_ADMIN`.` \

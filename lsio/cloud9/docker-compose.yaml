@@ -27,7 +27,7 @@ services:
       # Optionally if you want to mount up a local folder of code instead of checking out
       - ${BASEDIR:-/volume1/docker}/cloud9/code:/code # optional
       # Needed if you plan to use Docker or compose commands
-      - ${BASEDIR:-/volume1/docker}/cloud9/var/run/docker.sock:/var/run/docker.sock # optional
+      - /var/run/docker.sock:/var/run/docker.sock # optional
     ports:
       # The port for the Cloud9 web interface
       - 8000:8000

@@ -8,10 +8,10 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for GroupID` \
   -e PGID=${PGID:-100} `# for UserID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
-  -p 514:5514 `# Syslog UDP` \
-  -p 601:6601 `# Syslog TCP` \
-  -p 6514:6514 `# Syslog TLS` \
+  -p 514:5514/udp `# Syslog UDP` \
+  -p 601:6601/tcp `# Syslog TCP` \
+  -p 6514:6514/tcp `# Syslog TLS` \
   -v ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config `# Stores config and application files` \
-  -v ${BASEDIR:-/volume1/docker}/syslog-ng/var/log:/var/log `# optional` `# Stores logs collected by the syslog-ng service` \
+  -v /var/log:/var/log `# optional` `# Stores logs collected by the syslog-ng service` \
   --restart unless-stopped \
   ghcr.io/linuxserver/syslog-ng

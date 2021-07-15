@@ -25,7 +25,7 @@ docker run -d \
   -e ALLOWEDIPS=0.0.0.0/0 `# optional` `# The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.` \
   -p 51820:51820/udp `# wireguard port` \
   -v ${BASEDIR:-/volume1/docker}/wireguard/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/wireguard/lib/modules:/lib/modules `# Maps host's modules folder.` \
+  -v /lib/modules:/lib/modules `# Maps host's modules folder.` \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
   --restart unless-stopped \
   ghcr.io/linuxserver/wireguard

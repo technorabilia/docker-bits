@@ -19,12 +19,12 @@ services:
       # Stores config and application files
       - ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config
       # Stores logs collected by the syslog-ng service
-      - ${BASEDIR:-/volume1/docker}/syslog-ng/var/log:/var/log # optional
+      - /var/log:/var/log # optional
     ports:
       # Syslog UDP
-      - 514:5514
+      - 514:5514/udp
       # Syslog TCP
-      - 601:6601
+      - 601:6601/tcp
       # Syslog TLS
-      - 6514:6514
+      - 6514:6514/tcp
     restart: unless-stopped

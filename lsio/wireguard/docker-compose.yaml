@@ -41,7 +41,7 @@ services:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/wireguard/config:/config
       # Maps host's modules folder.
-      - ${BASEDIR:-/volume1/docker}/wireguard/lib/modules:/lib/modules
+      - /lib/modules:/lib/modules
     ports:
       # wireguard port
       - 51820:51820/udp

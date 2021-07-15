@@ -29,7 +29,7 @@ services:
       # Where config is stored.
       - ${BASEDIR:-/volume1/docker}/scrutiny/config:/config
       # Provides necessary metadata to Scrutiny.
-      - ${BASEDIR:-/volume1/docker}/scrutiny/run/udev:ro:/run/udev:ro
+      - /run/udev:ro:/run/udev:ro
     ports:
       # Port for scrutiny's web interface and API.
       - 8080:8080
