@@ -1,4 +1,4 @@
-# [Daapd](https://ejurgensen.github.io/forked-daapd/) (iTunes) media server with
+# [Daapd](https://owntone.github.io/owntone-server/) (iTunes) media server with
 # support for AirPlay devices, Apple Remote (and compatibles), Chromecast, MPD
 # and internet radio.
 
