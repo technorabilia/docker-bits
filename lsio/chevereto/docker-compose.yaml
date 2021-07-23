@@ -4,26 +4,37 @@
 # to closures and restrictions.
 
 ---
-version: "2.1"
+version: "2"
 services:
   chevereto:
     image: ghcr.io/linuxserver/chevereto
     container_name: chevereto
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
-      # for UserID
-      - PGID=${PGID:-100}
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
     volumes:
-      # config directory volume mapping
-      - ${BASEDIR:-/volume1/docker}/chevereto/config:/config
-      # data directory volume mapping
-      - ${BASEDIR:-/volume1/docker}/chevereto/data:/data
+      - /path/to/config:/config
+      - /path/to/data:/data
     ports:
-      # http gui
       - 80:80
-      # https gui
       - 443:443
     restart: unless-stopped
+    depends_on:
+      - chevereto-db
+
+  chevereto-db:
+    image: ghcr.io/linuxserver/mariadb
+    container_name: chevereto-db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - MYSQL_ROOT_PASSWORD=<yourrootpass>
+      - MYSQL_DATABASE=chevereto
+      - MYSQL_USER=chevereto
+      - MYSQL_PASSWORD=<yourdbpass>
+    volumes:
+      - /path/to/config:/config
+    restart: unless-stopped
+
