@@ -36,7 +36,9 @@ services:
       # Superuser password
       - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
       # Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.
-      - REGENERATE_SETTINGS=True/False
+      - REGENERATE_SETTINGS=True/False # optional
+      # Custom site logo URL
+      - SITE_LOGO_URL=<SITE_LOGO_URL> # optional
     volumes:
       # database and healthchecks config directory volume mapping
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
