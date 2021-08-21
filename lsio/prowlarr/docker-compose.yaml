@@ -1,0 +1,23 @@
+# [Prowlarr](https://github.com/prowlarr/prowlarr) - Prowlarr is a indexer
+# manager/proxy to integrate with your various PVR apps.
+
+---
+version: "2.1"
+services:
+  prowlarr:
+    image: ghcr.io/linuxserver/prowlarr
+    container_name: prowlarr
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Database and Prowlarr configs
+      - ${BASEDIR:-/volume1/docker}/prowlarr/config:/config
+    ports:
+      # The port for the Prowlarr webinterface
+      - 9696:9696
+    restart: unless-stopped
