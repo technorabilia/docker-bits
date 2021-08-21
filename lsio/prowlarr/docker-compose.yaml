@@ -5,7 +5,7 @@
 version: "2.1"
 services:
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr
+    image: ghcr.io/linuxserver/prowlarr:develop
     container_name: prowlarr
     environment:
       # for GroupID
