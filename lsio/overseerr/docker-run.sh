@@ -1,5 +1,5 @@
-# [Overseerr](https://overseerr.dev/) is a free and open source software
-# application for managing requests for your media library.
+# [Overseerr](https://overseerr.dev/) is a request management and media
+# discovery tool built to work with your existing Plex ecosystem.
 
 source ./.env
 docker run -d \
