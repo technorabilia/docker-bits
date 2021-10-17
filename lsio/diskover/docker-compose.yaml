@@ -1,51 +1,47 @@
-# [Diskover](https://github.com/shirosaidev/diskover) is a file system crawler
-# and disk space usage software that uses Elasticsearch to index and manage data
+# [Diskover](https://github.com/diskoverdata/diskover-community) is an open
+# source file system indexer that uses Elasticsearch to index and manage data
 # across heterogeneous storage systems.
 
 version: '2'
 services:
   diskover:
-    image: linuxserver/diskover
+    image: ghcr.io/linuxserver/diskover
     container_name: diskover
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - TZ=America/New_York
       - ES_HOST=elasticsearch
       - ES_PORT=9200
-      - ES_USER=elastic
-      - ES_PASS=changeme
-      - RUN_ON_START=true
-      - USE_CRON=true
     volumes:
       - /path/to/diskover/config:/config
       - /path/to/diskover/data:/data
     ports:
       - 80:80
-      - 9181:9181
-      - 9999:9999
     mem_limit: 4096m
     restart: unless-stopped
     depends_on:
       - elasticsearch
-      - redis
   elasticsearch:
     container_name: elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.9
-    volumes:
-      - ${DOCKER_HOME}/elasticsearch/data:/usr/share/elasticsearch/data
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
     environment:
+      - discovery.type=single-node
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     ulimits:
       memlock:
         soft: -1
         hard: -1
-  redis:
-    container_name: redis
-    image: redis:alpine
     volumes:
-      - ${HOME}/docker/redis:/data
+      - /path/to/esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    depends_on:
+      - elasticsearch-helper
+    restart: unless-stopped
+  elasticsearch-helper:
+    image: alpine
+    command: sh -c "sysctl -w vm.max_map_count=262144"
+    privileged: true
 
