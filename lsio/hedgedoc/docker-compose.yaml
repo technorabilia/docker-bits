@@ -7,11 +7,11 @@
 version: "3"
 services:
   mariadb:
-    image: ghcr.io/linuxserver/mariadb:latest
+    image: lscr.io/linuxserver/mariadb:latest
     container_name: hedgedoc_mariadb
     restart: always
     volumes:
-      - path/to/mariadb/data:/config
+      - /path/to/mariadb/data:/config
     environment:
       - MYSQL_ROOT_PASSWORD=<secret password>
       - MYSQL_DATABASE=hedgedoc
@@ -21,7 +21,7 @@ services:
       - PUID=1000
       - TZ=Europe/London
   hedgedoc:
-    image: ghcr.io/linuxserver/hedgedoc:latest
+    image: lscr.io/linuxserver/hedgedoc:latest
     container_name: hedgedoc
     restart: always
     depends_on:
@@ -37,6 +37,8 @@ services:
       - PGID=1000
       - PUID=1000
       - TZ=Europe/London
+      - CMD_DOMAIN=localhost
+      - CMD_URL_ADDPORT=true #optional
     ports:
       - "3000:3000"
 
