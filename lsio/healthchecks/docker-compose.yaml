@@ -29,7 +29,7 @@ services:
       - EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>
       # Use TLS for SMTP (`True` or `False`)
       - EMAIL_USE_TLS=<True or False>
-      # array of valid hostnames for the server `["test.com","test2.com"]` or `"*"`
+      # array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)
       - ALLOWED_HOSTS=<ALLOWED_HOSTS>
       # Superuser email
       - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
@@ -39,6 +39,8 @@ services:
       - REGENERATE_SETTINGS=True/False # optional
       # Custom site logo URL
       - SITE_LOGO_URL=<SITE_LOGO_URL> # optional
+      # A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist
+      - SECRET_KEY=<SECRET_KEY> # optional
     volumes:
       # database and healthchecks config directory volume mapping
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config

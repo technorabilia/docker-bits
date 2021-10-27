@@ -15,11 +15,12 @@ docker run -d \
   -e EMAIL_HOST_USER=<EMAIL_HOST_USER> `# SMTP user` \
   -e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD> `# SMTP password` \
   -e EMAIL_USE_TLS=<True or False> `# Use TLS for SMTP (`True` or `False`)` \
-  -e ALLOWED_HOSTS=<ALLOWED_HOSTS> `# array of valid hostnames for the server `["test.com","test2.com"]` or `"*"`` \
+  -e ALLOWED_HOSTS=<ALLOWED_HOSTS> `# array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)` \
   -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> `# Superuser email` \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> `# Superuser password` \
   -e REGENERATE_SETTINGS=True/False `# optional` `# Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.` \
   -e SITE_LOGO_URL=<SITE_LOGO_URL> `# optional` `# Custom site logo URL` \
+  -e SECRET_KEY=<SECRET_KEY> `# optional` `# A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist` \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
   -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# database and healthchecks config directory volume mapping` \
   --restart unless-stopped \
