@@ -19,7 +19,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SERVERURL=wireguard.domain.com `# optional` `# External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically` \
   -e SERVERPORT=51820 `# optional` `# External port for docker host. Used in server mode.` \
-  -e PEERS=1 `# optional` `# Number of peers to create confs for. Required for server mode. Can be a list of names too: myPC,myPhone,myTablet...` \
+  -e PEERS=1 `# optional` `# Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)` \
   -e PEERDNS=auto `# optional` `# DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.` \
   -e INTERNAL_SUBNET=10.13.13.0 `# optional` `# Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode.` \
   -e ALLOWEDIPS=0.0.0.0/0 `# optional` `# The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.` \

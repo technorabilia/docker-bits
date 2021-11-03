@@ -29,7 +29,7 @@ services:
       - SERVERURL=wireguard.domain.com # optional
       # External port for docker host. Used in server mode.
       - SERVERPORT=51820 # optional
-      # Number of peers to create confs for. Required for server mode. Can be a list of names too: myPC,myPhone,myTablet...
+      # Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)
       - PEERS=1 # optional
       # DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.
       - PEERDNS=auto # optional
