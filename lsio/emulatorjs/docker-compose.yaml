@@ -1,0 +1,30 @@
+# [Emulatorjs](https://github.com/linuxserver/emulatorjs) - A fork of NeptunJS
+# used to run multiple web based emulators for retro games. This projects adds a
+# management layer for adding roms and artwork to make it self hosted.
+
+---
+version: "2.1"
+services:
+  emulatorjs:
+    image: ghcr.io/linuxserver/emulatorjs
+    container_name: emulatorjs
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a subfolder for reverse proxies IE '/FOLDER/'
+      - SUBFOLDER=/ # optional
+    volumes:
+      # Path to store roms/artwork
+      - ${BASEDIR:-/volume1/docker}/emulatorjs/data:/data
+    ports:
+      # Rom/artwork management interface, used to generate/manage config files and download artwork
+      - 3000:3000
+      # Emulation frontend containing static web files used to browse and launch games
+      - 80:80
+      # IPFS peering port, if you want to participate in the P2P network to distribute frontend artwork please forward this to the Internet
+      - 4001:4001 # optional
+    restart: unless-stopped
