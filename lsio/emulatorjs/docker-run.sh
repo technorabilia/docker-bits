@@ -1,6 +1,6 @@
-# [Emulatorjs](https://github.com/linuxserver/emulatorjs) - A fork of NeptunJS
-# used to run multiple web based emulators for retro games. This projects adds a
-# management layer for adding roms and artwork to make it self hosted.
+# [Emulatorjs](https://github.com/linuxserver/emulatorjs) - In browser web based
+# emulation portable to nearly any device for many retro consoles. A mix of
+# emulators is used between Libretro and EmulatorJS.
 
 source ./.env
 docker run -d \
