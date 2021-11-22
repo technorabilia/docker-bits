@@ -26,6 +26,8 @@ services:
       - PUBLIC_KEY_FILE=/path/to/file # optional
       # Optionally specify a directory containing the public keys (works with docker secrets).
       - PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys # optional
+      # Optionally specify a URL containing the public key.
+      - PUBLIC_KEY_URL=https://github.com/username.keys # optional
       # Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access.
       - SUDO_ACCESS=false # optional
       # Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well.

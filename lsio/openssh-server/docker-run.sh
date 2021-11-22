@@ -15,6 +15,7 @@ docker run -d \
   -e PUBLIC_KEY=yourpublickey `# optional` `# Optional ssh public key, which will automatically be added to authorized_keys.` \
   -e PUBLIC_KEY_FILE=/path/to/file `# optional` `# Optionally specify a file containing the public key (works with docker secrets).` \
   -e PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys `# optional` `# Optionally specify a directory containing the public keys (works with docker secrets).` \
+  -e PUBLIC_KEY_URL=https://github.com/username.keys `# optional` `# Optionally specify a URL containing the public key.` \
   -e SUDO_ACCESS=false `# optional` `# Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access.` \
   -e PASSWORD_ACCESS=false `# optional` `# Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well.` \
   -e USER_PASSWORD=password `# optional` `# Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access.` \
