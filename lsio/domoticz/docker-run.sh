@@ -14,6 +14,6 @@ docker run -d \
   -p 6144:6144 `# Domoticz communication port.` \
   -p 1443:1443 `# Domoticz communication port.` \
   -v ${BASEDIR:-/volume1/docker}/domoticz/config:/config `# Where Domoticz stores config files and data.` \
-  --device <path to device>:<path to device> `# For passing through USB devices.` \
+  --device path to device:path to device `# For passing through USB devices.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/domoticz

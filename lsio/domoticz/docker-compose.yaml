@@ -30,5 +30,5 @@ services:
       - 1443:1443
     devices:
       # For passing through USB devices.
-      - <path to device>:<path to device>
+      - path to device:path to device
     restart: unless-stopped
