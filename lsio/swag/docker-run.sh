@@ -22,7 +22,6 @@ docker run -d \
   -e ONLY_SUBDOMAINS=false `# optional` `# If you wish to get certs only for certain subdomains, but not the main domain (main domain may be hosted on another machine and cannot be validated), set this to `true`` \
   -e EXTRA_DOMAINS= `# optional` `# Additional fully qualified domain names (comma separated, no spaces) ie. `extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org`` \
   -e STAGING=false `# optional` `# Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.` \
-  -e MAXMINDDB_LICENSE_KEY= `# optional` `# Add your MaxmindDB license key to automatically download the GeoLite2-City.mmdb database. Download location is /config/geoip2db. The database is updated weekly.` \
   -p 443:443 `# Https port` \
   -p 80:80 `# optional` `# Http port (required for http validation and http -> https redirect)` \
   -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# All the config files including the webroot reside here.` \
