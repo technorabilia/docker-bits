@@ -17,6 +17,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CMD_DOMAIN=localhost `# The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).` \
   -e CMD_URL_ADDPORT=true `# optional` `# Set to `false` if accessing at port `80` or `443`.` \
+  -e CMD_PROTOCOL_USESSL=false `# optional` `# Set to `true` if accessing over https via reverse proxy.` \
   -p 3000:3000 `# If you wish to access this container from http://{IP}:${PORT}` this *must* be left unchanged.` \
   -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# HedgeDoc config and configurable files` \
   --restart unless-stopped \
