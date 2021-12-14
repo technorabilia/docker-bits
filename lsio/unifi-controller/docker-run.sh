@@ -1,6 +1,6 @@
-# The [Unifi-controller](https://www.ubnt.com/enterprise/#unifi) Controller
-# software is a powerful, enterprise wireless software engine ideal for high-
-# density client deployments requiring low latency and high uptime performance.
+# The [Unifi-controller](https://www.ubnt.com/enterprise/#unifi) software is a
+# powerful, enterprise wireless software engine ideal for high-density client
+# deployments requiring low latency and high uptime performance.
 
 source ./.env
 docker run -d \
