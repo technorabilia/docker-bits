@@ -13,10 +13,10 @@ services:
       - PUID=${PUID:-1024}
       # for UserID
       - PGID=${PGID:-100}
-      # Optionally change the Java memory limit (-Xmx) (default is 1024M).
-      - MEM_LIMIT=1024M # optional
-      # Optionally change the Java initial memory (-Xms) (default is 1024M).
-      - MEM_STARTUP=1024M # optional
+      # Optionally change the Java memory limit. Set to `default` to reset to default
+      - MEM_LIMIT=1024 # optional
+      # Optionally change the Java initial/minimum memory. Set to `default` to reset to default
+      - MEM_STARTUP=1024 # optional
     volumes:
       # All Unifi data stored here
       - ${BASEDIR:-/volume1/docker}/unifi-controller/config:/config
