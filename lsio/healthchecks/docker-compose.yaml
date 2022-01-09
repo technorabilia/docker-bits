@@ -41,6 +41,8 @@ services:
       - SITE_LOGO_URL=<SITE_LOGO_URL> # optional
       # A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist
       - SECRET_KEY=<SECRET_KEY> # optional
+      # Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)
+      - APPRISE_ENABLED=True/False # optional
     volumes:
       # database and healthchecks config directory volume mapping
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config

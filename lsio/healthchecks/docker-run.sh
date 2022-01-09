@@ -21,6 +21,7 @@ docker run -d \
   -e REGENERATE_SETTINGS=True/False `# optional` `# Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.` \
   -e SITE_LOGO_URL=<SITE_LOGO_URL> `# optional` `# Custom site logo URL` \
   -e SECRET_KEY=<SECRET_KEY> `# optional` `# A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist` \
+  -e APPRISE_ENABLED=True/False `# optional` `# Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)` \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
   -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# database and healthchecks config directory volume mapping` \
   --restart unless-stopped \
