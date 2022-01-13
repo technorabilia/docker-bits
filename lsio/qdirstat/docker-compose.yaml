@@ -1,0 +1,26 @@
+# [QDirStat](https://github.com/shundhammer/qdirstat) Qt-based directory
+# statistics: KDirStat without any KDE -- from the author of the original
+# KDirStat.
+
+---
+version: "2.1"
+services:
+  qdirstat:
+    image: ghcr.io/linuxserver/qdirstat
+    container_name: qdirstat
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores qdirstat settings and scans.
+      - ${BASEDIR:-/volume1/docker}/qdirstat/config:/config
+      # Data you want to analyze disk usage information of.
+      - ${BASEDIR:-/volume1/docker}/qdirstat/data:/data
+    ports:
+      # QdirStat desktop gui.
+      - 3000:3000
+    restart: unless-stopped

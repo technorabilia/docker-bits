@@ -1,0 +1,41 @@
+# [Airsonic-advanced](https://github.com/airsonic-advanced/airsonic-advanced) is
+# a free, web-based media streamer, providing ubiquitious access to your music.
+# Use it to share your music with friends, or to listen to your own music while
+# at work. You can stream to multiple players simultaneously, for instance to
+# one player in your kitchen and another in your living room.
+
+---
+version: "2.1"
+services:
+  airsonic-advanced:
+    image: ghcr.io/linuxserver/airsonic-advanced
+    container_name: airsonic-advanced
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # For setting url-base in reverse proxy setups.
+      - CONTEXT_PATH=<URL_BASE> # optional
+      # For passing additional java options.
+      - JAVA_OPTS=<options> # optional
+    volumes:
+      # Configuration file location.
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config
+      # Location of music.
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/music:/music
+      # Location for playlists to be saved to.
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/playlists:/playlists
+      # Location of podcasts.
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/podcasts:/podcasts
+      # Location of other media.
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media # optional
+    ports:
+      # WebUI
+      - 4040:4040
+    devices:
+      # Only needed to pass your host sound device to Airsonic's Java jukebox player.
+      - /dev/snd:/dev/snd # optional
+    restart: unless-stopped
