@@ -10,7 +10,6 @@ docker run -d \
   -e PGID=${PGID:-100} `# for UserID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8080:8080 `# HTTP port for the WebUI.` \
-  -p 9090:9090 `# HTTPS port for the WebUI.` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config `# Local path for sabnzbd config files.` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads `# optional` `# Local path for finished downloads.` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads `# optional` `# Local path for incomplete-downloads.` \

@@ -26,6 +26,4 @@ services:
     ports:
       # HTTP port for the WebUI.
       - 8080:8080
-      # HTTPS port for the WebUI.
-      - 9090:9090
     restart: unless-stopped
