@@ -18,6 +18,8 @@ services:
       # Specify a subfolder for reverse proxies IE '/FOLDER/'
       - SUBFOLDER=/ # optional
     volumes:
+      # Path to store user profiles
+      - ${BASEDIR:-/volume1/docker}/emulatorjs/config:/config
       # Path to store roms/artwork
       - ${BASEDIR:-/volume1/docker}/emulatorjs/data:/data
     ports:
