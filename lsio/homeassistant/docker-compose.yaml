@@ -1,7 +1,7 @@
-# [Homeassistant](https://www.home-assistant.io/) is open source home automation
-# that puts local control and privacy first. Powered by a worldwide community of
-# tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local
-# server.
+# [Home Assistant Core](https://www.home-assistant.io/) - Open source home
+# automation that puts local control and privacy first. Powered by a worldwide
+# community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi
+# or a local server.
 
 ---
 version: "2.1"
@@ -25,5 +25,5 @@ services:
       - 8123:8123 # optional
     devices:
       # For passing through USB, serial or gpio devices.
-      - /path/to/device:/path/to/device
+      - /path/to/device:/path/to/device # optional
     restart: unless-stopped
