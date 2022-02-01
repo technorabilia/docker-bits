@@ -1,0 +1,33 @@
+# [Plex-meta-manager](https://github.com/meisnate12/Plex-Meta-Manager) is a
+# Python 3 script that can be continuously run using YAML configuration files to
+# update on a schedule the metadata of the movies, shows, and collections in
+# your libraries as well as automatically build collections based on various
+# methods all detailed in the wiki.
+
+---
+version: "2.1"
+services:
+  plex-meta-manager:
+    image: ghcr.io/linuxserver/plex-meta-manager
+    container_name: plex-meta-manager
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a custom config file to use.
+      - PMM_CONFIG=/config/config.yml # optional
+      # Comma-separated list of times to update each day. Format: `HH:MM`.
+      - PMM_TIME=03:00 # optional
+      # Set to `True` to run without the scheduler.
+      - PMM_RUN=False # optional
+      # Set to `True` to run in debug mode with only collections that have `test: true`.
+      - PMM_TEST=False # optional
+      # Set to `True` to run without any of the missing movie/show functions.
+      - PMM_NO_MISSING=False # optional
+    volumes:
+      # Local path for plex-meta-manager config files.
+      - ${BASEDIR:-/volume1/docker}/plex-meta-manager/config:/config
+    restart: unless-stopped

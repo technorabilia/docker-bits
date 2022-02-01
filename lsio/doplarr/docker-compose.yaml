@@ -17,37 +17,37 @@ services:
       # Specify your discord bot token.
       - DISCORD__TOKEN=<discord__token>
       # Specify your Overseerr API key. Leave blank if using Radarr/Sonarr.
-      - OVERSEERR__API=
+      - OVERSEERR__API=<overseerr__api>
       # Specify your Overseerr URL. Leave blank if using Radarr/Sonarr.
       - OVERSEERR__URL=http://localhost:5055
       # Specify your Radarr API key. Leave blank if using Overseerr.
-      - RADARR__API=
+      - RADARR__API=<radarr__api>
       # Specify your Radarr URL. Leave blank if using Overseerr.
       - RADARR__URL=http://localhost:7878
       # Specify your Sonarr API key. Leave blank if using Overseerr.
-      - SONARR__API=
+      - SONARR__API=<sonarr__api>
       # Specify your Sonarr URL. Leave blank if using Overseerr.
       - SONARR__URL=http://localhost:8989
       # Sets the maximum size of the search results selection
       - DISCORD__MAX_RESULTS=25 # optional
       # The discord role id for users of the bot (omitting this lets everyone on the server use the bot)
-      - DISCORD__ROLE_ID= # optional
+      - DISCORD__ROLE_ID=<not_set_by_default> # optional
       # Sets the style of the request alert message. One of `:plain` `:embed` `:none`
       - DISCORD__REQUESTED_MSG_STYLE=:plain # optional
       # The name of the quality profile to use by default for Sonarr
-      - SONARR__QUALITY_PROFILE= # optional
+      - SONARR__QUALITY_PROFILE=<not_set_by_default> # optional
       # The name of the quality profile to use by default for Radarr
-      - RADARR__QUALITY_PROFILE= # optional
+      - RADARR__QUALITY_PROFILE=<not_set_by_default> # optional
       # The name of the language profile to use by default for Radarr
-      - SONARR__LANGUAGE_PROFILE= # optional
+      - SONARR__LANGUAGE_PROFILE=<not_set_by_default> # optional
       # The Overseerr user id to use by default if there is no associated discord account for the requester
-      - OVERSEERR__DEFAULT_ID= # optional
+      - OVERSEERR__DEFAULT_ID=<not_set_by_default> # optional
       # Sets whether users can request partial seasons.
       - PARTIAL_SEASONS=true # optional
       # The log level for the logging backend. This can be changed for debugging purposes. One of trace `:debug` `:info` `:warn` `:error` `:fatal` `:report`
       - LOG_LEVEL=:info # optional
       # For passing additional java options.
-      - JAVA_OPTS= # optional
+      - JAVA_OPTS=<not_set_by_default> # optional
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/doplarr/config:/config
