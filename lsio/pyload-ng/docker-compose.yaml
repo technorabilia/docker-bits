@@ -23,4 +23,6 @@ services:
     ports:
       # Allows HTTP access to the application
       - 8000:8000
+      # Click'n'Load port.
+      - 9666:9666 # optional
     restart: unless-stopped
