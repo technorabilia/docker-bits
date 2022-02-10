@@ -18,7 +18,8 @@ docker run -d \
   -e CMD_DOMAIN=localhost `# The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).` \
   -e CMD_URL_ADDPORT=true `# optional` `# Set to `false` if accessing at port `80` or `443`.` \
   -e CMD_PROTOCOL_USESSL=false `# optional` `# Set to `true` if accessing over https via reverse proxy.` \
-  -p 3000:3000 `# If you wish to access this container from http://{IP}:${PORT}` this *must* be left unchanged.` \
+  -e CMD_PORT=3000 `# optional` `# If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).` \
+  -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \
   -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# HedgeDoc config and configurable files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/hedgedoc
