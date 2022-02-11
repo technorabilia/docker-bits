@@ -18,6 +18,8 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.
       - WEBROOT=domoticz # optional
+      # Sets path to database. Do not set unless you know what this does.
+      - DBASE=<path to database> # optional
     volumes:
       # Where Domoticz stores config files and data.
       - ${BASEDIR:-/volume1/docker}/domoticz/config:/config
