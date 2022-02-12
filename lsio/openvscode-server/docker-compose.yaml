@@ -15,8 +15,8 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
-      # Optional security token for accessing the Web UI.
-      - CONNECTION_TOKEN=supersecrettoken # optional
+      # Optional security token for accessing the Web UI (ie. `supersecrettoken`).
+      - CONNECTION_TOKEN= # optional
       # Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`.
       - CONNECTION_SECRET= # optional
       # If this optional variable is set, user will have sudo access in the openvscode-server terminal with the specified password.
