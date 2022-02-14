@@ -1,0 +1,25 @@
+# [Budge](https://github.com/linuxserver/budge) is an open source 'budgeting
+# with envelopes' personal finance app.
+
+---
+version: "2.1"
+services:
+  budge:
+    image: ghcr.io/linuxserver/budge
+    container_name: budge
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Persistent config files
+      - ${BASEDIR:-/volume1/docker}/budge/config:/config
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped
