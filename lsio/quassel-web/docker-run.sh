@@ -11,7 +11,7 @@ docker run -d \
   -e QUASSEL_CORE=192.168.1.10 `# specify the URL or IP address of your Quassel Core instance` \
   -e QUASSEL_PORT=4242 `# specify the port of your Quassel Core instance` \
   -e URL_BASE=/quassel `# optional` `# Specify a url-base in reverse proxy setups ie. `/quassel`` \
-  -p 64080:64080 `# will map the container's port 64080 to port 64080 on the host` \
+  -p 64443:64443 `# Quassel-web https webui` \
   -v ${BASEDIR:-/volume1/docker}/quassel-web/config:/config `# this will store config on the docker host` \
   --restart unless-stopped \
   ghcr.io/linuxserver/quassel-web

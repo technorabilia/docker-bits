@@ -24,6 +24,6 @@ services:
       # this will store config on the docker host
       - ${BASEDIR:-/volume1/docker}/quassel-web/config:/config
     ports:
-      # will map the container's port 64080 to port 64080 on the host
-      - 64080:64080
+      # Quassel-web https webui
+      - 64443:64443
     restart: unless-stopped
