@@ -22,6 +22,4 @@ services:
     ports:
       # Mysql Workbench desktop gui.
       - 3000:3000
-    cap_add:
-      - IPC_LOCK
     restart: unless-stopped

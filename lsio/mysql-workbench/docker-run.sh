@@ -11,6 +11,5 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 3000:3000 `# Mysql Workbench desktop gui.` \
   -v ${BASEDIR:-/volume1/docker}/mysql-workbench/config:/config `# Users home directory in the container, stores program settings.` \
-  --cap-add="IPC_LOCK" \
   --restart unless-stopped \
   ghcr.io/linuxserver/mysql-workbench
