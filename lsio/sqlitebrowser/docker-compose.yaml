@@ -19,6 +19,6 @@ services:
       # Users home directory in the container, stores program settings and potentially dump files.
       - ${BASEDIR:-/volume1/docker}/sqlitebrowser/config:/config
     ports:
-      # Sqlitebrowser desktop gui, only use this if you are not using host mode and sniffing Docker network traffic.
+      # Sqlitebrowser desktop gui.
       - 3000:3000
     restart: unless-stopped
