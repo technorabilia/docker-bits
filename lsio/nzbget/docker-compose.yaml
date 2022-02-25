@@ -15,8 +15,10 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
-      # Supported values are LATEST, PLEXPASS or a specific version number.
-      - VERSION=latest # optional
+      # Specify the user for web authentication.
+      - NZBGET_USER=nzbget # optional
+      # Specify the password for web authentication.
+      - NZBGET_PASS=tegbzn6789 # optional
     volumes:
       # NZBGet App data.
       - ${BASEDIR:-/volume1/docker}/nzbget/config:/config

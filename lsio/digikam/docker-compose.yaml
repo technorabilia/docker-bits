@@ -15,6 +15,10 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
+      - SUBFOLDER=/ # optional
+      # See the keyboard layouts section for more information and options.
+      - KEYBOARD=en-us-qwerty # optional
     volumes:
       # Users home directory in the container, stores database.
       - ${BASEDIR:-/volume1/docker}/digikam/config:/config

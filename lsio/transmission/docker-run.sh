@@ -14,6 +14,7 @@ docker run -d \
   -e USER=username `# optional` `# Specify an optional username for the interface` \
   -e PASS=password `# optional` `# Specify an optional password for the interface` \
   -e WHITELIST=iplist `# optional` `# Specify an optional list of comma separated ip whitelist. Fill rpc-whitelist setting.` \
+  -e PEERPORT=peerport `# optional` `# Specify an optional port for torrent TCP/UDP connections. Fill peer-port setting.` \
   -e HOST_WHITELIST=dnsnane list `# optional` `# Specify an optional list of comma separated dns name whitelist. Fill rpc-host-whitelist setting.` \
   -p 9091:9091 `# WebUI` \
   -p 51413:51413 `# Torrent Port TCP` \

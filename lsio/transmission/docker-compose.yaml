@@ -25,6 +25,8 @@ services:
       - PASS=password # optional
       # Specify an optional list of comma separated ip whitelist. Fill rpc-whitelist setting.
       - WHITELIST=iplist # optional
+      # Specify an optional port for torrent TCP/UDP connections. Fill peer-port setting.
+      - PEERPORT=peerport # optional
       # Specify an optional list of comma separated dns name whitelist. Fill rpc-host-whitelist setting.
       - HOST_WHITELIST=dnsnane list # optional
     volumes:
