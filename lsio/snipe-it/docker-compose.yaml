@@ -3,39 +3,35 @@
 # solid UX has always been a top priority. Straightforward design and bulk
 # actions mean getting things done faster.
 
-version: "3"
+---
+version: "2.1"
 services:
-  mysql:
-    image: linuxserver/mariadb
-    container_name: snipe_mysql
-    restart: always
-    volumes:
-      - <path to mysql data>:/config
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - MYSQL_ROOT_PASSWORD=<secret password>
-      - MYSQL_USER=snipe
-      - MYSQL_PASSWORD=<secret user password>
-      - MYSQL_DATABASE=snipe
-  snipeit:
-    image: linuxserver/snipe-it:latest
+  snipe-it:
+    image: ghcr.io/linuxserver/snipe-it
     container_name: snipe-it
-    restart: always
-    depends_on:
-      - mysql
-    volumes:
-      - <path to data>:/config
     environment:
-      - NGINX_APP_URL=< your application URL IE 192.168.10.1:8080>
-      - MYSQL_PORT_3306_TCP_ADDR=mysql
-      - MYSQL_PORT_3306_TCP_PORT=3306
-      - MYSQL_DATABASE=snipe
-      - MYSQL_USER=snipe
-      - MYSQL_PASSWORD=<secret user password>
-      - PGID=1000
-      - PUID=1000
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Hostname or IP and port if applicable, be sure to define https/http
+      - APP_URL=http://localhost:8080
+      # Mysql hostname or IP to use
+      - MYSQL_PORT_3306_TCP_ADDR=<mysql host>
+      # Mysql port to use
+      - MYSQL_PORT_3306_TCP_PORT=<mysql port>
+      # Mysql database to use
+      - MYSQL_DATABASE=<mysql database>
+      # Mysql user to use
+      - MYSQL_USER=<mysql pass>
+      # Mysql password to use
+      - MYSQL_PASSWORD=changeme
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Contains your config files and data storage for Snipe-IT
+      - ${BASEDIR:-/volume1/docker}/snipe-it/config:/config
     ports:
-      - "8080:80"
-
+      # Snipe-IT Web UI
+      - 8080:80
+    restart: unless-stopped
