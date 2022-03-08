@@ -1,5 +1,6 @@
-# [Rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop
-# environments in officially supported flavors accessible via RDP.
+# [Rdesktop](http://xrdp.org/) - Containers containing full desktop environments
+# in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via
+# RDP.
 
 ---
 version: "2.1"
@@ -7,7 +8,6 @@ services:
   rdesktop:
     image: ghcr.io/linuxserver/rdesktop
     container_name: rdesktop
-    privileged: true # optional
     environment:
       # for GroupID
       - PUID=${PUID:-1024}
@@ -23,5 +23,8 @@ services:
     ports:
       # RDP access port
       - 3389:3389
+    devices:
+      # Add this for GL support (Linux hosts only)
+      - /dev/dri:/dev/dri # optional
     shm_size: "1gb" # optional
     restart: unless-stopped
