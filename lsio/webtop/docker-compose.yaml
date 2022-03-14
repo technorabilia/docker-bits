@@ -27,5 +27,8 @@ services:
     ports:
       # Web Desktop GUI
       - 3000:3000
+    devices:
+      # Add this for GL support (Linux hosts only)
+      - /dev/dri:/dev/dri # optional
     shm_size: "1gb" # optional
     restart: unless-stopped

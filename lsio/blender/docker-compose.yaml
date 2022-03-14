@@ -1,0 +1,33 @@
+# [Blender](https://www.blender.org/) is a free and open-source 3D computer
+# graphics software toolset used for creating animated films, visual effects,
+# art, 3D printed models, motion graphics, interactive 3D applications, virtual
+# reality, and computer games. **This image does not support GPU rendering out
+# of the box only accelerated workspace experience**
+
+---
+version: "2.1"
+services:
+  blender:
+    image: ghcr.io/linuxserver/blender
+    container_name: blender
+    environment:
+      # for GroupID
+      - PUID=${PUID:-1024}
+      # for UserID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
+      - SUBFOLDER=/ # optional
+      # See the keyboard layouts section for more information and options.
+      - KEYBOARD=en-us-qwerty # optional
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/blender/config:/config
+    ports:
+      # Blender desktop gui
+      - 3000:3000
+    devices:
+      # Add this for hardware acceleration (Linux hosts only)
+      - /dev/dri:/dev/dri # optional
+    restart: unless-stopped
