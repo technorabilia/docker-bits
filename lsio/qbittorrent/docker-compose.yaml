@@ -23,10 +23,10 @@ services:
       # Location of downloads on disk.
       - ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads
     ports:
+      # WebUI
+      - 8080:8080
       # tcp connection port
       - 6881:6881
       # udp connection port
       - 6881:6881/udp
-      # http gui
-      - 8080:8080
     restart: unless-stopped

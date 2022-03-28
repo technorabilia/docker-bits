@@ -21,14 +21,14 @@ services:
       # All Unifi data stored here
       - ${BASEDIR:-/volume1/docker}/unifi-controller/config:/config
     ports:
+      # Unifi web admin port
+      - 8443:8443
       # Unifi STUN port
       - 3478:3478/udp
       # Required for AP discovery
       - 10001:10001/udp
       # Required for device communication
       - 8080:8080
-      # Unifi web admin port
-      - 8443:8443
       # Required for `Make controller discoverable on L2 network` option
       - 1900:1900/udp # optional
       # Unifi guest portal HTTPS redirect port

@@ -9,10 +9,10 @@ docker run -d \
   -e PGID=${PGID:-100} `# for UserID` \
   -e MEM_LIMIT=1024 `# optional` `# Optionally change the Java memory limit. Set to `default` to reset to default` \
   -e MEM_STARTUP=1024 `# optional` `# Optionally change the Java initial/minimum memory. Set to `default` to reset to default` \
+  -p 8443:8443 `# Unifi web admin port` \
   -p 3478:3478/udp `# Unifi STUN port` \
   -p 10001:10001/udp `# Required for AP discovery` \
   -p 8080:8080 `# Required for device communication` \
-  -p 8443:8443 `# Unifi web admin port` \
   -p 1900:1900/udp `# optional` `# Required for `Make controller discoverable on L2 network` option` \
   -p 8843:8843 `# optional` `# Unifi guest portal HTTPS redirect port` \
   -p 8880:8880 `# optional` `# Unifi guest portal HTTP redirect port` \
