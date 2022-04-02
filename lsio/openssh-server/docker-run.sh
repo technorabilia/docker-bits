@@ -9,8 +9,8 @@ source ./.env
 docker run -d \
   --name=openssh-server \
     --hostname={{ project_name }} `# optional` `# Optionally the hostname can be defined.` \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e PUBLIC_KEY=yourpublickey `# optional` `# Optional ssh public key, which will automatically be added to authorized_keys.` \
   -e PUBLIC_KEY_FILE=/path/to/file `# optional` `# Optionally specify a file containing the public key (works with docker secrets).` \

@@ -8,8 +8,8 @@
 source ./.env
 docker run -d \
   --name=netbox \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> `# Email address for `admin` account` \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> `# Password for `admin` account` \

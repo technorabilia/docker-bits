@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=endlessh \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e MSDELAY=10000 `# optional` `# The endless banner is sent one line at a time. This is the delay in milliseconds between individual lines.` \
   -e MAXLINES=32 `# optional` `# The length of each line is randomized. This controls the maximum length of each line. Shorter lines may keep clients on for longer if they give up after a certain number of bytes.` \

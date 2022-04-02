@@ -4,8 +4,8 @@
 source ./.env
 docker run -d \
   --name=raneto \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 3000:3000 `# The port for the Raneto web interface` \
   -v ${BASEDIR:-/volume1/docker}/raneto/config:/config `# Raneto config and Markdown files` \

@@ -4,8 +4,8 @@
 source ./.env
 docker run -d \
   --name=adguardhome-sync \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CONFIGFILE=/config/adguardhome-sync.yaml `# optional` `# Set a custom config file.` \
   -p 8080:8080 `# Port for AdGuardHome Sync's web API.` \

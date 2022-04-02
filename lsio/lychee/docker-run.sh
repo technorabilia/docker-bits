@@ -9,8 +9,8 @@
 source ./.env
 docker run -d \
   --name=lychee \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DB_HOST=mariadb `# for specifying the database host` \
   -e DB_USERNAME=lychee `# for specifying the database user` \

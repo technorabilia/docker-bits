@@ -16,8 +16,8 @@
 source ./.env
 docker run -d \
   --name=nntp2nntp \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e PUID=<yourUID> `# specify your UID` \
   -e PGID=<yourGID> `# specify your GID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \

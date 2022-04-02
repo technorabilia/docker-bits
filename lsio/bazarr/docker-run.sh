@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=bazarr \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 6767:6767 `# Allows HTTP access to the internal webserver.` \
   -v ${BASEDIR:-/volume1/docker}/bazarr/config:/config `# Bazarr data` \

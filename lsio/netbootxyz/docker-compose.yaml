@@ -12,9 +12,9 @@ services:
     image: ghcr.io/linuxserver/netbootxyz
     container_name: netbootxyz
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Specify a specific version of boot files you want to use from NETBOOT.XYZ (unset pulls latest)
       - MENU_VERSION=1.9.9 # optional

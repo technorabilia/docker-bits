@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=firefox \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 3000:3000 `# Firefox desktop gui.` \
   -v ${BASEDIR:-/volume1/docker}/firefox/config:/config `# Users home directory in the container, stores local files and settings` \

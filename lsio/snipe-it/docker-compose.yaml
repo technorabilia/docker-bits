@@ -10,9 +10,9 @@ services:
     image: ghcr.io/linuxserver/snipe-it
     container_name: snipe-it
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Hostname or IP and port if applicable, be sure to define https/http
       - APP_URL=http://localhost:8080

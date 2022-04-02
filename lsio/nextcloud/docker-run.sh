@@ -9,8 +9,8 @@
 source ./.env
 docker run -d \
   --name=nextcloud \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 443:443 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/nextcloud/config:/config `# Nextcloud configs.` \

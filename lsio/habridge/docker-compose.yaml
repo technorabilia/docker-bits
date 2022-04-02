@@ -21,9 +21,9 @@ services:
     image: ghcr.io/linuxserver/habridge
     container_name: habridge
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Key used to secure communication.
       - SEC_KEY=<Your Key To Encrypt Security Data>

@@ -8,9 +8,9 @@ services:
     image: ghcr.io/linuxserver/fleet
     container_name: fleet
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES.
       - fleet_admin_authentication_type=DATABASE

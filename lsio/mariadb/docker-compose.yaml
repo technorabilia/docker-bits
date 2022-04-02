@@ -8,9 +8,9 @@ services:
     image: ghcr.io/linuxserver/mariadb
     container_name: mariadb
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Set this to root password for installation (minimum 4 characters).
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD

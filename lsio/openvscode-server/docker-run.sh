@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=openvscode-server \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CONNECTION_TOKEN= `# optional` `# Optional security token for accessing the Web UI (ie. `supersecrettoken`).` \
   -e CONNECTION_SECRET= `# optional` `# Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`.` \

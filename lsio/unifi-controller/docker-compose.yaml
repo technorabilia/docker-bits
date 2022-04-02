@@ -9,9 +9,9 @@ services:
     image: ghcr.io/linuxserver/unifi-controller
     container_name: unifi-controller
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Optionally change the Java memory limit. Set to `default` to reset to default
       - MEM_LIMIT=1024 # optional

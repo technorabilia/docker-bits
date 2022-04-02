@@ -20,9 +20,9 @@ services:
     image: ghcr.io/linuxserver/nntp2nntp
     container_name: nntp2nntp
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # specify your UID
       - PUID=<yourUID>

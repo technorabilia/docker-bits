@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=healthchecks \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e SITE_ROOT=<SITE_ROOT> `# The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)` \
   -e SITE_NAME=<SITE_NAME> `# The site's name (e.g., "Example Corp HealthChecks")` \
   -e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL> `# From email for alerts` \

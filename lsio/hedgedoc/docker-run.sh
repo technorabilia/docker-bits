@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=hedgedoc \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e DB_HOST=<hostname or ip> `# Host address of mysql database` \
   -e DB_PORT=3306 `# Port to access mysql database default is 3306` \
   -e DB_USER=hedgedoc `# Database user` \

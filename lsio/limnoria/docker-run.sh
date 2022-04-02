@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=limnoria \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8080:8080 `# Port for Limnoria's web interface.` \
   -v ${BASEDIR:-/volume1/docker}/limnoria/config:/config `# Where Limnoria config is stored.` \

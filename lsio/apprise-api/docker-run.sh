@@ -8,8 +8,8 @@
 source ./.env
 docker run -d \
   --name=apprise-api \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8000:8000 `# Port for apprise's interface and API.` \
   -v ${BASEDIR:-/volume1/docker}/apprise-api/config:/config `# Where config is stored.` \

@@ -6,9 +6,9 @@ services:
     image: ghcr.io/linuxserver/jenkins-builder
     container_name: jenkins-builder
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}

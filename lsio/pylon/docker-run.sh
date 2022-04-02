@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=pylon \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e GITURL=https://github.com/linuxserver/docker-pylon.git `# optional` `# Specify a git repo to checkout on first startup` \
   -e PYUSER=myuser `# optional` `# Specify a basic auth user.` \

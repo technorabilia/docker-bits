@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=sickchill \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8081:8081 `# will map the container's port 8081 to port 8081 on the host` \
   -v ${BASEDIR:-/volume1/docker}/sickchill/config:/config `# this will store config on the docker host` \

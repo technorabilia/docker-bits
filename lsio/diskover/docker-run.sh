@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=diskover \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e ES_HOST=elasticsearch `# ElasticSearch host (optional)` \
   -e ES_PORT=9200 `# ElasticSearch port (optional)` \

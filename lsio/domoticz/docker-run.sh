@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=domoticz \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e WEBROOT=domoticz `# optional` `# Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.` \
   -e DBASE=<path to database> `# optional` `# Sets path to database. Do not set unless you know what this does.` \

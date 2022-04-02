@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=calibre-web \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DOCKER_MODS=linuxserver/calibre-web:calibre `# optional` `# #optional & **x86-64 only** Adds the ability to perform ebook conversion` \
   -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 `# optional` `# Optionally set this to allow Google OAUTH to work` \

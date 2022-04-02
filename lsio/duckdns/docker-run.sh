@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=duckdns \
-  -e PUID=${PUID:-1024} `# optional` `# for GroupID` \
-  -e PGID=${PGID:-100} `# optional` `# for UserID` \
+  -e PUID=${PUID:-1024} `# optional` `# for UserID` \
+  -e PGID=${PGID:-100} `# optional` `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SUBDOMAINS=subdomain1,subdomain2 `# multiple subdomains allowed, comma separated, no spaces` \
   -e TOKEN=token `# DuckDNS token` \

@@ -12,9 +12,9 @@ services:
     container_name: plex
     network_mode: host
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # Set whether to update plex or not - see Application Setup section.
       - VERSION=docker

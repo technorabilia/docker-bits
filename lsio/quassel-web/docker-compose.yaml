@@ -10,9 +10,9 @@ services:
     image: ghcr.io/linuxserver/quassel-web
     container_name: quassel-web
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
       # specify the URL or IP address of your Quassel Core instance
       - QUASSEL_CORE=192.168.1.10

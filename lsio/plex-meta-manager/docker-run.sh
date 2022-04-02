@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=plex-meta-manager \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e PMM_CONFIG=/config/config.yml `# optional` `# Specify a custom config file to use.` \
   -e PMM_TIME=03:00 `# optional` `# Comma-separated list of times to update each day. Format: `HH:MM`.` \

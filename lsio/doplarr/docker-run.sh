@@ -4,8 +4,8 @@
 source ./.env
 docker run -d \
   --name=doplarr \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DISCORD__TOKEN=<discord__token> `# Specify your discord bot token.` \
   -e OVERSEERR__API=<overseerr__api> `# Specify your Overseerr API key. Leave blank if using Radarr/Sonarr.` \

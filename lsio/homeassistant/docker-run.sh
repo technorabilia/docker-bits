@@ -7,8 +7,8 @@ source ./.env
 docker run -d \
   --name=homeassistant \
   --net=host `# Shares host networking with container. Required for some devices to be discovered by Home Assistant.` \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8123:8123 `# optional` `# Application WebUI, only use this if you are not using host mode.` \
   -v ${BASEDIR:-/volume1/docker}/homeassistant/config:/config `# Home Assistant config storage path.` \

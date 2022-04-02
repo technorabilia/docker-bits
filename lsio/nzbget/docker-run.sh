@@ -5,8 +5,8 @@
 source ./.env
 docker run -d \
   --name=nzbget \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e NZBGET_USER=nzbget `# optional` `# Specify the user for web authentication.` \
   -e NZBGET_PASS=tegbzn6789 `# optional` `# Specify the password for web authentication.` \

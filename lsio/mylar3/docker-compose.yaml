@@ -9,9 +9,9 @@ services:
     image: ghcr.io/linuxserver/mylar3
     container_name: mylar3
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
     volumes:
       # Where mylar should store config files.

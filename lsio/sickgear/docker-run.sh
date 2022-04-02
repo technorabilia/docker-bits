@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=sickgear \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -p 8081:8081 `# will map the container's port 8081 to port 8081 on the host` \
   -v ${BASEDIR:-/volume1/docker}/sickgear/config:/config `# this will store any uploaded data on the docker host` \
   -v ${BASEDIR:-/volume1/docker}/sickgear/tv:/tv `# where you store your tv shows` \

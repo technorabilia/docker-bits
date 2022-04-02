@@ -7,8 +7,8 @@
 source ./.env
 docker run -d \
   --name=kanzi \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e INVOCATION_NAME=kanzi `# Specify an invocation name for this skill, use either kanzi or kod.` \
   -e URL_ENDPOINT=https://server.com/kanzi/ `# Specify the URL at which the webserver is reachable either `https://kanzi.server.com/` or `https://server.com/kanzi/` Note the trailing slash **MUST** be included.` \

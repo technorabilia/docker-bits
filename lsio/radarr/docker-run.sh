@@ -4,8 +4,8 @@
 source ./.env
 docker run -d \
   --name=radarr \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 7878:7878 `# The port for the Radarr webinterface` \
   -v ${BASEDIR:-/volume1/docker}/radarr/config:/config `# Database and Radarr configs` \

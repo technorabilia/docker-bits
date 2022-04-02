@@ -10,9 +10,9 @@ services:
     image: ghcr.io/linuxserver/duckdns
     container_name: duckdns
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024} # optional
       # for UserID
+      - PUID=${PUID:-1024} # optional
+      # for GroupID
       - PGID=${PGID:-100} # optional
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}

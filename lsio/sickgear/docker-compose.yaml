@@ -10,9 +10,9 @@ services:
     image: ghcr.io/linuxserver/sickgear
     container_name: sickgear
     environment:
-      # for GroupID
-      - PUID=${PUID:-1024}
       # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
       - PGID=${PGID:-100}
     volumes:
       # this will store any uploaded data on the docker host

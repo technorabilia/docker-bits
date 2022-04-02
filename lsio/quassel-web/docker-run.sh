@@ -6,8 +6,8 @@
 source ./.env
 docker run -d \
   --name=quassel-web \
-  -e PUID=${PUID:-1024} `# for GroupID` \
-  -e PGID=${PGID:-100} `# for UserID` \
+  -e PUID=${PUID:-1024} `# for UserID` \
+  -e PGID=${PGID:-100} `# for GroupID` \
   -e QUASSEL_CORE=192.168.1.10 `# specify the URL or IP address of your Quassel Core instance` \
   -e QUASSEL_PORT=4242 `# specify the port of your Quassel Core instance` \
   -e URL_BASE=/quassel `# optional` `# Specify a url-base in reverse proxy setups ie. `/quassel`` \
