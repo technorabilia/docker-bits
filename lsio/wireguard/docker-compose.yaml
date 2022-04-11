@@ -37,6 +37,8 @@ services:
       - INTERNAL_SUBNET=10.13.13.0 # optional
       # The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.
       - ALLOWEDIPS=0.0.0.0/0 # optional
+      # Generated QR codes will be displayed in the docker log. Set to `false` to skip log output.
+      - LOG_CONFS=true # optional
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/wireguard/config:/config
