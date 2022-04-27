@@ -19,7 +19,9 @@ docker run -d \
   -e DISCORD__REQUESTED_MSG_STYLE=:plain `# optional` `# Sets the style of the request alert message. One of `:plain` `:embed` `:none`` \
   -e SONARR__QUALITY_PROFILE=<not_set_by_default> `# optional` `# The name of the quality profile to use by default for Sonarr` \
   -e RADARR__QUALITY_PROFILE=<not_set_by_default> `# optional` `# The name of the quality profile to use by default for Radarr` \
-  -e SONARR__LANGUAGE_PROFILE=<not_set_by_default> `# optional` `# The name of the language profile to use by default for Radarr` \
+  -e SONARR__ROOTFOLDER=<not_set_by_default> `# optional` `# The root folder to use by default for Sonarr` \
+  -e RADARR__ROOTFOLDER=<not_set_by_default> `# optional` `# The root folder to use by default for Radarr` \
+  -e SONARR__LANGUAGE_PROFILE=<not_set_by_default> `# optional` `# The name of the language profile to use by default for Sonarr` \
   -e OVERSEERR__DEFAULT_ID=<not_set_by_default> `# optional` `# The Overseerr user id to use by default if there is no associated discord account for the requester` \
   -e PARTIAL_SEASONS=true `# optional` `# Sets whether users can request partial seasons.` \
   -e LOG_LEVEL=:info `# optional` `# The log level for the logging backend. This can be changed for debugging purposes. One of trace `:debug` `:info` `:warn` `:error` `:fatal` `:report`` \
