@@ -8,6 +8,8 @@ services:
   webgrabplus:
     image: ghcr.io/linuxserver/webgrabplus
     container_name: webgrabplus
+    # Set the hostname for the container for the license check.
+    hostname: webgrabplus
     environment:
       # for UserID
       - PUID=${PUID:-1024}

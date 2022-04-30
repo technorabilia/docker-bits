@@ -5,6 +5,7 @@
 source ./.env
 docker run -d \
   --name=webgrabplus \
+  --hostname=webgrabplus `# Set the hostname for the container for the license check.` \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
