@@ -15,7 +15,6 @@ docker run -d \
   -e SONARR__API=<sonarr__api> `# Specify your Sonarr API key. Leave blank if using Overseerr.` \
   -e SONARR__URL=http://localhost:8989 `# Specify your Sonarr URL. Leave blank if using Overseerr.` \
   -e DISCORD__MAX_RESULTS=25 `# optional` `# Sets the maximum size of the search results selection` \
-  -e DISCORD__ROLE_ID=<not_set_by_default> `# optional` `# The discord role id for users of the bot (omitting this lets everyone on the server use the bot)` \
   -e DISCORD__REQUESTED_MSG_STYLE=:plain `# optional` `# Sets the style of the request alert message. One of `:plain` `:embed` `:none`` \
   -e SONARR__QUALITY_PROFILE=<not_set_by_default> `# optional` `# The name of the quality profile to use by default for Sonarr` \
   -e RADARR__QUALITY_PROFILE=<not_set_by_default> `# optional` `# The name of the quality profile to use by default for Radarr` \

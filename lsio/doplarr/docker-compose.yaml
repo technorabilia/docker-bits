@@ -30,8 +30,6 @@ services:
       - SONARR__URL=http://localhost:8989
       # Sets the maximum size of the search results selection
       - DISCORD__MAX_RESULTS=25 # optional
-      # The discord role id for users of the bot (omitting this lets everyone on the server use the bot)
-      - DISCORD__ROLE_ID=<not_set_by_default> # optional
       # Sets the style of the request alert message. One of `:plain` `:embed` `:none`
       - DISCORD__REQUESTED_MSG_STYLE=:plain # optional
       # The name of the quality profile to use by default for Sonarr
