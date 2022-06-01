@@ -9,6 +9,10 @@ services:
     image: ghcr.io/linuxserver/babybuddy
     container_name: babybuddy
     environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # Add any address you'd like to access babybuddy at (comma separated, no spaces)
