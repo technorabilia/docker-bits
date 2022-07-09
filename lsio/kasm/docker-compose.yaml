@@ -1,0 +1,38 @@
+# [Kasm](https://www.kasmweb.com/?utm_campaign=LinuxServer&utm_source=listing)
+# Workspaces is a docker container streaming platform for delivering browser-
+# based access to desktops, applications, and web services. Kasm uses devops-
+# enabled Containerized Desktop Infrastructure (CDI) to create on-demand,
+# disposable, docker containers that are accessible via web browser. Example
+# use-cases include Remote Browser Isolation (RBI), Data Loss Prevention (DLP),
+# Desktop as a Service (DaaS), Secure Remote Access Services (RAS), and Open
+# Source Intelligence (OSINT) collections. The rendering of the graphical-based
+# containers is powered by the open-source project
+# [KasmVNC](https://www.kasmweb.com/kasmvnc.html?utm_campaign=LinuxServer&utm_source=kasmvnc).
+
+---
+version: "2.1"
+services:
+  kasm:
+    image: ghcr.io/linuxserver/kasm
+    container_name: kasm
+    privileged: true
+    environment:
+      # Specify the port you bind to the outside for Kasm Workspaces.
+      - KASM_PORT=443
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Optionally specify a DockerHub Username to pull private images.
+      - DOCKER_HUB_USERNAME=USER # optional
+      # Optionally specify a DockerHub password to pull private images.
+      - DOCKER_HUB_PASSWORD=PASS # optional
+    volumes:
+      # Docker and installation storage.
+      - ${BASEDIR:-/volume1/docker}/kasm/opt:/opt
+      # Optionally specify a path for persistent profile storage.
+      - ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles # optional
+    ports:
+      # Kasm Installation wizard. (https)
+      - 3000:3000
+      # Kasm Workspaces interface. (https)
+      - 443:443
+    restart: unless-stopped
