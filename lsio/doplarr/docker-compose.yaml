@@ -15,17 +15,17 @@ services:
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # Specify your discord bot token.
-      - DISCORD__TOKEN=<discord__token>
+      - DISCORD__TOKEN=
       # Specify your Overseerr API key. Leave blank if using Radarr/Sonarr.
-      - OVERSEERR__API=<overseerr__api>
+      - OVERSEERR__API=
       # Specify your Overseerr URL. Leave blank if using Radarr/Sonarr.
       - OVERSEERR__URL=http://localhost:5055
       # Specify your Radarr API key. Leave blank if using Overseerr.
-      - RADARR__API=<radarr__api>
+      - RADARR__API=
       # Specify your Radarr URL. Leave blank if using Overseerr.
       - RADARR__URL=http://localhost:7878
       # Specify your Sonarr API key. Leave blank if using Overseerr.
-      - SONARR__API=<sonarr__api>
+      - SONARR__API=
       # Specify your Sonarr URL. Leave blank if using Overseerr.
       - SONARR__URL=http://localhost:8989
       # Sets the maximum size of the search results selection
@@ -33,23 +33,23 @@ services:
       # Sets the style of the request alert message. One of `:plain` `:embed` `:none`
       - DISCORD__REQUESTED_MSG_STYLE=:plain # optional
       # The name of the quality profile to use by default for Sonarr
-      - SONARR__QUALITY_PROFILE=<not_set_by_default> # optional
+      - SONARR__QUALITY_PROFILE= # optional
       # The name of the quality profile to use by default for Radarr
-      - RADARR__QUALITY_PROFILE=<not_set_by_default> # optional
+      - RADARR__QUALITY_PROFILE= # optional
       # The root folder to use by default for Sonarr
-      - SONARR__ROOTFOLDER=<not_set_by_default> # optional
+      - SONARR__ROOTFOLDER= # optional
       # The root folder to use by default for Radarr
-      - RADARR__ROOTFOLDER=<not_set_by_default> # optional
+      - RADARR__ROOTFOLDER= # optional
       # The name of the language profile to use by default for Sonarr
-      - SONARR__LANGUAGE_PROFILE=<not_set_by_default> # optional
+      - SONARR__LANGUAGE_PROFILE= # optional
       # The Overseerr user id to use by default if there is no associated discord account for the requester
-      - OVERSEERR__DEFAULT_ID=<not_set_by_default> # optional
+      - OVERSEERR__DEFAULT_ID= # optional
       # Sets whether users can request partial seasons.
       - PARTIAL_SEASONS=true # optional
       # The log level for the logging backend. This can be changed for debugging purposes. One of trace `:debug` `:info` `:warn` `:error` `:fatal` `:report`
       - LOG_LEVEL=:info # optional
       # For passing additional java options.
-      - JAVA_OPTS=<not_set_by_default> # optional
+      - JAVA_OPTS= # optional
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/doplarr/config:/config
