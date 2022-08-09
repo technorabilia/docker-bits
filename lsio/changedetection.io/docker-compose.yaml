@@ -1,0 +1,25 @@
+# [Changedetection.io](https://github.com/dgtlmoon/changedetection.io) provides
+# free, open-source web page monitoring, notification and change detection.
+
+---
+version: "2.1"
+services:
+  changedetection.io:
+    image: ghcr.io/linuxserver/changedetection.io
+    container_name: changedetection.io
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify the full URL (including protocol) when running behind a reverse proxy
+      - BASE_URL= # optional
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config
+    ports:
+      # WebUI
+      - 5000:5000
+    restart: unless-stopped
