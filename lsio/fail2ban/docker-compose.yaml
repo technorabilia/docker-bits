@@ -1,0 +1,73 @@
+# [Fail2ban](http://www.fail2ban.org/) is a daemon to ban hosts that cause
+# multiple authentication errors.
+
+---
+version: "2.1"
+services:
+  fail2ban:
+    image: ghcr.io/linuxserver/fail2ban
+    container_name: fail2ban
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: host
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/config:/config
+      # Host logs. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/var/log:ro:/var/log:ro
+      # Optional path to airsonic log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/airsonic/airsonic.log:ro:/remotelogs/airsonic/airsonic.log:ro # optional
+      # Optional path to apache2 log folder. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/apache2:ro:/remotelogs/apache2:ro # optional
+      # Optional path to auditd log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/audit/audit.log:ro:/remotelogs/audit/audit.log:ro # optional
+      # Optional path to authelia log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/authelia/authelia.log:ro:/remotelogs/authelia/authelia.log:ro # optional
+      # Optional path to emby log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/emby/embyserver.txt:ro:/remotelogs/emby/embyserver.txt:ro # optional
+      # Optional path to exim log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/exim/mainlog:ro:/remotelogs/exim/mainlog:ro # optional
+      # Optional path to filebrowser log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/filebrowser/filebrowser.log:ro:/remotelogs/filebrowser/filebrowser.log:ro # optional
+      # Optional path to gitea log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/gitea/gitea.log:ro:/remotelogs/gitea/gitea.log:ro # optional
+      # Optional path to homeassistant log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/homeassistant/home-assistant.log:ro:/remotelogs/homeassistant/home-assistant.log:ro # optional
+      # Optional path to lighttpd error log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/lighttpd/error.log:ro:/remotelogs/lighttpd/error.log:ro # optional
+      # Optional path to nextcloud log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/nextcloud/nextcloud.log:ro:/remotelogs/nextcloud/nextcloud.log:ro # optional
+      # Optional path to nginx log folder. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/nginx:ro:/remotelogs/nginx:ro # optional
+      # Optional path to nzbget log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/nzbget/nzbget.log:ro:/remotelogs/nzbget/nzbget.log:ro # optional
+      # Optional path to overseerr log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/overseerr/overseerr.log:ro:/remotelogs/overseerr/overseerr.log:ro # optional
+      # Optional path to prowlarr log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/prowlarr/prowlarr.txt:ro:/remotelogs/prowlarr/prowlarr.txt:ro # optional
+      # Optional path to radarr log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/radarr/radarr.txt:ro:/remotelogs/radarr/radarr.txt:ro # optional
+      # Optional path to roundcube error log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/roundcube/errors:ro:/remotelogs/roundcube/errors:ro # optional
+      # Optional path to sabnzbd log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/sabnzbd/sabnzbd.log:ro:/remotelogs/sabnzbd/sabnzbd.log:ro # optional
+      # Optional path to sonarr log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/sonarr/sonarr.txt:ro:/remotelogs/sonarr/sonarr.txt:ro # optional
+      # Optional path to unificontroller server log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/unificontroller/server.log:ro:/remotelogs/unificontroller/server.log:ro # optional
+      # Optional path to vaultwarden log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/vaultwarden/vaultwarden.log:ro:/remotelogs/vaultwarden/vaultwarden.log:ro # optional
+      # Optional path to vsftpd log file. Mounted as Read Only.
+      - ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/vsftpd/vsftpd.log:ro:/remotelogs/vsftpd/vsftpd.log:ro # optional
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped
