@@ -4,22 +4,17 @@
 ---
 version: "2.1"
 services:
-  changedetection.io:
-    image: ghcr.io/linuxserver/changedetection.io
-    container_name: changedetection.io
+  changedetection:
+    image: lscr.io/linuxserver/changedetection.io:latest
+    container_name: changedetection
     environment:
-      # for UserID
-      - PUID=${PUID:-1024}
-      # for GroupID
-      - PGID=${PGID:-100}
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify the full URL (including protocol) when running behind a reverse proxy
-      - BASE_URL= # optional
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - BASE_URL= #optional
     volumes:
-      # Contains all relevant configuration files.
-      - ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config
+      - /path/to/appdata/config:/config
     ports:
-      # WebUI
       - 5000:5000
     restart: unless-stopped
+
