@@ -11,7 +11,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
-  -e RUN_OPTS=<run options here> `# optional` `# Optionally specify additional arguments to be passed. See Additional runtime parameters.` \
+  -e RUN_OPTS= `# optional` `# Optionally specify additional arguments to be passed. See Additional runtime parameters.` \
   -p 9981:9981 `# WebUI` \
   -p 9982:9982 `# HTSP server port.` \
   -v ${BASEDIR:-/volume1/docker}/tvheadend/config:/config `# Where TVHeadend show store it's config files.` \

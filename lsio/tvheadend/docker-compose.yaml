@@ -19,7 +19,7 @@ services:
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # Optionally specify additional arguments to be passed. See Additional runtime parameters.
-      - RUN_OPTS=<run options here> # optional
+      - RUN_OPTS= # optional
     volumes:
       # Where TVHeadend show store it's config files.
       - ${BASEDIR:-/volume1/docker}/tvheadend/config:/config
