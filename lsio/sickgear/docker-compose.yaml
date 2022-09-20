@@ -14,6 +14,8 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # this will store any uploaded data on the docker host
       - ${BASEDIR:-/volume1/docker}/sickgear/config:/config
