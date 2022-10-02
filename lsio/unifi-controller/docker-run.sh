@@ -7,6 +7,7 @@ docker run -d \
   --name=unifi-controller \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e MEM_LIMIT=1024 `# optional` `# Optionally change the Java memory limit. Set to `default` to reset to default` \
   -e MEM_STARTUP=1024 `# optional` `# Optionally change the Java initial/minimum memory. Set to `default` to reset to default` \
   -p 8443:8443 `# Unifi web admin port` \
