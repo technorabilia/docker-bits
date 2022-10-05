@@ -17,7 +17,7 @@ services:
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # To set maximum upload size (in MB), default if unset is 5000.
-      - MAX_UPLOAD=<5000>
+      - MAX_UPLOAD=5000
     volumes:
       # Where to store projectsend config files.
       - ${BASEDIR:-/volume1/docker}/projectsend/config:/config
