@@ -15,7 +15,7 @@ docker run -d \
   -e DB_HOST=<yourdbhost> `# for specifying the database host` \
   -e DB_USER=<yourdbuser> `# for specifying the database user` \
   -e DB_PASS=<yourdbpass> `# for specifying the database password` \
-  -e DB_DATABASE=bookstackapp `# for specifying the database to be used` \
+  -e DB_DATABASE=bookstackapp `# for specifying the database to be used (non-alphanumeric passwords must be properly escaped.)` \
   -p 6875:80 `# will map the container's port 80 to port 6875 on the host` \
   -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# this will store any uploaded data on the docker host` \
   --restart unless-stopped \
