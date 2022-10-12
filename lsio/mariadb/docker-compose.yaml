@@ -12,7 +12,7 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
-      # Set this to root password for installation (minimum 4 characters).
+      # Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
@@ -20,7 +20,7 @@ services:
       - MYSQL_DATABASE=USER_DB_NAME # optional
       # This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).
       - MYSQL_USER=MYSQL_USER # optional
-      # Set this to the password you want to use for you MYSQL_USER (minimum 4 characters).
+      # Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
       - MYSQL_PASSWORD=DATABASE_PASSWORD # optional
       # Set this to ingest sql files from an http/https endpoint (comma seperated array).
       - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql # optional
