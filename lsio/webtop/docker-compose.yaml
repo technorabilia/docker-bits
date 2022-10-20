@@ -19,6 +19,8 @@ services:
       - SUBFOLDER=/ # optional
       # See the keyboard layouts section for more information and options.
       - KEYBOARD=en-us-qwerty # optional
+      # String which will be used as page/tab title in the web browser.
+      - TITLE=Webtop # optional
     volumes:
       # abc users home directory
       - ${BASEDIR:-/volume1/docker}/webtop/config:/config
