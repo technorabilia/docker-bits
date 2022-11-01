@@ -16,7 +16,7 @@ docker run -d \
   -e DB_NAME=hedgedoc `# Database name` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CMD_DOMAIN=localhost `# The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).` \
-  -e CMD_URL_ADDPORT=true `# optional` `# Set to `false` if accessing at port `80` or `443`.` \
+  -e CMD_URL_ADDPORT=false `# optional` `# Set to `true` if using a port other than `80` or `443`.` \
   -e CMD_PROTOCOL_USESSL=false `# optional` `# Set to `true` if accessing over https via reverse proxy.` \
   -e CMD_PORT=3000 `# optional` `# If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).` \
   -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \

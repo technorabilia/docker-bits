@@ -4,43 +4,41 @@
 # tablet or even on the phone. You can sign-in via multiple auth providers like
 # Facebook, Twitter, GitHub and many more on the homepage.
 
-version: "3"
+---
+version: "2.1"
 services:
-  mariadb:
-    image: lscr.io/linuxserver/mariadb:latest
-    container_name: hedgedoc_mariadb
-    restart: always
-    volumes:
-      - /path/to/mariadb/data:/config
-    environment:
-      - MYSQL_ROOT_PASSWORD=<secret password>
-      - MYSQL_DATABASE=hedgedoc
-      - MYSQL_USER=hedgedoc
-      - MYSQL_PASSWORD=<secret password>
-      - PGID=1000
-      - PUID=1000
-      - TZ=Europe/London
   hedgedoc:
-    image: lscr.io/linuxserver/hedgedoc:latest
+    image: ghcr.io/linuxserver/hedgedoc
     container_name: hedgedoc
-    restart: always
-    depends_on:
-      - mariadb
-    volumes:
-      - /path/to/config:/config
     environment:
-      - DB_HOST=mariadb
-      - DB_USER=hedgedoc
-      - DB_PASS=<secret password>
-      - DB_NAME=hedgedoc
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Host address of mysql database
+      - DB_HOST=<hostname or ip>
+      # Port to access mysql database default is 3306
       - DB_PORT=3306
-      - PGID=1000
-      - PUID=1000
-      - TZ=Europe/London
+      # Database user
+      - DB_USER=hedgedoc
+      # Database password
+      - DB_PASS=<secret password>
+      # Database name
+      - DB_NAME=hedgedoc
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).
       - CMD_DOMAIN=localhost
-      - CMD_URL_ADDPORT=true #optional
-      - CMD_PROTOCOL_USESSL=false #optional
-      - CMD_PORT=3000 #optional
+      # Set to `true` if using a port other than `80` or `443`.
+      - CMD_URL_ADDPORT=false # optional
+      # Set to `true` if accessing over https via reverse proxy.
+      - CMD_PROTOCOL_USESSL=false # optional
+      # If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).
+      - CMD_PORT=3000 # optional
+    volumes:
+      # HedgeDoc config and configurable files
+      - ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config
     ports:
-      - "3000:3000"
-
+      # Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).
+      - 3000:3000
+    restart: unless-stopped
