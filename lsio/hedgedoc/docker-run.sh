@@ -19,6 +19,7 @@ docker run -d \
   -e CMD_URL_ADDPORT=false `# optional` `# Set to `true` if using a port other than `80` or `443`.` \
   -e CMD_PROTOCOL_USESSL=false `# optional` `# Set to `true` if accessing over https via reverse proxy.` \
   -e CMD_PORT=3000 `# optional` `# If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).` \
+  -e CMD_ALLOW_ORIGIN=['localhost'] `# optional` `# Comma-separated list of allowed hostnames` \
   -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \
   -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# HedgeDoc config and configurable files` \
   --restart unless-stopped \

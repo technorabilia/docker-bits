@@ -43,6 +43,8 @@ services:
       - SECRET_KEY= # optional
       # Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)
       - APPRISE_ENABLED= # optional
+      # Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.
+      - DEBUG= # optional
     volumes:
       # Database and healthchecks config directory
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config

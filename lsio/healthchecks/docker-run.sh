@@ -22,6 +22,7 @@ docker run -d \
   -e ALLOWED_HOSTS= `# optional` `# Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)` \
   -e SECRET_KEY= `# optional` `# A secret key used for cryptographic signing. Will generate a secure value if one is not supplied` \
   -e APPRISE_ENABLED= `# optional` `# Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)` \
+  -e DEBUG= `# optional` `# Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.` \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
   -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Database and healthchecks config directory` \
   --restart unless-stopped \
