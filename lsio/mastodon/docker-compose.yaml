@@ -1,0 +1,82 @@
+# [Mastodon](https://github.com/mastodon/mastodon/) is a free, open-source
+# social network server based on ActivityPub where users can follow friends and
+# discover new ones..
+
+---
+version: "2.1"
+services:
+  mastodon:
+    image: ghcr.io/linuxserver/mastodon
+    container_name: mastodon
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # This is the unique identifier of your server in the network. It cannot be safely changed later.
+      - LOCAL_DOMAIN=example.com
+      # Redis server hostname
+      - REDIS_HOST=redis
+      # Redis port
+      - REDIS_PORT=6379
+      # Postgres database hostname
+      - DB_HOST=db
+      # Postgres username
+      - DB_USER=mastodon
+      # Postgres db name
+      - DB_NAME=mastodon
+      # Postgres password
+      - DB_PASS=mastodon
+      # Portgres port
+      - DB_PORT=5432
+      # Enable or disable Elasticsearch (requires a separate ES instance)
+      - ES_ENABLED=false
+      # Browser session secret. Changing it will break all active browser sessions.
+      - SECRET_KEY_BASE=
+      # MFA secret. Changing it will break two-factor authentication.
+      - OTP_SECRET=
+      # Push notification private key. Changing it will break push notifications.
+      - VAPID_PRIVATE_KEY=
+      # Push notification public key. Changing it will break push notifications.
+      - VAPID_PUBLIC_KEY=
+      # SMTP server for email notifications
+      - SMTP_SERVER=mail.example.com
+      # SMTP server port
+      - SMTP_PORT=25
+      # SMTP username
+      - SMTP_LOGIN=
+      # SMTP password
+      - SMTP_PASSWORD=
+      # From address for emails send from Mastodon
+      - SMTP_FROM_ADDRESS=notifications@example.com
+      # Enable or disable S3 storage of uploaded files
+      - S3_ENABLED=false
+      # This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See https://docs.joinmastodon.org/admin/config/#basic
+      - WEB_DOMAIN=mastodon.example.com # optional
+      # Elasticsearch server hostname
+      - ES_HOST=es # optional
+      # Elasticsearch port
+      - ES_PORT=9200 # optional
+      # Elasticsearch username
+      - ES_USER=elastic # optional
+      # Elasticsearch password
+      - ES_PASS=elastic # optional
+      # S3 bucket hostname
+      - S3_BUCKET= # optional
+      # S3 bucket access key ID
+      - AWS_ACCESS_KEY_ID= # optional
+      # S3 bucket secret access key
+      - AWS_SECRET_ACCESS_KEY= # optional
+      # Alternate hostname for object fetching if you are front the S3 connections.
+      - S3_ALIAS_HOST= # optional
+    volumes:
+      # Contains all relevant configuration files.
+      - ${BASEDIR:-/volume1/docker}/mastodon/config:/config
+    ports:
+      # Port for web frontend
+      - 80:80
+      # Port for web frontend
+      - 443:443
+    restart: unless-stopped
