@@ -1,0 +1,22 @@
+# [Feed2toot](https://gitlab.com/chaica/feed2toot) automatically parses rss
+# feeds, identifies new posts and posts them on the Mastodon social network.
+
+---
+version: "2.1"
+services:
+  feed2toot:
+    image: ghcr.io/linuxserver/feed2toot
+    container_name: feed2toot
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Limit number of RSS entries published at each execution.
+      - FEED_LIMIT=5 # optional
+    volumes:
+      # Local path for feed2toot config files.
+      - ${BASEDIR:-/volume1/docker}/feed2toot/config:/config
+    restart: unless-stopped
