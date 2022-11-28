@@ -27,7 +27,7 @@ docker run -d \
   -e SMTP_PASSWORD= `# SMTP password` \
   -e SMTP_FROM_ADDRESS=notifications@example.com `# From address for emails send from Mastodon` \
   -e S3_ENABLED=false `# Enable or disable S3 storage of uploaded files` \
-  -e WEB_DOMAIN=mastodon.example.com `# optional` `# This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See https://docs.joinmastodon.org/admin/config/#basic` \
+  -e WEB_DOMAIN=mastodon.example.com `# optional` `# This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic)` \
   -e ES_HOST=es `# optional` `# Elasticsearch server hostname` \
   -e ES_PORT=9200 `# optional` `# Elasticsearch port` \
   -e ES_USER=elastic `# optional` `# Elasticsearch username` \

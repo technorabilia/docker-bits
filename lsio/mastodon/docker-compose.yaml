@@ -53,7 +53,7 @@ services:
       - SMTP_FROM_ADDRESS=notifications@example.com
       # Enable or disable S3 storage of uploaded files
       - S3_ENABLED=false
-      # This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See https://docs.joinmastodon.org/admin/config/#basic
+      # This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic)
       - WEB_DOMAIN=mastodon.example.com # optional
       # Elasticsearch server hostname
       - ES_HOST=es # optional
