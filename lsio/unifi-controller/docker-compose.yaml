@@ -15,9 +15,9 @@ services:
       - PGID=${PGID:-100}
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
-      # Optionally change the Java memory limit. Set to `default` to reset to default
+      # Optionally change the Java memory limit (in Megabytes). Set to `default` to reset to default
       - MEM_LIMIT=1024 # optional
-      # Optionally change the Java initial/minimum memory. Set to `default` to reset to default
+      # Optionally change the Java initial/minimum memory (in Megabytes). Set to `default` to reset to default
       - MEM_STARTUP=1024 # optional
     volumes:
       # All Unifi data stored here
