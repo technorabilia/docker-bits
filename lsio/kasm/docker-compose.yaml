@@ -30,6 +30,10 @@ services:
       - ${BASEDIR:-/volume1/docker}/kasm/opt:/opt
       # Optionally specify a path for persistent profile storage.
       - ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles # optional
+      # Optional for gamepad support.
+      - ${BASEDIR:-/volume1/docker}/kasm/dev/input:/dev/input # optional
+      # Optional for gamepad support.
+      - ${BASEDIR:-/volume1/docker}/kasm/run/udev/data:/run/udev/data # optional
     ports:
       # Kasm Installation wizard. (https)
       - 3000:3000
