@@ -16,7 +16,7 @@ services:
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # Specify specific run params for minisatip
-      - RUN_OPTS=<parameter>
+      - RUN_OPTS=
     volumes:
       # Configuration files and minisatip data
       - ${BASEDIR:-/volume1/docker}/minisatip/config:/config

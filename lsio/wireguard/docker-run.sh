@@ -26,7 +26,7 @@ docker run -d \
   -e LOG_CONFS=true `# optional` `# Generated QR codes will be displayed in the docker log. Set to `false` to skip log output.` \
   -p 51820:51820/udp `# wireguard port` \
   -v ${BASEDIR:-/volume1/docker}/wireguard/config:/config `# Contains all relevant configuration files.` \
-  -v /lib/modules:/lib/modules `# Maps host's modules folder.` \
+  -v /lib/modules:/lib/modules `# optional` `# Maps host's modules folder. Only required if compiling wireguard modules.` \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
   --restart unless-stopped \
   ghcr.io/linuxserver/wireguard
