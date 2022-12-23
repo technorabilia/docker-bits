@@ -13,9 +13,10 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e APP_URL= `# for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
   -e DB_HOST=<yourdbhost> `# for specifying the database host` \
+  -e DB_PORT=<yourdbport> `# for specifying the database port if not default 3306` \
   -e DB_USER=<yourdbuser> `# for specifying the database user` \
-  -e DB_PASS=<yourdbpass> `# for specifying the database password` \
-  -e DB_DATABASE=bookstackapp `# for specifying the database to be used (non-alphanumeric passwords must be properly escaped.)` \
+  -e DB_PASS=<yourdbpass> `# for specifying the database password (non-alphanumeric passwords must be properly escaped.)` \
+  -e DB_DATABASE=bookstackapp `# for specifying the database to be used` \
   -p 6875:80 `# will map the container's port 80 to port 6875 on the host` \
   -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# this will store any uploaded data on the docker host` \
   --restart unless-stopped \
