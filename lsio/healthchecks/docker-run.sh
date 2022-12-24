@@ -17,13 +17,16 @@ docker run -d \
   -e EMAIL_USE_TLS= `# Use TLS for SMTP (`True` or `False`)` \
   -e SUPERUSER_EMAIL= `# Superuser email` \
   -e SUPERUSER_PASSWORD= `# Superuser password` \
-  -e REGENERATE_SETTINGS= `# optional` `# Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.` \
-  -e SITE_LOGO_URL= `# optional` `# Full URL to custom site logo` \
+  -e REGENERATE_SETTINGS= `# optional` `# Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.` \
   -e ALLOWED_HOSTS= `# optional` `# Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)` \
-  -e SECRET_KEY= `# optional` `# A secret key used for cryptographic signing. Will generate a secure value if one is not supplied` \
   -e APPRISE_ENABLED= `# optional` `# Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)` \
   -e DEBUG= `# optional` `# Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.` \
-  -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
+  -e INTEGRATIONS_ALLOW_PRIVATE_IPS= `# optional` `# Defaults to False. Set to True to allow integrations to connect to private IP addresses.` \
+  -e PING_EMAIL_DOMAIN= `# optional` `# The domain to use for generating ping email addresses.` \
+  -e SECRET_KEY= `# optional` `# A secret key used for cryptographic signing. Will generate a secure value if one is not supplied` \
+  -e SITE_LOGO_URL= `# optional` `# Full URL to custom site logo` \
+  -p 8000:8000 `# Healthchecks Web UI` \
+  -p 2525:2525 `# optional` `# Port for inbound SMTP pings` \
   -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Database and healthchecks config directory` \
   --restart unless-stopped \
   ghcr.io/linuxserver/healthchecks

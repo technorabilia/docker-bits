@@ -33,22 +33,28 @@ services:
       - SUPERUSER_EMAIL=
       # Superuser password
       - SUPERUSER_PASSWORD=
-      # Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.
+      # Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.
       - REGENERATE_SETTINGS= # optional
-      # Full URL to custom site logo
-      - SITE_LOGO_URL= # optional
       # Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)
       - ALLOWED_HOSTS= # optional
-      # A secret key used for cryptographic signing. Will generate a secure value if one is not supplied
-      - SECRET_KEY= # optional
       # Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)
       - APPRISE_ENABLED= # optional
       # Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.
       - DEBUG= # optional
+      # Defaults to False. Set to True to allow integrations to connect to private IP addresses.
+      - INTEGRATIONS_ALLOW_PRIVATE_IPS= # optional
+      # The domain to use for generating ping email addresses.
+      - PING_EMAIL_DOMAIN= # optional
+      # A secret key used for cryptographic signing. Will generate a secure value if one is not supplied
+      - SECRET_KEY= # optional
+      # Full URL to custom site logo
+      - SITE_LOGO_URL= # optional
     volumes:
       # Database and healthchecks config directory
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
     ports:
-      # will map the container's port 8000 to port 8000 on the host
+      # Healthchecks Web UI
       - 8000:8000
+      # Port for inbound SMTP pings
+      - 2525:2525 # optional
     restart: unless-stopped
