@@ -11,6 +11,7 @@ docker run -d \
   --name=bookstack \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e APP_URL= `# for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
   -e DB_HOST=<yourdbhost> `# for specifying the database host` \
   -e DB_PORT=<yourdbport> `# for specifying the database port if not default 3306` \
