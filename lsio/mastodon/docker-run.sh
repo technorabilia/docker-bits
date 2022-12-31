@@ -36,6 +36,11 @@ docker run -d \
   -e AWS_ACCESS_KEY_ID= `# optional` `# S3 bucket access key ID` \
   -e AWS_SECRET_ACCESS_KEY= `# optional` `# S3 bucket secret access key` \
   -e S3_ALIAS_HOST= `# optional` `# Alternate hostname for object fetching if you are front the S3 connections.` \
+  -e SIDEKIQ_ONLY=false `# optional` `# Only run the sidekiq service in this container instance. For large scale instances that need better queue handling.` \
+  -e SIDEKIQ_QUEUE= `# optional` `# The name of the sidekiq queue to run in this container. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-queues).` \
+  -e SIDEKIQ_DEFAULT=false `# optional` `# Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue.` \
+  -e SIDEKIQ_THREADS=5 `# optional` `# The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
+  -e DB_POOL=5 `# optional` `# The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
   -p 80:80 `# Port for web frontend` \
   -p 443:443 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/mastodon/config:/config `# Contains all relevant configuration files.` \

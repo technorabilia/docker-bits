@@ -17,15 +17,15 @@ services:
       # Hostname or IP and port if applicable, be sure to define https/http
       - APP_URL=http://localhost:8080
       # Mysql hostname or IP to use
-      - MYSQL_PORT_3306_TCP_ADDR=<mysql host>
+      - MYSQL_PORT_3306_TCP_ADDR=
       # Mysql port to use
-      - MYSQL_PORT_3306_TCP_PORT=<mysql port>
+      - MYSQL_PORT_3306_TCP_PORT=
       # Mysql database to use
-      - MYSQL_DATABASE=<mysql database>
+      - MYSQL_DATABASE=
       # Mysql user to use
-      - MYSQL_USER=<mysql pass>
+      - MYSQL_USER=
       # Mysql password to use
-      - MYSQL_PASSWORD=changeme
+      - MYSQL_PASSWORD=
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
