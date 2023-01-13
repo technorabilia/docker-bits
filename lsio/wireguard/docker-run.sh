@@ -23,6 +23,7 @@ docker run -d \
   -e PEERDNS=auto `# optional` `# DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.` \
   -e INTERNAL_SUBNET=10.13.13.0 `# optional` `# Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode.` \
   -e ALLOWEDIPS=0.0.0.0/0 `# optional` `# The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.` \
+  -e PERSISTENTKEEPALIVE_PEERS= `# optional` `# Set to `all` or a list of comma separated peers (ie. `1,4,laptop`) for the wireguard server to send keepalive packets to listed peers every 25 seconds. Useful if server is accessed via domain name and has dynamic IP. Used only in server mode.` \
   -e LOG_CONFS=true `# optional` `# Generated QR codes will be displayed in the docker log. Set to `false` to skip log output.` \
   -p 51820:51820/udp `# wireguard port` \
   -v ${BASEDIR:-/volume1/docker}/wireguard/config:/config `# Contains all relevant configuration files.` \
