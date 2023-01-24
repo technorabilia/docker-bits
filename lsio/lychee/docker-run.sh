@@ -13,6 +13,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DB_HOST=mariadb `# for specifying the database host` \
+  -e DB_PORT=3306 `# for specifying the database port` \
   -e DB_USERNAME=lychee `# for specifying the database user` \
   -e DB_PASSWORD=dbpassword `# for specifying the database password` \
   -e DB_DATABASE=lychee `# for specifying the database to be used` \
