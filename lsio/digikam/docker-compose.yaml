@@ -7,7 +7,6 @@ services:
   digikam:
     image: ghcr.io/linuxserver/digikam
     container_name: digikam
-    network_mode: host
     environment:
       # for UserID
       - PUID=${PUID:-1024}
