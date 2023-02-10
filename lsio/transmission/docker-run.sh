@@ -10,7 +10,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
-  -e TRANSMISSION_WEB_HOME=/combustion-release/ `# optional` `# Specify an alternative UI options are [`/combustion-release/`](https://github.com/Secretmapper/combustion), [`/transmission-web-control/`](https://github.com/ronggang/transmission-web-control), [`/kettu/`](https://github.com/endor/kettu), [`/flood-for-transmission/`](https://github.com/johman10/flood-for-transmission), and [`/transmissionic/`](https://github.com/6c65726f79/Transmissionic).` \
+  -e TRANSMISSION_WEB_HOME= `# optional` `# Specify the path to an alternative UI folder.` \
   -e USER=username `# optional` `# Specify an optional username for the interface` \
   -e PASS=password `# optional` `# Specify an optional password for the interface` \
   -e WHITELIST=iplist `# optional` `# Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.` \
