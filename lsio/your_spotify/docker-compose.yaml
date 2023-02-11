@@ -1,0 +1,35 @@
+# [Your_spotify](https://github.com/Yooooomi/your_spotify) is a self-hosted
+# application that tracks what you listen and offers you a dashboard to explore
+# statistics about it! It's composed of a web server which polls the Spotify API
+# every now and then and a web application on which you can explore your
+# statistics.
+
+---
+version: "2.1"
+services:
+  your_spotify:
+    image: ghcr.io/linuxserver/your_spotify
+    container_name: your_spotify
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # Specify a timezone to use for example Europe/Amsterdam
+      - TZ=${TZ:-Europe/Amsterdam}
+      # The protocol and hostname where the app will be accessed.
+      - APP_URL=http://localhost
+      # Your Spotify application client ID.
+      - SPOTIFY_PUBLIC=
+      # Your Spotify application secret.
+      - SPOTIFY_SECRET=
+      # Allowed CORS sources, set to `all` to allow any source.
+      - CORS=http://localhost:80,https://localhost:443
+      # Set mongodb endpoint address/port.
+      - MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
+    ports:
+      # your_spotify HTTP webui
+      - 80:80
+      # your_spotify HTTPS webui
+      - 443:443
+    restart: unless-stopped
