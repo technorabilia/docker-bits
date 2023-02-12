@@ -8,6 +8,7 @@ docker run -d \
   --name=domoticz \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e WEBROOT=domoticz `# optional` `# Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.` \
   -e DBASE=<path to database> `# optional` `# Sets path to database. Do not set unless you know what this does.` \

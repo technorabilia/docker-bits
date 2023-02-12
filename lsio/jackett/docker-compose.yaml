@@ -17,12 +17,14 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=Etc/UTC
       # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)
       - AUTO_UPDATE=true # optional
       # Optionally specify additional arguments to be passed.
-      - RUN_OPTS=<run options here> # optional
+      - RUN_OPTS= # optional
     volumes:
       # Where Jackett should store its config file.
       - ${BASEDIR:-/volume1/docker}/jackett/config:/config

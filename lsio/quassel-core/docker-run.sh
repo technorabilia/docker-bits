@@ -12,6 +12,7 @@ docker run -d \
   --name=quassel-core \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e RUN_OPTS=--config-from-environment `# optional` `# Custom CLI options for Quassel` \
   -p 4242:4242 `# The port quassel-core listens for connections on.` \

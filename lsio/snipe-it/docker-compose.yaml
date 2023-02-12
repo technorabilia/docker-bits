@@ -14,6 +14,8 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=Etc/UTC
       # Hostname or IP and port if applicable, be sure to define https/http
       - APP_URL=http://localhost:8080
       # Mysql hostname or IP to use

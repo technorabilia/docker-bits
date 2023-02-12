@@ -7,6 +7,7 @@ docker run -d \
   --name=healthchecks \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e SITE_ROOT= `# The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)` \
   -e SITE_NAME= `# The site's name (e.g., "Example Corp HealthChecks")` \
   -e DEFAULT_FROM_EMAIL= `# From email for alerts` \

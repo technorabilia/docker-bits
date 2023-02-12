@@ -7,6 +7,7 @@ docker run -d \
   --name=medusa \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8081:8081 `# The port for the Medusa webui` \
   -v ${BASEDIR:-/volume1/docker}/medusa/config:/config `# Medusa config` \

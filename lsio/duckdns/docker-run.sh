@@ -8,6 +8,7 @@ docker run -d \
   --name=duckdns \
   -e PUID=${PUID:-1024} `# optional` `# for UserID` \
   -e PGID=${PGID:-100} `# optional` `# for GroupID` \
+  -e TZ=Etc/UTC `# optional` `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SUBDOMAINS=subdomain1,subdomain2 `# multiple subdomains allowed, comma separated, no spaces` \
   -e TOKEN=token `# DuckDNS token` \

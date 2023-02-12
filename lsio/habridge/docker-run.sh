@@ -19,6 +19,7 @@ docker run -d \
   --name=habridge \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e SEC_KEY=<Your Key To Encrypt Security Data> `# Key used to secure communication.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8080:8080 `# WebUI` \

@@ -15,6 +15,8 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=Etc/UTC
       # Host address of mysql database
       - DB_HOST=<hostname or ip>
       # Port to access mysql database default is 3306

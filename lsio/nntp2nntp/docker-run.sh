@@ -18,6 +18,7 @@ docker run -d \
   --name=nntp2nntp \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PUID=<yourUID> `# specify your UID` \
   -e PGID=<yourGID> `# specify your GID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \

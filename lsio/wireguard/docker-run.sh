@@ -16,6 +16,7 @@ docker run -d \
   --cap-add=SYS_MODULE \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e SERVERURL=wireguard.domain.com `# optional` `# External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically` \
   -e SERVERPORT=51820 `# optional` `# External port for docker host. Used in server mode.` \

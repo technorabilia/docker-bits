@@ -9,6 +9,7 @@ docker run -d \
   --name=nano \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e PEER_HOST=localhost `# optional` `# Default peer host (can be overidden with an array by command line options)` \
   -e LIVE_GENESIS_PUB=GENESIS_PUBLIC `# optional` `# Genesis block public key` \

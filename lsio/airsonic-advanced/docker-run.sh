@@ -9,6 +9,7 @@ docker run -d \
   --name=airsonic-advanced \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CONTEXT_PATH=<URL_BASE> `# optional` `# For setting url-base in reverse proxy setups.` \
   -e JAVA_OPTS=<options> `# optional` `# For passing additional java options.` \

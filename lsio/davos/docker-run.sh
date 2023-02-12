@@ -10,6 +10,7 @@ docker run -d \
   --name=davos \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -p 8080:8080 `# This is the default port that davos runs under` \
   -v ${BASEDIR:-/volume1/docker}/davos/config:/config `# davos's config location. This is where it stores its database file and logs.` \

@@ -8,6 +8,7 @@ docker run -d \
   --net=host `# Shares host networking with container.` \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -v ${BASEDIR:-/volume1/docker}/daapd/config:/config `# Where daapd server stores its config and dbase files.` \
   -v ${BASEDIR:-/volume1/docker}/daapd/music:/music `# Map to your music folder.` \

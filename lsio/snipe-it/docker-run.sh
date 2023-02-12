@@ -8,6 +8,7 @@ docker run -d \
   --name=snipe-it \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
+  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e APP_URL=http://localhost:8080 `# Hostname or IP and port if applicable, be sure to define https/http` \
   -e MYSQL_PORT_3306_TCP_ADDR= `# Mysql hostname or IP to use` \
   -e MYSQL_PORT_3306_TCP_PORT= `# Mysql port to use` \

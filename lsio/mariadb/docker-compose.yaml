@@ -12,6 +12,8 @@ services:
       - PUID=${PUID:-1024}
       # for GroupID
       - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=Etc/UTC
       # Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
       # Specify a timezone to use for example Europe/Amsterdam
