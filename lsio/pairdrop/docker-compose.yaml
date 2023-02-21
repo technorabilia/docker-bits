@@ -1,0 +1,26 @@
+# [PairDrop](https://github.com/schlagmichdoch/PairDrop) is a sublime
+# alternative to AirDrop that works on all platforms. Send images, documents or
+# text via peer to peer connection to devices in the same local network/Wi-Fi or
+# to paired devices.
+
+---
+version: "2.1"
+services:
+  pairdrop:
+    image: ghcr.io/linuxserver/pairdrop
+    container_name: pairdrop
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=Etc/UTC
+      # Set to `true` to limit clients to 100 requests per 5 min
+      - RATE_LIMIT=false # optional
+      # Set to `true` to enable websocket fallback if the peer to peer WebRTC connection is not available to the client (see App Setup notes).
+      - WS_FALLBACK=false # optional
+    ports:
+      # http gui
+      - 3000:3000
+    restart: unless-stopped
