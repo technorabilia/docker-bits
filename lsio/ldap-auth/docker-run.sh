@@ -9,7 +9,6 @@
 source ./.env
 docker run -d \
   --name=ldap-auth \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e FERNETKEY= `# optional` `# Optionally define a custom fernet key, has to be base64-encoded 32-byte (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)` \
   -e CERTFILE= `# optional` `# Point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon` \
   -e KEYFILE= `# optional` `# Point this to the private key file, matching the certificate file referred to in CERTFILE` \

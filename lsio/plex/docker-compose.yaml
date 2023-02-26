@@ -17,7 +17,7 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # Set whether to update plex or not - see Application Setup section.
       - VERSION=docker
       # Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.

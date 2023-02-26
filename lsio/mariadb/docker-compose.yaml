@@ -13,11 +13,9 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
       # Specify the name of a database to be created on image startup.
       - MYSQL_DATABASE=USER_DB_NAME # optional
       # This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).

@@ -17,8 +17,6 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
-      # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # davos's config location. This is where it stores its database file and logs.

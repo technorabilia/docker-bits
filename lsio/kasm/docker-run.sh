@@ -14,7 +14,6 @@ docker run -d \
   --name=kasm \
   --privileged \
   -e KASM_PORT=443 `# Specify the port you bind to the outside for Kasm Workspaces.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e DOCKER_HUB_USERNAME=USER `# optional` `# Optionally specify a DockerHub Username to pull private images.` \
   -e DOCKER_HUB_PASSWORD=PASS `# optional` `# Optionally specify a DockerHub password to pull private images.` \
   -p 3000:3000 `# Kasm Installation wizard. (https)` \

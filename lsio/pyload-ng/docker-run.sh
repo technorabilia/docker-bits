@@ -7,8 +7,7 @@ docker run -d \
   --name=pyload-ng \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8000:8000 `# Allows HTTP access to the application` \
   -p 9666:9666 `# optional` `# Click'n'Load port.` \
   -v ${BASEDIR:-/volume1/docker}/pyload-ng/config:/config `# pyLoad Configuration and files database` \

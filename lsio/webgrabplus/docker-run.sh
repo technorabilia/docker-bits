@@ -8,8 +8,7 @@ docker run -d \
   --hostname=webgrabplus `# Set the hostname for the container for the license check.` \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -v ${BASEDIR:-/volume1/docker}/webgrabplus/config:/config `# Where webgrabplus should store it's config files.` \
   -v ${BASEDIR:-/volume1/docker}/webgrabplus/data:/data `# Where webgrabplus should store it's data files.` \
   --restart unless-stopped \

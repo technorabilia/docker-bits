@@ -9,8 +9,7 @@ docker run -d \
   --name=sonarr \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8989:8989 `# The port for the Sonarr webinterface` \
   -v ${BASEDIR:-/volume1/docker}/sonarr/config:/config `# Database and sonarr configs` \
   -v ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv `# optional` `# Location of TV library on disk (See note in Application setup)` \

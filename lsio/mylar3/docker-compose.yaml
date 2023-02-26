@@ -14,7 +14,7 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where mylar should store config files.
       - ${BASEDIR:-/volume1/docker}/mylar3/config:/config

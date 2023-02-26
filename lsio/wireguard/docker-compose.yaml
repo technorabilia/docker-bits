@@ -24,8 +24,6 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
-      # Specify a timezone to use for example Europe/Amsterdam
       - TZ=${TZ:-Europe/Amsterdam}
       # External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically
       - SERVERURL=wireguard.domain.com # optional

@@ -19,8 +19,6 @@ services:
     environment:
       # Specify the port you bind to the outside for Kasm Workspaces.
       - KASM_PORT=443
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
       # Optionally specify a DockerHub Username to pull private images.
       - DOCKER_HUB_USERNAME=USER # optional
       # Optionally specify a DockerHub password to pull private images.

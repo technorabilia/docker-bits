@@ -15,7 +15,7 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # specify the URL or IP address of your Quassel Core instance
       - QUASSEL_CORE=192.168.1.10
       # specify the port of your Quassel Core instance

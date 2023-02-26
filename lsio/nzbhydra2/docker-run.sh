@@ -14,8 +14,7 @@ docker run -d \
   --name=nzbhydra2 \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 5076:5076 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/nzbhydra2/config:/config `# Where nzbhydra2 should store config files.` \
   -v ${BASEDIR:-/volume1/docker}/nzbhydra2/downloads:/downloads `# NZB download folder.` \

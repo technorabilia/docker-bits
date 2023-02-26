@@ -7,8 +7,7 @@ docker run -d \
   --name=openvscode-server \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e CONNECTION_TOKEN= `# optional` `# Optional security token for accessing the Web UI (ie. `supersecrettoken`).` \
   -e CONNECTION_SECRET= `# optional` `# Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`.` \
   -e SUDO_PASSWORD=password `# optional` `# If this optional variable is set, user will have sudo access in the openvscode-server terminal with the specified password.` \

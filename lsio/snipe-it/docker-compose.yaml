@@ -15,7 +15,7 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # Hostname or IP and port if applicable, be sure to define https/http
       - APP_URL=http://localhost:8080
       # Mysql hostname or IP to use
@@ -28,8 +28,6 @@ services:
       - MYSQL_USER=
       # Mysql password to use
       - MYSQL_PASSWORD=
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Contains your config files and data storage for Snipe-IT
       - ${BASEDIR:-/volume1/docker}/snipe-it/config:/config

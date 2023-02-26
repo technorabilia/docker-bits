@@ -13,8 +13,6 @@ services:
     image: ghcr.io/linuxserver/ldap-auth
     container_name: ldap-auth
     environment:
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
       # Optionally define a custom fernet key, has to be base64-encoded 32-byte (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)
       - FERNETKEY= # optional
       # Point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon

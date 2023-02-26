@@ -9,8 +9,7 @@ docker run -d \
   --name=endlessh \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e MSDELAY=10000 `# optional` `# The endless banner is sent one line at a time. This is the delay in milliseconds between individual lines.` \
   -e MAXLINES=32 `# optional` `# The length of each line is randomized. This controls the maximum length of each line. Shorter lines may keep clients on for longer if they give up after a certain number of bytes.` \
   -e MAXCLIENTS=4096 `# optional` `# Maximum number of connections to accept at a time. Connections beyond this are not immediately rejected, but will wait in the queue.` \

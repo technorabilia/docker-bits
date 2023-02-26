@@ -9,8 +9,7 @@ docker run -d \
   --net=host `# Shares host networking with container. Required for some devices to be discovered by Home Assistant.` \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8123:8123 `# optional` `# Application WebUI, only use this if you are not using host mode.` \
   -v ${BASEDIR:-/volume1/docker}/homeassistant/config:/config `# Home Assistant config storage path.` \
   --device /path/to/device:/path/to/device `# optional` `# For passing through USB, serial or gpio devices.` \

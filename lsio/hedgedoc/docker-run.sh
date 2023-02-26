@@ -9,13 +9,12 @@ docker run -d \
   --name=hedgedoc \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e DB_HOST=<hostname or ip> `# Host address of mysql database` \
   -e DB_PORT=3306 `# Port to access mysql database default is 3306` \
   -e DB_USER=hedgedoc `# Database user` \
   -e DB_PASS=<secret password> `# Database password` \
   -e DB_NAME=hedgedoc `# Database name` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e CMD_DOMAIN=localhost `# The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).` \
   -e CMD_URL_ADDPORT=false `# optional` `# Set to `true` if using a port other than `80` or `443`.` \
   -e CMD_PROTOCOL_USESSL=false `# optional` `# Set to `true` if accessing over https via reverse proxy.` \

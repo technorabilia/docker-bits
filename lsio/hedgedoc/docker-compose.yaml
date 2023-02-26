@@ -16,7 +16,7 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # Host address of mysql database
       - DB_HOST=<hostname or ip>
       # Port to access mysql database default is 3306
@@ -27,8 +27,6 @@ services:
       - DB_PASS=<secret password>
       # Database name
       - DB_NAME=hedgedoc
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
       # The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).
       - CMD_DOMAIN=localhost
       # Set to `true` if using a port other than `80` or `443`.

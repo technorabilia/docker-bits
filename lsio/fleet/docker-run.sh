@@ -6,7 +6,7 @@ docker run -d \
   --name=fleet \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e fleet_admin_authentication_type=DATABASE `# A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES.` \
   -e fleet_database_url=jdbc:mariadb://<url>:3306/fleet `# The full JDBC connection string to the Fleet database` \
   -e fleet_database_username=fleet_user `# The username with the relevant GRANT permissions for the database` \

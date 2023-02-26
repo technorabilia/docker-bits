@@ -26,11 +26,9 @@ services:
       # for GroupID
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=Etc/UTC
+      - TZ=${TZ:-Europe/Amsterdam}
       # Key used to secure communication.
       - SEC_KEY=<Your Key To Encrypt Security Data>
-      # Specify a timezone to use for example Europe/Amsterdam
-      - TZ=${TZ:-Europe/Amsterdam}
     volumes:
       # Where HABridge stores config files and data.
       - ${BASEDIR:-/volume1/docker}/habridge/config:/config

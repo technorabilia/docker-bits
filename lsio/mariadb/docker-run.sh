@@ -6,9 +6,8 @@ docker run -d \
   --name=mariadb \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
-  -e TZ=Etc/UTC `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD `# Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped).` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# Specify a timezone to use for example Europe/Amsterdam` \
   -e MYSQL_DATABASE=USER_DB_NAME `# optional` `# Specify the name of a database to be created on image startup.` \
   -e MYSQL_USER=MYSQL_USER `# optional` `# This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).` \
   -e MYSQL_PASSWORD=DATABASE_PASSWORD `# optional` `# Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped).` \
