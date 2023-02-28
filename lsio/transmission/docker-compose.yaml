@@ -20,15 +20,15 @@ services:
       # Specify the path to an alternative UI folder.
       - TRANSMISSION_WEB_HOME= # optional
       # Specify an optional username for the interface
-      - USER=username # optional
+      - USER= # optional
       # Specify an optional password for the interface
-      - PASS=password # optional
+      - PASS= # optional
       # Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.
-      - WHITELIST=iplist # optional
+      - WHITELIST= # optional
       # Specify an optional port for torrent TCP/UDP connections. Fills peer-port setting.
-      - PEERPORT=peerport # optional
+      - PEERPORT= # optional
       # Specify an optional list of comma separated dns name whitelist. Fills rpc-host-whitelist setting.
-      - HOST_WHITELIST=dnsname list # optional
+      - HOST_WHITELIST= # optional
     volumes:
       # Where transmission should store config files and logs.
       - ${BASEDIR:-/volume1/docker}/transmission/config:/config

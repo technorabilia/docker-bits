@@ -11,11 +11,11 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e TRANSMISSION_WEB_HOME= `# optional` `# Specify the path to an alternative UI folder.` \
-  -e USER=username `# optional` `# Specify an optional username for the interface` \
-  -e PASS=password `# optional` `# Specify an optional password for the interface` \
-  -e WHITELIST=iplist `# optional` `# Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.` \
-  -e PEERPORT=peerport `# optional` `# Specify an optional port for torrent TCP/UDP connections. Fills peer-port setting.` \
-  -e HOST_WHITELIST=dnsname list `# optional` `# Specify an optional list of comma separated dns name whitelist. Fills rpc-host-whitelist setting.` \
+  -e USER= `# optional` `# Specify an optional username for the interface` \
+  -e PASS= `# optional` `# Specify an optional password for the interface` \
+  -e WHITELIST= `# optional` `# Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.` \
+  -e PEERPORT= `# optional` `# Specify an optional port for torrent TCP/UDP connections. Fills peer-port setting.` \
+  -e HOST_WHITELIST= `# optional` `# Specify an optional list of comma separated dns name whitelist. Fills rpc-host-whitelist setting.` \
   -p 9091:9091 `# WebUI` \
   -p 51413:51413 `# Torrent Port TCP` \
   -p 51413:51413/udp `# Torrent Port UDP` \
