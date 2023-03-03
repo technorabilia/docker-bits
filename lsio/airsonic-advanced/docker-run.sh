@@ -10,8 +10,8 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e CONTEXT_PATH=<URL_BASE> `# optional` `# For setting url-base in reverse proxy setups.` \
-  -e JAVA_OPTS=<options> `# optional` `# For passing additional java options.` \
+  -e CONTEXT_PATH= `# optional` `# For setting url-base in reverse proxy setups.` \
+  -e JAVA_OPTS= `# optional` `# For passing additional java options.` \
   -p 4040:4040 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config `# Configuration file location.` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/music:/music `# Location of music.` \

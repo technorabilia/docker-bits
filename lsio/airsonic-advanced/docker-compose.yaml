@@ -18,9 +18,9 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
       # For setting url-base in reverse proxy setups.
-      - CONTEXT_PATH=<URL_BASE> # optional
+      - CONTEXT_PATH= # optional
       # For passing additional java options.
-      - JAVA_OPTS=<options> # optional
+      - JAVA_OPTS= # optional
     volumes:
       # Configuration file location.
       - ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config
