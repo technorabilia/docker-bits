@@ -20,6 +20,8 @@ services:
       - RATE_LIMIT=false # optional
       # Set to `true` to enable websocket fallback if the peer to peer WebRTC connection is not available to the client (see App Setup notes).
       - WS_FALLBACK=false # optional
+      # Path to a json file containing custom STUN/TURN config (see App Setup notes)
+      - RTC_CONFIG= # optional
     ports:
       # http gui
       - 3000:3000

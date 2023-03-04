@@ -11,6 +11,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e RATE_LIMIT=false `# optional` `# Set to `true` to limit clients to 100 requests per 5 min` \
   -e WS_FALLBACK=false `# optional` `# Set to `true` to enable websocket fallback if the peer to peer WebRTC connection is not available to the client (see App Setup notes).` \
+  -e RTC_CONFIG= `# optional` `# Path to a json file containing custom STUN/TURN config (see App Setup notes)` \
   -p 3000:3000 `# http gui` \
   --restart unless-stopped \
   ghcr.io/linuxserver/pairdrop
