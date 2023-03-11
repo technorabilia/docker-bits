@@ -14,6 +14,18 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # Set to sqlite (default) or postgres depending on the database engine you wish to use
+      - DB_TYPE=sqlite # optional
+      # DB hostname (postgres only)
+      - DB_HOST= # optional
+      # DB port (postgres only)
+      - DB_PORT= # optional
+      # DB name (postgres only)
+      - DB_NAME= # optional
+      # DB username (postgres only)
+      - DB_USER= # optional
+      # DB password (postgres only)
+      - DB_PASS= # optional
     volumes:
       # Where Wiki.js config is stored.
       - ${BASEDIR:-/volume1/docker}/wikijs/config:/config

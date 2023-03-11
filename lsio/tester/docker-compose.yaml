@@ -1,0 +1,16 @@
+# This internal tool is used as a desktop sandbox in our CI process to grab a
+# screenshot of a hopefully functional endpoint
+
+---
+version: "2.1"
+services:
+  tester:
+    image: ghcr.io/linuxserver/tester
+    container_name: tester
+    environment:
+      # Specify an endpoint, the container will automatically determine the correct protocol and program to use
+      - URL=http://google.com
+    ports:
+      # WebUI
+      - 3000:3000
+    restart: unless-stopped
