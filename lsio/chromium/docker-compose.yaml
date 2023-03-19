@@ -1,0 +1,27 @@
+# [Chromium](https://www.chromium.org/chromium-projects/) is an open-source
+# browser project that aims to build a safer, faster, and more stable way for
+# all users to experience the web.
+
+---
+version: "2.1"
+services:
+  chromium:
+    image: ghcr.io/linuxserver/chromium
+    container_name: chromium
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/chromium/config:/config
+    ports:
+      # Chromium desktop gui.
+      - 3000:3000
+      # HTTPS Chromium desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
