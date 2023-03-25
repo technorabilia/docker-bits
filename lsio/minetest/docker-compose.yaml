@@ -16,7 +16,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
       # Optionally specify any [CLI variables](https://wiki.minetest.net/Command_line) you want to launch the app with
-      - CLI_ARGS="--gameid minetest --port 30000" # optional
+      - CLI_ARGS=--gameid minetest --port 30000 # optional
     volumes:
       # Where minetest stores config files and maps etc.
       - ${BASEDIR:-/volume1/docker}/minetest/config/.minetest:/config/.minetest
