@@ -1,0 +1,26 @@
+# [GitQlient](https://github.com/francescmm/GitQlient) is a multi-platform Git
+# client originally forked from QGit. Nowadays it goes beyond of just a fork and
+# adds a lot of new functionality.
+
+---
+version: "2.1"
+services:
+  gitqlient:
+    image: ghcr.io/linuxserver/gitqlient
+    container_name: gitqlient
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/gitqlient/config:/config
+    ports:
+      # GitQlient desktop gui.
+      - 3000:3000
+      # HTTPS GitQlient desktop gui.
+      - 3001:3001
+    restart: unless-stopped

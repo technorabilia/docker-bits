@@ -1,0 +1,28 @@
+# [Github Desktop](https://desktop.github.com/) is an open source Electron-based
+# GitHub app. It is written in TypeScript and uses React.
+
+---
+version: "2.1"
+services:
+  github-desktop:
+    image: ghcr.io/linuxserver/github-desktop
+    container_name: github-desktop
+    cap_add:
+      - IPC_LOCK
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/github-desktop/config:/config
+    ports:
+      # Github Desktop gui.
+      - 3000:3000
+      # HTTPS Github Desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
