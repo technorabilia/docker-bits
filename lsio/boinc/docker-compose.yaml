@@ -25,6 +25,8 @@ services:
     ports:
       # Boinc desktop gui.
       - 8080:8080
+      # Boinc desktop gui HTTPS.
+      - 8181:8181
     devices:
       # Only needed if you want to use your Intel GPU (vaapi).
       - /dev/dri:/dev/dri # optional

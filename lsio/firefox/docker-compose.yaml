@@ -23,5 +23,7 @@ services:
     ports:
       # Firefox desktop gui.
       - 3000:3000
+      # Firefox desktop gui HTTPS.
+      - 3001:3001
     shm_size: "1gb"
     restart: unless-stopped

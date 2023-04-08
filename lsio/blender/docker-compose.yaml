@@ -19,15 +19,12 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
       - SUBFOLDER=/ # optional
-      # See the keyboard layouts section for more information and options.
-      - KEYBOARD=en-us-qwerty # optional
     volumes:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/volume1/docker}/blender/config:/config
     ports:
       # Blender desktop gui
       - 3000:3000
-    devices:
-      # Add this for hardware acceleration (Linux hosts only)
-      - /dev/dri:/dev/dri # optional
+      # Blender desktop gui HTTPS
+      - 3001:3001
     restart: unless-stopped

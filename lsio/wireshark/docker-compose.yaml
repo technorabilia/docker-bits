@@ -28,4 +28,6 @@ services:
     ports:
       # WireShark desktop gui, only use this if you are not using host mode and sniffing Docker network traffic.
       - 3000:3000 # optional
+      # WireShark desktop gui HTTPS, only use this if you are not using host mode and sniffing Docker network traffic.
+      - 3001:3001 # optional
     restart: unless-stopped

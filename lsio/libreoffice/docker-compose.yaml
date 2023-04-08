@@ -22,4 +22,6 @@ services:
     ports:
       # LibreOffice desktop gui.
       - 3000:3000
+      # LibreOffice desktop gui HTTPS.
+      - 3000:3000
     restart: unless-stopped

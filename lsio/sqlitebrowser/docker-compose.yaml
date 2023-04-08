@@ -21,4 +21,6 @@ services:
     ports:
       # Sqlitebrowser desktop gui.
       - 3000:3000
+      # Sqlitebrowser desktop gui HTTPS.
+      - 3001:3001
     restart: unless-stopped

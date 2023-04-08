@@ -16,12 +16,12 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
       - SUBFOLDER=/ # optional
-      # See the keyboard layouts section for more information and options.
-      - KEYBOARD=en-us-qwerty # optional
     volumes:
       # Users home directory in the container, stores database.
       - ${BASEDIR:-/volume1/docker}/digikam/config:/config
     ports:
       # digiKam desktop gui
       - 3000:3000 # optional
+      # digiKam desktop gui HTTPS
+      - 3001:3001 # optional
     restart: unless-stopped
