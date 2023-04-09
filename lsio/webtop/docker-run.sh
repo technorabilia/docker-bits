@@ -9,9 +9,9 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e SUBFOLDER=/ `# optional` `# Specify a subfolder to use with reverse proxies, IE `/subfolder/`` \
-  -e KEYBOARD=en-us-qwerty `# optional` `# See the keyboard layouts section for more information and options.` \
   -e TITLE=Webtop `# optional` `# String which will be used as page/tab title in the web browser.` \
   -p 3000:3000 `# Web Desktop GUI` \
+  -p 3001:3001 `# Web Desktop GUI HTTPS` \
   -v ${BASEDIR:-/volume1/docker}/webtop/config:/config `# abc users home directory` \
   -v /var/run/docker.sock:/var/run/docker.sock `# optional` `# Docker Socket on the system, if you want to use Docker in the container` \
   --device /dev/dri:/dev/dri `# optional` `# Add this for GL support (Linux hosts only)` \

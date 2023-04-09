@@ -17,8 +17,6 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
       - SUBFOLDER=/ # optional
-      # See the keyboard layouts section for more information and options.
-      - KEYBOARD=en-us-qwerty # optional
       # String which will be used as page/tab title in the web browser.
       - TITLE=Webtop # optional
     volumes:
@@ -29,6 +27,8 @@ services:
     ports:
       # Web Desktop GUI
       - 3000:3000
+      # Web Desktop GUI HTTPS
+      - 3001:3001
     devices:
       # Add this for GL support (Linux hosts only)
       - /dev/dri:/dev/dri # optional
