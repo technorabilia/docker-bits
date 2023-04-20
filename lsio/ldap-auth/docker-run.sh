@@ -9,9 +9,9 @@
 source ./.env
 docker run -d \
   --name=ldap-auth \
-  -e FERNETKEY= `# optional` `# Optionally define a custom fernet key, has to be base64-encoded 32-byte (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)` \
-  -e CERTFILE= `# optional` `# Point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon` \
-  -e KEYFILE= `# optional` `# Point this to the private key file, matching the certificate file referred to in CERTFILE` \
+  -e FERNETKEY= `# optional` `# Optionally define a custom valid fernet key (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)` \
+  -e CERTFILE= `# optional` `# Optionally point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon` \
+  -e KEYFILE= `# optional` `# Optionally point this to the private key file, matching the certificate file referred to in CERTFILE` \
   -p 8888:8888 `# the port for ldap auth daemon` \
   -p 9000:9000 `# the port for ldap login page` \
   --restart unless-stopped \
