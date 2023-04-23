@@ -1,0 +1,30 @@
+# [WebCord](https://github.com/SpacingBat3/WebCord) can be summarized as a pack
+# of security and privacy hardenings, Discord features reimplementations,
+# Electron / Chromium / Discord bugs workarounds, stylesheets, internal pages
+# and wrapped https://discord.com page, designed to conform with ToS as much as
+# it is possible (or hide the changes that might violate it from Discord's
+# eyes).
+
+---
+version: "2.1"
+services:
+  webcord:
+    image: ghcr.io/linuxserver/webcord
+    container_name: webcord
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings.
+      - ${BASEDIR:-/volume1/docker}/webcord/config:/config
+    ports:
+      # WebCord desktop gui.
+      - 3000:3000
+      # WebCord desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
