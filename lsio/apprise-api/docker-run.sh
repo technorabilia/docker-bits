@@ -5,7 +5,7 @@
 # disposal. Apprise API was designed to easily fit into existing (and new) eco-
 # systems that are looking for a simple notification solution.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=apprise-api \
   -e PUID=${PUID:-1024} `# for UserID` \

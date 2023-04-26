@@ -3,7 +3,7 @@
 # provides data modeling, SQL development, and comprehensive administration
 # tools for server configuration, user administration, backup, and much more.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mysql-workbench \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -3,7 +3,7 @@
 # For more information on SickGear visit their website and check it out:
 # https://github.com/SickGear/SickGear
 
-source ./.env
+. ./.env
 docker run -d \
   --name=sickgear \
   -e PUID=${PUID:-1024} `# for UserID` \

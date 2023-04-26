@@ -9,7 +9,7 @@
 # containers is powered by the open-source project
 # [KasmVNC](https://www.kasmweb.com/kasmvnc.html?utm_campaign=LinuxServer&utm_source=kasmvnc).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=kasm \
   --privileged \

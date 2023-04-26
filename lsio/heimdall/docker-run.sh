@@ -3,7 +3,7 @@
 # key to Heimdall. Why not use it as your browser start page? It even has the
 # ability to include a search bar using either Google, Bing or DuckDuckGo.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=heimdall \
   -e PUID=${PUID:-1024} `# for UserID` \

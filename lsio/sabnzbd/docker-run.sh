@@ -3,7 +3,7 @@
 # SABnzbd takes over from there, where it will be automatically downloaded,
 # verified, repaired, extracted and filed away with zero human interaction.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=sabnzbd \
   -e PUID=${PUID:-1024} `# for UserID` \

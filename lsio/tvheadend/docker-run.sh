@@ -5,7 +5,7 @@
 # SAT>IP streaming. Multiple EPG sources are supported (over-the-air DVB and
 # ATSC including OpenTV DVB extensions, XMLTV, PyXML).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=tvheadend \
   -e PUID=${PUID:-1024} `# for UserID` \

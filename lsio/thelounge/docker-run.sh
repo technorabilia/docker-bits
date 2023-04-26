@@ -1,7 +1,7 @@
 # [Thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC
 # client that you host on your own server.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=thelounge \
   -e PUID=${PUID:-1024} `# for UserID` \

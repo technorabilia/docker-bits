@@ -1,7 +1,7 @@
 # [Budge](https://github.com/linuxserver/budge) is an open source 'budgeting
 # with envelopes' personal finance app.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=budge \
   -e PUID=${PUID:-1024} `# for UserID` \

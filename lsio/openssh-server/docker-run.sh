@@ -5,7 +5,7 @@
 # users only have access to the folders mapped and the processes running inside
 # this container.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=openssh-server \
     --hostname={{ project_name }} `# optional` `# Optionally the hostname can be defined.` \

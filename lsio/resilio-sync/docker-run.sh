@@ -4,7 +4,7 @@
 # both. There is an official sync image but we created this one as it supports
 # user mapping to simplify permissions for volumes.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=resilio-sync \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -6,7 +6,7 @@
 # to the volunteer contributions of networking experts around the globe and is
 # the continuation of a project started by Gerald Combs in 1998.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=wireshark \
   --net=host `# Use Host Networking` \

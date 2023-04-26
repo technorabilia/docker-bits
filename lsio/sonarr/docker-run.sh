@@ -4,7 +4,7 @@
 # to automatically upgrade the quality of files already downloaded when a better
 # quality format becomes available.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=sonarr \
   -e PUID=${PUID:-1024} `# for UserID` \

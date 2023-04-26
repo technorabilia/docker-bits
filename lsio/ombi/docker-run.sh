@@ -7,7 +7,7 @@
 # automatically send them weekly newsletters of new content that has been added
 # to your Plex server!
 
-source ./.env
+. ./.env
 docker run -d \
   --name=ombi \
   -e PUID=${PUID:-1024} `# for UserID` \

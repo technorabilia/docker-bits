@@ -6,7 +6,7 @@
 # maintained indexer scraping & translation logic - removing the burden from
 # other apps.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=jackett \
   -e PUID=${PUID:-1024} `# for UserID` \

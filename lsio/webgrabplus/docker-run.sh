@@ -2,7 +2,7 @@
 # epg grabber. It collects tv-program guide data from selected tvguide sites for
 # your favourite channels.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=webgrabplus \
   --hostname=webgrabplus `# Set the hostname for the container for the license check.` \

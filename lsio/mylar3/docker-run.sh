@@ -2,7 +2,7 @@
 # downloader (cbr/cbz) for use with NZB and torrents written in python. It
 # supports SABnzbd, NZBGET, and many torrent clients in addition to DDL.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mylar3 \
   -e PUID=${PUID:-1024} `# for UserID` \

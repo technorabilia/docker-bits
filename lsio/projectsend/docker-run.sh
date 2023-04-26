@@ -3,7 +3,7 @@
 # yourself. Secure, private and easy. No more depending on external services or
 # e-mail to send those files.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=projectsend \
   -e PUID=${PUID:-1024} `# for UserID` \

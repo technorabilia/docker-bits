@@ -2,7 +2,7 @@
 # use mStream to stream your music from your home computer to any device,
 # anywhere. There are mobile apps available for both Android and iPhone.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mstream \
   -e PUID=${PUID:-1024} `# for UserID` \

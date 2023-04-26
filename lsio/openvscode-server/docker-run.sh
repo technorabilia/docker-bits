@@ -2,7 +2,7 @@
 # version of VS Code that runs a server on a remote machine and allows access
 # through a modern web browser.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=openvscode-server \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -5,7 +5,7 @@
 # operating system you want along with any specific types of versions or
 # bootable flags.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=netbootxyz \
   -e PUID=${PUID:-1024} `# for UserID` \

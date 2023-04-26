@@ -2,7 +2,7 @@
 # source file system indexer that uses Elasticsearch to index and manage data
 # across heterogeneous storage systems.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=diskover \
   -e PUID=${PUID:-1024} `# for UserID` \

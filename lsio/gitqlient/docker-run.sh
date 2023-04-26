@@ -2,7 +2,7 @@
 # client originally forked from QGit. Nowadays it goes beyond of just a fork and
 # adds a lot of new functionality.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=gitqlient \
   -e PUID=${PUID:-1024} `# for UserID` \

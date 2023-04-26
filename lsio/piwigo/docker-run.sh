@@ -2,7 +2,7 @@
 # comes with powerful features to publish and manage your collection of
 # pictures.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=piwigo \
   -e PUID=${PUID:-1024} `# for UserID` \

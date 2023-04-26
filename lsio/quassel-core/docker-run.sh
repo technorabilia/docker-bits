@@ -7,7 +7,7 @@
 # downloaded by your client upon reconnection allowing infinite scrollback
 # through time.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=quassel-core \
   -e PUID=${PUID:-1024} `# for UserID` \

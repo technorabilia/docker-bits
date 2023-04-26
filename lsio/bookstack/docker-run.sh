@@ -6,7 +6,7 @@
 # a pleasure than a chore. For more information on BookStack visit their website
 # and check it out: https://www.bookstackapp.com
 
-source ./.env
+. ./.env
 docker run -d \
   --name=bookstack \
   -e PUID=${PUID:-1024} `# for UserID` \

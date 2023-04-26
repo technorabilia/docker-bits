@@ -6,7 +6,7 @@
 # scientists to better understand biology, and providing new opportunities for
 # developing therapeutics.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=foldingathome \
   -e PUID=${PUID:-1024} `# for UserID` \

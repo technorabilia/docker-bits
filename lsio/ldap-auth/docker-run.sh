@@ -6,7 +6,7 @@
 # use with a Lightweight Directory Access Protocol (LDAP) authentication server
 # (OpenLDAP or Microsoft Windows Active Directory 2003 and 2012).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=ldap-auth \
   -e FERNETKEY= `# optional` `# Optionally define a custom valid fernet key (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)` \

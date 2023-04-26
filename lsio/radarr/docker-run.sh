@@ -1,7 +1,7 @@
 # [Radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with
 # movies à la Couchpotato.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=radarr \
   -e PUID=${PUID:-1024} `# for UserID` \

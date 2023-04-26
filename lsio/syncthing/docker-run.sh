@@ -3,7 +3,7 @@
 # data alone and you deserve to choose where it is stored, if it is shared with
 # some third party and how it's transmitted over the Internet.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=syncthing \
     --hostname={{ project_name }} `# optional` `# Optionally the hostname can be defined.` \

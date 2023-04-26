@@ -1,7 +1,7 @@
 # [Overseerr](https://overseerr.dev/) is a request management and media
 # discovery tool built to work with your existing Plex ecosystem.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=overseerr \
   -e PUID=${PUID:-1024} `# for UserID` \

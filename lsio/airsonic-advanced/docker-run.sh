@@ -4,7 +4,7 @@
 # at work. You can stream to multiple players simultaneously, for instance to
 # one player in your kitchen and another in your living room.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=airsonic-advanced \
   -e PUID=${PUID:-1024} `# for UserID` \

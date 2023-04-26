@@ -2,7 +2,7 @@
 # Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No
 # Flash, No Java, No Websocket, No Bullshit.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=librespeed \
   -e PUID=${PUID:-1024} `# for UserID` \

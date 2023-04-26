@@ -2,7 +2,7 @@
 # Module software used for descrambling DVB transmissions using smart cards.
 # It's both a server and a client.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=oscam \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -1,5 +1,5 @@
 This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.
-source ./.env
+. ./.env
 docker run -d \
   --name=ffmpeg \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -1,7 +1,7 @@
 # [Doplarr](https://github.com/kiranshila/Doplarr) is an *arr request bot for
 # Discord.'
 
-source ./.env
+. ./.env
 docker run -d \
   --name=doplarr \
   -e PUID=${PUID:-1024} `# for UserID` \

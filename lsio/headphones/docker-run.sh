@@ -2,7 +2,7 @@
 # downloader for NZB and Torrent, written in Python. It supports SABnzbd,
 # NZBget, Transmission, µTorrent and Blackhole.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=headphones \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -2,7 +2,7 @@
 # cross-platform FTP, FTPS and SFTP client with lots of useful features and an
 # intuitive graphical user interface.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=filezilla \
   -e PUID=${PUID:-1024} `# for UserID` \

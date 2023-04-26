@@ -2,7 +2,7 @@
 # latency. For a full example of what this application is capable of visit
 # [UCDavis](http://smokeping.ucdavis.edu/cgi-bin/smokeping.fcgi).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=smokeping \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -2,7 +2,7 @@
 # can calculate all kinds of statistics from your (local) Emby server. Just
 # install this on your server and let him calculate all kinds of fun stuff.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=embystat \
   -e PUID=${PUID:-1024} `# for UserID` \

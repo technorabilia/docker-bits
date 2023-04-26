@@ -2,7 +2,7 @@
 # your cron jobs. It's a web server that listens for pings from your cron jobs,
 # plus a web interface.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=healthchecks \
   -e PUID=${PUID:-1024} `# for UserID` \

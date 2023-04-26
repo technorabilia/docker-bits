@@ -2,7 +2,7 @@
 # platform video editing program made by the KDE community. Feature rich and
 # production ready.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=kdenlive \
   -e PUID=${PUID:-1024} `# for UserID` \

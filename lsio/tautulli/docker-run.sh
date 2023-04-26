@@ -1,7 +1,7 @@
 # [Tautulli](http://tautulli.com) is a python based web application for
 # monitoring, analytics and notifications for Plex Media Server.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=tautulli \
   -e PUID=${PUID:-1024} `# for UserID` \

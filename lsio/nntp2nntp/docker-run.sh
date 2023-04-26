@@ -13,7 +13,7 @@
 # provider, server, thread limits for all applications with one global config
 # change.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nntp2nntp \
   -e PUID=${PUID:-1024} `# for UserID` \

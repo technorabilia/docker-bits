@@ -4,7 +4,7 @@
 # every now and then and a web application on which you can explore your
 # statistics.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=your_spotify \
   -e PUID=${PUID:-1024} `# for UserID` \

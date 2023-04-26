@@ -2,7 +2,7 @@
 # allows you to flexibly collect, parse, classify, rewrite and correlate logs
 # from across your infrastructure and store or route them to log analysis tools.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=syslog-ng \
   -e PUID=${PUID:-1024} `# for UserID` \

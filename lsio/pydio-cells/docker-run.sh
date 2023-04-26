@@ -2,7 +2,7 @@
 # organizations. It is a full rewrite of the Pydio project using the Go language
 # following a micro-service architecture.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pydio-cells \
   --hostname={{ project_name }} `# Pydio Cells uses the hostname to verify local files. This setting is required and should not be changed after it has been set.` \

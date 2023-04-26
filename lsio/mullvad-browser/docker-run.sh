@@ -4,7 +4,7 @@
 # Tor Browser to use without the Tor Network. Instead, you can use it with a
 # trustworthy VPN.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mullvad-browser \
   --cap-add=NET_ADMIN \

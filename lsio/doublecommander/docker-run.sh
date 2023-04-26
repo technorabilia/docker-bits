@@ -2,7 +2,7 @@
 # open source file manager with two panels side by side. It is inspired by Total
 # Commander and features some new ideas.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=doublecommander \
   -e PUID=${PUID:-1024} `# for UserID` \

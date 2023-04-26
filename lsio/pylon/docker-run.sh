@@ -3,7 +3,7 @@
 # supercharged JavaScript/HTML5 frontend, licensed under GPL version 3. This
 # project originates from Cloud9 v2 project.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pylon \
   -e PUID=${PUID:-1024} `# for UserID` \

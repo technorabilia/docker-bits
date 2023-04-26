@@ -1,7 +1,7 @@
 # [Fail2ban](http://www.fail2ban.org/) is a daemon to ban hosts that cause
 # multiple authentication errors.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=fail2ban \
   --net=host `# Shares host networking with container.` \

@@ -2,7 +2,7 @@
 # open-source software alternative to µTorrent. qBittorrent is based on the Qt
 # toolkit and libtorrent-rasterbar library.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=qbittorrent \
   -e PUID=${PUID:-1024} `# for UserID` \

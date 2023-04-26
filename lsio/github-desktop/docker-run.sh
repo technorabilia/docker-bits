@@ -1,7 +1,7 @@
 # [Github Desktop](https://desktop.github.com/) is an open source Electron-based
 # GitHub app. It is written in TypeScript and uses React.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=github-desktop \
   --cap-add=IPC_LOCK \

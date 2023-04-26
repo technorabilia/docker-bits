@@ -2,7 +2,7 @@
 # written in Python and designed to be extremely lightweight, easily extensible
 # and fully manageable via web.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pyload-ng \
   -e PUID=${PUID:-1024} `# for UserID` \

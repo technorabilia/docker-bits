@@ -3,7 +3,7 @@
 # clean interface and feature-rich tools help you unleash your creativity and
 # enhance your productivity.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=libreoffice \
   -e PUID=${PUID:-1024} `# for UserID` \

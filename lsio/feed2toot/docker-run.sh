@@ -1,7 +1,7 @@
 # [Feed2toot](https://gitlab.com/chaica/feed2toot) automatically parses rss
 # feeds, identifies new posts and posts them on the Mastodon social network.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=feed2toot \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -1,7 +1,7 @@
 # [Fleet](https://github.com/linuxserver/fleet) provides an online web interface
 # which displays a set of maintained images from one or more owned repositories.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=fleet \
   -e PUID=${PUID:-1024} `# for UserID` \

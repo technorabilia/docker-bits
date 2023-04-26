@@ -5,7 +5,7 @@
 # user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are
 # supported.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=remmina \
   -e PUID=${PUID:-1024} `# for UserID` \

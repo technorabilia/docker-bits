@@ -2,7 +2,7 @@
 # user/programmer-friendly Python IRC bot, with many existing plugins. Successor
 # of the well-known Supybot.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=limnoria \
   -e PUID=${PUID:-1024} `# for UserID` \

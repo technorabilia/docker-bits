@@ -2,7 +2,7 @@
 # hosting service for sending out red teaming payloads or securely sharing your
 # private files over HTTP and WebDAV.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pwndrop \
   -e PUID=${PUID:-1024} `# for UserID` \

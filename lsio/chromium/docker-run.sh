@@ -2,7 +2,7 @@
 # browser project that aims to build a safer, faster, and more stable way for
 # all users to experience the web.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=chromium \
   -e PUID=${PUID:-1024} `# for UserID` \

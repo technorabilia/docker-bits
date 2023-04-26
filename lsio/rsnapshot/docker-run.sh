@@ -3,7 +3,7 @@
 # machines, and remote machines over ssh. The code makes extensive use of hard
 # links whenever possible, to greatly reduce the disk space required.'
 
-source ./.env
+. ./.env
 docker run -d \
   --name=rsnapshot \
   -e PUID=${PUID:-1024} `# for UserID` \

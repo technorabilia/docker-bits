@@ -4,7 +4,7 @@
 # reality, and computer games. **This image does not support GPU rendering out
 # of the box only accelerated workspace experience**
 
-source ./.env
+. ./.env
 docker run -d \
   --name=blender \
   -e PUID=${PUID:-1024} `# for UserID` \

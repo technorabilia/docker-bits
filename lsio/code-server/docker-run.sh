@@ -6,7 +6,7 @@
 # when you're on the go. - All intensive computation runs on your server. -
 # You're no longer running excess instances of Chrome.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=code-server \
   -e PUID=${PUID:-1024} `# for UserID` \

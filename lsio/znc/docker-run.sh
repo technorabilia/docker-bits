@@ -3,7 +3,7 @@
 # Multiple clients from different locations can connect to a single ZNC account
 # simultaneously and therefore appear under the same nickname on IRC.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=znc \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -1,7 +1,7 @@
 # [Adguardhome-sync](https://github.com/bakito/adguardhome-sync/) is a tool to
 # synchronize AdGuardHome config to replica instances.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=adguardhome-sync \
   -e PUID=${PUID:-1024} `# for UserID` \

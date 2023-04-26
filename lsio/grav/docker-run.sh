@@ -1,7 +1,7 @@
 # [Grav](https://github.com/getgrav/grav/) is a Fast, Simple, and Flexible,
 # file-based Web-platform.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=grav \
   -e PUID=${PUID:-1024} `# for UserID` \

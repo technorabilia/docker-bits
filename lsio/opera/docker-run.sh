@@ -3,7 +3,7 @@
 # distinguishes itself from other Chromium-based browsers (Chrome, Edge, etc.)
 # through its user interface and other features.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=opera \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -5,7 +5,7 @@
 # complete management of your indexers with no per app Indexer setup required
 # (we do it all).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=prowlarr \
   -e PUID=${PUID:-1024} `# for UserID` \

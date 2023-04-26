@@ -1,5 +1,5 @@
 This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.
-source ./.env
+. ./.env
 docker run -d \
   --name=jenkins-builder \
   -e PUID=${PUID:-1024} `# for UserID` \

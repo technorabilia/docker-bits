@@ -1,7 +1,7 @@
 # [digiKam](https://www.digikam.org/): Professional Photo Management with the
 # Power of Open Source
 
-source ./.env
+. ./.env
 docker run -d \
   --name=digikam \
   -e PUID=${PUID:-1024} `# for UserID` \

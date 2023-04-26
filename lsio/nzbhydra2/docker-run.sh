@@ -9,7 +9,7 @@
 # **NOTE:** The last version that supports migration is
 # `linuxserver/nzbhydra2:v2.10.2-ls49`
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nzbhydra2 \
   -e PUID=${PUID:-1024} `# for UserID` \

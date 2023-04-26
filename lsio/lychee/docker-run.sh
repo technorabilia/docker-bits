@@ -6,7 +6,7 @@
 # albums. Any albums that were made public with a password will need to be re-
 # secured.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=lychee \
   -e PUID=${PUID:-1024} `# for UserID` \

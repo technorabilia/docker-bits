@@ -2,7 +2,7 @@
 # platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much
 # more...
 
-source ./.env
+. ./.env
 docker run -d \
   --name=deluge \
   -e PUID=${PUID:-1024} `# for UserID` \

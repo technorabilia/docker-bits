@@ -7,7 +7,7 @@
 # no hidden agendas: just a team who want to build something better and work
 # together to achieve it.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=jellyfin \
   -e PUID=${PUID:-1024} `# for UserID` \

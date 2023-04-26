@@ -1,7 +1,7 @@
 # [Wikijs](https://github.com/Requarks/wiki) A modern, lightweight and powerful
 # wiki app built on NodeJS.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=wikijs \
   -e PUID=${PUID:-1024} `# for UserID` \

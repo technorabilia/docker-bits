@@ -2,7 +2,7 @@
 # FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon
 # Cloud Drive & S3, Google Drive, box.com, Mega, hubiC and many others.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=duplicati \
   -e PUID=${PUID:-1024} `# for UserID` \

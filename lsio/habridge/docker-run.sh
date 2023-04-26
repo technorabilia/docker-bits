@@ -14,7 +14,7 @@
 # software have a look at their Wiki [https://github.com/bwssytems/ha-
 # bridge/wiki](https://github.com/bwssytems/ha-bridge/wiki)
 
-source ./.env
+. ./.env
 docker run -d \
   --name=habridge \
   -e PUID=${PUID:-1024} `# for UserID` \

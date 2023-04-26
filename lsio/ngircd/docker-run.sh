@@ -5,7 +5,7 @@
 # PAM for authentication. It is written from scratch and not based on the
 # original IRCd.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=ngircd \
   -e PUID=${PUID:-1024} `# for UserID` \

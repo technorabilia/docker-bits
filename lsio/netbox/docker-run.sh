@@ -5,7 +5,7 @@
 # engineers. It is intended to function as a domain-specific source of truth for
 # network operations.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=netbox \
   -e PUID=${PUID:-1024} `# for UserID` \

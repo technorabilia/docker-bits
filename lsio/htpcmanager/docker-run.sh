@@ -1,7 +1,7 @@
 # [Htpcmanager](https://github.com/HTPC-Manager/HTPC-Manager) is a front end for
 # many htpc related applications.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=htpcmanager \
   -e PUID=${PUID:-1024} `# for UserID` \

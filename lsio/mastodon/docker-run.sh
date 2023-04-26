@@ -2,7 +2,7 @@
 # social network server based on ActivityPub where users can follow friends and
 # discover new ones..
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mastodon \
   -e PUID=${PUID:-1024} `# for UserID` \

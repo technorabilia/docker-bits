@@ -4,7 +4,7 @@
 # organizational resources). It supports virtualized, parallel, and GPU-based
 # applications.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=boinc \
   -e PUID=${PUID:-1024} `# for UserID` \

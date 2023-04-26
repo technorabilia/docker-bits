@@ -2,7 +2,7 @@
 # accounts on multiple chat networks simultaneously. This means that you can be
 # chatting with friends on XMPP and sitting in an IRC channel at the same time.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pidgin \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -3,7 +3,7 @@
 # experimental Web-based player, but it generally leaves actual sound-
 # reproduction to specialized tools.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=beets \
   -e PUID=${PUID:-1024} `# for UserID` \

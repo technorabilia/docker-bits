@@ -4,7 +4,7 @@
 # your libraries as well as automatically build collections based on various
 # methods all detailed in the wiki.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=plex-meta-manager \
   -e PUID=${PUID:-1024} `# for UserID` \

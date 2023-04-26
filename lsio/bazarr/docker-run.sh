@@ -3,7 +3,7 @@
 # define your preferences by TV show or movie and Bazarr takes care of
 # everything for you.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=bazarr \
   -e PUID=${PUID:-1024} `# for UserID` \

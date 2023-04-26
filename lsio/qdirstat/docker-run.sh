@@ -2,7 +2,7 @@
 # statistics: KDirStat without any KDE -- from the author of the original
 # KDirStat.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=qdirstat \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -2,7 +2,7 @@
 # to-use home server for your comics and ebooks. Use it to access your files
 # from anywhere, with a tablet, an e-reader, a phone or a computer.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=ubooquity \
   -e PUID=${PUID:-1024} `# for UserID` \

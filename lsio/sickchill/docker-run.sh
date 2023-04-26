@@ -2,7 +2,7 @@
 # Library Manager for TV Shows. It watches for new episodes of your favorite
 # shows, and when they are posted it does its magic.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=sickchill \
   -e PUID=${PUID:-1024} `# for UserID` \

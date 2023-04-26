@@ -1,7 +1,7 @@
 # [Lollypop](https://wiki.gnome.org/Apps/Lollypop) is a lightweight modern music
 # player designed to work excellently on the GNOME desktop environment.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=lollypop \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -1,7 +1,7 @@
 # [Mariadb](https://mariadb.org/) is one of the most popular database servers.
 # Made by the original developers of MySQL.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=mariadb \
   -e PUID=${PUID:-1024} `# for UserID` \

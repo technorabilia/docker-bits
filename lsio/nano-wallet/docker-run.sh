@@ -6,7 +6,7 @@
 # located [here](https://github.com/linuxserver/nano-wallet). You will need to
 # pass a valid RPC host when accessing this container.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nano-wallet \
   -p 80:80 `# Webserver port` \

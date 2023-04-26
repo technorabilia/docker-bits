@@ -4,7 +4,7 @@
 # Corporation. Firefox uses the Gecko layout engine to render web pages, which
 # implements current and anticipated web standards.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=firefox \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -3,7 +3,7 @@
 # free, and doesn't require reactivation or forum posts to maintain its
 # existence.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=duckdns \
   -e PUID=${PUID:-1024} `# optional` `# for UserID` \

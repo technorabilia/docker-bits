@@ -4,7 +4,7 @@
 # a top priority. Straightforward design and bulk actions mean getting things
 # done faster.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=plex \
   --net=host `# Use Host Networking` \

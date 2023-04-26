@@ -3,7 +3,7 @@
 # container available [here.](https://hub.docker.com/r/linuxserver/quassel-
 # core/)
 
-source ./.env
+. ./.env
 docker run -d \
   --name=quassel-web \
   -e PUID=${PUID:-1024} `# for UserID` \

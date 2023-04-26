@@ -2,7 +2,7 @@
 # sandbox game and a game engine, inspired by InfiniMiner, Minecraft, and the
 # like.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=minetest \
   -e PUID=${PUID:-1024} `# for UserID` \

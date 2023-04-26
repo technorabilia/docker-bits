@@ -2,7 +2,7 @@
 # emulation portable to nearly any device for many retro consoles. A mix of
 # emulators is used between Libretro and EmulatorJS.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=emulatorjs \
   -e PUID=${PUID:-1024} `# for UserID` \

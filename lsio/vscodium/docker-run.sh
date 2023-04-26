@@ -1,7 +1,7 @@
 # [VSCodium](https://vscodium.com/) is a community-driven, freely-licensed
 # binary distribution of Microsoft’s editor VS Code.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=vscodium \
   --cap-add=IPC_LOCK \

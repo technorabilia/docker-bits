@@ -4,7 +4,7 @@
 # another port and then let the script kiddies get stuck in this tarpit instead
 # of bothering a real server.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=endlessh \
   -e PUID=${PUID:-1024} `# for UserID` \

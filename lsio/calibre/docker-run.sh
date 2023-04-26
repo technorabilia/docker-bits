@@ -4,7 +4,7 @@
 # It's also completely free and open source and great for both casual users and
 # computer experts.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=calibre \
   -e PUID=${PUID:-1024} `# for UserID` \

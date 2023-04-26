@@ -1,7 +1,7 @@
 # [Changedetection.io](https://github.com/dgtlmoon/changedetection.io) provides
 # free, open-source web page monitoring, notification and change detection.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=changedetection.io \
   -e PUID=${PUID:-1024} `# for UserID` \

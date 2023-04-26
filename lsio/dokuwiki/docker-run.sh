@@ -6,7 +6,7 @@
 # enterprise context and the large number of plugins contributed by its vibrant
 # community allow for a broad range of use cases beyond a traditional wiki.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=dokuwiki \
   -e PUID=${PUID:-1024} `# for UserID` \

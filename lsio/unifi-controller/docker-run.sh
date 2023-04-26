@@ -2,7 +2,7 @@
 # powerful, enterprise wireless software engine ideal for high-density client
 # deployments requiring low latency and high uptime performance.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=unifi-controller \
   -e PUID=${PUID:-1024} `# for UserID` \

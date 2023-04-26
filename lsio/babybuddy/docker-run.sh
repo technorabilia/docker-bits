@@ -2,7 +2,7 @@
 # Helps caregivers track sleep, feedings, diaper changes, tummy time and more to
 # learn about and predict baby's needs without (as much) guess work.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=babybuddy \
   -e PUID=${PUID:-1024} `# for UserID` \

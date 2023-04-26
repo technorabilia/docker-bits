@@ -4,7 +4,7 @@
 # edit metadata and your calibre library through the app itself. This software
 # is a fork of library and licensed under the GPL v3 License.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=calibre-web \
   -e PUID=${PUID:-1024} `# for UserID` \

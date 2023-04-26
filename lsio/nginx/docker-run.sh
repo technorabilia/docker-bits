@@ -1,7 +1,7 @@
 # [Nginx](https://nginx.org/) is a simple webserver with php support. The config
 # files reside in `/config` for easy user customization.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nginx \
   -e PUID=${PUID:-1024} `# for UserID` \

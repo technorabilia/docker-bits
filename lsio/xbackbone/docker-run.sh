@@ -4,7 +4,7 @@
 # formatted text, and file downloading and uploading. Also have a web UI with
 # multi user management, past uploads history and search support.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=xbackbone \
   -e PUID=${PUID:-1024} `# for UserID` \

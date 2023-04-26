@@ -1,7 +1,7 @@
 # [Raneto](http://raneto.com/) - is an open source Knowledgebase platform that
 # uses static Markdown files to power your Knowledgebase.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=raneto \
   -e PUID=${PUID:-1024} `# for UserID` \

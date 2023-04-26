@@ -4,7 +4,7 @@
 # tablet or even on the phone. You can sign-in via multiple auth providers like
 # Facebook, Twitter, GitHub and many more on the homepage.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=hedgedoc \
   -e PUID=${PUID:-1024} `# for UserID` \

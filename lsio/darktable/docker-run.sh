@@ -4,7 +4,7 @@
 # them through a zoomable lighttable and enables you to develop raw images and
 # enhance them.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=darktable \
   -e PUID=${PUID:-1024} `# for UserID` \

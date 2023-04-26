@@ -3,7 +3,7 @@
 # sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much
 # more. Notifications/Alerts can be sent to any mobile device.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=domoticz \
   -e PUID=${PUID:-1024} `# for UserID` \

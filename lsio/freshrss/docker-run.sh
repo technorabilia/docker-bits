@@ -1,7 +1,7 @@
 # [Freshrss](https://freshrss.org/) is a free, self-hostable aggregator for rss
 # feeds.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=freshrss \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -4,7 +4,7 @@
 # original Booksonic server and based on Airsonic. * Booksonic App - An DSub
 # based Android app for connection to Booksonic-Air servers.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=booksonic-air \
   -e PUID=${PUID:-1024} `# for UserID` \

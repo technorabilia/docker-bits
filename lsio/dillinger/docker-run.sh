@@ -1,7 +1,7 @@
 # [Dillinger](https://github.com/joemccann/dillinger) is a cloud-enabled,
 # mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=dillinger \
   -e PUID=${PUID:-1024} `# for UserID` \

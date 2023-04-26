@@ -2,7 +2,7 @@
 # open source tool to create, design, and edit database files compatible with
 # SQLite.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=sqlitebrowser \
   -e PUID=${PUID:-1024} `# for UserID` \

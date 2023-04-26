@@ -2,7 +2,7 @@
 # in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via
 # RDP.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=rdesktop \
   -e PUID=${PUID:-1024} `# for UserID` \

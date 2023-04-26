@@ -6,7 +6,7 @@
 # Nextcloud you also access, sync and share your existing data on that FTP drive
 # at the office, a Dropbox or a NAS you have at home.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nextcloud \
   -e PUID=${PUID:-1024} `# for UserID` \

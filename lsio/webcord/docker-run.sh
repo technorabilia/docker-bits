@@ -5,7 +5,7 @@
 # it is possible (or hide the changes that might violate it from Discord's
 # eyes).
 
-source ./.env
+. ./.env
 docker run -d \
   --name=webcord \
   -e PUID=${PUID:-1024} `# for UserID` \

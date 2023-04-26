@@ -2,7 +2,7 @@
 # support for AirPlay devices, Apple Remote (and compatibles), Chromecast, MPD
 # and internet radio.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=daapd \
   --net=host `# Shares host networking with container.` \

@@ -5,7 +5,7 @@
 # supports completion notifications as well as downstream API calls, to further
 # the workflow.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=davos \
   -e PUID=${PUID:-1024} `# for UserID` \

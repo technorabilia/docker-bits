@@ -2,7 +2,7 @@
 # personal media libraries and streams them to smart TVs, streaming boxes and
 # mobile devices. This container is packaged as a standalone emby Media Server.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=emby \
   -e PUID=${PUID:-1024} `# for UserID` \

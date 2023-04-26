@@ -4,7 +4,7 @@
 # wimpunk. It has the capability to update more than just dyndns and it can
 # fetch your WAN-ipaddress in a few different ways.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=ddclient \
   -e PUID=${PUID:-1024} `# for UserID` \

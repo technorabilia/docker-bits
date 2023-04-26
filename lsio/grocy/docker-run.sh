@@ -4,7 +4,7 @@
 # and what batteries need charging with this proudly Open Source tool For more
 # information on grocy visit their website and check it out: https://grocy.info
 
-source ./.env
+. ./.env
 docker run -d \
   --name=grocy \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -17,7 +17,7 @@
 # very easy to have an up to date OPDS server. * It was fun to code. If you want
 # to use the OPDS feed don't forget to specify feed.php at the end of your URL.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=cops \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -4,7 +4,7 @@
 # green and decentralized network, this makes Nano ideal for everyday
 # transactions.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=nano \
   -e PUID=${PUID:-1024} `# for UserID` \

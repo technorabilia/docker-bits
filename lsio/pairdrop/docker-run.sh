@@ -3,7 +3,7 @@
 # text via peer to peer connection to devices in the same local network/Wi-Fi or
 # to paired devices.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=pairdrop \
   -e PUID=${PUID:-1024} `# for UserID` \

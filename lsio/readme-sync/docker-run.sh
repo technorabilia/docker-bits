@@ -1,5 +1,5 @@
 This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.
-source ./.env
+. ./.env
 docker run -d \
   --name=readme-sync \
   -e PUID=${PUID:-1024} `# for UserID` \

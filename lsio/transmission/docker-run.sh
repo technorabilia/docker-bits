@@ -4,7 +4,7 @@
 # NAT-PMP port forwarding, webseed support, watch directories, tracker editing,
 # global and per-torrent speed limits, and more.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=transmission \
   -e PUID=${PUID:-1024} `# for UserID` \

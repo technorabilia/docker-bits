@@ -3,7 +3,7 @@
 # community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi
 # or a local server.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=homeassistant \
   --net=host `# Shares host networking with container. Required for some devices to be discovered by Home Assistant.` \

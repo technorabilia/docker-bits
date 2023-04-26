@@ -1,7 +1,7 @@
 # [Requestrr](https://github.com/darkalfx/requestrr) is a chatbot used to
 # simplify using services like Sonarr/Radarr/Ombi via the use of chat.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=requestrr \
   -e PUID=${PUID:-1024} `# for UserID` \

@@ -3,7 +3,7 @@
 # combination of Goodreads Librarything and optionally GoogleBooks as sources
 # for author info and book info. This container is based on the DobyTang fork.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=lazylibrarian \
   -e PUID=${PUID:-1024} `# for UserID` \

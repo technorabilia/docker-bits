@@ -3,7 +3,7 @@
 # professional office software, WPS Office allows you to edit files in Writer,
 # Presentation, Spreadsheet, and PDF to improve your work efficiency.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=wps-office \
   -e PUID=${PUID:-1024} `# for UserID` \

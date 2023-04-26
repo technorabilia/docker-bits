@@ -9,7 +9,7 @@
 # development, but already it might be regarded as the most secure, easiest to
 # use, and simplest VPN solution in the industry.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=wireguard \
   --cap-add=NET_ADMIN \

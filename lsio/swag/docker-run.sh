@@ -4,7 +4,7 @@
 # certificate generation and renewal processes (Let's Encrypt and ZeroSSL). It
 # also contains fail2ban for intrusion prevention.
 
-source ./.env
+. ./.env
 docker run -d \
   --name=swag \
   --cap-add=NET_ADMIN \
