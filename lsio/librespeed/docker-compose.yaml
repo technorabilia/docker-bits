@@ -31,6 +31,8 @@ services:
       - DB_PASSWORD=DB_PASSWORD # optional
       # Database port. Required for mysql.
       - DB_PORT=DB_PORT # optional
+      # Access token from ipinfo.io. Required for detailed IP information.
+      - IPINFO_APIKEY=ACCESS_TOKEN # optional
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/librespeed/config:/config

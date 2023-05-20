@@ -16,6 +16,7 @@ docker run -d \
   -e DB_USERNAME=DB_USERNAME `# optional` `# Database username. Required for mysql and pgsql.` \
   -e DB_PASSWORD=DB_PASSWORD `# optional` `# Database password. Required for mysql and pgsql.` \
   -e DB_PORT=DB_PORT `# optional` `# Database port. Required for mysql.` \
+  -e IPINFO_APIKEY=ACCESS_TOKEN `# optional` `# Access token from ipinfo.io. Required for detailed IP information.` \
   -p 80:80 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/librespeed/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
