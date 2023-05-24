@@ -17,6 +17,7 @@ services:
     container_name: wireguard
     cap_add:
       - NET_ADMIN
+      - SYS_MODULE # optional
     environment:
       # for UserID
       - PUID=${PUID:-1024}
@@ -43,6 +44,8 @@ services:
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/wireguard/config:/config
+      # Host kernel modules for situations where they're not already loaded.
+      - /lib/modules:/lib/modules # optional
     ports:
       # wireguard port
       - 51820:51820/udp

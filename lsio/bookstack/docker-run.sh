@@ -12,7 +12,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e APP_URL= `# for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
+  -e APP_URL=<yourbaseurl> `# for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
   -e DB_HOST=<yourdbhost> `# for specifying the database host` \
   -e DB_PORT=<yourdbport> `# for specifying the database port if not default 3306` \
   -e DB_USER=<yourdbuser> `# for specifying the database user` \
