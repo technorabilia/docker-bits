@@ -32,11 +32,12 @@ services:
       - /path/to/config:/config
       - /path/to/pictures:/pictures
     environment:
+      - DB_CONNECTION=mysql
       - DB_HOST=mariadb
+      - DB_PORT=3306
       - DB_USERNAME=lychee
       - DB_PASSWORD=dbpassword
       - DB_DATABASE=lychee
-      - DB_PORT=3306
       - PGID=1000
       - PUID=1000
       - TZ=Europe/London

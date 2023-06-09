@@ -12,6 +12,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e DB_CONNECTION=mysql `# for specifying the database type` \
   -e DB_HOST=mariadb `# for specifying the database host` \
   -e DB_PORT=3306 `# for specifying the database port` \
   -e DB_USERNAME=lychee `# for specifying the database user` \
