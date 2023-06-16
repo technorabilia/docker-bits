@@ -23,6 +23,8 @@ services:
       - DOCKER_HUB_USERNAME=USER # optional
       # Optionally specify a DockerHub password to pull private images.
       - DOCKER_HUB_PASSWORD=PASS # optional
+      # Optionally specify the mtu options passed to dockerd.
+      - DOCKER_MTU=1500 # optional
     volumes:
       # Docker and installation storage.
       - ${BASEDIR:-/volume1/docker}/kasm/opt:/opt

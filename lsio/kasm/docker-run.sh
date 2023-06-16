@@ -16,6 +16,7 @@ docker run -d \
   -e KASM_PORT=443 `# Specify the port you bind to the outside for Kasm Workspaces.` \
   -e DOCKER_HUB_USERNAME=USER `# optional` `# Optionally specify a DockerHub Username to pull private images.` \
   -e DOCKER_HUB_PASSWORD=PASS `# optional` `# Optionally specify a DockerHub password to pull private images.` \
+  -e DOCKER_MTU=1500 `# optional` `# Optionally specify the mtu options passed to dockerd.` \
   -p 3000:3000 `# Kasm Installation wizard. (https)` \
   -p 443:443 `# Kasm Workspaces interface. (https)` \
   -v ${BASEDIR:-/volume1/docker}/kasm/opt:/opt `# Docker and installation storage.` \
