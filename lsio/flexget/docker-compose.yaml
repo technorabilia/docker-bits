@@ -16,6 +16,10 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # Set the FlexGet logging level.
       - FG_LOG_LEVEL=info
+      # Set the FlexGet log file location.
+      - FG_LOG_FILE=/config/flexget.log
+      # Set the FlexGet config file location.
+      - FG_CONFIG_FILE=/config/.flexget/config.yml
       # Set the FlexGet webui password. Pay attention to Bash/YAML reserved characters.
       - FG_WEBUI_PASSWORD=info # optional
     volumes:
