@@ -1,0 +1,47 @@
+# [SteamOS](https://www.steamdeck.com/) is an Arch based Linux distribution made
+# by Valve Software. This container is a vanilla Arch install with Steam
+# repositories added for software support. **This container will only work with
+# modern AMD/Intel GPUs on a real Linux Host**
+
+---
+version: "2.1"
+services:
+  steamos:
+    image: ghcr.io/linuxserver/steamos
+    container_name: steamos
+    # Specify the hostname of the host, this is useful for keeping a persistent hostname between upgrades and identifying the server in the remote play Steam Client.
+    hostname: hostname # optional
+    cap_add:
+      - NET_ADMIN
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify the render device (GPU) for the contianer to use.
+      - DRINODE=/dev/dri/renderD128
+      # Specify the IP of the host, needed for LAN Remote Play.
+      - HOST_IP=192.168.100.10 # optional
+    volumes:
+      # Users home directory in the container, stores all files and games.
+      - ${BASEDIR:-/volume1/docker}/steamos/config:/config
+      # Optional for gamepad support.
+      - /dev/input:/dev/input # optional
+      # Optional for gamepad support.
+      - /run/udev/data:/run/udev/data # optional
+    ports:
+      # SteamOS desktop gui.
+      - 3000:3000
+      # HTTPS SteamOS desktop gui.
+      - 3001:3001
+      # Steam Remote Play Ports (UDP).
+      - 27031-27036:27031-27036/udp # optional
+      # Steam Remote Play Ports (TCP).
+      - 27031-27036:27031-27036 # optional
+    devices:
+      # Video card passthrough to Steam.
+      - /dev/dri:/dev/dri
+    shm_size: "1gb"
+    restart: unless-stopped
