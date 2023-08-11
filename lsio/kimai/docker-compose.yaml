@@ -1,0 +1,37 @@
+# [Kimai](https://kimai.org/) is a professional grade time-tracking application,
+# free and open-source. It handles use-cases of freelancers as well as companies
+# with dozens or hundreds of users. Kimai was build to track your project times
+# and ships with many advanced features, including but not limited to: JSON API,
+# invoicing, data exports, multi-timer and punch-in punch-out mode, tagging,
+# multi-user - multi-timezones - multi-language ([over 30 translations
+# existing](https://hosted.weblate.org/projects/kimai/)!), authentication via
+# SAML/LDAP/Database, two-factor authentication (2FA) with TOTP, customizable
+# role and team permissions, responsive design, user/customer/project specific
+# rates, advanced search & filtering, money and time budgets, advanced
+# reporting, support for [plugins](https://www.kimai.org/store/) and so much
+# more.
+
+---
+version: "2.1"
+services:
+  kimai:
+    image: ghcr.io/linuxserver/kimai
+    container_name: kimai
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Configure your database connection
+      - DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/kimai/config:/config
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped
