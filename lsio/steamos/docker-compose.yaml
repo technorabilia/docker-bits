@@ -24,12 +24,16 @@ services:
       - DRINODE=/dev/dri/renderD128
       # Specify the IP of the host, needed for LAN Remote Play.
       - HOST_IP=192.168.100.10 # optional
+      # KDE to boot into desktop mode, BIGPICTURE to boot into gamescope.
+      - STARTUP=KDE # optional
+      # When booting into BIGPICTURE mode the screen resolution will be bound to this value.
+      - RESOLUTION=1920x1080 # optional
     volumes:
       # Users home directory in the container, stores all files and games.
       - ${BASEDIR:-/volume1/docker}/steamos/config:/config
-      # Optional for gamepad support.
+      # Optional for gamepad support. *Only working for Steam Remote Play
       - /dev/input:/dev/input # optional
-      # Optional for gamepad support.
+      # Optional for gamepad support. *Only working for Steam Remote Play
       - /run/udev/data:/run/udev/data # optional
     ports:
       # SteamOS desktop gui.
@@ -40,6 +44,12 @@ services:
       - 27031-27036:27031-27036/udp # optional
       # Steam Remote Play Ports (TCP).
       - 27031-27036:27031-27036 # optional
+      # Sunshine Ports (TCP).
+      - 47984-47990:47984-47990:47984-47990:47984-47990/tcp # optional
+      # Sunshine Ports (TCP).
+      - 48010:48010:48010:48010 # optional
+      # Sunshine Ports (UDP).
+      - 47998-48000:47998-48000:47998-48000:47998-48000/udp # optional
     devices:
       # Video card passthrough to Steam.
       - /dev/dri:/dev/dri
