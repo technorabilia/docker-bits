@@ -45,11 +45,11 @@ services:
       # Steam Remote Play Ports (TCP).
       - 27031-27036:27031-27036 # optional
       # Sunshine Ports (TCP).
-      - 47984-47990:47984-47990:47984-47990:47984-47990/tcp # optional
+      - 47984-47990:47984-47990 # optional
       # Sunshine Ports (TCP).
       - 48010:48010:48010:48010 # optional
       # Sunshine Ports (UDP).
-      - 47998-48000:47998-48000:47998-48000:47998-48000/udp # optional
+      - 47998-48000:47998-48000/udp # optional
     devices:
       # Video card passthrough to Steam.
       - /dev/dri:/dev/dri

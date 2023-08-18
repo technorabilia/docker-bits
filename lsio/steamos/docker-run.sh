@@ -19,9 +19,9 @@ docker run -d \
   -p 3001:3001 `# HTTPS SteamOS desktop gui.` \
   -p 27031-27036:27031-27036/udp `# optional` `# Steam Remote Play Ports (UDP).` \
   -p 27031-27036:27031-27036 `# optional` `# Steam Remote Play Ports (TCP).` \
-  -p 47984-47990:47984-47990:47984-47990:47984-47990/tcp `# optional` `# Sunshine Ports (TCP).` \
+  -p 47984-47990:47984-47990 `# optional` `# Sunshine Ports (TCP).` \
   -p 48010:48010:48010:48010 `# optional` `# Sunshine Ports (TCP).` \
-  -p 47998-48000:47998-48000:47998-48000:47998-48000/udp `# optional` `# Sunshine Ports (UDP).` \
+  -p 47998-48000:47998-48000/udp `# optional` `# Sunshine Ports (UDP).` \
   -v ${BASEDIR:-/volume1/docker}/steamos/config:/config `# Users home directory in the container, stores all files and games.` \
   -v /dev/input:/dev/input `# optional` `# Optional for gamepad support. *Only working for Steam Remote Play` \
   -v /run/udev/data:/run/udev/data `# optional` `# Optional for gamepad support. *Only working for Steam Remote Play` \
