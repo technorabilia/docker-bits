@@ -24,8 +24,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Configure your database connection
-      - DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name
+      # Configure your database connection, see Application Setup instructions.
+      - DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/kimai/config:/config
