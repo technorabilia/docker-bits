@@ -1,0 +1,54 @@
+# The [Unifi-network-application](https://ui.com/) software is a powerful,
+# enterprise wireless software engine ideal for high-density client deployments
+# requiring low latency and high uptime performance.
+
+---
+version: "2.1"
+services:
+  unifi-network-application:
+    image: ghcr.io/linuxserver/unifi-network-application
+    container_name: unifi-network-application
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Mongodb Username. Only evaluated on first run.
+      - MONGO_USER=unifi
+      # Mongodb Password. Only evaluated on first run.
+      - MONGO_PASS=
+      # Mongodb Hostname. Only evaluated on first run.
+      - MONGO_HOST=unifi-db
+      # Mongodb Port. Only evaluated on first run.
+      - MONGO_PORT=27017
+      # Mongodb Database Name (stats DB is automatically suffixed with `_stat`). Only evaluated on first run.
+      - MONGO_DBNAME=unifi
+      # Optionally change the Java memory limit (in Megabytes). Set to `default` to reset to default
+      - MEM_LIMIT=1024 # optional
+      # Optionally change the Java initial/minimum memory (in Megabytes). Set to `default` to reset to default
+      - MEM_STARTUP=1024 # optional
+    volumes:
+      # All Unifi data stored here
+      - ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config
+    ports:
+      # Unifi web admin port
+      - 8443:8443
+      # Unifi STUN port
+      - 3478:3478/udp
+      # Required for AP discovery
+      - 10001:10001/udp
+      # Required for device communication
+      - 8080:8080
+      # Required for `Make controller discoverable on L2 network` option
+      - 1900:1900/udp # optional
+      # Unifi guest portal HTTPS redirect port
+      - 8843:8843 # optional
+      # Unifi guest portal HTTP redirect port
+      - 8880:8880 # optional
+      # For mobile throughput test
+      - 6789:6789 # optional
+      # Remote syslog port
+      - 5514:5514/udp # optional
+    restart: unless-stopped
