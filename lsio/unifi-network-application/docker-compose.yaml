@@ -15,9 +15,9 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Mongodb Username. Only evaluated on first run.
+      # Mongodb Username. Only evaluated on first run. **Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding)**.
       - MONGO_USER=unifi
-      # Mongodb Password. Only evaluated on first run.
+      # Mongodb Password. Only evaluated on first run. **Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding)**.
       - MONGO_PASS=
       # Mongodb Hostname. Only evaluated on first run.
       - MONGO_HOST=unifi-db
