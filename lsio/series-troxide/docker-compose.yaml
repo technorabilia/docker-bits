@@ -1,0 +1,26 @@
+# [Series Troxide](https://github.com/MaarifaMaarifa/series-troxide) a Simple
+# and Modern Series Tracker
+
+---
+version: "2.1"
+services:
+  series-troxide:
+    image: ghcr.io/linuxserver/series-troxide
+    container_name: series-troxide
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/series-troxide/config:/config
+    ports:
+      # Series Troxide desktop gui.
+      - 3000:3000
+      # HTTPS Series Troxide desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
