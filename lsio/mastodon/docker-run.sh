@@ -41,6 +41,7 @@ docker run -d \
   -e SIDEKIQ_DEFAULT=false `# optional` `# Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue.` \
   -e SIDEKIQ_THREADS=5 `# optional` `# The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
   -e DB_POOL=5 `# optional` `# The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
+  -e NO_CHOWN= `# optional` `# Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*.` \
   -p 80:80 `# Port for web frontend` \
   -p 443:443 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/mastodon/config:/config `# Contains all relevant configuration files.` \

@@ -81,6 +81,8 @@ services:
       - SIDEKIQ_THREADS=5 # optional
       # The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).
       - DB_POOL=5 # optional
+      # Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*.
+      - NO_CHOWN= # optional
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/mastodon/config:/config
