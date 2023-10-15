@@ -16,7 +16,7 @@ services:
       - PGID=${PGID:-100} # optional
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam} # optional
-      # multiple subdomains allowed, comma separated, no spaces
+      # multiple subdomains allowed, comma separated, no spaces, if your domain is user.duckdns.org you put user, not a sub-subdomain
       - SUBDOMAINS=subdomain1,subdomain2
       # DuckDNS token
       - TOKEN=token

@@ -9,7 +9,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# optional` `# for UserID` \
   -e PGID=${PGID:-100} `# optional` `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# optional` `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e SUBDOMAINS=subdomain1,subdomain2 `# multiple subdomains allowed, comma separated, no spaces` \
+  -e SUBDOMAINS=subdomain1,subdomain2 `# multiple subdomains allowed, comma separated, no spaces, if your domain is user.duckdns.org you put user, not a sub-subdomain` \
   -e TOKEN=token `# DuckDNS token` \
   -e LOG_FILE=false `# optional` `# Set to `true` to log to file (also need to map /config).` \
   -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# optional` `# Used in conjunction with logging to file.` \
