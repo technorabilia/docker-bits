@@ -15,6 +15,8 @@ docker run -d \
   -e MONGO_DBNAME=unifi `# Mongodb Database Name (stats DB is automatically suffixed with `_stat`). Only evaluated on first run.` \
   -e MEM_LIMIT=1024 `# optional` `# Optionally change the Java memory limit (in Megabytes). Set to `default` to reset to default` \
   -e MEM_STARTUP=1024 `# optional` `# Optionally change the Java initial/minimum memory (in Megabytes). Set to `default` to reset to default` \
+  -e MONGO_TLS= `# optional` `# Mongodb enable TLS. Only evaluated on first run.` \
+  -e MONGO_AUTHSOURCE= `# optional` `# Mongodb authSource. For Atlas set to `admin`.Defaults to `MONGO_DBNAME`.Only evaluated on first run.` \
   -p 8443:8443 `# Unifi web admin port` \
   -p 3478:3478/udp `# Unifi STUN port` \
   -p 10001:10001/udp `# Required for AP discovery` \

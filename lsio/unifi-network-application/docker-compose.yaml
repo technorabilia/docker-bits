@@ -29,6 +29,10 @@ services:
       - MEM_LIMIT=1024 # optional
       # Optionally change the Java initial/minimum memory (in Megabytes). Set to `default` to reset to default
       - MEM_STARTUP=1024 # optional
+      # Mongodb enable TLS. Only evaluated on first run.
+      - MONGO_TLS= # optional
+      # Mongodb authSource. For Atlas set to `admin`.Defaults to `MONGO_DBNAME`.Only evaluated on first run.
+      - MONGO_AUTHSOURCE= # optional
     volumes:
       # All Unifi data stored here
       - ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config
