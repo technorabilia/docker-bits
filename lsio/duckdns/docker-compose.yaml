@@ -9,6 +9,7 @@ services:
   duckdns:
     image: ghcr.io/linuxserver/duckdns
     container_name: duckdns
+    network_mode: host # optional
     environment:
       # for UserID
       - PUID=${PUID:-1024} # optional
@@ -20,6 +21,8 @@ services:
       - SUBDOMAINS=subdomain1,subdomain2
       # DuckDNS token
       - TOKEN=token
+      # Set to `ipv6` or `ipv4` to update  **only** your public IPv4/6 address. Set to `both` to update IPv6 and IPv4 address. This variable makes use of a [third-party service](#notice-regarding-automatic-detection). Omitting this variable uses DuckDNS for detection and only supports IPv4. `both` and `ipv6` modes needs [host networking](#networking-net).
+      - UPDATE_IP=ipv4 # optional
       # Set to `true` to log to file (also need to map /config).
       - LOG_FILE=false # optional
     volumes:
