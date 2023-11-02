@@ -21,6 +21,7 @@ docker run -d \
   -e USER_PASSWORD=password `# optional` `# Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access.` \
   -e USER_PASSWORD_FILE=/path/to/file `# optional` `# Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets).` \
   -e USER_NAME=linuxserver.io `# optional` `# Optionally specify a user name (Default:`linuxserver.io`)` \
+  -e LOG_STDOUT= `# optional` `# Set to `true` to log to stdout instead of file.` \
   -p 2222:2222 `# ssh port` \
   -v ${BASEDIR:-/volume1/docker}/openssh-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
