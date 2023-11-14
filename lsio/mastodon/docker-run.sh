@@ -18,9 +18,9 @@ docker run -d \
   -e DB_PORT=5432 `# Portgres port` \
   -e ES_ENABLED=false `# Enable or disable Elasticsearch (requires a separate ES instance)` \
   -e SECRET_KEY_BASE= `# Browser session secret. Changing it will break all active browser sessions.` \
-  -e OTP_SECRET= `# MFA secret. Changing it will break two-factor authentication.` \
-  -e VAPID_PRIVATE_KEY= `# Push notification private key. Changing it will break push notifications.` \
-  -e VAPID_PUBLIC_KEY= `# Push notification public key. Changing it will break push notifications.` \
+  -e OTP_SECRET= `# MFA secret. Changing it after initial setup will break two-factor authentication.` \
+  -e VAPID_PRIVATE_KEY= `# Push notification private key. Changing it after initial setup will break push notifications.` \
+  -e VAPID_PUBLIC_KEY= `# Push notification public key. Changing it after initial setup will break push notifications.` \
   -e SMTP_SERVER=mail.example.com `# SMTP server for email notifications` \
   -e SMTP_PORT=25 `# SMTP server port` \
   -e SMTP_LOGIN= `# SMTP username` \
