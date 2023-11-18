@@ -17,15 +17,19 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
       # specify the URL or IP address of your Quassel Core instance
-      - QUASSEL_CORE=192.168.1.10
+      - QUASSEL_CORE=192.168.1.10 # optional
       # specify the port of your Quassel Core instance
-      - QUASSEL_PORT=4242
+      - QUASSEL_PORT=4242 # optional
+      # Set to `true` to have Quassel web serve over https on port 64443 instead of http on port 64080.
+      - QUASSEL_HTTPS= # optional
       # Specify a url-base in reverse proxy setups ie. `/quassel`
       - URL_BASE=/quassel # optional
     volumes:
       # this will store config on the docker host
       - ${BASEDIR:-/volume1/docker}/quassel-web/config:/config
     ports:
+      # Quassel-web http webui
+      - 64080:64080 # optional
       # Quassel-web https webui
-      - 64443:64443
+      - 64443:64443 # optional
     restart: unless-stopped
