@@ -1,0 +1,28 @@
+# [Bambu Studio](https://bambulab.com/en/download/studio) Bambu Studio is an
+# open-source, cutting-edge, feature-rich slicing software. It contains project-
+# based workflows, systematically optimized slicing algorithms, and an easy-to-
+# use graphical interface, bringing users an incredibly smooth printing
+# experience.
+
+---
+version: "2.1"
+services:
+  bambustudio:
+    image: ghcr.io/linuxserver/bambustudio
+    container_name: bambustudio
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/bambustudio/config:/config
+    ports:
+      # Bambu Studio desktop gui.
+      - 3000:3000
+      # Bambu Studio desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

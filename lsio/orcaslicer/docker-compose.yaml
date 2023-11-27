@@ -1,0 +1,28 @@
+# [Orca Slicer](https://github.com/SoftFever/OrcaSlicer) is an open source
+# slicer for FDM printers. OrcaSlicer is fork of Bambu Studio, it was previously
+# known as BambuStudio-SoftFever, Bambu Studio is forked from PrusaSlicer by
+# Prusa Research, which is from Slic3r by Alessandro Ranellucci and the RepRap
+# community
+
+---
+version: "2.1"
+services:
+  orcaslicer:
+    image: ghcr.io/linuxserver/orcaslicer
+    container_name: orcaslicer
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/orcaslicer/config:/config
+    ports:
+      # Orca Slicer desktop gui.
+      - 3000:3000
+      # Orca Slicer desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

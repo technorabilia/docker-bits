@@ -1,0 +1,26 @@
+# [UltiMaker Cura](https://ultimaker.com/software/ultimaker-cura/) is free,
+# easy-to-use 3D printing software trusted by millions of users. Fine-tune your
+# 3D model with 400+ settings for the best slicing and printing results.
+
+---
+version: "2.1"
+services:
+  cura:
+    image: ghcr.io/linuxserver/cura
+    container_name: cura
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/cura/config:/config
+    ports:
+      # Cura desktop gui.
+      - 3000:3000
+      # Cura desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped
