@@ -15,7 +15,7 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # for changing the port of the webui, see below for explanation
+      # for changing the port of the web UI, see below for explanation
       - WEBUI_PORT=8080
     volumes:
       # Contains all relevant configuration files.

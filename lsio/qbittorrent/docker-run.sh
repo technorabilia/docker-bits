@@ -8,7 +8,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e WEBUI_PORT=8080 `# for changing the port of the webui, see below for explanation` \
+  -e WEBUI_PORT=8080 `# for changing the port of the web UI, see below for explanation` \
   -p 8080:8080 `# WebUI` \
   -p 6881:6881 `# tcp connection port` \
   -p 6881:6881/udp `# udp connection port` \
