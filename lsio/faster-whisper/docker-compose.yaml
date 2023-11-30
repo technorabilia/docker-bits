@@ -1,0 +1,30 @@
+# [Faster-whisper](https://github.com/SYSTRAN/faster-whisper) is a
+# reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast
+# inference engine for Transformer models.
+
+---
+version: "2.1"
+services:
+  faster-whisper:
+    image: ghcr.io/linuxserver/faster-whisper
+    container_name: faster-whisper
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Whisper model that will be used for transcription.
+      - WHISPER_MODEL=tiny-int8
+      # Number of candidates to consider simultaneously during transcription.
+      - WHISPER_BEAM=1 # optional
+      # Language that you will speak to the add-on.
+      - WHISPER_LANG=en # optional
+    volumes:
+      # Local path for Whisper config files.
+      - ${BASEDIR:-/volume1/docker}/faster-whisper/config:/config
+    ports:
+      # Wyoming connection port.
+      - 10300:10300
+    restart: unless-stopped
