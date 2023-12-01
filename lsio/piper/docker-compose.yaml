@@ -1,0 +1,36 @@
+# [Piper](https://github.com/rhasspy/piper/) is a fast, local neural text to
+# speech system that sounds great and is optimized for the Raspberry Pi 4. This
+# container provides a Wyoming protocol server for Piper.
+
+---
+version: "2.1"
+services:
+  piper:
+    image: ghcr.io/linuxserver/piper
+    container_name: piper
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # The [Piper voice](https://huggingface.co/rhasspy/piper-voices/tree/main) to use, in the format `<language>-<name>-<quality>`
+      - PIPER_VOICE=en_US-lessac-medium
+      # Voice speaking rate, 1.0 is default with < 1.0 being faster and > 1.0 being slower.
+      - PIPER_LENGTH=1.0 # optional
+      # Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio.
+      - PIPER_NOISE=0.667 # optional
+      # Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses.
+      - PIPER_NOISEW=0.333 # optional
+      # Speaker number to use if the voice supports multiple speakers.
+      - PIPER_SPEAKER=0 # optional
+      # Number of Piper processes to run simultaneously.
+      - PIPER_PROCS=1 # optional
+    volumes:
+      # Local path for piper config files.
+      - ${BASEDIR:-/volume1/docker}/piper/config:/config
+    ports:
+      # Wyoming connection port.
+      - 10200:10200
+    restart: unless-stopped
