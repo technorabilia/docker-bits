@@ -16,7 +16,7 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Whisper model that will be used for transcription.
+      # Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium`, all with `-int8` compressed variants
       - WHISPER_MODEL=tiny-int8
       # Number of candidates to consider simultaneously during transcription.
       - WHISPER_BEAM=1 # optional
