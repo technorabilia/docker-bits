@@ -12,6 +12,7 @@ docker run -d \
   -p 8112:8112 `# Port for webui` \
   -p 6881:6881 `# Inbound torrent traffic (See App Setup)` \
   -p 6881:6881/udp `# Inbound torrent traffic (See App Setup)` \
+  -p 58846:58846 `# optional` `# Default deluged port for thin client connectivity` \
   -v ${BASEDIR:-/volume1/docker}/deluge/config:/config `# deluge configs` \
   -v ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads `# torrent download directory` \
   --restart unless-stopped \

@@ -1,0 +1,27 @@
+# [Calligra](https://calligra.org/) is an office and graphic art suite by KDE.
+# It is available for desktop PCs, tablet computers, and smartphones. It
+# contains applications for word processing, spreadsheets, presentation, vector
+# graphics, and editing databases.
+
+---
+version: "2.1"
+services:
+  calligra:
+    image: ghcr.io/linuxserver/calligra
+    container_name: calligra
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/calligra/config:/config
+    ports:
+      # Calligra desktop gui.
+      - 3000:3000
+      # Calligra desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

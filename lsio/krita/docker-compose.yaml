@@ -1,0 +1,26 @@
+# [Krita](https://krita.org/en/) is a professional FREE and open source painting
+# program. It is made by artists that want to see affordable art tools for
+# everyone.
+
+---
+version: "2.1"
+services:
+  krita:
+    image: ghcr.io/linuxserver/krita
+    container_name: krita
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/krita/config:/config
+    ports:
+      # Krita desktop gui.
+      - 3000:3000
+      # Krita desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

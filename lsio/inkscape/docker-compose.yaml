@@ -1,0 +1,25 @@
+# [Inkscape](https://inkscape.org/) is professional quality vector graphics
+# software which runs on Linux, Mac OS X and Windows desktop computers.
+
+---
+version: "2.1"
+services:
+  inkscape:
+    image: ghcr.io/linuxserver/inkscape
+    container_name: inkscape
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/inkscape/config:/config
+    ports:
+      # Inkscape desktop gui.
+      - 3000:3000
+      # Inkscape desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

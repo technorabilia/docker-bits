@@ -1,0 +1,26 @@
+# [FreeCAD](https://www.freecad.org/) is a general-purpose parametric 3D
+# computer-aided design (CAD) modeler and a building information modeling (BIM)
+# software application with finite element method (FEM) support.
+
+---
+version: "2.1"
+services:
+  freecad:
+    image: ghcr.io/linuxserver/freecad
+    container_name: freecad
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/freecad/config:/config
+    ports:
+      # FreeCAD desktop gui.
+      - 3000:3000
+      # FreeCAD desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

@@ -1,0 +1,26 @@
+# [Ferdium](https://ferdium.org/) is a desktop app that helps you organize how
+# you use your favourite apps by combining them into one application.
+
+---
+version: "2.1"
+services:
+  ferdium:
+    image: ghcr.io/linuxserver/ferdium
+    container_name: ferdium
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/ferdium/config:/config
+    ports:
+      # Ferdium desktop gui.
+      - 3000:3000
+      # Ferdium desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped

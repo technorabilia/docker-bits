@@ -29,4 +29,6 @@ services:
       - 6881:6881
       # Inbound torrent traffic (See App Setup)
       - 6881:6881/udp
+      # Default deluged port for thin client connectivity
+      - 58846:58846 # optional
     restart: unless-stopped

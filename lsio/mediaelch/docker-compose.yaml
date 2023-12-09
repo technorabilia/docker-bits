@@ -1,0 +1,27 @@
+# [MediaElch](https://github.com/Komet/MediaElch) is a MediaManager for Kodi.
+# Information about Movies, TV Shows, Concerts and Music are stored as nfo
+# files. Fanarts are downloaded automatically from fanart.tv. Using the nfo
+# generator, MediaElch can be used with other MediaCenters as well.
+
+---
+version: "2.1"
+services:
+  mediaelch:
+    image: ghcr.io/linuxserver/mediaelch
+    container_name: mediaelch
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/mediaelch/config:/config
+    ports:
+      # MediaElch desktop gui.
+      - 3000:3000
+      # MediaElch desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

@@ -1,0 +1,26 @@
+# [Altus](https://github.com/amanharwara/altus) is an Electron-based WhatsApp
+# client with themes and multiple account support.
+
+---
+version: "2.1"
+services:
+  altus:
+    image: ghcr.io/linuxserver/altus
+    container_name: altus
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/altus/config:/config
+    ports:
+      # Altus desktop gui.
+      - 3000:3000
+      # Altus desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
