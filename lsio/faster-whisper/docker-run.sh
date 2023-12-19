@@ -9,7 +9,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e WHISPER_MODEL=tiny-int8 `# Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium`, all with `-int8` compressed variants` \
+  -e WHISPER_MODEL=tiny-int8 `# Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium.en`, all with `-int8` compressed variants` \
   -e WHISPER_BEAM=1 `# optional` `# Number of candidates to consider simultaneously during transcription.` \
   -e WHISPER_LANG=en `# optional` `# Language that you will speak to the add-on.` \
   -p 10300:10300 `# Wyoming connection port.` \
