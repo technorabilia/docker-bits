@@ -20,6 +20,6 @@ docker run -d \
   -e DB_DATABASE=bookstackapp `# for specifying the database to be used` \
   -e QUEUE_CONNECTION= `# optional` `# Set to `database` to enable async actions like sending email or triggering webhooks. See [documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/#async-action-handling).` \
   -p 6875:80 `# will map the container's port 80 to port 6875 on the host` \
-  -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# this will store any uploaded data on the docker host` \
+  -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/bookstack

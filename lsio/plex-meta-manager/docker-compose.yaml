@@ -28,6 +28,6 @@ services:
       # Set to `True` to run without any of the missing movie/show functions.
       - PMM_NO_MISSING=False # optional
     volumes:
-      # Local path for plex-meta-manager config files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/plex-meta-manager/config:/config
     restart: unless-stopped

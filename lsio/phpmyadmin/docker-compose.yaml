@@ -20,7 +20,7 @@ services:
       # Set the URL you will use to access the web frontend
       - PMA_ABSOLUTE_URI=https://phpmyadmin.example.com # optional
     volumes:
-      # Contains all relevant configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/phpmyadmin/config:/config
     ports:
       # Port for web frontend

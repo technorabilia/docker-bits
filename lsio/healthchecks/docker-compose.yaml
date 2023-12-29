@@ -52,7 +52,7 @@ services:
       # Full URL to custom site logo
       - SITE_LOGO_URL= # optional
     volumes:
-      # Database and healthchecks config directory
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
     ports:
       # Healthchecks Web UI

@@ -15,6 +15,6 @@ docker run -d \
   -e PMM_RUN=False `# optional` `# Set to `True` to run without the scheduler.` \
   -e PMM_TEST=False `# optional` `# Set to `True` to run in debug mode with only collections that have `test: true`.` \
   -e PMM_NO_MISSING=False `# optional` `# Set to `True` to run without any of the missing movie/show functions.` \
-  -v ${BASEDIR:-/volume1/docker}/plex-meta-manager/config:/config `# Local path for plex-meta-manager config files.` \
+  -v ${BASEDIR:-/volume1/docker}/plex-meta-manager/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/plex-meta-manager

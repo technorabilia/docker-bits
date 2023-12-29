@@ -9,6 +9,6 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e BASE_URL= `# optional` `# Specify the full URL (including protocol) when running behind a reverse proxy` \
   -p 5000:5000 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/changedetection.io

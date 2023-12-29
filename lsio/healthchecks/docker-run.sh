@@ -28,6 +28,6 @@ docker run -d \
   -e SITE_LOGO_URL= `# optional` `# Full URL to custom site logo` \
   -p 8000:8000 `# Healthchecks Web UI` \
   -p 2525:2525 `# optional` `# Port for inbound SMTP pings` \
-  -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Database and healthchecks config directory` \
+  -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/healthchecks

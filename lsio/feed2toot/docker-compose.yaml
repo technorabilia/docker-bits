@@ -17,6 +17,6 @@ services:
       # Limit number of RSS entries published at each execution.
       - FEED_LIMIT=5 # optional
     volumes:
-      # Local path for feed2toot config files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/feed2toot/config:/config
     restart: unless-stopped

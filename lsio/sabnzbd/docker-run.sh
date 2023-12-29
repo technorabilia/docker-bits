@@ -10,7 +10,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8080:8080 `# HTTP port for the WebUI.` \
-  -v ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config `# Local path for sabnzbd config files.` \
+  -v ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads `# optional` `# Local path for finished downloads.` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads `# optional` `# Local path for incomplete-downloads.` \
   --restart unless-stopped \
