@@ -19,7 +19,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # Where config is stored.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/apprise-api/config:/config
     ports:
       # Port for apprise's interface and API.
