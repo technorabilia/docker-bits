@@ -26,6 +26,6 @@ services:
       # Set to `true` to log to file (also need to map /config).
       - LOG_FILE=false # optional
     volumes:
-      # Used in conjunction with logging to file.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/duckdns/config:/config # optional
     restart: unless-stopped

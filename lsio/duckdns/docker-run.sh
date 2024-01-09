@@ -14,6 +14,6 @@ docker run -d \
   -e TOKEN=token `# DuckDNS token` \
   -e UPDATE_IP=ipv4 `# optional` `# Set to `ipv6` or `ipv4` to update  **only** your public IPv4/6 address. Set to `both` to update IPv6 and IPv4 address. This variable makes use of a [third-party service](#notice-regarding-automatic-detection). Omitting this variable uses DuckDNS for detection and only supports IPv4. `both` and `ipv6` modes needs [host networking](#networking-net).` \
   -e LOG_FILE=false `# optional` `# Set to `true` to log to file (also need to map /config).` \
-  -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# optional` `# Used in conjunction with logging to file.` \
+  -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# optional` `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/duckdns
