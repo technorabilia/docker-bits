@@ -1,46 +1,45 @@
 # [Lychee](https://lycheeorg.github.io/) is a free photo-management tool, which
 # runs on your server or web-space. Installing is a matter of seconds. Upload,
 # manage and share photos like from a native application. Lychee comes with
-# everything you need and all your photos are stored securely.' ### UPGRADE
-# WARNING Please note that the v4 upgrade process resets ALL password-protected
-# albums. Any albums that were made public with a password will need to be re-
-# secured.
+# everything you need and all your photos are stored securely.'
 
-version: "3"
+---
+version: "2.1"
 services:
-  mariadb:
-    image: lscr.io/linuxserver/mariadb:latest
-    container_name: lychee_mariadb
-    restart: always
-    volumes:
-      - /path/to/mariadb/data:/config
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=lychee
-      - MYSQL_USER=lychee
-      - MYSQL_PASSWORD=dbpassword
-      - PGID=1000
-      - PUID=1000
-      - TZ=Europe/London
   lychee:
-    image: lscr.io/linuxserver/lychee:latest
+    image: ghcr.io/linuxserver/lychee
     container_name: lychee
-    restart: always
-    depends_on:
-      - mariadb
-    volumes:
-      - /path/to/config:/config
-      - /path/to/pictures:/pictures
     environment:
-      - DB_CONNECTION=mysql
-      - DB_HOST=mariadb
-      - DB_PORT=3306
-      - DB_USERNAME=lychee
-      - DB_PASSWORD=dbpassword
-      - DB_DATABASE=lychee
-      - PGID=1000
-      - PUID=1000
-      - TZ=Europe/London
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # DB type, from `sqlite`, `mysql`, `pqsql`.
+      - DB_CONNECTION=
+      # DB server hostname. For `mysql` and `pgsql` only.
+      - DB_HOST=
+      # DB server port. For `mysql` and `pgsql` only.
+      - DB_PORT=
+      # DB user. For `mysql` and `pgsql` only.
+      - DB_USERNAME=
+      # DB password. For `mysql` and `pgsql` only.
+      - DB_PASSWORD=
+      # Path to DB file for `sqlite`. DB name for `mysql` and `pgsql`.
+      - DB_DATABASE=
+      # The gallery name.
+      - APP_NAME=Lychee # optional
+      # The URL you will use to access Lychee including protocol, and port where appropriate.
+      - APP_URL= # optional
+      # Set to `true` if running behind an https reverse proxy.
+      - APP_FORCE_HTTPS= # optional
+    volumes:
+      # Persistent config files.
+      - ${BASEDIR:-/volume1/docker}/lychee/config:/config
+      # Where lychee will store uploaded images.
+      - ${BASEDIR:-/volume1/docker}/lychee/pictures:/pictures
     ports:
+      # http gui
       - 80:80
-
+    restart: unless-stopped
