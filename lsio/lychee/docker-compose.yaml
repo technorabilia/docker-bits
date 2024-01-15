@@ -32,8 +32,8 @@ services:
       - APP_NAME=Lychee # optional
       # The URL you will use to access Lychee including protocol, and port where appropriate.
       - APP_URL= # optional
-      # Set to `true` if running behind an https reverse proxy.
-      - APP_FORCE_HTTPS= # optional
+      # Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`).
+      - TRUSTED_PROXIES= # optional
     volumes:
       # Persistent config files.
       - ${BASEDIR:-/volume1/docker}/lychee/config:/config
