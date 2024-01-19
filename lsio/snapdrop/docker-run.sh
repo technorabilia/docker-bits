@@ -9,6 +9,6 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
-  -v ${BASEDIR:-/volume1/docker}/snapdrop/config:/config `# Persistent configs and logs.` \
+  -v ${BASEDIR:-/volume1/docker}/snapdrop/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/snapdrop
