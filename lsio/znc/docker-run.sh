@@ -10,6 +10,6 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 6501:6501 `# Port ZNC listens on.` \
-  -v ${BASEDIR:-/volume1/docker}/znc/config:/config `# Where local ZNC data is stored.` \
+  -v ${BASEDIR:-/volume1/docker}/znc/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/znc
