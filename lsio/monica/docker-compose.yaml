@@ -1,0 +1,43 @@
+# [Monica](https://github.com/monicahq/monica) is an open source personal
+# relationship management system, that lets you document your life.
+
+---
+version: "2.1"
+services:
+  monica:
+    image: ghcr.io/linuxserver/monica
+    container_name: monica
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Mariadb DB server hostname.
+      - DB_HOST=
+      # Mariadb DB server port.
+      - DB_PORT=
+      # Mariadb DB user.
+      - DB_USERNAME=
+      # Mariadb DB password.
+      - DB_PASSWORD=
+      # Mariadb DB name.
+      - DB_DATABASE=
+      # The URL you will use to access Monica including protocol, and port where appropriate.
+      - APP_URL=http://localhost:80 # optional
+      # Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`).
+      - TRUSTED_PROXIES= # optional
+      # Set to `production` when exposing the container to anyone else; this also makes https mandatory.
+      - APP_ENV=local # optional
+      # Set to `false` to enable new account sign-ups.
+      - APP_DISABLE_SIGNUP=true # optional
+    volumes:
+      # Persistent config files.
+      - ${BASEDIR:-/volume1/docker}/monica/config:/config
+    ports:
+      # http gui
+      - 80:80
+      # https gui
+      - 443:443
+    restart: unless-stopped
