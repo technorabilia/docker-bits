@@ -37,8 +37,10 @@ services:
       - SUPERUSER_PASSWORD=
       # Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.
       - REGENERATE_SETTINGS= # optional
-      # Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)
+      # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of valid hostnames for the server. Default is: `["*"]`
       - ALLOWED_HOSTS= # optional
+      # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`.
+      - CSRF_TRUSTED_ORIGINS= # optional
       # Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)
       - APPRISE_ENABLED= # optional
       # Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.

@@ -19,7 +19,8 @@ docker run -d \
   -e SUPERUSER_EMAIL= `# Superuser email` \
   -e SUPERUSER_PASSWORD= `# Superuser password` \
   -e REGENERATE_SETTINGS= `# optional` `# Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.` \
-  -e ALLOWED_HOSTS= `# optional` `# Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`)` \
+  -e ALLOWED_HOSTS= `# optional` `# A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of valid hostnames for the server. Default is: `["*"]`` \
+  -e CSRF_TRUSTED_ORIGINS= `# optional` `# A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`.` \
   -e APPRISE_ENABLED= `# optional` `# Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)` \
   -e DEBUG= `# optional` `# Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.` \
   -e INTEGRATIONS_ALLOW_PRIVATE_IPS= `# optional` `# Defaults to False. Set to True to allow integrations to connect to private IP addresses.` \
