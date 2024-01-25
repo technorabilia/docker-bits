@@ -59,7 +59,7 @@ services:
       # A mapping of permissions to assign a new user account when created using remote authentication (optional, default: {})
       - REMOTE_AUTH_DEFAULT_PERMISSIONS= # optional
     volumes:
-      # config directory volume mapping
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/netbox/config:/config
     ports:
       # will map the container's port 8000 to port 8000 on the host
