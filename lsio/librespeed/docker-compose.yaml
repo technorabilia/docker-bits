@@ -34,7 +34,7 @@ services:
       # Access token from ipinfo.io. Required for detailed IP information.
       - IPINFO_APIKEY=ACCESS_TOKEN # optional
     volumes:
-      # Contains all relevant configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/librespeed/config:/config
     ports:
       # web gui

@@ -10,7 +10,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/rsnapshot/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/volume1/docker}/rsnapshot/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/rsnapshot/.snapshots:/.snapshots `# optional` `# Storage location for all snapshots.` \
   -v ${BASEDIR:-/volume1/docker}/rsnapshot/data:/data `# optional` `# Storage location for data to be backed up.` \
   --restart unless-stopped \

@@ -15,46 +15,46 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)
+      # The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000).
       - SITE_ROOT=
-      # The site's name (e.g., "Example Corp HealthChecks")
+      # The site's name (e.g., "Example Corp HealthChecks").
       - SITE_NAME=
-      # From email for alerts
-      - DEFAULT_FROM_EMAIL=
-      # SMTP host
-      - EMAIL_HOST=
-      # SMTP port
-      - EMAIL_PORT=
-      # SMTP user
-      - EMAIL_HOST_USER=
-      # SMTP password
-      - EMAIL_HOST_PASSWORD=
-      # Use TLS for SMTP (`True` or `False`)
-      - EMAIL_USE_TLS=
-      # Superuser email
+      # Superuser email.
       - SUPERUSER_EMAIL=
-      # Superuser password
+      # Superuser password.
       - SUPERUSER_PASSWORD=
-      # Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file.
-      - REGENERATE_SETTINGS= # optional
-      # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of valid hostnames for the server. Default is: `["*"]`
+      # A comma-separated list of valid hostnames for the server. Default is: `*`.
       - ALLOWED_HOSTS= # optional
+      # Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise).
+      - APPRISE_ENABLED=False # optional
       # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`.
       - CSRF_TRUSTED_ORIGINS= # optional
-      # Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)
-      - APPRISE_ENABLED= # optional
-      # Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.
-      - DEBUG= # optional
+      # Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.
+      - DEBUG=True # optional
+      # From email for alerts.
+      - DEFAULT_FROM_EMAIL= # optional
+      # SMTP host.
+      - EMAIL_HOST= # optional
+      # SMTP port.
+      - EMAIL_PORT= # optional
+      # SMTP user.
+      - EMAIL_HOST_USER= # optional
+      # SMTP password.
+      - EMAIL_HOST_PASSWORD= # optional
+      # Use TLS for SMTP (`True` or `False`).
+      - EMAIL_USE_TLS= # optional
       # Defaults to False. Set to True to allow integrations to connect to private IP addresses.
       - INTEGRATIONS_ALLOW_PRIVATE_IPS= # optional
-      # The domain to use for generating ping email addresses.
+      # The domain to use for generating ping email addresses. Defaults to `localhost`.
       - PING_EMAIL_DOMAIN= # optional
-      # A secret key used for cryptographic signing. Will generate a secure value if one is not supplied
+      # If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https.
+      - RP_ID= # optional
+      # A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`.
       - SECRET_KEY= # optional
-      # Full URL to custom site logo
+      # Full URL to custom site logo.
       - SITE_LOGO_URL= # optional
     volumes:
-      # Persistent config files
+      # Persistent config files.
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
     ports:
       # Healthchecks Web UI

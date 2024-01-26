@@ -17,7 +17,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # Contains all relevant configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/rsnapshot/config:/config
       # Storage location for all snapshots.
       - ${BASEDIR:-/volume1/docker}/rsnapshot/.snapshots:/.snapshots # optional

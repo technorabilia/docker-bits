@@ -11,7 +11,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e MAX_UPLOAD=5000 `# To set maximum upload size (in MB), default if unset is 5000.` \
   -p 80:80 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/projectsend/config:/config `# Where to store projectsend config files.` \
+  -v ${BASEDIR:-/volume1/docker}/projectsend/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/projectsend/data:/data `# Where to store files to share.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/projectsend
