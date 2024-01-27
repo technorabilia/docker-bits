@@ -21,6 +21,6 @@ docker run -d \
   -e CMD_PORT=3000 `# optional` `# If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).` \
   -e CMD_ALLOW_ORIGIN=['localhost'] `# optional` `# Comma-separated list of allowed hostnames` \
   -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \
-  -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# HedgeDoc config and configurable files` \
+  -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/hedgedoc

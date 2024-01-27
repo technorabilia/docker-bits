@@ -10,6 +10,6 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -v ${BASEDIR:-/volume1/docker}/ddclient/config:/config `# Where ddclient should store its config files.` \
+  -v ${BASEDIR:-/volume1/docker}/ddclient/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/ddclient

@@ -10,7 +10,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8337:8337 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/beets/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/volume1/docker}/beets/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/beets/music:/music `# Music library` \
   -v ${BASEDIR:-/volume1/docker}/beets/downloads:/downloads `# Non processed music` \
   --restart unless-stopped \

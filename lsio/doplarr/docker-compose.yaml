@@ -51,6 +51,6 @@ services:
       # For passing additional java options.
       - JAVA_OPTS= # optional
     volumes:
-      # Contains all relevant configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/doplarr/config:/config
     restart: unless-stopped

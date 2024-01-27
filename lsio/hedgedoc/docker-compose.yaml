@@ -38,7 +38,7 @@ services:
       # Comma-separated list of allowed hostnames
       - CMD_ALLOW_ORIGIN=['localhost'] # optional
     volumes:
-      # HedgeDoc config and configurable files
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config
     ports:
       # Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).

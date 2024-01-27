@@ -13,6 +13,6 @@ docker run -d \
   -e MYSQL_PASSWORD=DATABASE_PASSWORD `# optional` `# Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped).` \
   -e REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql `# optional` `# Set this to ingest sql files from an http/https endpoint (comma seperated array).` \
   -p 3306:3306 `# Mariadb listens on this port.` \
-  -v ${BASEDIR:-/volume1/docker}/mariadb/config:/config `# Contains the db itself and all assorted settings.` \
+  -v ${BASEDIR:-/volume1/docker}/mariadb/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/mariadb

@@ -25,7 +25,7 @@ services:
       # Set this to ingest sql files from an http/https endpoint (comma seperated array).
       - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql # optional
     volumes:
-      # Contains the db itself and all assorted settings.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/mariadb/config:/config
     ports:
       # Mariadb listens on this port.

@@ -27,7 +27,7 @@ services:
       # DB password (postgres only)
       - DB_PASS= # optional
     volumes:
-      # Where Wiki.js config is stored.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/wikijs/config:/config
       # Where Wiki.js data is stored.
       - ${BASEDIR:-/volume1/docker}/wikijs/data:/data

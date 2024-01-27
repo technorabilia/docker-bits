@@ -16,7 +16,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # Where Limnoria config is stored.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/limnoria/config:/config
     ports:
       # Port for Limnoria's web interface.
