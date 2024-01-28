@@ -40,7 +40,7 @@ services:
       # Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.
       - STAGING=false # optional
     volumes:
-      # All the config files including the webroot reside here.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/swag/config:/config
     ports:
       # Https port

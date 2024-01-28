@@ -23,6 +23,6 @@ docker run -d \
   -e STAGING=false `# optional` `# Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.` \
   -p 443:443 `# Https port` \
   -p 80:80 `# optional` `# Http port (required for http validation and http -> https redirect)` \
-  -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# All the config files including the webroot reside here.` \
+  -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/swag
