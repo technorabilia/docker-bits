@@ -1,0 +1,25 @@
+# [Shotcut](https://www.shotcut.org/) is a free, open source, cross-platform
+# video editor.
+
+---
+version: "2.1"
+services:
+  shotcut:
+    image: ghcr.io/linuxserver/shotcut
+    container_name: shotcut
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Where Shotcut should store its config.
+      - ${BASEDIR:-/volume1/docker}/shotcut/config:/config
+    ports:
+      # Shotcut desktop gui.
+      - 3000:3000
+      # Shotcut desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped
