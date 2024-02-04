@@ -1,0 +1,26 @@
+# [Zotero](https://www.zotero.org/) is a free, easy-to-use tool to help you
+# collect, organize, annotate, cite, and share research.
+
+---
+version: "2.1"
+services:
+  zotero:
+    image: ghcr.io/linuxserver/zotero
+    container_name: zotero
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/zotero/config:/config
+    ports:
+      # Zotero gui.
+      - 3000:3000
+      # HTTPS Zotero gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
