@@ -20,6 +20,6 @@ docker run -d \
   -e DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version `# Configure your database connection, see Application Setup instructions.` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
-  -v ${BASEDIR:-/volume1/docker}/kimai/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/volume1/docker}/kimai/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/kimai

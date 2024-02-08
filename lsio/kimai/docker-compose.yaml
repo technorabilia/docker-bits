@@ -27,7 +27,7 @@ services:
       # Configure your database connection, see Application Setup instructions.
       - DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version
     volumes:
-      # Configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/kimai/config:/config
     ports:
       # http gui
