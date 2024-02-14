@@ -16,7 +16,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # this will store config on the docker host
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/sickchill/config:/config
       # this will store any downloaded data on the docker host
       - ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads

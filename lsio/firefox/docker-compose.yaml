@@ -17,6 +17,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # Specify one or multiple Firefox CLI flags, this string will be passed to the application in full.
+      - FIREFOX_CLI=https://www.linuxserver.io/ # optional
     volumes:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/volume1/docker}/firefox/config:/config
