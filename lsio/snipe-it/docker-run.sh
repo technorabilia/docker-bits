@@ -15,6 +15,16 @@ docker run -d \
   -e MYSQL_DATABASE= `# Mysql database to use` \
   -e MYSQL_USER= `# Mysql user to use` \
   -e MYSQL_PASSWORD= `# Mysql password to use` \
+  -e APP_ENV=production `# optional` `# Default is `production` but can use `testing` or `develop`.` \
+  -e APP_DEBUG=false `# optional` `# Set to `true` to see debugging output in the web UI.` \
+  -e APP_LOCALE= `# optional` `# Default is `en`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).` \
+  -e MAIL_PORT_587_TCP_ADDR=US/Pacific `# optional` `# SMTP mail server ip or hostname.` \
+  -e MAIL_PORT_587_TCP_PORT=US/Pacific `# optional` `# SMTP mail server port.` \
+  -e MAIL_ENV_FROM_ADDR=US/Pacific `# optional` `# The email address mail should be replied to and listed when sent.` \
+  -e MAIL_ENV_FROM_NAME=US/Pacific `# optional` `# The name listed on email sent from the default account on the system.` \
+  -e MAIL_ENV_ENCRYPTION=US/Pacific `# optional` `# Mail encryption to use e.g. `tls`.` \
+  -e MAIL_ENV_USERNAME=US/Pacific `# optional` `# SMTP server login username.` \
+  -e MAIL_ENV_PASSWORD=US/Pacific `# optional` `# SMTP server login password.` \
   -p 8080:80 `# Snipe-IT Web UI` \
   -v ${BASEDIR:-/volume1/docker}/snipe-it/config:/config `# Contains your config files and data storage for Snipe-IT` \
   --restart unless-stopped \

@@ -28,6 +28,26 @@ services:
       - MYSQL_USER=
       # Mysql password to use
       - MYSQL_PASSWORD=
+      # Default is `production` but can use `testing` or `develop`.
+      - APP_ENV=production # optional
+      # Set to `true` to see debugging output in the web UI.
+      - APP_DEBUG=false # optional
+      # Default is `en`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).
+      - APP_LOCALE= # optional
+      # SMTP mail server ip or hostname.
+      - MAIL_PORT_587_TCP_ADDR=US/Pacific # optional
+      # SMTP mail server port.
+      - MAIL_PORT_587_TCP_PORT=US/Pacific # optional
+      # The email address mail should be replied to and listed when sent.
+      - MAIL_ENV_FROM_ADDR=US/Pacific # optional
+      # The name listed on email sent from the default account on the system.
+      - MAIL_ENV_FROM_NAME=US/Pacific # optional
+      # Mail encryption to use e.g. `tls`.
+      - MAIL_ENV_ENCRYPTION=US/Pacific # optional
+      # SMTP server login username.
+      - MAIL_ENV_USERNAME=US/Pacific # optional
+      # SMTP server login password.
+      - MAIL_ENV_PASSWORD=US/Pacific # optional
     volumes:
       # Contains your config files and data storage for Snipe-IT
       - ${BASEDIR:-/volume1/docker}/snipe-it/config:/config
