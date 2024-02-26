@@ -14,6 +14,8 @@ docker run -d \
   -e MENU_VERSION=1.9.9 `# optional` `# Specify a specific version of boot files you want to use from NETBOOT.XYZ (unset pulls latest)` \
   -e PORT_RANGE=30000:30010 `# optional` `# Specify the port range tftp will use for data transfers [(see Wikipedia)](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol#Details)` \
   -e SUBFOLDER=/ `# optional` `# Specify a sobfolder if running this behind a reverse proxy (IE /proxy/)` \
+  -e NGINX_PORT=80 `# optional` `# Specify a different internal port for the asset server` \
+  -e WEB_APP_PORT=3000 `# optional` `# Specify a different internal port for the configuration UI` \
   -p 3000:3000 `# Web configuration interface.` \
   -p 69:69/udp `# TFTP Port.` \
   -p 8080:80 `# optional` `# NGINX server for hosting assets.` \
