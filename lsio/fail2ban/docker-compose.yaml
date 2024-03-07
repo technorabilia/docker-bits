@@ -21,7 +21,7 @@ services:
       # Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.
       - VERBOSITY=-vv # optional
     volumes:
-      # Contains all relevant configuration files.
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/fail2ban/config:/config
       # Host logs. Mounted as Read Only.
       - ${BASEDIR:-/volume1/docker}/fail2ban/var/log:ro:/var/log:ro

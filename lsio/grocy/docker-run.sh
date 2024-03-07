@@ -11,6 +11,6 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 9283:80 `# will map the container's port 80 to port 9283 on the host` \
-  -v ${BASEDIR:-/volume1/docker}/grocy/config:/config `# this will store any uploaded data on the docker host` \
+  -v ${BASEDIR:-/volume1/docker}/grocy/config:/config `# Persistent config files` \
   --restart unless-stopped \
   ghcr.io/linuxserver/grocy

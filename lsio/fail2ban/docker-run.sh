@@ -12,7 +12,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e VERBOSITY=-vv `# optional` `# Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/fail2ban/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/volume1/docker}/fail2ban/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/fail2ban/var/log:ro:/var/log:ro `# Host logs. Mounted as Read Only.` \
   -v ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/airsonic:ro:/remotelogs/airsonic:ro `# optional` `# Optional path to airsonic log folder. Mounted as Read Only.` \
   -v ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/apache2:ro:/remotelogs/apache2:ro `# optional` `# Optional path to apache2 log folder. Mounted as Read Only.` \

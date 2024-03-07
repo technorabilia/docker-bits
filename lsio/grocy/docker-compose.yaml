@@ -18,7 +18,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # this will store any uploaded data on the docker host
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/grocy/config:/config
     ports:
       # will map the container's port 80 to port 9283 on the host
