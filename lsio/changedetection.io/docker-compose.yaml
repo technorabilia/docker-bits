@@ -2,18 +2,18 @@
 # free, open-source web page monitoring, notification and change detection.
 
 ---
-version: "2.1"
 services:
-  changedetection:
+  changedetection.io:
     image: lscr.io/linuxserver/changedetection.io:latest
     container_name: changedetection
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Etc/UTC
       - BASE_URL= #optional
+      - PLAYWRIGHT_DRIVER_URL= #optional
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/changedetection/config:/config
     ports:
       - 5000:5000
     restart: unless-stopped
