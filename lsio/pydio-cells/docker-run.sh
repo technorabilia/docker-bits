@@ -12,7 +12,6 @@ docker run -d \
   -e EXTERNALURL=yourdomain.url `# The external url you would like to use to access Pydio Cells (Can be https://domain.url or https://IP:PORT).` \
   -e SERVER_IP=0.0.0.0 `# optional` `# Enter the LAN IP of the docker server. Required for local access by IP, added to self signed cert as SAN (not required if accessing only through reverse proxy).` \
   -p 8080:8080 `# Http port` \
-  -p 33060:33060 `# optional` `# gRPC port (required for CellsSync).` \
   -v ${BASEDIR:-/volume1/docker}/pydio-cells/config:/config `# All the config files reside here.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/pydio-cells

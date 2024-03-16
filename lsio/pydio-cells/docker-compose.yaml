@@ -27,6 +27,4 @@ services:
     ports:
       # Http port
       - 8080:8080
-      # gRPC port (required for CellsSync).
-      - 33060:33060 # optional
     restart: unless-stopped
