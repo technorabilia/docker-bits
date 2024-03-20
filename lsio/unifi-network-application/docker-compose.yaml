@@ -34,7 +34,7 @@ services:
       # Mongodb [authSource](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.authSource). For Atlas set to `admin`.Defaults to `MONGO_DBNAME`.Only evaluated on first run.
       - MONGO_AUTHSOURCE= # optional
     volumes:
-      # All Unifi data stored here
+      # Persistent config files
       - ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config
     ports:
       # Unifi web admin port
