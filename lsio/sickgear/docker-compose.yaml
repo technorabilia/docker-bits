@@ -17,7 +17,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
-      # this will store any uploaded data on the docker host
+      # Persistent configuration files.
       - ${BASEDIR:-/volume1/docker}/sickgear/config:/config
       # where you store your tv shows
       - ${BASEDIR:-/volume1/docker}/sickgear/tv:/tv

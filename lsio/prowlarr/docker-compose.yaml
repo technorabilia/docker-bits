@@ -22,6 +22,6 @@ services:
       # Database and Prowlarr configs
       - ${BASEDIR:-/volume1/docker}/prowlarr/config:/config
     ports:
-      # The port for the Prowlarr webinterface
+      # The port for the Prowlarr web UI
       - 9696:9696
     restart: unless-stopped

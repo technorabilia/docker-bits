@@ -22,6 +22,6 @@ services:
       # Location of download managers output directory (See note in Application setup)
       - ${BASEDIR:-/volume1/docker}/radarr/downloads:/downloads # optional
     ports:
-      # The port for the Radarr webinterface
+      # The port for the Radarr Web UI
       - 7878:7878
     restart: unless-stopped
