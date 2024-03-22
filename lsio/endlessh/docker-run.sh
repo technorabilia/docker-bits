@@ -16,6 +16,7 @@ docker run -d \
   -e LOGFILE=false `# optional` `# By default, the app logs to container log. If this is set to `true`, the log will be output to file under `/config/logs/endlessh` (`/config` needs to be mapped).` \
   -e BINDFAMILY= `# optional` `# By default, the app binds to IPv4 and IPv6 addresses. Set it to `4` or `6` to bind to IPv4 only or IPv6 only, respectively. Leave blank to bind to both.` \
   -p 22:2222 `# ssh port` \
+  -v ${BASEDIR:-/volume1/docker}/endlessh/config:/config `# Configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/endlessh/config:/config `# optional` `# Required if `LOGFILE` is set to `true`.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/endlessh

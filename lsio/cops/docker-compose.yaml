@@ -37,6 +37,8 @@ services:
       # Calibre metadata.db location.
       - ${BASEDIR:-/volume1/docker}/cops/books:/books
     ports:
-      # WebUI
+      # HTTP WebUI
       - 80:80
+      # HTTPS WebUI
+      - 443:443
     restart: unless-stopped

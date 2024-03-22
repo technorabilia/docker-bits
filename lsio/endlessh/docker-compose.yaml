@@ -28,6 +28,8 @@ services:
       # By default, the app binds to IPv4 and IPv6 addresses. Set it to `4` or `6` to bind to IPv4 only or IPv6 only, respectively. Leave blank to bind to both.
       - BINDFAMILY= # optional
     volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/endlessh/config:/config
       # Required if `LOGFILE` is set to `true`.
       - ${BASEDIR:-/volume1/docker}/endlessh/config:/config # optional
     ports:

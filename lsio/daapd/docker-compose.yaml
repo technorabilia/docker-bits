@@ -21,4 +21,7 @@ services:
       - ${BASEDIR:-/volume1/docker}/daapd/config:/config
       # Map to your music folder.
       - ${BASEDIR:-/volume1/docker}/daapd/music:/music
+    ports:
+      # Application WebUI
+      - 80:80
     restart: unless-stopped

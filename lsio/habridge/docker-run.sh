@@ -20,7 +20,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e SEC_KEY=<Your Key To Encrypt Security Data> `# Key used to secure communication.` \
+  -e SEC_KEY= `# Key used to secure communication.` \
   -p 8080:8080 `# WebUI` \
   -p 50000:50000 `# HABridge communication port.` \
   -v ${BASEDIR:-/volume1/docker}/habridge/config:/config `# Where HABridge stores config files and data.` \

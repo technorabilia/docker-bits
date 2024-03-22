@@ -8,7 +8,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e MAXMEM= `# To set the maximum memory. ( ex: set '1024' for 1GB )` \
+  -e MAXMEM= `# optional` `# To set the maximum memory. ( ex: set '1024' for 1GB )` \
   -p 2202:2202 `# The library port.` \
   -p 2203:2203 `# The admin port.` \
   -v ${BASEDIR:-/volume1/docker}/ubooquity/config:/config `# Config files and database for ubooquity.` \
