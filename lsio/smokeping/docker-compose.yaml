@@ -15,6 +15,12 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # Specify the master url to connect to. Used when in slave mode.
+      - MASTER_URL=http://<master-host-ip>:80/smokeping/ # optional
+      # Specify the master shared secret for this host. Used when in slave mode.
+      - SHARED_SECRET=password # optional
+      # Specify the cache directory for this host. Used when in slave mode.
+      - CACHE_DIR=/tmp # optional
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/smokeping/config:/config
