@@ -1,0 +1,26 @@
+# [KeePassXC](https://keepassxc.org/) is a free and open-source password
+# manager. It started as a community fork of KeePassX (itself a cross-platform
+# port of KeePass).
+
+---
+version: "2.1"
+services:
+  keepassxc:
+    image: ghcr.io/linuxserver/keepassxc
+    container_name: keepassxc
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/keepassxc/config:/config
+    ports:
+      # KeePassXC desktop gui.
+      - 3000:3000
+      # KeePassXC desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

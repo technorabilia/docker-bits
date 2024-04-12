@@ -1,0 +1,26 @@
+# [FreeTube](https://freetubeapp.io/) is a feature-rich and user-friendly
+# YouTube client with a focus on privacy.
+
+---
+version: "2.1"
+services:
+  freetube:
+    image: ghcr.io/linuxserver/freetube
+    container_name: freetube
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/freetube/config:/config
+    ports:
+      # FreeTube desktop gui.
+      - 3000:3000
+      # HTTPS FreeTube desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped

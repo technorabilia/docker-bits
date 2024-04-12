@@ -1,0 +1,30 @@
+# [LibreWolf](https://librewolf.net/) is a custom and independent version of
+# Firefox, with the primary goals of privacy, security and user freedom.
+# LibreWolf also aims to remove all the telemetry, data collection and
+# annoyances, as well as disabling anti-freedom features like DRM.
+
+---
+version: "2.1"
+services:
+  librewolf:
+    image: ghcr.io/linuxserver/librewolf
+    container_name: librewolf
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify one or multiple LibreWolf CLI flags, this string will be passed to the application in full.
+      - LIBREWOLF_CLI=https://www.linuxserver.io/ # optional
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/librewolf/config:/config
+    ports:
+      # LibreWolf desktop gui.
+      - 3000:3000
+      # LibreWolf desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
