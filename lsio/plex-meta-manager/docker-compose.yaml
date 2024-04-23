@@ -1,8 +1,8 @@
-# [Plex-meta-manager](https://github.com/meisnate12/Plex-Meta-Manager) is a
-# Python 3 script that can be continuously run using YAML configuration files to
-# update on a schedule the metadata of the movies, shows, and collections in
-# your libraries as well as automatically build collections based on various
-# methods all detailed in the wiki.
+# [Plex-meta-manager](https://github.com/Kometa-Team/Kometa) is a Python 3
+# script that can be continuously run using YAML configuration files to update
+# on a schedule the metadata of the movies, shows, and collections in your
+# libraries as well as automatically build collections based on various methods
+# all detailed in the wiki.
 
 ---
 version: "2.1"

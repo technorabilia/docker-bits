@@ -1,4 +1,4 @@
-This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.
+# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.
 . ./.env
 docker run -d \
   --name=socket-proxy \
