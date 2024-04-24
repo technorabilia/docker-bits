@@ -1,0 +1,32 @@
+# [Kometa](https://github.com/Kometa-Team/Kometa) is a powerful tool designed to
+# give you complete control over your media libraries. With Kometa, you can take
+# your customization to the next level, with granular control over metadata,
+# collections, overlays, and much more.
+
+---
+version: "2.1"
+services:
+  kometa:
+    image: ghcr.io/linuxserver/kometa
+    container_name: kometa
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a custom config file to use.
+      - KOMETA_CONFIG=/config/config.yml # optional
+      # Comma-separated list of times to update each day. Format: `HH:MM`.
+      - KOMETA_TIME=03:00 # optional
+      # Set to `True` to run without the scheduler.
+      - KOMETA_RUN=False # optional
+      # Set to `True` to run in debug mode with only collections that have `test: true`.
+      - KOMETA_TEST=False # optional
+      # Set to `True` to run without any of the missing movie/show functions.
+      - KOMETA_NO_MISSING=False # optional
+    volumes:
+      # Persistent config files
+      - ${BASEDIR:-/volume1/docker}/kometa/config:/config
+    restart: unless-stopped
