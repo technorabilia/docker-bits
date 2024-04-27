@@ -1,0 +1,28 @@
+# [Microsoft Edge](https://www.microsoft.com/edge) is a cross-platform web
+# browser developed by Microsoft and based on Chromium.
+
+---
+version: "2.1"
+services:
+  msedge:
+    image: ghcr.io/linuxserver/msedge
+    container_name: msedge
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify one or multiple Chromium CLI flags, this string will be passed to the application in full.
+      - EDGE_CLI=https://www.linuxserver.io/ # optional
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/msedge/config:/config
+    ports:
+      # Edge desktop gui.
+      - 3000:3000
+      # HTTPS Edge desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
