@@ -1,0 +1,27 @@
+# [Spotube](https://spotube.krtirtho.dev/) is an open source, cross-platform
+# Spotify client compatible across multiple platforms utilizing Spotify's data
+# API and YouTube, Piped.video or JioSaavn as an audio source, eliminating the
+# need for Spotify Premium
+
+---
+version: "2.1"
+services:
+  spotube:
+    image: ghcr.io/linuxserver/spotube
+    container_name: spotube
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/spotube/config:/config
+    ports:
+      # Spotube desktop gui.
+      - 3000:3000
+      # HTTPS Spotube desktop gui.
+      - 3001:3001
+    restart: unless-stopped
