@@ -1,6 +1,6 @@
-# [Oscam](http://www.streamboard.tv/oscam/) is an Open Source Conditional Access
-# Module software used for descrambling DVB transmissions using smart cards.
-# It's both a server and a client.
+# [Oscam](https://git.streamboard.tv/common/oscam) is an Open Source Conditional
+# Access Module software used for descrambling DVB transmissions using smart
+# cards. It's both a server and a client.
 
 . ./.env
 docker run -d \
