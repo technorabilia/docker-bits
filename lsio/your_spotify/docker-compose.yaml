@@ -27,6 +27,9 @@ services:
       - CORS=http://localhost:80,https://localhost:443
       # Set mongodb endpoint address/port.
       - MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/your_spotify/config:/config
     ports:
       # your_spotify HTTP webui
       - 80:80
