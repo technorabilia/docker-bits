@@ -16,6 +16,8 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
     volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/rdesktop/config:/config
       # Docker Socket on the system, if you want to use Docker in the container
       - /var/run/docker.sock:/var/run/docker.sock # optional
       # abc users home directory
