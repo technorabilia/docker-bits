@@ -14,5 +14,6 @@ docker run -d \
   -e RTC_CONFIG= `# optional` `# Path to a json file containing custom STUN/TURN config (see App Setup notes)` \
   -e DEBUG_MODE=false `# optional` `# Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production!` \
   -p 3000:3000 `# http gui` \
+  -v ${BASEDIR:-/volume1/docker}/pairdrop/config:/config `# Configuration files.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/pairdrop

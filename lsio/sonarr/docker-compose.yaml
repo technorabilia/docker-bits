@@ -25,6 +25,6 @@ services:
       # Location of download managers output directory (See note in Application setup)
       - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads # optional
     ports:
-      # The port for the Sonarr webinterface
+      # The port for the Sonarr web interface
       - 8989:8989
     restart: unless-stopped
