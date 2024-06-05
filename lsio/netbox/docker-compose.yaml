@@ -32,7 +32,7 @@ services:
       - DB_PASSWORD=
       # Database host (default: postgres)
       - DB_HOST=
-      # Database port (defaul: 5432)
+      # Database port (default: 5432)
       - DB_PORT=
       # Redis host (default: redis)
       - REDIS_HOST=

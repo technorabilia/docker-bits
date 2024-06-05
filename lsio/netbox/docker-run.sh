@@ -18,7 +18,7 @@ docker run -d \
   -e DB_USER= `# Database user` \
   -e DB_PASSWORD= `# Database password` \
   -e DB_HOST= `# Database host (default: postgres)` \
-  -e DB_PORT= `# Database port (defaul: 5432)` \
+  -e DB_PORT= `# Database port (default: 5432)` \
   -e REDIS_HOST= `# Redis host (default: redis)` \
   -e REDIS_PORT= `# Redis port number (default: 6379)` \
   -e REDIS_PASSWORD= `# Redis password (default: none)` \
