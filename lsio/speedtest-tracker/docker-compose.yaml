@@ -15,10 +15,14 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)
+      - APP_KEY=
       # Set the database type to use. `sqlite`, `pgsql`, or `mysql`
       - DB_CONNECTION=sqlite
-      # App key used for encrypting stored data. Generate with `docker exec speedtest-tracker php /app/www/artisan key:generate --show`
-      - APP_KEY= # optional
+      # Set the test schedule in cron format. e.g. `0 */6 * * *`
+      - SPEEDTEST_SCHEDULE=
+      # A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers.
+      - SPEEDTEST_SERVERS=
       # Database hostname (postgres/mysql).
       - DB_HOST= # optional
       # Database port (postgres/mysql).
@@ -29,6 +33,10 @@ services:
       - DB_USERNAME= # optional
       # Database password (postgres/mysql).
       - DB_PASSWORD= # optional
+      # Timezone for the UI.
+      - DISPLAY_TIMEZONE=Etc/UTC # optional
+      # Days to keep test results.
+      - PRUNE_RESULTS_OLDER_THAN=0 # optional
     volumes:
       # Contains speedtest-tracker config and database, if using sqlite.
       - ${BASEDIR:-/volume1/docker}/speedtest-tracker/config:/config
