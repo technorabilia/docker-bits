@@ -19,6 +19,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # Optionally pass additional cli arguments to `FAHClient` on container start.
+      - CLI_ARGS= # optional
     volumes:
       # Where Folding@home should store its database and config.
       - ${BASEDIR:-/volume1/docker}/foldingathome/config:/config
