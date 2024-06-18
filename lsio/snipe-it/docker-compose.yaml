@@ -16,6 +16,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # App key used for encrypting stored data. Generate with `docker exec snipe-it php /app/www/artisan key:generate --show`.
+      - APP_KEY=
       # Hostname or IP and port if applicable, be sure to define https/http
       - APP_URL=http://localhost:8080
       # Mysql hostname or IP to use
@@ -28,26 +30,28 @@ services:
       - MYSQL_USER=
       # Mysql password to use
       - MYSQL_PASSWORD=
-      # Default is `production` but can use `testing` or `develop`.
-      - APP_ENV=production # optional
       # Set to `true` to see debugging output in the web UI.
       - APP_DEBUG=false # optional
+      # Default is `production` but can use `testing` or `develop`.
+      - APP_ENV=production # optional
+      # Set to `true` if running behind a reverse proxy
+      - APP_FORCE_TLS=false # optional
       # Default is `en`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).
       - APP_LOCALE= # optional
       # SMTP mail server ip or hostname.
-      - MAIL_PORT_587_TCP_ADDR=US/Pacific # optional
+      - MAIL_PORT_587_TCP_ADDR= # optional
       # SMTP mail server port.
-      - MAIL_PORT_587_TCP_PORT=US/Pacific # optional
+      - MAIL_PORT_587_TCP_PORT= # optional
       # The email address mail should be replied to and listed when sent.
-      - MAIL_ENV_FROM_ADDR=US/Pacific # optional
+      - MAIL_ENV_FROM_ADDR= # optional
       # The name listed on email sent from the default account on the system.
-      - MAIL_ENV_FROM_NAME=US/Pacific # optional
+      - MAIL_ENV_FROM_NAME= # optional
       # Mail encryption to use e.g. `tls`.
-      - MAIL_ENV_ENCRYPTION=US/Pacific # optional
+      - MAIL_ENV_ENCRYPTION= # optional
       # SMTP server login username.
-      - MAIL_ENV_USERNAME=US/Pacific # optional
+      - MAIL_ENV_USERNAME= # optional
       # SMTP server login password.
-      - MAIL_ENV_PASSWORD=US/Pacific # optional
+      - MAIL_ENV_PASSWORD= # optional
     volumes:
       # Contains your config files and data storage for Snipe-IT
       - ${BASEDIR:-/volume1/docker}/snipe-it/config:/config
