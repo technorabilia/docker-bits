@@ -19,7 +19,7 @@ docker run -d \
   -e APP_DEBUG=false `# optional` `# Set to `true` to see debugging output in the web UI.` \
   -e APP_ENV=production `# optional` `# Default is `production` but can use `testing` or `develop`.` \
   -e APP_FORCE_TLS=false `# optional` `# Set to `true` if running behind a reverse proxy` \
-  -e APP_LOCALE= `# optional` `# Default is `en`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).` \
+  -e APP_LOCALE= `# optional` `# Default is `en-US`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).` \
   -e MAIL_PORT_587_TCP_ADDR= `# optional` `# SMTP mail server ip or hostname.` \
   -e MAIL_PORT_587_TCP_PORT= `# optional` `# SMTP mail server port.` \
   -e MAIL_ENV_FROM_ADDR= `# optional` `# The email address mail should be replied to and listed when sent.` \

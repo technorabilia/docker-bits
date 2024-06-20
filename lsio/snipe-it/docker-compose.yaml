@@ -36,7 +36,7 @@ services:
       - APP_ENV=production # optional
       # Set to `true` if running behind a reverse proxy
       - APP_FORCE_TLS=false # optional
-      # Default is `en`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).
+      # Default is `en-US`. Set to a language from [this list](https://snipe-it.readme.io/docs/configuration#section-setting-a-language).
       - APP_LOCALE= # optional
       # SMTP mail server ip or hostname.
       - MAIL_PORT_587_TCP_ADDR= # optional
