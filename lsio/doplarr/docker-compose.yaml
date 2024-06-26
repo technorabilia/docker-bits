@@ -53,4 +53,7 @@ services:
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/doplarr/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
     restart: unless-stopped
