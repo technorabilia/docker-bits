@@ -20,4 +20,7 @@ services:
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/ddclient/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
     restart: unless-stopped

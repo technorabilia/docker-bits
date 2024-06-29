@@ -21,6 +21,6 @@ services:
       # Music location
       - ${BASEDIR:-/volume1/docker}/mstream/music:/music
     ports:
-      # The port for the mStream webinterface
+      # The port for the mStream web interface
       - 3000:3000
     restart: unless-stopped
