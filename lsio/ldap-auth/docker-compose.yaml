@@ -13,12 +13,21 @@ services:
     image: ghcr.io/linuxserver/ldap-auth
     container_name: ldap-auth
     environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
       # Optionally define a custom valid fernet key (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)
       - FERNETKEY= # optional
       # Optionally point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon
       - CERTFILE= # optional
       # Optionally point this to the private key file, matching the certificate file referred to in CERTFILE
       - KEYFILE= # optional
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/ldap-auth/config:/config
     ports:
       # the port for ldap auth daemon
       - 8888:8888

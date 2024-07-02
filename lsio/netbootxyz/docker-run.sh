@@ -13,7 +13,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e MENU_VERSION=1.9.9 `# optional` `# Specify a specific version of boot files you want to use from NETBOOT.XYZ (unset pulls latest)` \
   -e PORT_RANGE=30000:30010 `# optional` `# Specify the port range tftp will use for data transfers [(see Wikipedia)](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol#Details)` \
-  -e SUBFOLDER=/ `# optional` `# Specify a sobfolder if running this behind a reverse proxy (IE /proxy/)` \
+  -e SUBFOLDER=/ `# optional` `# Specify a subfolder if running this behind a reverse proxy (IE /proxy/)` \
   -e NGINX_PORT=80 `# optional` `# Specify a different internal port for the asset server` \
   -e WEB_APP_PORT=3000 `# optional` `# Specify a different internal port for the configuration UI` \
   -p 3000:3000 `# Web configuration interface.` \
