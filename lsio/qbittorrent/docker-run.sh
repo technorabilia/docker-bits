@@ -14,6 +14,6 @@ docker run -d \
   -p 6881:6881 `# tcp connection port` \
   -p 6881:6881/udp `# udp connection port` \
   -v ${BASEDIR:-/volume1/docker}/qbittorrent/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads `# Location of downloads on disk.` \
+  -v ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads `# optional` `# Location of downloads on disk.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/qbittorrent
