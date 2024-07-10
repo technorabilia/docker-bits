@@ -17,9 +17,9 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Host address of mysql database
+      # Host address of mariadb database
       - DB_HOST=<hostname or ip>
-      # Port to access mysql database default is 3306
+      # Port to access mariadb database default is 3306
       - DB_PORT=3306
       # Database user
       - DB_USER=hedgedoc
@@ -37,6 +37,8 @@ services:
       - CMD_PORT=3000 # optional
       # Comma-separated list of allowed hostnames
       - CMD_ALLOW_ORIGIN=['localhost'] # optional
+      # This variable allows selecting a database engine (if DB_HOST not set up). Available options are: `mariadb`, `mysql`, `postgres`, `sqlite`.
+      - CMD_DB_DIALECT= # optional
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config
