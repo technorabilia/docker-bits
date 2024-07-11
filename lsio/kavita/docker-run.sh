@@ -11,6 +11,6 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 5000:5000 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/kavita/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/kavita/data:/data `# Media library containing manga, comics and books.` \
+  -v ${BASEDIR:-/volume1/docker}/kavita/data:/data `# optional` `# Media library containing manga, comics and books.` \
   --restart unless-stopped \
   ghcr.io/linuxserver/kavita

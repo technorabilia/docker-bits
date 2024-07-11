@@ -28,6 +28,6 @@ services:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/mariadb/config:/config
     ports:
-      # Mariadb listens on this port.
+      # MariaDB listens on this port.
       - 3306:3306
     restart: unless-stopped
