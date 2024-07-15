@@ -19,9 +19,9 @@ services:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/sickchill/config:/config
       # this will store any downloaded data on the docker host
-      - ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads
+      - ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads # optional
       # this will allow sickchill to view what you already have
-      - ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv
+      - ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv # optional
     ports:
       # will map the container's port 8081 to port 8081 on the host
       - 8081:8081

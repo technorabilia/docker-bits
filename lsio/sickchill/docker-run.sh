@@ -10,7 +10,7 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8081:8081 `# will map the container's port 8081 to port 8081 on the host` \
   -v ${BASEDIR:-/volume1/docker}/sickchill/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads `# this will store any downloaded data on the docker host` \
-  -v ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv `# this will allow sickchill to view what you already have` \
+  -v ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads `# optional` `# this will store any downloaded data on the docker host` \
+  -v ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv `# optional` `# this will allow sickchill to view what you already have` \
   --restart unless-stopped \
   ghcr.io/linuxserver/sickchill
