@@ -1,0 +1,37 @@
+# [Kali-linux](https://github.com/linuxserver/docker-kali-linux) - is an
+# Advanced Penetration Testing Linux distribution used for Penetration Testing,
+# Ethical Hacking and network security assessments. KALI LINUX ™ is a trademark
+# of OffSec.
+
+---
+version: "2.1"
+services:
+  kali-linux:
+    image: ghcr.io/linuxserver/kali-linux
+    container_name: kali-linux
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
+      - SUBFOLDER=/ # optional
+      # String which will be used as page/tab title in the web browser.
+      - TITLE=Kali Linux # optional
+    volumes:
+      # abc users home directory
+      - ${BASEDIR:-/volume1/docker}/kali-linux/config:/config
+      # Docker Socket on the system, if you want to use Docker in the container
+      - /var/run/docker.sock:/var/run/docker.sock # optional
+    ports:
+      # Web Desktop GUI
+      - 3000:3000
+      # Web Desktop GUI HTTPS
+      - 3001:3001
+    devices:
+      # Add this for GL support (Linux hosts only)
+      - /dev/dri:/dev/dri # optional
+    shm_size: "1gb" # optional
+    restart: unless-stopped
