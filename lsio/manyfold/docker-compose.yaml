@@ -1,0 +1,32 @@
+# [Manyfold](https://github.com/manyfold3d/manyfold/) is an open source, self-
+# hosted web application for managing a collection of 3D models, particularly
+# focused on 3D printing.
+
+---
+version: "2.1"
+services:
+  manyfold:
+    image: ghcr.io/linuxserver/manyfold
+    container_name: manyfold
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Database connection URL. For sqlite use `sqlite3:/config/manyfold.sqlite3`. For postgres or mariadb use `<scheme>://<username>:<password>@<hostname>:<port>/<db name>` where `<scheme>` is `postgresql` or `mysql2`. Special characters in username/password must be [URL encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+      - DATABASE_URL=
+      # Redis/Valkey database URL in `redis://<hostname>:<port>/<db number>` format.
+      - REDIS_URL=
+      # Browser session secret. Changing it will terminate all active browser sessions.
+      - SECRET_KEY_BASE=
+    volumes:
+      # Persistent storage for application configuration data.
+      - ${BASEDIR:-/volume1/docker}/manyfold/config:/config
+      # Location of your 3D model libraries.
+      - ${BASEDIR:-/volume1/docker}/manyfold/libraries:/libraries # optional
+    ports:
+      # Port for web frontend
+      - 3214:3214
+    restart: unless-stopped
