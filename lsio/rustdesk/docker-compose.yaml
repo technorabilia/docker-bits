@@ -1,0 +1,25 @@
+# [RustDesk](https://rustdesk.com/) is a full-featured open source remote
+# control alternative for self-hosting and security with minimal configuration.
+
+---
+version: "2.1"
+services:
+  rustdesk:
+    image: ghcr.io/linuxserver/rustdesk
+    container_name: rustdesk
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/rustdesk/config:/config
+    ports:
+      # RustDesk desktop gui.
+      - 3000:3000
+      # HTTPS Rustdesk desktop gui.
+      - 3001:3001
+    restart: unless-stopped
