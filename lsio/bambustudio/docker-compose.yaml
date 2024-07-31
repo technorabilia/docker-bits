@@ -17,6 +17,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
+      # Set this to true to enable dark mode for Bambu Studio.
+      - DARK_MODE=true # optional
     volumes:
       # Users home directory in the container, stores program settings and files.
       - ${BASEDIR:-/volume1/docker}/bambustudio/config:/config
