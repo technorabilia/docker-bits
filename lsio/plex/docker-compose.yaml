@@ -28,4 +28,7 @@ services:
       - ${BASEDIR:-/volume1/docker}/plex/tv:/tv
       # Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.
       - ${BASEDIR:-/volume1/docker}/plex/movies:/movies
+    ports:
+      # Application WebUI
+      - 80:80
     restart: unless-stopped

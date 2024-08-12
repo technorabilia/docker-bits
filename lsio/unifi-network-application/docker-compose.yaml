@@ -25,14 +25,14 @@ services:
       - MONGO_PORT=27017
       # Mongodb Database Name (stats DB is automatically suffixed with `_stat`). Only evaluated on first run.
       - MONGO_DBNAME=unifi
+      # Mongodb [authSource](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.authSource). For Atlas set to `admin`. Only evaluated on first run.
+      - MONGO_AUTHSOURCE=admin
       # Optionally change the Java memory limit (in Megabytes). Set to `default` to reset to default
       - MEM_LIMIT=1024 # optional
       # Optionally change the Java initial/minimum memory (in Megabytes). Set to `default` to reset to default
       - MEM_STARTUP=1024 # optional
       # Mongodb enable [TLS](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.tls). Only evaluated on first run.
       - MONGO_TLS= # optional
-      # Mongodb [authSource](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.authSource). For Atlas set to `admin`.Defaults to `MONGO_DBNAME`.Only evaluated on first run.
-      - MONGO_AUTHSOURCE= # optional
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config
