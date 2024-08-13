@@ -1,5 +1,5 @@
-# [Snapdrop](https://github.com/RobinLinus/snapdrop) A local file sharing in
-# your browser. Inspired by Apple's Airdrop.
+# [Snapdrop](https://github.com/snapdrop/snapdrop) A local file sharing in your
+# browser. Inspired by Apple's Airdrop.
 
 . ./.env
 docker run -d \
