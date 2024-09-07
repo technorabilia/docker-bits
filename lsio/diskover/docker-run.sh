@@ -10,8 +10,6 @@ docker run -d \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e ES_HOST=elasticsearch `# ElasticSearch host (optional)` \
   -e ES_PORT=9200 `# ElasticSearch port (optional)` \
-  -e ES_USER=elastic `# ElasticSearch username (optional)` \
-  -e ES_PASS=changeme `# ElasticSearch password (optional)` \
   -p 80:80 `# diskover Web UI` \
   -v ${BASEDIR:-/volume1/docker}/diskover/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/diskover/data:/data `# Default mount point to crawl` \
