@@ -1,0 +1,31 @@
+# [Planka](https://github.com/plankanban/planka/) is an elegant open source
+# project tracking tool.
+
+---
+version: "2.1"
+services:
+  planka:
+    image: ghcr.io/linuxserver/planka
+    container_name: planka
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # The URL you will use to access planka including protocol, and port if not 80/443.
+      - BASE_URL=https://planka.example.com
+      # Postgres database URL. Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+      - DATABASE_URL=postgresql://user:password@planka-db:5432/planka
+      # Session encryption key, recommended 32-64 character alphanumeric.
+      - SECRET_KEY=notasecretkey
+      # Set to `1` to trust upstream proxies if reverse proxying.
+      - TRUST_PROXY=0
+    volumes:
+      # Local path for planka config files.
+      - ${BASEDIR:-/volume1/docker}/planka/config:/config
+    ports:
+      # Planka web UI.
+      - 1337:1337
+    restart: unless-stopped
