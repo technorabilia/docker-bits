@@ -1,0 +1,25 @@
+# [RawTherapee](https://rawtherapee.com/) is a free, cross-platform raw image
+# processing program!
+
+---
+version: "2.1"
+services:
+  rawtherapee:
+    image: ghcr.io/linuxserver/rawtherapee
+    container_name: rawtherapee
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # User's home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/rawtherapee/config:/config
+    ports:
+      # RawTherapee desktop gui.
+      - 3000:3000
+      # RawTherapee desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped
