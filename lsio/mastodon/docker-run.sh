@@ -15,8 +15,11 @@ docker run -d \
   -e DB_USER=mastodon `# Postgres username` \
   -e DB_NAME=mastodon `# Postgres db name` \
   -e DB_PASS=mastodon `# Postgres password` \
-  -e DB_PORT=5432 `# Portgres port` \
+  -e DB_PORT=5432 `# Postgres port` \
   -e ES_ENABLED=false `# Enable or disable Elasticsearch (requires a separate ES instance)` \
+  -e ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY= `# Primary key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files).` \
+  -e ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY= `# Deterministic key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files).` \
+  -e ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT= `# Derivation salt for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files).` \
   -e SECRET_KEY_BASE= `# Browser session secret. Changing it will break all active browser sessions.` \
   -e OTP_SECRET= `# MFA secret. Changing it after initial setup will break two-factor authentication.` \
   -e VAPID_PRIVATE_KEY= `# Push notification private key. Changing it after initial setup will break push notifications.` \
