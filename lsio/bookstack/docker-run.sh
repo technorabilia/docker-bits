@@ -12,12 +12,13 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e APP_URL=yourbaseurl `# for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
-  -e DB_HOST=yourdbhost `# for specifying the database host` \
-  -e DB_PORT=yourdbport `# for specifying the database port if not default 3306` \
-  -e DB_USER=yourdbuser `# for specifying the database user` \
-  -e DB_PASS=yourdbpass `# for specifying the database password (minimum 4 characters & non-alphanumeric passwords must be properly escaped.)` \
-  -e DB_DATABASE=bookstackapp `# for specifying the database to be used` \
+  -e APP_URL= `# The IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
+  -e APP_KEY= `# Session encryption key. Can be generated with `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey`` \
+  -e DB_HOST= `# The database instance hostname` \
+  -e DB_PORT=3306 `# Database port (default `3306`)` \
+  -e DB_USERNAME= `# Database user` \
+  -e DB_PASSWORD= `# Database password (minimum 4 characters & non-alphanumeric passwords must be properly escaped.)` \
+  -e DB_DATABASE= `# Database name` \
   -e QUEUE_CONNECTION= `# optional` `# Set to `database` to enable async actions like sending email or triggering webhooks. See [documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/#async-action-handling).` \
   -p 6875:80 `# will map the container's port 80 to port 6875 on the host` \
   -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# Persistent config files` \
