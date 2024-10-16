@@ -13,7 +13,7 @@ docker run -d \
   -e PUID=${PUID:-1024} `# for UserID` \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e JELLYFIN_PublishedServerUrl=192.168.0.5 `# optional` `# Set the autodiscovery response domain or IP address.` \
+  -e JELLYFIN_PublishedServerUrl=http://192.168.0.5 `# optional` `# Set the autodiscovery response domain or IP address, include http(s)://.` \
   -p 8096:8096 `# Http webUI.` \
   -p 8920:8920 `# optional` `# Optional - Https webUI (you need to set up your own certificate).` \
   -p 7359:7359/udp `# optional` `# Optional - Allows clients to discover Jellyfin on the local network.` \

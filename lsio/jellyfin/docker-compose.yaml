@@ -20,8 +20,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Set the autodiscovery response domain or IP address.
-      - JELLYFIN_PublishedServerUrl=192.168.0.5 # optional
+      # Set the autodiscovery response domain or IP address, include http(s)://.
+      - JELLYFIN_PublishedServerUrl=http://192.168.0.5 # optional
     volumes:
       # Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*
       - ${BASEDIR:-/volume1/docker}/jellyfin/config:/config

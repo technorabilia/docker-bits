@@ -14,13 +14,13 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
+      # Set this to root password for installation (minimum 4 characters & non-alphanumeric passwords must be properly escaped). (valid only for first run)
       - MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
-      # Specify the name of a database to be created on image startup.
+      # Specify the name of a database to be created. (valid only for first run)
       - MYSQL_DATABASE=USER_DB_NAME # optional
-      # This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).
+      # This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here). (valid only for first run)
       - MYSQL_USER=MYSQL_USER # optional
-      # Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped).
+      # Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped). (valid only for first run)
       - MYSQL_PASSWORD=DATABASE_PASSWORD # optional
       # Set this to ingest sql files from an http/https endpoint (comma seperated array).
       - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql # optional

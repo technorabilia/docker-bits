@@ -11,7 +11,7 @@ docker run -d \
   -e APP_KEY= `# App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)` \
   -e DB_CONNECTION=sqlite `# Set the database type to use. `sqlite`, `pgsql`, or `mysql`` \
   -e SPEEDTEST_SCHEDULE= `# Set the test schedule in cron format. e.g. `0 */6 * * *`` \
-  -e SPEEDTEST_SERVERS= `# A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers.` \
+  -e SPEEDTEST_SERVERS= `# A comma-separated list of server IDs to test against. Run `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/speedtest-tracker:latest list-servers` to get a list of nearby servers.` \
   -e DB_HOST= `# optional` `# Database hostname (postgres/mysql).` \
   -e DB_PORT= `# optional` `# Database port (postgres/mysql).` \
   -e DB_DATABASE= `# optional` `# Database name (postgres/mysql).` \

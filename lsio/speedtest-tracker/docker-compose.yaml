@@ -21,7 +21,7 @@ services:
       - DB_CONNECTION=sqlite
       # Set the test schedule in cron format. e.g. `0 */6 * * *`
       - SPEEDTEST_SCHEDULE=
-      # A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers.
+      # A comma-separated list of server IDs to test against. Run `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/speedtest-tracker:latest list-servers` to get a list of nearby servers.
       - SPEEDTEST_SERVERS=
       # Database hostname (postgres/mysql).
       - DB_HOST= # optional
