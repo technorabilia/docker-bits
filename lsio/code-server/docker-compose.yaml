@@ -27,7 +27,7 @@ services:
       - SUDO_PASSWORD=password # optional
       # Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.
       - SUDO_PASSWORD_HASH= # optional
-      # If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)
+      # If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/coder/code-server/blob/main/docs/guide.md#using-a-subdomain)
       - PROXY_DOMAIN=code-server.my.domain # optional
       # If this optional variable is set, code-server will open this directory by default
       - DEFAULT_WORKSPACE=/config/workspace # optional
