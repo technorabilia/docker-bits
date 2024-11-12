@@ -9,6 +9,7 @@ docker run -d \
   -e PGID=${PGID:-100} `# for GroupID` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e APP_KEY= `# App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)` \
+  -e APP_URL= `# The IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`` \
   -e DB_CONNECTION=sqlite `# Set the database type to use. `sqlite`, `pgsql`, or `mysql`` \
   -e SPEEDTEST_SCHEDULE= `# Set the test schedule in cron format. e.g. `0 */6 * * *`` \
   -e SPEEDTEST_SERVERS= `# A comma-separated list of server IDs to test against. Run `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/speedtest-tracker:latest list-servers` to get a list of nearby servers.` \

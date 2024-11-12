@@ -17,6 +17,8 @@ services:
       - TZ=${TZ:-Europe/Amsterdam}
       # App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)
       - APP_KEY=
+      # The IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`
+      - APP_URL=
       # Set the database type to use. `sqlite`, `pgsql`, or `mysql`
       - DB_CONNECTION=sqlite
       # Set the test schedule in cron format. e.g. `0 */6 * * *`
