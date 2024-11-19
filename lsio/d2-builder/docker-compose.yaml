@@ -1,0 +1,21 @@
+# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.
+---
+version: "2.1"
+services:
+  d2-builder:
+    image: ghcr.io/linuxserver/d2-builder
+    container_name: d2-builder
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/d2-builder/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped
