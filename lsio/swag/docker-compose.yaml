@@ -19,8 +19,8 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Top url you have control over (`customdomain.com` if you own it, or `customsubdomain.ddnsprovider.com` if dynamic dns).
-      - URL=yourdomain.url
+      # Top url you have control over (e.g. `example.com` if you own it, or `customsubdomain.example.com` if dynamic dns).
+      - URL=example.com
       # Certbot validation method to use, options are `http` or `dns` (`dns` method also requires `DNSPLUGIN` variable set).
       - VALIDATION=http
       # Subdomains you'd like the cert to cover (comma separated, no spaces) ie. `www,ftp,cloud`. For a wildcard cert, set this *exactly* to `wildcard` (wildcard cert is available via `dns` validation only)
@@ -35,7 +35,7 @@ services:
       - EMAIL= # optional
       # If you wish to get certs only for certain subdomains, but not the main domain (main domain may be hosted on another machine and cannot be validated), set this to `true`
       - ONLY_SUBDOMAINS=false # optional
-      # Additional fully qualified domain names (comma separated, no spaces) ie. `extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org`
+      # Additional fully qualified domain names (comma separated, no spaces) ie. `example.net,subdomain.example.net,*.example.org`
       - EXTRA_DOMAINS= # optional
       # Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.
       - STAGING=false # optional
@@ -43,8 +43,8 @@ services:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/swag/config:/config
     ports:
-      # Https port
+      # HTTPS port
       - 443:443
-      # Http port (required for http validation and http -> https redirect)
+      # HTTP port (required for HTTP validation and HTTP -> HTTPS redirect)
       - 80:80 # optional
     restart: unless-stopped
