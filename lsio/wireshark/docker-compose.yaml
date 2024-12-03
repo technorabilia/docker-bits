@@ -26,6 +26,8 @@ services:
       # Users home directory in the container, stores program settings and potentially dump files.
       - ${BASEDIR:-/volume1/docker}/wireshark/config:/config
     ports:
+      # Application WebUI
+      - 80:80
       # WireShark desktop gui, only use this if you are not using host mode and sniffing Docker network traffic.
       - 3000:3000 # optional
       # WireShark desktop gui HTTPS, only use this if you are not using host mode and sniffing Docker network traffic.

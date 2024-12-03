@@ -9,6 +9,8 @@ services:
   mysql-workbench:
     image: ghcr.io/linuxserver/mysql-workbench
     container_name: mysql-workbench
+    cap_add:
+      - IPC_LOCK
     environment:
       # for UserID
       - PUID=${PUID:-1024}
@@ -24,6 +26,4 @@ services:
       - 3000:3000
       # Mysql Workbench desktop gui HTTPS.
       - 3001:3001
-    cap_add:
-      - IPC_LOCK
     restart: unless-stopped
