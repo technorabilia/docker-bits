@@ -1,0 +1,26 @@
+# [OpenShot](https://openshot.org/) Video Editor is an award-winning free and
+# open-source video editor for Linux, Mac, and Windows, and is dedicated to
+# delivering high quality video editing and animation solutions to the world.
+
+---
+version: "2.1"
+services:
+  openshot:
+    image: ghcr.io/linuxserver/openshot
+    container_name: openshot
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # User's home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/volume1/docker}/openshot/config:/config
+    ports:
+      # OpenShot desktop gui.
+      - 3000:3000
+      # OpenShot desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped

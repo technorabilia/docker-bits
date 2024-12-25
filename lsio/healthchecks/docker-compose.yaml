@@ -23,7 +23,7 @@ services:
       - SUPERUSER_EMAIL=
       # Superuser password.
       - SUPERUSER_PASSWORD=
-      # A comma-separated list of valid hostnames for the server. Default is: `*`.
+      # A comma-separated list of valid hostnames for the server. Default is the domain portion of `SITE_ROOT`.
       - ALLOWED_HOSTS= # optional
       # Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise).
       - APPRISE_ENABLED=False # optional
