@@ -8,6 +8,8 @@ services:
   smokeping:
     image: ghcr.io/linuxserver/smokeping
     container_name: smokeping
+    # In a master-slave architecture, the hostname of the master node is displayed as its name in the web interface, while the hostname of the slave nodes represents their device aliases. These slave hostnames must match the aliases defined in the master's Slaves file.
+    hostname: {{ project_name }} # optional
     environment:
       # for UserID
       - PUID=${PUID:-1024}
