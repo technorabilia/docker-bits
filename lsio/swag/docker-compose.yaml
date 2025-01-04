@@ -39,6 +39,8 @@ services:
       - EXTRA_DOMAINS= # optional
       # Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.
       - STAGING=false # optional
+      # Set to `true` to disable the Fail2ban service in the container, if you're already running it elsewhere or using a different IPS.
+      - DISABLE_F2B= # optional
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/swag/config:/config

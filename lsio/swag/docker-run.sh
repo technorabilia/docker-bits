@@ -21,6 +21,7 @@ docker run -d \
   -e ONLY_SUBDOMAINS=false `# optional` `# If you wish to get certs only for certain subdomains, but not the main domain (main domain may be hosted on another machine and cannot be validated), set this to `true`` \
   -e EXTRA_DOMAINS= `# optional` `# Additional fully qualified domain names (comma separated, no spaces) ie. `example.net,subdomain.example.net,*.example.org`` \
   -e STAGING=false `# optional` `# Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.` \
+  -e DISABLE_F2B= `# optional` `# Set to `true` to disable the Fail2ban service in the container, if you're already running it elsewhere or using a different IPS.` \
   -p 443:443 `# HTTPS port` \
   -p 80:80 `# optional` `# HTTP port (required for HTTP validation and HTTP -> HTTPS redirect)` \
   -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# Persistent config files` \
