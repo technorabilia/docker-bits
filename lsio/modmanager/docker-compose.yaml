@@ -1,0 +1,21 @@
+# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.
+---
+version: "2.1"
+services:
+  modmanager:
+    image: ghcr.io/linuxserver/modmanager
+    container_name: modmanager
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/modmanager/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped
