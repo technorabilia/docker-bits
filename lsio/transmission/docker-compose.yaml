@@ -33,9 +33,9 @@ services:
       # Where transmission should store config files and logs.
       - ${BASEDIR:-/volume1/docker}/transmission/config:/config
       # Local path for downloads.
-      - ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads
+      - ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads # optional
       # Watch folder for torrent files.
-      - ${BASEDIR:-/volume1/docker}/transmission/watch:/watch
+      - ${BASEDIR:-/volume1/docker}/transmission/watch:/watch # optional
     ports:
       # WebUI
       - 9091:9091

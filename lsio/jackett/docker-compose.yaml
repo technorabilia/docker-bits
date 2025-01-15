@@ -19,7 +19,7 @@ services:
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}
-      # Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)
+      # Allow Jackett to update inside of the container.
       - AUTO_UPDATE=true # optional
       # Optionally specify additional arguments to be passed.
       - RUN_OPTS= # optional
