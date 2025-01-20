@@ -22,6 +22,8 @@ docker run -d \
   -e EXTRA_DOMAINS= `# optional` `# Additional fully qualified domain names (comma separated, no spaces) ie. `example.net,subdomain.example.net,*.example.org`` \
   -e STAGING=false `# optional` `# Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes.` \
   -e DISABLE_F2B= `# optional` `# Set to `true` to disable the Fail2ban service in the container, if you're already running it elsewhere or using a different IPS.` \
+  -e SWAG_AUTORELOAD= `# optional` `# Set to `true` to enable automatic reloading of confs on change without stopping/restarting nginx. Your filesystem must support inotify. This functionality was previously offered [via mod](https://github.com/linuxserver/docker-mods/tree/swag-auto-reload).` \
+  -e SWAG_AUTORELOAD_WATCHLIST= `# optional` `# A [pipe](https://en.wikipedia.org/wiki/Vertical_bar)-separated list of additional folders for auto reload to watch in addition to `/config/nginx`` \
   -p 443:443 `# HTTPS port` \
   -p 80:80 `# optional` `# HTTP port (required for HTTP validation and HTTP -> HTTPS redirect)` \
   -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# Persistent config files` \
