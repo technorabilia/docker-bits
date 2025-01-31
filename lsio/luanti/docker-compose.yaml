@@ -1,0 +1,25 @@
+# [Luanti](https://www.luanti.org/) (formerly Minetest) is an open source voxel
+# game-creation platform with easy modding and game creation
+
+---
+version: "2.1"
+services:
+  luanti:
+    image: ghcr.io/linuxserver/luanti
+    container_name: luanti
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+      # Optionally specify any [CLI variables](https://wiki.luanti.net/Command_line) you want to launch the app with
+      - CLI_ARGS=--gameid devtest # optional
+    volumes:
+      # Where luanti stores config files and maps etc.
+      - ${BASEDIR:-/volume1/docker}/luanti/config/.minetest:/config/.minetest
+    ports:
+      # Port Luanti listens on (UDP).
+      - 30000:30000/udp
+    restart: unless-stopped
