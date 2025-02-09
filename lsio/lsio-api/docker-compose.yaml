@@ -1,0 +1,21 @@
+# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/lsio-api for details.
+---
+version: "2.1"
+services:
+  lsio-api:
+    image: ghcr.io/linuxserver/lsio-api
+    container_name: lsio-api
+    environment:
+      # for UserID
+      - PUID=${PUID:-1024}
+      # for GroupID
+      - PGID=${PGID:-100}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Europe/Amsterdam}
+    volumes:
+      # Configuration files.
+      - ${BASEDIR:-/volume1/docker}/lsio-api/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped
