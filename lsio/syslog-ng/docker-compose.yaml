@@ -3,10 +3,9 @@
 # from across your infrastructure and store or route them to log analysis tools.
 
 ---
-version: "2.1"
 services:
   syslog-ng:
-    image: ghcr.io/linuxserver/syslog-ng
+    image: lscr.io/linuxserver/syslog-ng:latest
     container_name: syslog-ng
     environment:
       # for UserID

@@ -3,10 +3,9 @@
 # Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.
 
 ---
-version: "2.1"
 services:
   phpmyadmin:
-    image: ghcr.io/linuxserver/phpmyadmin
+    image: lscr.io/linuxserver/phpmyadmin:latest
     container_name: phpmyadmin
     environment:
       # for UserID

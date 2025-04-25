@@ -3,10 +3,9 @@
 # focused on 3D printing.
 
 ---
-version: "2.1"
 services:
   manyfold:
-    image: ghcr.io/linuxserver/manyfold
+    image: lscr.io/linuxserver/manyfold:latest
     container_name: manyfold
     environment:
       # for UserID

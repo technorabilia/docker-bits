@@ -2,10 +2,9 @@
 # YouTube client with a focus on privacy.
 
 ---
-version: "2.1"
 services:
   freetube:
-    image: ghcr.io/linuxserver/freetube
+    image: lscr.io/linuxserver/freetube:latest
     container_name: freetube
     environment:
       # for UserID

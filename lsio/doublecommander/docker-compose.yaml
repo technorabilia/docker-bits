@@ -3,10 +3,9 @@
 # Commander and features some new ideas.
 
 ---
-version: "2.1"
 services:
   doublecommander:
-    image: ghcr.io/linuxserver/doublecommander
+    image: lscr.io/linuxserver/doublecommander:latest
     container_name: doublecommander
     environment:
       # for UserID

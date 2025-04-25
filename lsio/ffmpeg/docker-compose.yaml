@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.
 ---
-version: "2.1"
 services:
   ffmpeg:
-    image: ghcr.io/linuxserver/ffmpeg
+    image: lscr.io/linuxserver/ffmpeg:latest
     container_name: ffmpeg
     environment:
       # for UserID

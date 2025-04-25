@@ -3,10 +3,9 @@
 # delivering high quality video editing and animation solutions to the world.
 
 ---
-version: "2.1"
 services:
   openshot:
-    image: ghcr.io/linuxserver/openshot
+    image: lscr.io/linuxserver/openshot:latest
     container_name: openshot
     environment:
       # for UserID

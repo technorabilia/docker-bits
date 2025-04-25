@@ -2,10 +2,9 @@
 # files reside in `/config` for easy user customization.
 
 ---
-version: "2.1"
 services:
   nginx:
-    image: ghcr.io/linuxserver/nginx
+    image: lscr.io/linuxserver/nginx:latest
     container_name: nginx
     environment:
       # for UserID

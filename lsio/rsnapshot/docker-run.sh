@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/rsnapshot/.snapshots:/.snapshots `# optional` `# Storage location for all snapshots.` \
   -v ${BASEDIR:-/volume1/docker}/rsnapshot/data:/data `# optional` `# Storage location for data to be backed up.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/rsnapshot
+  lscr.io/linuxserver/rsnapshot:latest

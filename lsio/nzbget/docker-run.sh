@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/nzbget/config:/config `# Persistent config` \
   -v ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads `# optional` `# Location of downloads on disk.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/nzbget
+  lscr.io/linuxserver/nzbget:latest

@@ -7,10 +7,9 @@
 # community allow for a broad range of use cases beyond a traditional wiki.
 
 ---
-version: "2.1"
 services:
   dokuwiki:
-    image: ghcr.io/linuxserver/dokuwiki
+    image: lscr.io/linuxserver/dokuwiki:latest
     container_name: dokuwiki
     environment:
       # for UserID

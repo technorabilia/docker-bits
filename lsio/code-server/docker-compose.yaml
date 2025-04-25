@@ -7,10 +7,9 @@
 # You're no longer running excess instances of Chrome.
 
 ---
-version: "2.1"
 services:
   code-server:
-    image: ghcr.io/linuxserver/code-server
+    image: lscr.io/linuxserver/code-server:latest
     container_name: code-server
     environment:
       # for UserID

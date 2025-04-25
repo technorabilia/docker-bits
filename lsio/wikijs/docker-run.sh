@@ -17,4 +17,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/wikijs/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/wikijs/data:/data `# Where Wiki.js data is stored.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/wikijs
+  lscr.io/linuxserver/wikijs:latest

@@ -10,4 +10,4 @@ docker run -d \
   -e FEED_LIMIT=5 `# optional` `# Limit number of RSS entries published at each execution.` \
   -v ${BASEDIR:-/volume1/docker}/feed2toot/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/feed2toot
+  lscr.io/linuxserver/feed2toot:latest

@@ -11,4 +11,4 @@ docker run -d \
   -p 443:443 `# https` \
   -v ${BASEDIR:-/volume1/docker}/nginx/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/nginx
+  lscr.io/linuxserver/nginx:latest

@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# KeePassXC desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/keepassxc/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/keepassxc
+  lscr.io/linuxserver/keepassxc:latest

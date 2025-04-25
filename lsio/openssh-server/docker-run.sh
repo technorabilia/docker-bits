@@ -25,4 +25,4 @@ docker run -d \
   -p 2222:2222 `# ssh port` \
   -v ${BASEDIR:-/volume1/docker}/openssh-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/openssh-server
+  lscr.io/linuxserver/openssh-server:latest

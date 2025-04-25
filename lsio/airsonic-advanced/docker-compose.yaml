@@ -5,10 +5,9 @@
 # one player in your kitchen and another in your living room.
 
 ---
-version: "2.1"
 services:
   airsonic-advanced:
-    image: ghcr.io/linuxserver/airsonic-advanced
+    image: lscr.io/linuxserver/airsonic-advanced:latest
     container_name: airsonic-advanced
     environment:
       # for UserID

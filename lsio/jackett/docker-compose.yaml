@@ -7,10 +7,9 @@
 # other apps.
 
 ---
-version: "2.1"
 services:
   jackett:
-    image: ghcr.io/linuxserver/jackett
+    image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
     environment:
       # for UserID

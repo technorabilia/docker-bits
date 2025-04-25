@@ -6,10 +6,9 @@
 # bootable flags.
 
 ---
-version: "2.1"
 services:
   netbootxyz:
-    image: ghcr.io/linuxserver/netbootxyz
+    image: lscr.io/linuxserver/netbootxyz:latest
     container_name: netbootxyz
     environment:
       # for UserID

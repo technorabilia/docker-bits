@@ -2,10 +2,9 @@
 # Discord.'
 
 ---
-version: "2.1"
 services:
   doplarr:
-    image: ghcr.io/linuxserver/doplarr
+    image: lscr.io/linuxserver/doplarr:latest
     container_name: doplarr
     environment:
       # for UserID

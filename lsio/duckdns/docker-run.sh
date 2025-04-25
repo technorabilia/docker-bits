@@ -18,4 +18,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# Configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# optional` `# Persistent config files. Also set `LOG_FILE=true` to keep address history.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/duckdns
+  lscr.io/linuxserver/duckdns:latest

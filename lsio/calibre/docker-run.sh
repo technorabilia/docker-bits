@@ -17,4 +17,4 @@ docker run -d \
   -p 8081:8081 `# Calibre webserver gui.` \
   -v ${BASEDIR:-/volume1/docker}/calibre/config:/config `# Where calibre should store its database and library.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/calibre
+  lscr.io/linuxserver/calibre:latest

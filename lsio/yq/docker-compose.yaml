@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/yq for details.
 ---
-version: "2.1"
 services:
   yq:
-    image: ghcr.io/linuxserver/yq
+    image: lscr.io/linuxserver/yq:latest
     container_name: yq
     environment:
       # for UserID

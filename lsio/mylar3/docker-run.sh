@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/mylar3/comics:/comics `# Map to your comics folder.` \
   -v ${BASEDIR:-/volume1/docker}/mylar3/downloads:/downloads `# Map to your downloads folder.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mylar3
+  lscr.io/linuxserver/mylar3:latest

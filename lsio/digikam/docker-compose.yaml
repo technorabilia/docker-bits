@@ -2,10 +2,9 @@
 # Power of Open Source
 
 ---
-version: "2.1"
 services:
   digikam:
-    image: ghcr.io/linuxserver/digikam
+    image: lscr.io/linuxserver/digikam:latest
     container_name: digikam
     environment:
       # for UserID

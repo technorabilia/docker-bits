@@ -12,4 +12,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/piwigo/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/piwigo/gallery:/gallery `# Image storage for Piwigo` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/piwigo
+  lscr.io/linuxserver/piwigo:latest

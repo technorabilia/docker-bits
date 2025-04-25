@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/bazarr/movies:/movies `# optional` `# Location of your movies` \
   -v ${BASEDIR:-/volume1/docker}/bazarr/tv:/tv `# optional` `# Location of your TV Shows` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/bazarr
+  lscr.io/linuxserver/bazarr:latest

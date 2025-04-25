@@ -3,10 +3,9 @@
 # through a modern web browser.
 
 ---
-version: "2.1"
 services:
   openvscode-server:
-    image: ghcr.io/linuxserver/openvscode-server
+    image: lscr.io/linuxserver/openvscode-server:latest
     container_name: openvscode-server
     environment:
       # for UserID

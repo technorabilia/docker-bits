@@ -8,4 +8,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/modmanager/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/modmanager
+  lscr.io/linuxserver/modmanager:latest

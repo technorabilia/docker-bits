@@ -5,10 +5,9 @@
 # multi user management, past uploads history and search support.
 
 ---
-version: "2.1"
 services:
   xbackbone:
-    image: ghcr.io/linuxserver/xbackbone
+    image: lscr.io/linuxserver/xbackbone:latest
     container_name: xbackbone
     environment:
       # for UserID

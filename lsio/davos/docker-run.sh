@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/davos/config:/config `# davos's config location. This is where it stores its database file and logs.` \
   -v ${BASEDIR:-/volume1/docker}/davos/download:/download `# davos's file download location` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/davos
+  lscr.io/linuxserver/davos:latest

@@ -2,10 +2,9 @@
 # editor and recorder. Developed by a group of volunteers as open source.
 
 ---
-version: "2.1"
 services:
   audacity:
-    image: ghcr.io/linuxserver/audacity
+    image: lscr.io/linuxserver/audacity:latest
     container_name: audacity
     environment:
       # for UserID

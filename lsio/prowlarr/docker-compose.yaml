@@ -6,10 +6,9 @@
 # (we do it all).
 
 ---
-version: "2.1"
 services:
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr
+    image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
     environment:
       # for UserID

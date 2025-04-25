@@ -18,4 +18,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/duplicati/backups:/backups `# Path to store local backups.` \
   -v ${BASEDIR:-/volume1/docker}/duplicati/source:/source `# Path to source for files to backup.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/duplicati
+  lscr.io/linuxserver/duplicati:latest

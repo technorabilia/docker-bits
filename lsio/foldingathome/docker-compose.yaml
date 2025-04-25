@@ -7,10 +7,9 @@
 # developing therapeutics.
 
 ---
-version: "2.1"
 services:
   foldingathome:
-    image: ghcr.io/linuxserver/foldingathome
+    image: lscr.io/linuxserver/foldingathome:latest
     container_name: foldingathome
     environment:
       # for UserID

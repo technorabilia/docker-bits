@@ -3,10 +3,9 @@
 # DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.
 
 ---
-version: "2.1"
 services:
   minisatip:
-    image: ghcr.io/linuxserver/minisatip
+    image: lscr.io/linuxserver/minisatip:latest
     container_name: minisatip
     environment:
       # for UserID

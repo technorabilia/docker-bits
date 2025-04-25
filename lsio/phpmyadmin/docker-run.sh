@@ -13,4 +13,4 @@ docker run -d \
   -p 80:80 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/phpmyadmin/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/phpmyadmin
+  lscr.io/linuxserver/phpmyadmin:latest

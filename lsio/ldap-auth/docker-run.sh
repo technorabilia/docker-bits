@@ -19,4 +19,4 @@ docker run -d \
   -p 9000:9000 `# the port for ldap login page` \
   -v ${BASEDIR:-/volume1/docker}/ldap-auth/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ldap-auth
+  lscr.io/linuxserver/ldap-auth:latest

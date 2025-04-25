@@ -2,10 +2,9 @@
 # allows you to watch Plex in sync with your friends/family, wherever you are.
 
 ---
-version: "2.1"
 services:
   synclounge:
-    image: ghcr.io/linuxserver/synclounge
+    image: lscr.io/linuxserver/synclounge:latest
     container_name: synclounge
     environment:
       # If set, only the users defined here and the users of the plex servers defined here will be able to access the server. Use e-mails, plex usernames and/or plex server machine ids, comma separated, no spaces.

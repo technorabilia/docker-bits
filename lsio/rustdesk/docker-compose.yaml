@@ -2,10 +2,9 @@
 # control alternative for self-hosting and security with minimal configuration.
 
 ---
-version: "2.1"
 services:
   rustdesk:
-    image: ghcr.io/linuxserver/rustdesk
+    image: lscr.io/linuxserver/rustdesk:latest
     container_name: rustdesk
     environment:
       # for UserID

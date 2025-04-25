@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/doublecommander/config:/config `# Users home directory in the container, stores program settings.` \
   -v ${BASEDIR:-/volume1/docker}/doublecommander/data:/data `# Host data directories, mount as many as needed.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/doublecommander
+  lscr.io/linuxserver/doublecommander:latest

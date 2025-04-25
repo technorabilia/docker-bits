@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/kavita/config:/config `# Contains all relevant configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/kavita/data:/data `# optional` `# Media library containing manga, comics and books.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kavita
+  lscr.io/linuxserver/kavita:latest

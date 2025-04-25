@@ -10,4 +10,4 @@ docker run -d \
   -p 9000:9000 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/thelounge/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/thelounge
+  lscr.io/linuxserver/thelounge:latest

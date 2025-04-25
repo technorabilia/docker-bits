@@ -4,10 +4,9 @@
 # https://github.com/SickGear/SickGear
 
 ---
-version: "2.1"
 services:
   sickgear:
-    image: ghcr.io/linuxserver/sickgear
+    image: lscr.io/linuxserver/sickgear:latest
     container_name: sickgear
     environment:
       # for UserID

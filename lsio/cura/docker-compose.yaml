@@ -3,10 +3,9 @@
 # 3D model with 400+ settings for the best slicing and printing results.
 
 ---
-version: "2.1"
 services:
   cura:
-    image: ghcr.io/linuxserver/cura
+    image: lscr.io/linuxserver/cura:latest
     container_name: cura
     environment:
       # for UserID

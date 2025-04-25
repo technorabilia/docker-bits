@@ -6,10 +6,9 @@
 # eyes).
 
 ---
-version: "2.1"
 services:
   webcord:
-    image: ghcr.io/linuxserver/webcord
+    image: lscr.io/linuxserver/webcord:latest
     container_name: webcord
     environment:
       # for UserID

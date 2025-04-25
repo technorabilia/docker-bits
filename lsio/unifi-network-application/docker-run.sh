@@ -28,4 +28,4 @@ docker run -d \
   -p 5514:5514/udp `# optional` `# Remote syslog port` \
   -v ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/unifi-network-application
+  lscr.io/linuxserver/unifi-network-application:latest

@@ -21,4 +21,4 @@ docker run -d \
   -p 8443:8443 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/code-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/code-server
+  lscr.io/linuxserver/code-server:latest

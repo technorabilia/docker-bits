@@ -5,10 +5,9 @@
 # user mapping to simplify permissions for volumes.
 
 ---
-version: "2.1"
 services:
   resilio-sync:
-    image: ghcr.io/linuxserver/resilio-sync
+    image: lscr.io/linuxserver/resilio-sync:latest
     container_name: resilio-sync
     environment:
       # for UserID

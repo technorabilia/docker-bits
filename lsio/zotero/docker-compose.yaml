@@ -2,10 +2,9 @@
 # collect, organize, annotate, cite, and share research.
 
 ---
-version: "2.1"
 services:
   zotero:
-    image: ghcr.io/linuxserver/zotero
+    image: lscr.io/linuxserver/zotero:latest
     container_name: zotero
     environment:
       # for UserID

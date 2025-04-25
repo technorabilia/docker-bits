@@ -30,4 +30,4 @@ docker run -d \
   -p 8080:80 `# Snipe-IT Web UI` \
   -v ${BASEDIR:-/volume1/docker}/snipe-it/config:/config `# Contains your config files and data storage for Snipe-IT` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/snipe-it
+  lscr.io/linuxserver/snipe-it:latest

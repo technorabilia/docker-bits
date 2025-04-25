@@ -3,10 +3,9 @@
 # container provides a Wyoming protocol server for Piper.
 
 ---
-version: "2.1"
 services:
   piper:
-    image: ghcr.io/linuxserver/piper
+    image: lscr.io/linuxserver/piper:latest
     container_name: piper
     environment:
       # for UserID

@@ -19,4 +19,4 @@ docker run -d \
   -p 7396:7396 `# optional` `# Folding@home web gui (redirects to [https://app.foldingathome.org](https://app.foldingathome.org)).` \
   -v ${BASEDIR:-/volume1/docker}/foldingathome/config:/config `# Where Folding@home should store its database and config.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/foldingathome
+  lscr.io/linuxserver/foldingathome:latest

@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# Shotcut desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/shotcut/config:/config `# Where Shotcut should store its config.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/shotcut
+  lscr.io/linuxserver/shotcut:latest

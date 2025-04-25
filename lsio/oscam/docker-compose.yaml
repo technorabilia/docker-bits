@@ -3,10 +3,9 @@
 # cards. It's both a server and a client.
 
 ---
-version: "2.1"
 services:
   oscam:
-    image: ghcr.io/linuxserver/oscam
+    image: lscr.io/linuxserver/oscam:latest
     container_name: oscam
     environment:
       # for UserID

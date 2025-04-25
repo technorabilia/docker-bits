@@ -6,10 +6,9 @@
 # network operations.
 
 ---
-version: "2.1"
 services:
   netbox:
-    image: ghcr.io/linuxserver/netbox
+    image: lscr.io/linuxserver/netbox:latest
     container_name: netbox
     environment:
       # for UserID

@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/sickgear/tv:/tv `# where you store your tv shows` \
   -v ${BASEDIR:-/volume1/docker}/sickgear/downloads:/downloads `# your downloads folder for post processing (must not be download in progress)` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/sickgear
+  lscr.io/linuxserver/sickgear:latest

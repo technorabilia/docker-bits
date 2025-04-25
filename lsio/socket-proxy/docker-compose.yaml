@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.
 ---
-version: "2.1"
 services:
   socket-proxy:
-    image: ghcr.io/linuxserver/socket-proxy
+    image: lscr.io/linuxserver/socket-proxy:latest
     container_name: socket-proxy
     environment:
       # for UserID

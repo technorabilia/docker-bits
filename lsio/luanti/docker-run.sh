@@ -11,4 +11,4 @@ docker run -d \
   -p 30000:30000/udp `# Port Luanti listens on (UDP).` \
   -v ${BASEDIR:-/volume1/docker}/luanti/config/.minetest:/config/.minetest `# Where luanti stores config files and maps etc.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/luanti
+  lscr.io/linuxserver/luanti:latest

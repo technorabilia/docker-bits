@@ -2,10 +2,9 @@
 # your media.
 
 ---
-version: "2.1"
 services:
   flexget:
-    image: ghcr.io/linuxserver/flexget
+    image: lscr.io/linuxserver/flexget:latest
     container_name: flexget
     environment:
       # for UserID

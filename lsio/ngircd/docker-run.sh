@@ -14,4 +14,4 @@ docker run -d \
   -p 6667:6667 `# ngircd port` \
   -v ${BASEDIR:-/volume1/docker}/ngircd/config:/config `# Where `ngircd.conf` is stored` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ngircd
+  lscr.io/linuxserver/ngircd:latest

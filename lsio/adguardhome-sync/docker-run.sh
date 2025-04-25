@@ -11,4 +11,4 @@ docker run -d \
   -p 8080:8080 `# Port for AdGuardHome Sync's web API.` \
   -v ${BASEDIR:-/volume1/docker}/adguardhome-sync/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/adguardhome-sync
+  lscr.io/linuxserver/adguardhome-sync:latest

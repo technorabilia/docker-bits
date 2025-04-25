@@ -14,4 +14,4 @@ docker run -d \
   -p 3001:3001 `# Remmina desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/remmina/config:/config `# Users home directory in the container, stores program settings.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/remmina
+  lscr.io/linuxserver/remmina:latest

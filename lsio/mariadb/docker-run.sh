@@ -15,4 +15,4 @@ docker run -d \
   -p 3306:3306 `# MariaDB listens on this port.` \
   -v ${BASEDIR:-/volume1/docker}/mariadb/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mariadb
+  lscr.io/linuxserver/mariadb:latest

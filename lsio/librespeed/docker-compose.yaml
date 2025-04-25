@@ -3,10 +3,9 @@
 # Flash, No Java, No Websocket, No Bullshit.
 
 ---
-version: "2.1"
 services:
   librespeed:
-    image: ghcr.io/linuxserver/librespeed
+    image: lscr.io/linuxserver/librespeed:latest
     container_name: librespeed
     environment:
       # for UserID

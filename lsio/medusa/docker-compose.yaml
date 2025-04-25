@@ -3,10 +3,9 @@
 # posted it does its magic.
 
 ---
-version: "2.1"
 services:
   medusa:
-    image: ghcr.io/linuxserver/medusa
+    image: lscr.io/linuxserver/medusa:latest
     container_name: medusa
     environment:
       # for UserID

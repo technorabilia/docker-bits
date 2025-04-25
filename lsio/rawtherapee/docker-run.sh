@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# RawTherapee desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/rawtherapee/config:/config `# User's home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/rawtherapee
+  lscr.io/linuxserver/rawtherapee:latest

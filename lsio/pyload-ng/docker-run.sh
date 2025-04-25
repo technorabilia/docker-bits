@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/pyload-ng/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/pyload-ng/downloads:/downloads `# Destination of pyLoad downloads` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pyload-ng
+  lscr.io/linuxserver/pyload-ng:latest

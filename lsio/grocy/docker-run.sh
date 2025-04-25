@@ -13,4 +13,4 @@ docker run -d \
   -p 9283:80 `# will map the container's port 80 to port 9283 on the host` \
   -v ${BASEDIR:-/volume1/docker}/grocy/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/grocy
+  lscr.io/linuxserver/grocy:latest

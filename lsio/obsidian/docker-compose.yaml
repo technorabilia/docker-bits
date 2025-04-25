@@ -4,10 +4,9 @@
 # access them offline, and sync them securely with end-to-end encryption.
 
 ---
-version: "2.1"
 services:
   obsidian:
-    image: ghcr.io/linuxserver/obsidian
+    image: lscr.io/linuxserver/obsidian:latest
     container_name: obsidian
     environment:
       # for UserID

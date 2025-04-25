@@ -12,4 +12,4 @@ docker run -d \
   -p 8080:8080 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/pwndrop/config:/config `# Contains all relevant configuration and data.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pwndrop
+  lscr.io/linuxserver/pwndrop:latest

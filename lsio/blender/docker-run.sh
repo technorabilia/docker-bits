@@ -15,4 +15,4 @@ docker run -d \
   -p 3001:3001 `# Blender desktop gui HTTPS` \
   -v ${BASEDIR:-/volume1/docker}/blender/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/blender
+  lscr.io/linuxserver/blender:latest

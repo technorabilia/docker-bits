@@ -3,10 +3,9 @@
 # chatting with friends on XMPP and sitting in an IRC channel at the same time.
 
 ---
-version: "2.1"
 services:
   pidgin:
-    image: ghcr.io/linuxserver/pidgin
+    image: lscr.io/linuxserver/pidgin:latest
     container_name: pidgin
     environment:
       # for UserID

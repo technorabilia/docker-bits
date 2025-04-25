@@ -17,4 +17,4 @@ docker run -d \
   -p 10200:10200 `# Wyoming connection port.` \
   -v ${BASEDIR:-/volume1/docker}/piper/config:/config `# Local path for piper config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/piper
+  lscr.io/linuxserver/piper:latest

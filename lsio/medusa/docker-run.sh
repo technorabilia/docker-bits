@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/medusa/downloads:/downloads `# Download location` \
   -v ${BASEDIR:-/volume1/docker}/medusa/tv:/tv `# TV Shows location` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/medusa
+  lscr.io/linuxserver/medusa:latest

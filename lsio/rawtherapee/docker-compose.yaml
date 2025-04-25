@@ -2,10 +2,9 @@
 # processing program!
 
 ---
-version: "2.1"
 services:
   rawtherapee:
-    image: ghcr.io/linuxserver/rawtherapee
+    image: lscr.io/linuxserver/rawtherapee:latest
     container_name: rawtherapee
     environment:
       # for UserID

@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config `# Stores config and application files` \
   -v /var/log:/var/log `# optional` `# Stores logs collected by the syslog-ng service` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/syslog-ng
+  lscr.io/linuxserver/syslog-ng:latest

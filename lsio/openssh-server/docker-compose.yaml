@@ -6,10 +6,9 @@
 # this container.
 
 ---
-version: "2.1"
 services:
   openssh-server:
-    image: ghcr.io/linuxserver/openssh-server
+    image: lscr.io/linuxserver/openssh-server:latest
     container_name: openssh-server
     # Optionally the hostname can be defined.
     hostname: {{ project_name }} # optional

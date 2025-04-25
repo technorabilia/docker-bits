@@ -2,10 +2,9 @@
 # and Modern Series Tracker
 
 ---
-version: "2.1"
 services:
   series-troxide:
-    image: ghcr.io/linuxserver/series-troxide
+    image: lscr.io/linuxserver/series-troxide:latest
     container_name: series-troxide
     environment:
       # for UserID

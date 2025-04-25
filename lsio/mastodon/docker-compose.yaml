@@ -3,10 +3,9 @@
 # discover new ones..
 
 ---
-version: "2.1"
 services:
   mastodon:
-    image: ghcr.io/linuxserver/mastodon
+    image: lscr.io/linuxserver/mastodon:latest
     container_name: mastodon
     environment:
       # for UserID

@@ -4,10 +4,9 @@
 # enhance your productivity.
 
 ---
-version: "2.1"
 services:
   libreoffice:
-    image: ghcr.io/linuxserver/libreoffice
+    image: lscr.io/linuxserver/libreoffice:latest
     container_name: libreoffice
     environment:
       # for UserID

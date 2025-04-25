@@ -10,10 +10,9 @@
 # [KasmVNC](https://www.kasmweb.com/kasmvnc.html?utm_campaign=LinuxServer&utm_source=kasmvnc).
 
 ---
-version: "2.1"
 services:
   kasm:
-    image: ghcr.io/linuxserver/kasm
+    image: lscr.io/linuxserver/kasm:latest
     container_name: kasm
     privileged: true
     environment:

@@ -5,10 +5,9 @@
 # community
 
 ---
-version: "2.1"
 services:
   orcaslicer:
-    image: ghcr.io/linuxserver/orcaslicer
+    image: lscr.io/linuxserver/orcaslicer:latest
     container_name: orcaslicer
     environment:
       # for UserID

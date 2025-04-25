@@ -3,10 +3,9 @@
 # from anywhere, with a tablet, an e-reader, a phone or a computer.
 
 ---
-version: "2.1"
 services:
   ubooquity:
-    image: ghcr.io/linuxserver/ubooquity
+    image: lscr.io/linuxserver/ubooquity:latest
     container_name: ubooquity
     environment:
       # for UserID

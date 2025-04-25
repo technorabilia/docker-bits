@@ -4,10 +4,9 @@
 # collections, overlays, and much more.
 
 ---
-version: "2.1"
 services:
   kometa:
-    image: ghcr.io/linuxserver/kometa
+    image: lscr.io/linuxserver/kometa:latest
     container_name: kometa
     environment:
       # for UserID

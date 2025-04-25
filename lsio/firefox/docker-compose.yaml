@@ -5,10 +5,9 @@
 # implements current and anticipated web standards.
 
 ---
-version: "2.1"
 services:
   firefox:
-    image: ghcr.io/linuxserver/firefox
+    image: lscr.io/linuxserver/firefox:latest
     container_name: firefox
     environment:
       # for UserID

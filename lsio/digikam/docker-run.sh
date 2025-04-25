@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# optional` `# digiKam desktop gui HTTPS` \
   -v ${BASEDIR:-/volume1/docker}/digikam/config:/config `# Users home directory in the container, stores database.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/digikam
+  lscr.io/linuxserver/digikam:latest

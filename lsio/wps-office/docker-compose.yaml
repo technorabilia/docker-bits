@@ -4,10 +4,9 @@
 # Presentation, Spreadsheet, and PDF to improve your work efficiency.
 
 ---
-version: "2.1"
 services:
   wps-office:
-    image: ghcr.io/linuxserver/wps-office
+    image: lscr.io/linuxserver/wps-office:latest
     container_name: wps-office
     environment:
       # for UserID

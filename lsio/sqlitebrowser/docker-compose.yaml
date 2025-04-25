@@ -3,10 +3,9 @@
 # SQLite.
 
 ---
-version: "2.1"
 services:
   sqlitebrowser:
-    image: ghcr.io/linuxserver/sqlitebrowser
+    image: lscr.io/linuxserver/sqlitebrowser:latest
     container_name: sqlitebrowser
     environment:
       # for UserID

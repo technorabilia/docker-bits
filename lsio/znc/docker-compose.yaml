@@ -4,10 +4,9 @@
 # simultaneously and therefore appear under the same nickname on IRC.
 
 ---
-version: "2.1"
 services:
   znc:
-    image: ghcr.io/linuxserver/znc
+    image: lscr.io/linuxserver/znc:latest
     container_name: znc
     environment:
       # for UserID

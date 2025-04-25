@@ -11,4 +11,4 @@ docker run -d \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/budge/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/budge
+  lscr.io/linuxserver/budge:latest

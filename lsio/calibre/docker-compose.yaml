@@ -5,10 +5,9 @@
 # computer experts.
 
 ---
-version: "2.1"
 services:
   calibre:
-    image: ghcr.io/linuxserver/calibre
+    image: lscr.io/linuxserver/calibre:latest
     container_name: calibre
     environment:
       # for UserID

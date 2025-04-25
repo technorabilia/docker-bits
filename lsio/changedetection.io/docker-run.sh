@@ -12,4 +12,4 @@ docker run -d \
   -p 5000:5000 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/changedetection.io
+  lscr.io/linuxserver/changedetection.io:latest

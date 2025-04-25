@@ -24,4 +24,4 @@ docker run -d \
   -v /dev/input:/dev/input `# optional` `# Optional for gamepad support.` \
   -v /run/udev/data:/run/udev/data `# optional` `# Optional for gamepad support.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kasm
+  lscr.io/linuxserver/kasm:latest

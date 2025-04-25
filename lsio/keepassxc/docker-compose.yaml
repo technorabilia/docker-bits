@@ -3,10 +3,9 @@
 # port of KeePass).
 
 ---
-version: "2.1"
 services:
   keepassxc:
-    image: ghcr.io/linuxserver/keepassxc
+    image: lscr.io/linuxserver/keepassxc:latest
     container_name: keepassxc
     environment:
       # for UserID

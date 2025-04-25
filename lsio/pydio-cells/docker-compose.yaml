@@ -3,10 +3,9 @@
 # following a micro-service architecture.
 
 ---
-version: "2.1"
 services:
   pydio-cells:
-    image: ghcr.io/linuxserver/pydio-cells
+    image: lscr.io/linuxserver/pydio-cells:latest
     container_name: pydio-cells
     # Pydio Cells uses the hostname to verify local files. This setting is required and should not be changed after it has been set.
     hostname: {{ project_name }}

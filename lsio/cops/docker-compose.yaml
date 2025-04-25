@@ -18,10 +18,9 @@
 # to use the OPDS feed don't forget to specify /feed at the end of your URL.
 
 ---
-version: "2.1"
 services:
   cops:
-    image: ghcr.io/linuxserver/cops
+    image: lscr.io/linuxserver/cops:latest
     container_name: cops
     environment:
       # for UserID

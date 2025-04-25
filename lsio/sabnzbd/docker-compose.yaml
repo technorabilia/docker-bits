@@ -4,10 +4,9 @@
 # verified, repaired, extracted and filed away with zero human interaction.
 
 ---
-version: "2.1"
 services:
   sabnzbd:
-    image: ghcr.io/linuxserver/sabnzbd
+    image: lscr.io/linuxserver/sabnzbd:latest
     container_name: sabnzbd
     environment:
       # for UserID

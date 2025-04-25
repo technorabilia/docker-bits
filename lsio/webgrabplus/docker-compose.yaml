@@ -3,10 +3,9 @@
 # your favourite channels.
 
 ---
-version: "2.1"
 services:
   webgrabplus:
-    image: ghcr.io/linuxserver/webgrabplus
+    image: lscr.io/linuxserver/webgrabplus:latest
     container_name: webgrabplus
     # Set the hostname for the container for the license check.
     hostname: webgrabplus

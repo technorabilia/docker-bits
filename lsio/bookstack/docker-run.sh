@@ -23,4 +23,4 @@ docker run -d \
   -p 6875:80 `# http/s web interface.` \
   -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/bookstack
+  lscr.io/linuxserver/bookstack:latest

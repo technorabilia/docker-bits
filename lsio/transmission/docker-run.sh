@@ -23,4 +23,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads `# optional` `# Local path for downloads.` \
   -v ${BASEDIR:-/volume1/docker}/transmission/watch:/watch `# optional` `# Watch folder for torrent files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/transmission
+  lscr.io/linuxserver/transmission:latest

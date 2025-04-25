@@ -7,4 +7,4 @@ docker run -d \
   -e URL=http://google.com `# Specify an endpoint, the container will automatically determine the correct protocol and program to use` \
   -p 3000:3000 `# WebUI` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/tester
+  lscr.io/linuxserver/tester:latest

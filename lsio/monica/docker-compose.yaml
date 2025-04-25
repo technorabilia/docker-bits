@@ -2,10 +2,9 @@
 # relationship management system, that lets you document your life.
 
 ---
-version: "2.1"
 services:
   monica:
-    image: ghcr.io/linuxserver/monica
+    image: lscr.io/linuxserver/monica:latest
     container_name: monica
     environment:
       # for UserID

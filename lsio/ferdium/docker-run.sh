@@ -12,4 +12,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/ferdium/config:/config `# Users home directory in the container, stores program settings and files.` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ferdium
+  lscr.io/linuxserver/ferdium:latest

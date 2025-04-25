@@ -22,4 +22,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/lychee/config:/config `# Persistent config files.` \
   -v ${BASEDIR:-/volume1/docker}/lychee/pictures:/pictures `# Where lychee will store uploaded images.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/lychee
+  lscr.io/linuxserver/lychee:latest

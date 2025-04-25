@@ -4,10 +4,9 @@
 # ability to include a search bar using either Google, Bing or DuckDuckGo.
 
 ---
-version: "2.1"
 services:
   heimdall:
-    image: ghcr.io/linuxserver/heimdall
+    image: lscr.io/linuxserver/heimdall:latest
     container_name: heimdall
     environment:
       # for UserID

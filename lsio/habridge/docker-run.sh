@@ -16,4 +16,4 @@ docker run -d \
   -p 50000:50000 `# HABridge communication port.` \
   -v ${BASEDIR:-/volume1/docker}/habridge/config:/config `# Where HABridge stores config files and data.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/habridge
+  lscr.io/linuxserver/habridge:latest

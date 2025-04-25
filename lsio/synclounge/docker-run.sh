@@ -8,4 +8,4 @@ docker run -d \
   -p 8088:8088 `# Web app and server port` \
   -v ${BASEDIR:-/volume1/docker}/synclounge/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/synclounge
+  lscr.io/linuxserver/synclounge:latest

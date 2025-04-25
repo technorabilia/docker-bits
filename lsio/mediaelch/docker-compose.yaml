@@ -4,10 +4,9 @@
 # generator, MediaElch can be used with other MediaCenters as well.
 
 ---
-version: "2.1"
 services:
   mediaelch:
-    image: ghcr.io/linuxserver/mediaelch
+    image: lscr.io/linuxserver/mediaelch:latest
     container_name: mediaelch
     environment:
       # for UserID

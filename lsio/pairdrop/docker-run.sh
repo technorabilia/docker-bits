@@ -16,4 +16,4 @@ docker run -d \
   -p 3000:3000 `# http gui` \
   -v ${BASEDIR:-/volume1/docker}/pairdrop/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pairdrop
+  lscr.io/linuxserver/pairdrop:latest

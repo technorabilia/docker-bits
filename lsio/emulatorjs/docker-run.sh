@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/emulatorjs/config:/config `# Path to store user profiles` \
   -v ${BASEDIR:-/volume1/docker}/emulatorjs/data:/data `# Path to store roms/artwork` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/emulatorjs
+  lscr.io/linuxserver/emulatorjs:latest

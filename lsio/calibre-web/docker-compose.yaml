@@ -5,10 +5,9 @@
 # is a fork of library and licensed under the GPL v3 License.
 
 ---
-version: "2.1"
 services:
   calibre-web:
-    image: ghcr.io/linuxserver/calibre-web
+    image: lscr.io/linuxserver/calibre-web:latest
     container_name: calibre-web
     environment:
       # for UserID

@@ -2,10 +2,9 @@
 # file-based Web-platform.
 
 ---
-version: "2.1"
 services:
   grav:
-    image: ghcr.io/linuxserver/grav
+    image: lscr.io/linuxserver/grav:latest
     container_name: grav
     environment:
       # for UserID

@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/build-agent for details.
 ---
-version: "2.1"
 services:
   build-agent:
-    image: ghcr.io/linuxserver/build-agent
+    image: lscr.io/linuxserver/build-agent:latest
     container_name: build-agent
     environment:
       # for UserID

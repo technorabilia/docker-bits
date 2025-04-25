@@ -4,10 +4,9 @@
 # with your friends and family!
 
 ---
-version: "2.1"
 services:
   kavita:
-    image: ghcr.io/linuxserver/kavita
+    image: lscr.io/linuxserver/kavita:latest
     container_name: kavita
     environment:
       # for UserID

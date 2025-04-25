@@ -15,4 +15,4 @@ docker run -d \
   --device /dev/dri:/dev/dri `# optional` `# Add this for GL support (Linux hosts only)` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/obsidian
+  lscr.io/linuxserver/obsidian:latest

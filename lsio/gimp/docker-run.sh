@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# GIMP desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/gimp/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/gimp
+  lscr.io/linuxserver/gimp:latest

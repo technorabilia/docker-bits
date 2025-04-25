@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/ubooquity/comics:/comics `# Location of comics.` \
   -v ${BASEDIR:-/volume1/docker}/ubooquity/files:/files `# Location of raw files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ubooquity
+  lscr.io/linuxserver/ubooquity:latest

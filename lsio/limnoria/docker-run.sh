@@ -11,4 +11,4 @@ docker run -d \
   -p 8080:8080 `# Port for Limnoria's web interface.` \
   -v ${BASEDIR:-/volume1/docker}/limnoria/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/limnoria
+  lscr.io/linuxserver/limnoria:latest

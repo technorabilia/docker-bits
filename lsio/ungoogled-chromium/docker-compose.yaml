@@ -2,10 +2,9 @@
 # is Google Chromium, sans dependency on Google web services.
 
 ---
-version: "2.1"
 services:
   ungoogled-chromium:
-    image: ghcr.io/linuxserver/ungoogled-chromium
+    image: lscr.io/linuxserver/ungoogled-chromium:latest
     container_name: ungoogled-chromium
     environment:
       # for UserID

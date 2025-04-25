@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# optional` `# Ardour desktop gui HTTPS` \
   -v ${BASEDIR:-/volume1/docker}/ardour/config:/config `# Users home directory in the container, stores data and application config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ardour
+  lscr.io/linuxserver/ardour:latest

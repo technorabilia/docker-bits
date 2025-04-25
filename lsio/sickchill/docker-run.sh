@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads `# optional` `# this will store any downloaded data on the docker host` \
   -v ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv `# optional` `# this will allow sickchill to view what you already have` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/sickchill
+  lscr.io/linuxserver/sickchill:latest

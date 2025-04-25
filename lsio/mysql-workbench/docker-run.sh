@@ -14,4 +14,4 @@ docker run -d \
   -p 3001:3001 `# Mysql Workbench desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/mysql-workbench/config:/config `# Users home directory in the container, stores program settings.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mysql-workbench
+  lscr.io/linuxserver/mysql-workbench:latest

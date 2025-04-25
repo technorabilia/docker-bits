@@ -15,4 +15,4 @@ docker run -d \
   --device /dev/dri:/dev/dri `# optional` `# Add this for hardware acceleration (Linux hosts only)` \
   --shm-size="1gb" `# optional` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kdenlive
+  lscr.io/linuxserver/kdenlive:latest

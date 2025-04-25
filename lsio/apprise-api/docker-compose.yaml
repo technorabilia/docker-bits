@@ -7,10 +7,9 @@
 # that are looking for a simple notification solution.
 
 ---
-version: "2.1"
 services:
   apprise-api:
-    image: ghcr.io/linuxserver/apprise-api
+    image: lscr.io/linuxserver/apprise-api:latest
     container_name: apprise-api
     environment:
       # for UserID

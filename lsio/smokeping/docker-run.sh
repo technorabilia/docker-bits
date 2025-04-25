@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/smokeping/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/smokeping/data:/data `# Storage location for db and application data (graphs etc)` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/smokeping
+  lscr.io/linuxserver/smokeping:latest

@@ -2,10 +2,9 @@
 # project tracking tool.
 
 ---
-version: "2.1"
 services:
   planka:
-    image: ghcr.io/linuxserver/planka
+    image: lscr.io/linuxserver/planka:latest
     container_name: planka
     environment:
       # for UserID

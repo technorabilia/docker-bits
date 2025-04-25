@@ -4,10 +4,9 @@
 # project originates from Cloud9 v2 project.
 
 ---
-version: "2.1"
 services:
   pylon:
-    image: ghcr.io/linuxserver/pylon
+    image: lscr.io/linuxserver/pylon:latest
     container_name: pylon
     environment:
       # for UserID

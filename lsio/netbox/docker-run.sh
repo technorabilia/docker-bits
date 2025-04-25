@@ -34,4 +34,4 @@ docker run -d \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
   -v ${BASEDIR:-/volume1/docker}/netbox/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/netbox
+  lscr.io/linuxserver/netbox:latest

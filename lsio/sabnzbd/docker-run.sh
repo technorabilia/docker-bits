@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads `# optional` `# Local path for finished downloads.` \
   -v ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads `# optional` `# Local path for incomplete-downloads.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/sabnzbd
+  lscr.io/linuxserver/sabnzbd:latest

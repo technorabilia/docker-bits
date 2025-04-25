@@ -2,10 +2,9 @@
 # Design Automation Suite.
 
 ---
-version: "2.1"
 services:
   kicad:
-    image: ghcr.io/linuxserver/kicad
+    image: lscr.io/linuxserver/kicad:latest
     container_name: kicad
     environment:
       # for UserID

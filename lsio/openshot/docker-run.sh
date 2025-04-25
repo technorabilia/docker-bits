@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# OpenShot desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/openshot/config:/config `# User's home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/openshot
+  lscr.io/linuxserver/openshot:latest

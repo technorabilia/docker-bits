@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# Cura desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/cura/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/cura
+  lscr.io/linuxserver/cura:latest

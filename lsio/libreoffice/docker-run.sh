@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# LibreOffice desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/libreoffice/config:/config `# Users home directory in the container, stores program settings and documents` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/libreoffice
+  lscr.io/linuxserver/libreoffice:latest

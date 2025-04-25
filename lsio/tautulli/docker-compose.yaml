@@ -2,10 +2,9 @@
 # monitoring, analytics and notifications for Plex Media Server.
 
 ---
-version: "2.1"
 services:
   tautulli:
-    image: ghcr.io/linuxserver/tautulli
+    image: lscr.io/linuxserver/tautulli:latest
     container_name: tautulli
     environment:
       # for UserID

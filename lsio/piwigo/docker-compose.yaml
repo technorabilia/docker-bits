@@ -3,10 +3,9 @@
 # pictures.
 
 ---
-version: "2.1"
 services:
   piwigo:
-    image: ghcr.io/linuxserver/piwigo
+    image: lscr.io/linuxserver/piwigo:latest
     container_name: piwigo
     environment:
       # for UserID

@@ -5,10 +5,9 @@
 # information on grocy visit their website and check it out: https://grocy.info
 
 ---
-version: "2.1"
 services:
   grocy:
-    image: ghcr.io/linuxserver/grocy
+    image: lscr.io/linuxserver/grocy:latest
     container_name: grocy
     environment:
       # for UserID

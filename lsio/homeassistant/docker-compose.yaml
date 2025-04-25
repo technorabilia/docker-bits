@@ -4,10 +4,9 @@
 # or a local server
 
 ---
-version: "2.1"
 services:
   homeassistant:
-    image: ghcr.io/linuxserver/homeassistant
+    image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
     network_mode: host
     environment:

@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/manyfold/config:/config `# Persistent storage for application configuration data.` \
   -v ${BASEDIR:-/volume1/docker}/manyfold/libraries:/libraries `# optional` `# Location of your 3D model libraries.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/manyfold
+  lscr.io/linuxserver/manyfold:latest

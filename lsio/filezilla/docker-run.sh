@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# FileZilla desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/filezilla/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/filezilla
+  lscr.io/linuxserver/filezilla:latest

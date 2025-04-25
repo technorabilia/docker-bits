@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# MediaElch desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/mediaelch/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mediaelch
+  lscr.io/linuxserver/mediaelch:latest

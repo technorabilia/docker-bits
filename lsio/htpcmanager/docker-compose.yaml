@@ -2,10 +2,9 @@
 # many htpc related applications.
 
 ---
-version: "2.1"
 services:
   htpcmanager:
-    image: ghcr.io/linuxserver/htpcmanager
+    image: lscr.io/linuxserver/htpcmanager:latest
     container_name: htpcmanager
     environment:
       # for UserID

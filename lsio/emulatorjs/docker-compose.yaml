@@ -3,10 +3,9 @@
 # emulators is used between Libretro and EmulatorJS.
 
 ---
-version: "2.1"
 services:
   emulatorjs:
-    image: ghcr.io/linuxserver/emulatorjs
+    image: lscr.io/linuxserver/emulatorjs:latest
     container_name: emulatorjs
     environment:
       # for UserID

@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# KiCad desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/kicad/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kicad
+  lscr.io/linuxserver/kicad:latest

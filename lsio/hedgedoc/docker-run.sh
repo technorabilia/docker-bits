@@ -24,4 +24,4 @@ docker run -d \
   -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \
   -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/hedgedoc
+  lscr.io/linuxserver/hedgedoc:latest

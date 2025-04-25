@@ -4,10 +4,9 @@
 # [ReactJS](https://react.dev/).
 
 ---
-version: "2.1"
 services:
   yaak:
-    image: ghcr.io/linuxserver/yaak
+    image: lscr.io/linuxserver/yaak:latest
     container_name: yaak
     environment:
       # for UserID

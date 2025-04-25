@@ -2,10 +2,9 @@
 # with envelopes' personal finance app.
 
 ---
-version: "2.1"
 services:
   budge:
-    image: ghcr.io/linuxserver/budge
+    image: lscr.io/linuxserver/budge:latest
     container_name: budge
     environment:
       # for UserID

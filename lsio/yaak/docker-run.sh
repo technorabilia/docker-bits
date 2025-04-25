@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# Yaak desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/yaak/config:/config `# Where yaak should store its config and data.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/yaak
+  lscr.io/linuxserver/yaak:latest

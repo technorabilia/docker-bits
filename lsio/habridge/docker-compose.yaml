@@ -6,10 +6,9 @@
 # API.
 
 ---
-version: "2.1"
 services:
   habridge:
-    image: ghcr.io/linuxserver/habridge
+    image: lscr.io/linuxserver/habridge:latest
     container_name: habridge
     environment:
       # for UserID

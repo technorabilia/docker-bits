@@ -17,4 +17,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/kometa/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kometa
+  lscr.io/linuxserver/kometa:latest

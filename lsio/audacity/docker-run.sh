@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# Audacity desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/audacity/config:/config `# Users home directory in the container, stores program settings and images` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/audacity
+  lscr.io/linuxserver/audacity:latest

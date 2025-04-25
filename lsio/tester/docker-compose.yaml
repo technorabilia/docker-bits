@@ -2,10 +2,9 @@
 # screenshot of a hopefully functional endpoint
 
 ---
-version: "2.1"
 services:
   tester:
-    image: ghcr.io/linuxserver/tester
+    image: lscr.io/linuxserver/tester:latest
     container_name: tester
     environment:
       # Specify an endpoint, the container will automatically determine the correct protocol and program to use

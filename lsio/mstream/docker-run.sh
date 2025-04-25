@@ -12,4 +12,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/mstream/config:/config `# mStream config` \
   -v ${BASEDIR:-/volume1/docker}/mstream/music:/music `# Music location` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mstream
+  lscr.io/linuxserver/mstream:latest

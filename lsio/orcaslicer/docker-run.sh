@@ -14,4 +14,4 @@ docker run -d \
   -p 3001:3001 `# Orca Slicer desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/orcaslicer/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/orcaslicer
+  lscr.io/linuxserver/orcaslicer:latest

@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.
 ---
-version: "2.1"
 services:
   modmanager:
-    image: ghcr.io/linuxserver/modmanager
+    image: lscr.io/linuxserver/modmanager:latest
     container_name: modmanager
     environment:
       # for UserID

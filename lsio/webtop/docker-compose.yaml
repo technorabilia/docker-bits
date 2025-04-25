@@ -3,10 +3,9 @@
 # officially supported flavors accessible via any modern web browser.
 
 ---
-version: "2.1"
 services:
   webtop:
-    image: ghcr.io/linuxserver/webtop
+    image: lscr.io/linuxserver/webtop:latest
     container_name: webtop
     environment:
       # for UserID

@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/boinc/config:/config `# Where BOINC should store its database and config.` \
   --device /dev/dri:/dev/dri `# optional` `# Only needed if you want to use your Intel GPU (vaapi).` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/boinc
+  lscr.io/linuxserver/boinc:latest

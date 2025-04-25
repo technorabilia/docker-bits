@@ -19,4 +19,4 @@ docker run -d \
   -p 443:443 `# your_spotify HTTPS webui` \
   -v ${BASEDIR:-/volume1/docker}/your_spotify/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/your_spotify
+  lscr.io/linuxserver/your_spotify:latest

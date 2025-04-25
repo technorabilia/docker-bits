@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/unrar for details.
 ---
-version: "2.1"
 services:
   unrar:
-    image: ghcr.io/linuxserver/unrar
+    image: lscr.io/linuxserver/unrar:latest
     container_name: unrar
     environment:
       # for UserID

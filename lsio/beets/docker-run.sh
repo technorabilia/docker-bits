@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/beets/music:/music `# Music library` \
   -v ${BASEDIR:-/volume1/docker}/beets/downloads:/downloads `# Non processed music` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/beets
+  lscr.io/linuxserver/beets:latest

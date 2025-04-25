@@ -7,10 +7,9 @@
 # at the office, a Dropbox or a NAS you have at home.
 
 ---
-version: "2.1"
 services:
   nextcloud:
-    image: ghcr.io/linuxserver/nextcloud
+    image: lscr.io/linuxserver/nextcloud:latest
     container_name: nextcloud
     environment:
       # for UserID

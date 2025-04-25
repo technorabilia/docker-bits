@@ -30,4 +30,4 @@ docker run -d \
   -v /lib/modules:/lib/modules `# optional` `# Path to host kernel module for situations where it's not already loaded.` \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/wireguard
+  lscr.io/linuxserver/wireguard:latest

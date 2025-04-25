@@ -5,10 +5,9 @@
 # when a better quality format becomes available.
 
 ---
-version: "2.1"
 services:
   lidarr:
-    image: ghcr.io/linuxserver/lidarr
+    image: lscr.io/linuxserver/lidarr:latest
     container_name: lidarr
     environment:
       # for UserID

@@ -7,10 +7,9 @@
 # the continuation of a project started by Gerald Combs in 1998.
 
 ---
-version: "2.1"
 services:
   wireshark:
-    image: ghcr.io/linuxserver/wireshark
+    image: lscr.io/linuxserver/wireshark:latest
     container_name: wireshark
     cap_add:
       - NET_ADMIN

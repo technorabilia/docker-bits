@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/pylon/config:/config `# Configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/pylon/code:/code `# optional` `# Optionally if you want the bind mount your own code and have changes survive container upgrades.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pylon
+  lscr.io/linuxserver/pylon:latest

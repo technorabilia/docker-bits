@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/deluge/config:/config `# deluge configs` \
   -v ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads `# torrent download directory` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/deluge
+  lscr.io/linuxserver/deluge:latest

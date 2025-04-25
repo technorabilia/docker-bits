@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# Lollypop desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/lollypop/config:/config `# Users home directory in the container, stores settings and downloaded metadata for music.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/lollypop
+  lscr.io/linuxserver/lollypop:latest

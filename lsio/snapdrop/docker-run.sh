@@ -11,4 +11,4 @@ docker run -d \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/snapdrop/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/snapdrop
+  lscr.io/linuxserver/snapdrop:latest

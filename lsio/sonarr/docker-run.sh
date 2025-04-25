@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv `# optional` `# Location of TV library on disk (See note in Application setup)` \
   -v ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads `# optional` `# Location of download managers output directory (See note in Application setup)` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/sonarr
+  lscr.io/linuxserver/sonarr:latest

@@ -4,10 +4,9 @@
 # graphical interface, bringing users an incredibly smooth printing experience.
 
 ---
-version: "2.1"
 services:
   bambustudio:
-    image: ghcr.io/linuxserver/bambustudio
+    image: lscr.io/linuxserver/bambustudio:latest
     container_name: bambustudio
     environment:
       # for UserID

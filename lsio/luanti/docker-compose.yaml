@@ -2,10 +2,9 @@
 # game-creation platform with easy modding and game creation
 
 ---
-version: "2.1"
 services:
   luanti:
-    image: ghcr.io/linuxserver/luanti
+    image: lscr.io/linuxserver/luanti:latest
     container_name: luanti
     environment:
       # for UserID

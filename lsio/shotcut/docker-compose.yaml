@@ -2,10 +2,9 @@
 # video editor.
 
 ---
-version: "2.1"
 services:
   shotcut:
-    image: ghcr.io/linuxserver/shotcut
+    image: lscr.io/linuxserver/shotcut:latest
     container_name: shotcut
     environment:
       # for UserID

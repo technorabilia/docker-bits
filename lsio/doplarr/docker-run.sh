@@ -28,4 +28,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/doplarr/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/doplarr
+  lscr.io/linuxserver/doplarr:latest

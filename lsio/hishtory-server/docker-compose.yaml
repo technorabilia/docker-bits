@@ -4,10 +4,9 @@
 # locally and end-to-end encrypted for syncing to to all your other computers.
 
 ---
-version: "2.1"
 services:
   hishtory-server:
-    image: ghcr.io/linuxserver/hishtory-server
+    image: lscr.io/linuxserver/hishtory-server:latest
     container_name: hishtory-server
     environment:
       # for UserID

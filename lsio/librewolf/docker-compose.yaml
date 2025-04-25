@@ -4,10 +4,9 @@
 # annoyances, as well as disabling anti-freedom features like DRM.
 
 ---
-version: "2.1"
 services:
   librewolf:
-    image: ghcr.io/linuxserver/librewolf
+    image: lscr.io/linuxserver/librewolf:latest
     container_name: librewolf
     environment:
       # for UserID

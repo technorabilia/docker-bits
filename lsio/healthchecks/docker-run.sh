@@ -31,4 +31,4 @@ docker run -d \
   -p 2525:2525 `# optional` `# Port for inbound SMTP pings` \
   -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Persistent config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/healthchecks
+  lscr.io/linuxserver/healthchecks:latest

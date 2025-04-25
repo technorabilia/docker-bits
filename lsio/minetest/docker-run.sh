@@ -12,4 +12,4 @@ docker run -d \
   -p 30000:30000/udp `# Port Minetest listens on (UDP).` \
   -v ${BASEDIR:-/volume1/docker}/minetest/config/.minetest:/config/.minetest `# Where minetest stores config files and maps etc.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/minetest
+  lscr.io/linuxserver/minetest:latest

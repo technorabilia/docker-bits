@@ -3,10 +3,9 @@
 # shows, and when they are posted it does its magic.
 
 ---
-version: "2.1"
 services:
   sickchill:
-    image: ghcr.io/linuxserver/sickchill
+    image: lscr.io/linuxserver/sickchill:latest
     container_name: sickchill
     environment:
       # for UserID

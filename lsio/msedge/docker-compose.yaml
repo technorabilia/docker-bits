@@ -2,10 +2,9 @@
 # browser developed by Microsoft and based on Chromium.
 
 ---
-version: "2.1"
 services:
   msedge:
-    image: ghcr.io/linuxserver/msedge
+    image: lscr.io/linuxserver/msedge:latest
     container_name: msedge
     environment:
       # for UserID

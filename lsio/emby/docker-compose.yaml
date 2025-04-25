@@ -3,10 +3,9 @@
 # mobile devices. This container is packaged as a standalone emby Media Server.
 
 ---
-version: "2.1"
 services:
   emby:
-    image: ghcr.io/linuxserver/emby
+    image: lscr.io/linuxserver/emby:latest
     container_name: emby
     environment:
       # for UserID

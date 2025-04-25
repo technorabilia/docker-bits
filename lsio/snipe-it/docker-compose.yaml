@@ -4,10 +4,9 @@
 # actions mean getting things done faster.
 
 ---
-version: "2.1"
 services:
   snipe-it:
-    image: ghcr.io/linuxserver/snipe-it
+    image: lscr.io/linuxserver/snipe-it:latest
     container_name: snipe-it
     environment:
       # for UserID

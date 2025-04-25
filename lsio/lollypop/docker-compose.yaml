@@ -2,10 +2,9 @@
 # player designed to work excellently on the GNOME desktop environment.
 
 ---
-version: "2.1"
 services:
   lollypop:
-    image: ghcr.io/linuxserver/lollypop
+    image: lscr.io/linuxserver/lollypop:latest
     container_name: lollypop
     environment:
       # for UserID

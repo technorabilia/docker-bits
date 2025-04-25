@@ -5,10 +5,9 @@
 # applications.
 
 ---
-version: "2.1"
 services:
   boinc:
-    image: ghcr.io/linuxserver/boinc
+    image: lscr.io/linuxserver/boinc:latest
     container_name: boinc
     environment:
       # for UserID

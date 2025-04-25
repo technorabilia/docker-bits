@@ -3,10 +3,9 @@
 # RDP.
 
 ---
-version: "2.1"
 services:
   rdesktop:
-    image: ghcr.io/linuxserver/rdesktop
+    image: lscr.io/linuxserver/rdesktop:latest
     container_name: rdesktop
     environment:
       # for UserID

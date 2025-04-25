@@ -3,10 +3,9 @@
 # engineers.
 
 ---
-version: "2.1"
 services:
   ardour:
-    image: ghcr.io/linuxserver/ardour
+    image: lscr.io/linuxserver/ardour:latest
     container_name: ardour
     environment:
       # for UserID

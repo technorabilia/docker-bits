@@ -18,4 +18,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/jackett/config:/config `# Where Jackett should store its config file.` \
   -v ${BASEDIR:-/volume1/docker}/jackett/downloads:/downloads `# Path to torrent blackhole.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/jackett
+  lscr.io/linuxserver/jackett:latest

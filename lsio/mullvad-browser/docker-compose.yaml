@@ -5,10 +5,9 @@
 # trustworthy VPN.
 
 ---
-version: "2.1"
 services:
   mullvad-browser:
-    image: ghcr.io/linuxserver/mullvad-browser
+    image: lscr.io/linuxserver/mullvad-browser:latest
     container_name: mullvad-browser
     cap_add:
       - NET_ADMIN

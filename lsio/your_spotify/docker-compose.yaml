@@ -5,10 +5,9 @@
 # statistics.
 
 ---
-version: "2.1"
 services:
   your_spotify:
-    image: ghcr.io/linuxserver/your_spotify
+    image: lscr.io/linuxserver/your_spotify:latest
     container_name: your_spotify
     environment:
       # for UserID

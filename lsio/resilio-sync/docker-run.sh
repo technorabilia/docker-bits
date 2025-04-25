@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/resilio-sync/downloads:/downloads `# Folder for downloads/cache.` \
   -v ${BASEDIR:-/volume1/docker}/resilio-sync/sync:/sync `# Sync folders root.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/resilio-sync
+  lscr.io/linuxserver/resilio-sync:latest

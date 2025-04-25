@@ -10,4 +10,4 @@ docker run -d \
   -p 5055:5055 `# Port for Overseerr's web interface.` \
   -v ${BASEDIR:-/volume1/docker}/overseerr/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/overseerr
+  lscr.io/linuxserver/overseerr:latest

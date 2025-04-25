@@ -10,4 +10,4 @@ docker run -d \
   -p 80:80 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/grav/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/grav
+  lscr.io/linuxserver/grav:latest

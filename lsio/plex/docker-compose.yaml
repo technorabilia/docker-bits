@@ -4,10 +4,9 @@
 # design and bulk actions mean getting things done faster.
 
 ---
-version: "2.1"
 services:
   plex:
-    image: ghcr.io/linuxserver/plex
+    image: lscr.io/linuxserver/plex:latest
     container_name: plex
     network_mode: host
     environment:

@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/wps-office/config:/config `# Users home directory in the container, stores program settings and documents` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/wps-office
+  lscr.io/linuxserver/wps-office:latest

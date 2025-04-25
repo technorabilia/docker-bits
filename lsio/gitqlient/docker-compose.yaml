@@ -3,10 +3,9 @@
 # adds a lot of new functionality.
 
 ---
-version: "2.1"
 services:
   gitqlient:
-    image: ghcr.io/linuxserver/gitqlient
+    image: lscr.io/linuxserver/gitqlient:latest
     container_name: gitqlient
     environment:
       # for UserID

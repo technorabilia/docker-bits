@@ -2,10 +2,9 @@
 # wiki app built on NodeJS.
 
 ---
-version: "2.1"
 services:
   wikijs:
-    image: ghcr.io/linuxserver/wikijs
+    image: lscr.io/linuxserver/wikijs:latest
     container_name: wikijs
     environment:
       # for UserID

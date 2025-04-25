@@ -14,4 +14,4 @@ docker run -d \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/xbackbone/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/xbackbone
+  lscr.io/linuxserver/xbackbone:latest

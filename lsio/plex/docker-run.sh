@@ -17,4 +17,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/plex/tv:/tv `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
   -v ${BASEDIR:-/volume1/docker}/plex/movies:/movies `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/plex
+  lscr.io/linuxserver/plex:latest

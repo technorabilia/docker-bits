@@ -2,10 +2,9 @@
 # you use your favourite apps by combining them into one application.
 
 ---
-version: "2.1"
 services:
   ferdium:
-    image: ghcr.io/linuxserver/ferdium
+    image: lscr.io/linuxserver/ferdium:latest
     container_name: ferdium
     environment:
       # for UserID

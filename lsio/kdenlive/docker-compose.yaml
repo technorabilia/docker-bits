@@ -3,10 +3,9 @@
 # production ready.
 
 ---
-version: "2.1"
 services:
   kdenlive:
-    image: ghcr.io/linuxserver/kdenlive
+    image: lscr.io/linuxserver/kdenlive:latest
     container_name: kdenlive
     environment:
       # for UserID

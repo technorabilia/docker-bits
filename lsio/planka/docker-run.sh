@@ -18,4 +18,4 @@ docker run -d \
   -p 1337:1337 `# Planka web UI.` \
   -v ${BASEDIR:-/volume1/docker}/planka/config:/config `# Local path for planka config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/planka
+  lscr.io/linuxserver/planka:latest

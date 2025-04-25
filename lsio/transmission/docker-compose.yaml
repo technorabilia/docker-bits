@@ -5,10 +5,9 @@
 # global and per-torrent speed limits, and more.
 
 ---
-version: "2.1"
 services:
   transmission:
-    image: ghcr.io/linuxserver/transmission
+    image: lscr.io/linuxserver/transmission:latest
     container_name: transmission
     environment:
       # for UserID

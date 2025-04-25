@@ -13,4 +13,4 @@ docker run -d \
   -p 3001:3001 `# Calligra desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/calligra/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/calligra
+  lscr.io/linuxserver/calligra:latest

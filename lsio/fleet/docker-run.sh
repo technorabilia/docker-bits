@@ -15,4 +15,4 @@ docker run -d \
   -p 8080:8080 `# Http port` \
   -v ${BASEDIR:-/volume1/docker}/fleet/config:/config `# The primary config file and rolling log files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/fleet
+  lscr.io/linuxserver/fleet:latest

@@ -5,10 +5,9 @@
 # Facebook, Twitter, GitHub and many more on the homepage.
 
 ---
-version: "2.1"
 services:
   hedgedoc:
-    image: ghcr.io/linuxserver/hedgedoc
+    image: lscr.io/linuxserver/hedgedoc:latest
     container_name: hedgedoc
     environment:
       # for UserID

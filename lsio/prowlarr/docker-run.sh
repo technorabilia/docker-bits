@@ -14,4 +14,4 @@ docker run -d \
   -p 9696:9696 `# The port for the Prowlarr web UI` \
   -v ${BASEDIR:-/volume1/docker}/prowlarr/config:/config `# Database and Prowlarr configs` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/prowlarr
+  lscr.io/linuxserver/prowlarr:latest

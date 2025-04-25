@@ -20,4 +20,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media `# optional` `# Location of other media.` \
   --device /dev/snd:/dev/snd `# optional` `# Only needed to pass your host sound device to Airsonic's Java jukebox player.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/airsonic-advanced
+  lscr.io/linuxserver/airsonic-advanced:latest

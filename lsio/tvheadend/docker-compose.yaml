@@ -6,10 +6,9 @@
 # ATSC including OpenTV DVB extensions, XMLTV, PyXML).
 
 ---
-version: "2.1"
 services:
   tvheadend:
-    image: ghcr.io/linuxserver/tvheadend
+    image: lscr.io/linuxserver/tvheadend:latest
     container_name: tvheadend
     environment:
       # for UserID

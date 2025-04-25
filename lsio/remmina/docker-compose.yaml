@@ -5,10 +5,9 @@
 # user interface. Currently RDP, VNC, SPICE, SSH and EXEC are supported.
 
 ---
-version: "2.1"
 services:
   remmina:
-    image: ghcr.io/linuxserver/remmina
+    image: lscr.io/linuxserver/remmina:latest
     container_name: remmina
     environment:
       # for UserID

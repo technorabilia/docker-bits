@@ -28,4 +28,4 @@ docker run -d \
   -p 80:80 `# optional` `# HTTP port (required for HTTP validation and HTTP -> HTTPS redirect)` \
   -v ${BASEDIR:-/volume1/docker}/swag/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/swag
+  lscr.io/linuxserver/swag:latest

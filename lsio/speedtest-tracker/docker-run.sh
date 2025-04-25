@@ -23,4 +23,4 @@ docker run -d \
   -p 80:80 `# Web UI` \
   -v ${BASEDIR:-/volume1/docker}/speedtest-tracker/config:/config `# Contains speedtest-tracker config and database, if using sqlite.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/speedtest-tracker
+  lscr.io/linuxserver/speedtest-tracker:latest

@@ -8,4 +8,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/build-agent/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/build-agent
+  lscr.io/linuxserver/build-agent:latest

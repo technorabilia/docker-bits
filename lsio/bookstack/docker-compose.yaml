@@ -7,10 +7,9 @@
 # and check it out: https://www.bookstackapp.com
 
 ---
-version: "2.1"
 services:
   bookstack:
-    image: ghcr.io/linuxserver/bookstack
+    image: lscr.io/linuxserver/bookstack:latest
     container_name: bookstack
     environment:
       # for UserID

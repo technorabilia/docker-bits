@@ -3,10 +3,9 @@
 # plus a web interface.
 
 ---
-version: "2.1"
 services:
   healthchecks:
-    image: ghcr.io/linuxserver/healthchecks
+    image: lscr.io/linuxserver/healthchecks:latest
     container_name: healthchecks
     environment:
       # for UserID

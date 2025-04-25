@@ -17,4 +17,4 @@ docker run -d \
   -p 3579:3579 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/ombi/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ombi
+  lscr.io/linuxserver/ombi:latest

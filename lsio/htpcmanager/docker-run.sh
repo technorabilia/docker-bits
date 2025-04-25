@@ -10,4 +10,4 @@ docker run -d \
   -p 8085:8085 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/htpcmanager/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/htpcmanager
+  lscr.io/linuxserver/htpcmanager:latest

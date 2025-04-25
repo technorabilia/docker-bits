@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/diskover/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/diskover/data:/data `# Default mount point to crawl` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/diskover
+  lscr.io/linuxserver/diskover:latest

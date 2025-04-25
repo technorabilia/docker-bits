@@ -3,10 +3,9 @@
 # anywhere. There are mobile apps available for both Android and iPhone.
 
 ---
-version: "2.1"
 services:
   mstream:
-    image: ghcr.io/linuxserver/mstream
+    image: lscr.io/linuxserver/mstream:latest
     container_name: mstream
     environment:
       # for UserID

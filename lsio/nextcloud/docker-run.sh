@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/nextcloud/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/nextcloud/data:/data `# Your personal data.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/nextcloud
+  lscr.io/linuxserver/nextcloud:latest

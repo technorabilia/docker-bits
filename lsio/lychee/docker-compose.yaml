@@ -4,10 +4,9 @@
 # everything you need and all your photos are stored securely.'
 
 ---
-version: "2.1"
 services:
   lychee:
-    image: ghcr.io/linuxserver/lychee
+    image: lscr.io/linuxserver/lychee:latest
     container_name: lychee
     environment:
       # for UserID

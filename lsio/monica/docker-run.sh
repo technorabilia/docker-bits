@@ -20,4 +20,4 @@ docker run -d \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/monica/config:/config `# Persistent config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/monica
+  lscr.io/linuxserver/monica:latest

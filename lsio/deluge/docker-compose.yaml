@@ -3,10 +3,9 @@
 # more...
 
 ---
-version: "2.1"
 services:
   deluge:
-    image: ghcr.io/linuxserver/deluge
+    image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
     environment:
       # for UserID

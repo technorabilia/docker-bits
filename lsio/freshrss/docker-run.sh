@@ -10,4 +10,4 @@ docker run -d \
   -p 80:80 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/freshrss/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/freshrss
+  lscr.io/linuxserver/freshrss:latest

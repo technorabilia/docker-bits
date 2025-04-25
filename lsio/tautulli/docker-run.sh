@@ -10,4 +10,4 @@ docker run -d \
   -p 8181:8181 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/tautulli/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/tautulli
+  lscr.io/linuxserver/tautulli:latest

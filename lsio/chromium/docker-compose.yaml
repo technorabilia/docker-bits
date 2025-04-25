@@ -3,10 +3,9 @@
 # all users to experience the web.
 
 ---
-version: "2.1"
 services:
   chromium:
-    image: ghcr.io/linuxserver/chromium
+    image: lscr.io/linuxserver/chromium:latest
     container_name: chromium
     environment:
       # for UserID

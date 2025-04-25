@@ -3,10 +3,9 @@
 # like.
 
 ---
-version: "2.1"
 services:
   minetest:
-    image: ghcr.io/linuxserver/minetest
+    image: lscr.io/linuxserver/minetest:latest
     container_name: minetest
     environment:
       # for UserID

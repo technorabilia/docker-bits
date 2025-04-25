@@ -5,10 +5,9 @@
 # of the box only accelerated workspace experience**
 
 ---
-version: "2.1"
 services:
   blender:
-    image: ghcr.io/linuxserver/blender
+    image: lscr.io/linuxserver/blender:latest
     container_name: blender
     environment:
       # for UserID

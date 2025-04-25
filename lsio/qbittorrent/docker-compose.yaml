@@ -3,10 +3,9 @@
 # toolkit and libtorrent-rasterbar library.
 
 ---
-version: "2.1"
 services:
   qbittorrent:
-    image: ghcr.io/linuxserver/qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     environment:
       # for UserID

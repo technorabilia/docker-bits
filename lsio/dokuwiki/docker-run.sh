@@ -16,4 +16,4 @@ docker run -d \
   -p 443:443 `# optional` `# #optional Application HTTPS Port` \
   -v ${BASEDIR:-/volume1/docker}/dokuwiki/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/dokuwiki
+  lscr.io/linuxserver/dokuwiki:latest

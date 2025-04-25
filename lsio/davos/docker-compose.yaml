@@ -6,10 +6,9 @@
 # the workflow.
 
 ---
-version: "2.1"
 services:
   davos:
-    image: ghcr.io/linuxserver/davos
+    image: lscr.io/linuxserver/davos:latest
     container_name: davos
     environment:
       # for UserID

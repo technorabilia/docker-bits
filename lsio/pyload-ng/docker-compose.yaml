@@ -3,10 +3,9 @@
 # and fully manageable via web.
 
 ---
-version: "2.1"
 services:
   pyload-ng:
-    image: ghcr.io/linuxserver/pyload-ng
+    image: lscr.io/linuxserver/pyload-ng:latest
     container_name: pyload-ng
     environment:
       # for UserID

@@ -5,10 +5,9 @@
 # Amazon S3, Google Drive, box.com, Mega, B2, and many others.
 
 ---
-version: "2.1"
 services:
   duplicati:
-    image: ghcr.io/linuxserver/duplicati
+    image: lscr.io/linuxserver/duplicati:latest
     container_name: duplicati
     environment:
       # for UserID

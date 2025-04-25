@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# Krita desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/krita/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/krita
+  lscr.io/linuxserver/krita:latest

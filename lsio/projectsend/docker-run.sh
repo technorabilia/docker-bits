@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/projectsend/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/projectsend/data:/data `# Where to store files to share.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/projectsend
+  lscr.io/linuxserver/projectsend:latest

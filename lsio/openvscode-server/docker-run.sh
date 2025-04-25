@@ -15,4 +15,4 @@ docker run -d \
   -p 3000:3000 `# Web UI port.` \
   -v ${BASEDIR:-/volume1/docker}/openvscode-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/openvscode-server
+  lscr.io/linuxserver/openvscode-server:latest

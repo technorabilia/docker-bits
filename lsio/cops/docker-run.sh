@@ -28,4 +28,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/cops/config:/config `# COPS Application Data.` \
   -v ${BASEDIR:-/volume1/docker}/cops/books:/books `# Calibre metadata.db location.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/cops
+  lscr.io/linuxserver/cops:latest

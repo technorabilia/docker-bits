@@ -3,10 +3,9 @@
 # requiring low latency and high uptime performance.
 
 ---
-version: "2.1"
 services:
   unifi-network-application:
-    image: ghcr.io/linuxserver/unifi-network-application
+    image: lscr.io/linuxserver/unifi-network-application:latest
     container_name: unifi-network-application
     environment:
       # for UserID

@@ -2,10 +2,9 @@
 # binary distribution of Microsoft’s editor VS Code.
 
 ---
-version: "2.1"
 services:
   vscodium:
-    image: ghcr.io/linuxserver/vscodium
+    image: lscr.io/linuxserver/vscodium:latest
     container_name: vscodium
     cap_add:
       - IPC_LOCK

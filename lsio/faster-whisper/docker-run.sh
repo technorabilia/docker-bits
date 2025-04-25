@@ -15,4 +15,4 @@ docker run -d \
   -p 10300:10300 `# Wyoming connection port.` \
   -v ${BASEDIR:-/volume1/docker}/faster-whisper/config:/config `# Local path for Whisper config files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/faster-whisper
+  lscr.io/linuxserver/faster-whisper:latest

@@ -18,4 +18,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data1:/data1 `# Data1` \
   -v ${BASEDIR:-/volume1/docker}/syncthing/data2:/data2 `# Data2` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/syncthing
+  lscr.io/linuxserver/syncthing:latest

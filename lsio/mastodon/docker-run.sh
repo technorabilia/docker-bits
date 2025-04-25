@@ -49,4 +49,4 @@ docker run -d \
   -p 443:443 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/mastodon/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mastodon
+  lscr.io/linuxserver/mastodon:latest

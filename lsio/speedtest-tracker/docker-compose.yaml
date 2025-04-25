@@ -3,10 +3,9 @@
 # checks against Ookla's Speedtest service.
 
 ---
-version: "2.1"
 services:
   speedtest-tracker:
-    image: ghcr.io/linuxserver/speedtest-tracker
+    image: lscr.io/linuxserver/speedtest-tracker:latest
     container_name: speedtest-tracker
     environment:
       # for UserID

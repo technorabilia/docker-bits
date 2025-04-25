@@ -14,4 +14,4 @@ docker run -d \
   -p 3001:3001 `# Darktable desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/darktable/config:/config `# Users home directory in the container, stores program settings and images` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/darktable
+  lscr.io/linuxserver/darktable:latest

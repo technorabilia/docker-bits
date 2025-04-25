@@ -2,10 +2,9 @@
 # GitHub app. It is written in TypeScript and uses React.
 
 ---
-version: "2.1"
 services:
   github-desktop:
-    image: ghcr.io/linuxserver/github-desktop
+    image: lscr.io/linuxserver/github-desktop:latest
     container_name: github-desktop
     cap_add:
       - IPC_LOCK

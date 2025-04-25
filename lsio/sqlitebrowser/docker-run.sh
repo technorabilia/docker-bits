@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# Sqlitebrowser desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/sqlitebrowser/config:/config `# Users home directory in the container, stores program settings and potentially dump files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/sqlitebrowser
+  lscr.io/linuxserver/sqlitebrowser:latest

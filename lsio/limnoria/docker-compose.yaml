@@ -3,10 +3,9 @@
 # of the well-known Supybot.
 
 ---
-version: "2.1"
 services:
   limnoria:
-    image: ghcr.io/linuxserver/limnoria
+    image: lscr.io/linuxserver/limnoria:latest
     container_name: limnoria
     environment:
       # for UserID

@@ -20,4 +20,4 @@ docker run -d \
   --device /dev/video11:/dev/video11 `# optional` `# Only needed if you want to use your Raspberry Pi V4L2 video encoding.` \
   --device /dev/video12:/dev/video12 `# optional` `# Only needed if you want to use your Raspberry Pi V4L2 video encoding.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/emby
+  lscr.io/linuxserver/emby:latest

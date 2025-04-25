@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/nzbhydra2/config:/config `# Where nzbhydra2 should store config data.` \
   -v ${BASEDIR:-/volume1/docker}/nzbhydra2/downloads:/downloads `# optional` `# NZB download folder.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/nzbhydra2
+  lscr.io/linuxserver/nzbhydra2:latest

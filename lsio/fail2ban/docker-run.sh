@@ -32,4 +32,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/unificontroller:ro:/remotelogs/unificontroller:ro `# optional` `# Optional path to unificontroller log folder. Mounted as Read Only.` \
   -v ${BASEDIR:-/volume1/docker}/fail2ban/remotelogs/vaultwarden:ro:/remotelogs/vaultwarden:ro `# optional` `# Optional path to vaultwarden log folder. Mounted as Read Only.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/fail2ban
+  lscr.io/linuxserver/fail2ban:latest

@@ -5,10 +5,9 @@
 # enhance them.
 
 ---
-version: "2.1"
 services:
   darktable:
-    image: ghcr.io/linuxserver/darktable
+    image: lscr.io/linuxserver/darktable:latest
     container_name: darktable
     environment:
       # for UserID

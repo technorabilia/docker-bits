@@ -2,10 +2,9 @@
 # multiple authentication errors.
 
 ---
-version: "2.1"
 services:
   fail2ban:
-    image: ghcr.io/linuxserver/fail2ban
+    image: lscr.io/linuxserver/fail2ban:latest
     container_name: fail2ban
     cap_add:
       - NET_ADMIN

@@ -2,10 +2,9 @@
 # software which runs on Linux, Mac OS X and Windows desktop computers.
 
 ---
-version: "2.1"
 services:
   inkscape:
-    image: ghcr.io/linuxserver/inkscape
+    image: lscr.io/linuxserver/inkscape:latest
     container_name: inkscape
     environment:
       # for UserID

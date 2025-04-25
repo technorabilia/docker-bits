@@ -2,10 +2,9 @@
 # browser. Inspired by Apple's Airdrop.
 
 ---
-version: "2.1"
 services:
   snapdrop:
-    image: ghcr.io/linuxserver/snapdrop
+    image: lscr.io/linuxserver/snapdrop:latest
     container_name: snapdrop
     environment:
       # for UserID

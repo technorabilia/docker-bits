@@ -12,4 +12,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/zotero/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/zotero
+  lscr.io/linuxserver/zotero:latest

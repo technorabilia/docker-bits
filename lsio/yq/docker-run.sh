@@ -8,4 +8,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/yq/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/yq
+  lscr.io/linuxserver/yq:latest

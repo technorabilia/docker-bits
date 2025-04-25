@@ -3,10 +3,9 @@
 # everyone.
 
 ---
-version: "2.1"
 services:
   krita:
-    image: ghcr.io/linuxserver/krita
+    image: lscr.io/linuxserver/krita:latest
     container_name: krita
     environment:
       # for UserID

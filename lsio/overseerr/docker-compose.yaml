@@ -2,10 +2,9 @@
 # discovery tool built to work with your existing Plex ecosystem.
 
 ---
-version: "2.1"
 services:
   overseerr:
-    image: ghcr.io/linuxserver/overseerr
+    image: lscr.io/linuxserver/overseerr:latest
     container_name: overseerr
     environment:
       # for UserID

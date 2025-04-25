@@ -2,10 +2,9 @@
 # client that you host on your own server.
 
 ---
-version: "2.1"
 services:
   thelounge:
-    image: ghcr.io/linuxserver/thelounge
+    image: lscr.io/linuxserver/thelounge:latest
     container_name: thelounge
     environment:
       # for UserID

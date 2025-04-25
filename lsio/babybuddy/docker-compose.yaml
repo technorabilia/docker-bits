@@ -3,10 +3,9 @@
 # learn about and predict baby's needs without (as much) guess work.
 
 ---
-version: "2.1"
 services:
   babybuddy:
-    image: ghcr.io/linuxserver/babybuddy
+    image: lscr.io/linuxserver/babybuddy:latest
     container_name: babybuddy
     environment:
       # for UserID

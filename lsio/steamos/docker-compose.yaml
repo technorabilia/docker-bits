@@ -4,10 +4,9 @@
 # modern AMD/Intel GPUs on a real Linux Host**
 
 ---
-version: "2.1"
 services:
   steamos:
-    image: ghcr.io/linuxserver/steamos
+    image: lscr.io/linuxserver/steamos:latest
     container_name: steamos
     # Specify the hostname of the host, this is useful for keeping a persistent hostname between upgrades and identifying the server in the remote play Steam Client.
     hostname: hostname # optional

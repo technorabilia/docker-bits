@@ -17,4 +17,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/apprise-api/config:/config `# Persistent config files` \
   -v ${BASEDIR:-/volume1/docker}/apprise-api/attachments:/attachments `# optional` `# Temporary storage for attachments when sent with notifications.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/apprise-api
+  lscr.io/linuxserver/apprise-api:latest

@@ -4,10 +4,9 @@
 # tools for server configuration, user administration, backup, and much more.
 
 ---
-version: "2.1"
 services:
   mysql-workbench:
-    image: ghcr.io/linuxserver/mysql-workbench
+    image: lscr.io/linuxserver/mysql-workbench:latest
     container_name: mysql-workbench
     cap_add:
       - IPC_LOCK

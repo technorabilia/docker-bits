@@ -12,10 +12,9 @@
 # more.
 
 ---
-version: "2.1"
 services:
   kimai:
-    image: ghcr.io/linuxserver/kimai
+    image: lscr.io/linuxserver/kimai:latest
     container_name: kimai
     environment:
       # for UserID

@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads:/downloads `# Download location` \
   -v ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books `# optional` `# Books location` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/lazylibrarian
+  lscr.io/linuxserver/lazylibrarian:latest

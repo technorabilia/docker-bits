@@ -17,4 +17,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/mullvad-browser/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/mullvad-browser
+  lscr.io/linuxserver/mullvad-browser:latest

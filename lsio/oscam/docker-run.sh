@@ -12,4 +12,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/oscam/config:/config `# Where oscam should store config files and logs.` \
   --device /dev/ttyUSB0:/dev/ttyUSB0 `# For passing through smart card readers.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/oscam
+  lscr.io/linuxserver/oscam:latest

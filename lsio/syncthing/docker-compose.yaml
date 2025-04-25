@@ -4,10 +4,9 @@
 # some third party and how it's transmitted over the Internet.
 
 ---
-version: "2.1"
 services:
   syncthing:
-    image: ghcr.io/linuxserver/syncthing
+    image: lscr.io/linuxserver/syncthing:latest
     container_name: syncthing
     # Optionally the hostname can be defined.
     hostname: {{ project_name }} # optional

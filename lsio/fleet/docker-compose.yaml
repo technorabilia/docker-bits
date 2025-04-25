@@ -2,10 +2,9 @@
 # which displays a set of maintained images from one or more owned repositories.
 
 ---
-version: "2.1"
 services:
   fleet:
-    image: ghcr.io/linuxserver/fleet
+    image: lscr.io/linuxserver/fleet:latest
     container_name: fleet
     environment:
       # for UserID

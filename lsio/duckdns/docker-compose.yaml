@@ -4,10 +4,9 @@
 # existence.
 
 ---
-version: "2.1"
 services:
   duckdns:
-    image: ghcr.io/linuxserver/duckdns
+    image: lscr.io/linuxserver/duckdns:latest
     container_name: duckdns
     network_mode: host # optional
     environment:

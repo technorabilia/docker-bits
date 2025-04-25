@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/flexget/config:/config `# Local path for FlexGet config files.` \
   -v ${BASEDIR:-/volume1/docker}/flexget/data:/data `# optional` `# Default path for downloads.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/flexget
+  lscr.io/linuxserver/flexget:latest

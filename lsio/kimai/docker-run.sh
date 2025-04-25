@@ -22,4 +22,4 @@ docker run -d \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/kimai/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/kimai
+  lscr.io/linuxserver/kimai:latest

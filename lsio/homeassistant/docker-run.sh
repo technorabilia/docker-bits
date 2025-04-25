@@ -14,4 +14,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/homeassistant/config:/config `# Home Assistant config storage path.` \
   --device /path/to/device:/path/to/device `# optional` `# For passing through USB, serial or gpio devices.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/homeassistant
+  lscr.io/linuxserver/homeassistant:latest

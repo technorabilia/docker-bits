@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# HTTPS GitQlient desktop gui.` \
   -v ${BASEDIR:-/volume1/docker}/gitqlient/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/gitqlient
+  lscr.io/linuxserver/gitqlient:latest

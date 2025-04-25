@@ -8,4 +8,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/ffmpeg/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ffmpeg
+  lscr.io/linuxserver/ffmpeg:latest

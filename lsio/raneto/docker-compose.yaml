@@ -2,10 +2,9 @@
 # uses static Markdown files to power your Knowledgebase.
 
 ---
-version: "2.1"
 services:
   raneto:
-    image: ghcr.io/linuxserver/raneto
+    image: lscr.io/linuxserver/raneto:latest
     container_name: raneto
     environment:
       # for UserID

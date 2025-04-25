@@ -22,4 +22,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/netbootxyz/config:/config `# Storage for boot menu files and web application config` \
   -v ${BASEDIR:-/volume1/docker}/netbootxyz/assets:/assets `# optional` `# Storage for NETBOOT.XYZ bootable assets (live CDs and other files)` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/netbootxyz
+  lscr.io/linuxserver/netbootxyz:latest

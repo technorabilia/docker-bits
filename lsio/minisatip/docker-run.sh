@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/minisatip/config:/config `# Configuration files and minisatip data` \
   --device /dev/dvb:/dev/dvb `# For passing through Tv-cards` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/minisatip
+  lscr.io/linuxserver/minisatip:latest

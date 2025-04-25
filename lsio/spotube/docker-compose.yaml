@@ -4,10 +4,9 @@
 # need for Spotify Premium
 
 ---
-version: "2.1"
 services:
   spotube:
-    image: ghcr.io/linuxserver/spotube
+    image: lscr.io/linuxserver/spotube:latest
     container_name: spotube
     environment:
       # for UserID

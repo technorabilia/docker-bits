@@ -1,9 +1,8 @@
 # This container needs special attention. Please check https://hub.docker.com/r/linuxserver/qemu-static for details.
 ---
-version: "2.1"
 services:
   qemu-static:
-    image: ghcr.io/linuxserver/qemu-static
+    image: lscr.io/linuxserver/qemu-static:latest
     container_name: qemu-static
     environment:
       # for UserID

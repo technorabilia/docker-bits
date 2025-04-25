@@ -12,4 +12,4 @@ docker run -d \
   -p 3001:3001 `# Pidgin desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/pidgin/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pidgin
+  lscr.io/linuxserver/pidgin:latest

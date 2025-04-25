@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \
   -v ${BASEDIR:-/volume1/docker}/calibre-web/books:/books `# Where your preexisting calibre database is located.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/calibre-web
+  lscr.io/linuxserver/calibre-web:latest

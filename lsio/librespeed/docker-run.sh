@@ -20,4 +20,4 @@ docker run -d \
   -p 80:80 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/librespeed/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/librespeed
+  lscr.io/linuxserver/librespeed:latest

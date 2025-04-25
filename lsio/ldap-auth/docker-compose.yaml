@@ -7,10 +7,9 @@
 # (OpenLDAP or Microsoft Windows Active Directory 2003 and 2012).
 
 ---
-version: "2.1"
 services:
   ldap-auth:
-    image: ghcr.io/linuxserver/ldap-auth
+    image: lscr.io/linuxserver/ldap-auth:latest
     container_name: ldap-auth
     environment:
       # for UserID

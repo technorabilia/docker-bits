@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/qdirstat/config:/config `# Users home directory in the container, stores qdirstat settings and scans.` \
   -v ${BASEDIR:-/volume1/docker}/qdirstat/data:/data `# Data you want to analyze disk usage information of.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/qdirstat
+  lscr.io/linuxserver/qdirstat:latest

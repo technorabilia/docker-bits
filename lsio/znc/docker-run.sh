@@ -12,4 +12,4 @@ docker run -d \
   -p 6501:6501 `# Port ZNC listens on.` \
   -v ${BASEDIR:-/volume1/docker}/znc/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/znc
+  lscr.io/linuxserver/znc:latest

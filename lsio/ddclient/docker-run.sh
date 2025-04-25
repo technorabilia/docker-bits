@@ -13,4 +13,4 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/ddclient/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/ddclient
+  lscr.io/linuxserver/ddclient:latest

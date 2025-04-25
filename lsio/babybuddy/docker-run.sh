@@ -12,4 +12,4 @@ docker run -d \
   -p 8000:8000 `# the port for the web ui` \
   -v ${BASEDIR:-/volume1/docker}/babybuddy/config:/config `# Persistent config files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/babybuddy
+  lscr.io/linuxserver/babybuddy:latest

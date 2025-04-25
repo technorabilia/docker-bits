@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/webcord/config:/config `# Users home directory in the container, stores program settings.` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/webcord
+  lscr.io/linuxserver/webcord:latest

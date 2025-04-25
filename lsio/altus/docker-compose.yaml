@@ -2,10 +2,9 @@
 # client with themes and multiple account support.
 
 ---
-version: "2.1"
 services:
   altus:
-    image: ghcr.io/linuxserver/altus
+    image: lscr.io/linuxserver/altus:latest
     container_name: altus
     environment:
       # for UserID

@@ -3,10 +3,9 @@
 # intuitive graphical user interface.
 
 ---
-version: "2.1"
 services:
   filezilla:
-    image: ghcr.io/linuxserver/filezilla
+    image: lscr.io/linuxserver/filezilla:latest
     container_name: filezilla
     environment:
       # for UserID

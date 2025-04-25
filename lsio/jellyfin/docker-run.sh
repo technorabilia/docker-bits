@@ -22,4 +22,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/jellyfin/data/tvshows:/data/tvshows `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
   -v ${BASEDIR:-/volume1/docker}/jellyfin/data/movies:/data/movies `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/jellyfin
+  lscr.io/linuxserver/jellyfin:latest

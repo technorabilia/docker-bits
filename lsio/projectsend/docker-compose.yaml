@@ -4,10 +4,9 @@
 # e-mail to send those files.
 
 ---
-version: "2.1"
 services:
   projectsend:
-    image: ghcr.io/linuxserver/projectsend
+    image: lscr.io/linuxserver/projectsend:latest
     container_name: projectsend
     environment:
       # for UserID

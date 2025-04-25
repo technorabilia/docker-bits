@@ -16,4 +16,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/qbittorrent/config:/config `# Contains all relevant configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads `# optional` `# Location of downloads on disk.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/qbittorrent
+  lscr.io/linuxserver/qbittorrent:latest

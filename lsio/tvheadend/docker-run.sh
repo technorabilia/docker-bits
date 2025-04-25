@@ -19,4 +19,4 @@ docker run -d \
   --device /dev/dri:/dev/dri `# optional` `# Only needed if you want to use your AMD/Intel GPU for hardware accelerated video encoding (vaapi).` \
   --device /dev/dvb:/dev/dvb `# optional` `# Only needed if you want to pass through a DVB card to the container. If you use IPTV or HDHomeRun you can leave it out.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/tvheadend
+  lscr.io/linuxserver/tvheadend:latest

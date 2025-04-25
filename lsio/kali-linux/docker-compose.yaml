@@ -4,10 +4,9 @@
 # of OffSec.
 
 ---
-version: "2.1"
 services:
   kali-linux:
-    image: ghcr.io/linuxserver/kali-linux
+    image: lscr.io/linuxserver/kali-linux:latest
     container_name: kali-linux
     environment:
       # for UserID

@@ -14,4 +14,4 @@ docker run -d \
   -p 8080:8080 `# API port` \
   -v ${BASEDIR:-/volume1/docker}/hishtory-server/config:/config `# Configuration files.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/hishtory-server
+  lscr.io/linuxserver/hishtory-server:latest

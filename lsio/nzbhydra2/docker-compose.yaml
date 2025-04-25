@@ -5,10 +5,9 @@
 # a number of raw and newznab based indexers.
 
 ---
-version: "2.1"
 services:
   nzbhydra2:
-    image: ghcr.io/linuxserver/nzbhydra2
+    image: lscr.io/linuxserver/nzbhydra2:latest
     container_name: nzbhydra2
     environment:
       # for UserID

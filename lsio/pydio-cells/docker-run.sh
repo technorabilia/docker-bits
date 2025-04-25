@@ -14,4 +14,4 @@ docker run -d \
   -p 8080:8080 `# Http port` \
   -v ${BASEDIR:-/volume1/docker}/pydio-cells/config:/config `# All the config files reside here.` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/pydio-cells
+  lscr.io/linuxserver/pydio-cells:latest

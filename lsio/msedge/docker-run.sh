@@ -13,4 +13,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/msedge/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/msedge
+  lscr.io/linuxserver/msedge:latest

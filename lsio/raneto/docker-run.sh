@@ -10,4 +10,4 @@ docker run -d \
   -p 3000:3000 `# The port for the Raneto web interface` \
   -v ${BASEDIR:-/volume1/docker}/raneto/config:/config `# Raneto config and Markdown files` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/raneto
+  lscr.io/linuxserver/raneto:latest

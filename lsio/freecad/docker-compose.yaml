@@ -3,10 +3,9 @@
 # software application with finite element method (FEM) support.
 
 ---
-version: "2.1"
 services:
   freecad:
-    image: ghcr.io/linuxserver/freecad
+    image: lscr.io/linuxserver/freecad:latest
     container_name: freecad
     environment:
       # for UserID

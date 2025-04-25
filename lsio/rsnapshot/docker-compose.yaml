@@ -4,10 +4,9 @@
 # links whenever possible, to greatly reduce the disk space required.'
 
 ---
-version: "2.1"
 services:
   rsnapshot:
-    image: ghcr.io/linuxserver/rsnapshot
+    image: lscr.io/linuxserver/rsnapshot:latest
     container_name: rsnapshot
     environment:
       # for UserID

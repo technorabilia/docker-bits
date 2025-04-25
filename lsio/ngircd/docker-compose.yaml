@@ -6,10 +6,9 @@
 # original IRCd.
 
 ---
-version: "2.1"
 services:
   ngircd:
-    image: ghcr.io/linuxserver/ngircd
+    image: lscr.io/linuxserver/ngircd:latest
     container_name: ngircd
     environment:
       # for UserID

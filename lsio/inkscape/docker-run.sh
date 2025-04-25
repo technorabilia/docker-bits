@@ -11,4 +11,4 @@ docker run -d \
   -p 3001:3001 `# Inkscape desktop gui HTTPS.` \
   -v ${BASEDIR:-/volume1/docker}/inkscape/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/inkscape
+  lscr.io/linuxserver/inkscape:latest

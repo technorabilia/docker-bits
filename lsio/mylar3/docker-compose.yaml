@@ -3,10 +3,9 @@
 # supports SABnzbd, NZBGET, and many torrent clients in addition to DDL.
 
 ---
-version: "2.1"
 services:
   mylar3:
-    image: ghcr.io/linuxserver/mylar3
+    image: lscr.io/linuxserver/mylar3:latest
     container_name: mylar3
     environment:
       # for UserID

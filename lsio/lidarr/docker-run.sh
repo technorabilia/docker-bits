@@ -15,4 +15,4 @@ docker run -d \
   -v ${BASEDIR:-/volume1/docker}/lidarr/music:/music `# optional` `# Music files (See note in Application setup).` \
   -v ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads `# optional` `# Path to your download folder for music (See note in Application setup).` \
   --restart unless-stopped \
-  ghcr.io/linuxserver/lidarr
+  lscr.io/linuxserver/lidarr:latest

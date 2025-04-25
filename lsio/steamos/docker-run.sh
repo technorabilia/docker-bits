@@ -28,4 +28,4 @@ docker run -d \
   --device /dev/dri:/dev/dri `# Video card passthrough to Steam.` \
   --shm-size="1gb" \
   --restart unless-stopped \
-  ghcr.io/linuxserver/steamos
+  lscr.io/linuxserver/steamos:latest

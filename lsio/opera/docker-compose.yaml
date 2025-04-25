@@ -4,10 +4,9 @@
 # through its user interface and other features.
 
 ---
-version: "2.1"
 services:
   opera:
-    image: ghcr.io/linuxserver/opera
+    image: lscr.io/linuxserver/opera:latest
     container_name: opera
     environment:
       # for UserID

@@ -2,10 +2,9 @@
 # movies à la Couchpotato.
 
 ---
-version: "2.1"
 services:
   radarr:
-    image: ghcr.io/linuxserver/radarr
+    image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
       # for UserID
