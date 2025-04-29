@@ -8,8 +8,8 @@
 docker run -d \
   --name=swag \
   --cap-add=NET_ADMIN \
-  -e PUID=${PUID:-1024} `# for UserID` \
-  -e PGID=${PGID:-100} `# for GroupID` \
+  -e PUID=${PUID:-1024} `# Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-100} `# Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e URL=example.com `# Top url you have control over (e.g. `example.com` if you own it, or `customsubdomain.example.com` if dynamic dns).` \
   -e VALIDATION=http `# Certbot validation method to use, options are `http` or `dns` (`dns` method also requires `DNSPLUGIN` variable set).` \

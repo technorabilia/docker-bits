@@ -5,8 +5,8 @@
 . ./.env
 docker run -d \
   --name=piper \
-  -e PUID=${PUID:-1024} `# for UserID` \
-  -e PGID=${PGID:-100} `# for GroupID` \
+  -e PUID=${PUID:-1024} `# Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-100} `# Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PIPER_VOICE=en_US-lessac-medium `# The [Piper voice](https://huggingface.co/rhasspy/piper-voices/tree/main) to use, in the format `<language>-<name>-<quality>`` \
   -e PIPER_LENGTH=1.0 `# optional` `# Voice speaking rate, 1.0 is default with < 1.0 being faster and > 1.0 being slower.` \

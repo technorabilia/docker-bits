@@ -5,8 +5,8 @@
 . ./.env
 docker run -d \
   --name=phpmyadmin \
-  -e PUID=${PUID:-1024} `# for UserID` \
-  -e PGID=${PGID:-100} `# for GroupID` \
+  -e PUID=${PUID:-1024} `# Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-100} `# Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PMA_ARBITRARY=1 `# optional` `# Set to `1` to allow you to connect to any server. Setting to `0` will only allow you to connect to specified hosts (See Application Setup)` \
   -e PMA_ABSOLUTE_URI=https://phpmyadmin.example.com `# optional` `# Set the URL you will use to access the web frontend` \

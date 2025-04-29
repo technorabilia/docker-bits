@@ -6,8 +6,8 @@
 . ./.env
 docker run -d \
   --name=kometa \
-  -e PUID=${PUID:-1024} `# for UserID` \
-  -e PGID=${PGID:-100} `# for GroupID` \
+  -e PUID=${PUID:-1024} `# Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-100} `# Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e KOMETA_CONFIG=/config/config.yml `# optional` `# Specify a custom config file to use.` \
   -e KOMETA_TIME=03:00 `# optional` `# Comma-separated list of times to update each day. Format: `HH:MM`.` \

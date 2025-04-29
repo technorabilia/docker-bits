@@ -10,9 +10,9 @@ services:
     container_name: duckdns
     network_mode: host # optional
     environment:
-      # for UserID
+      # Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1024} # optional
-      # for GroupID
+      # Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.
       - PGID=${PGID:-100} # optional
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam} # optional
