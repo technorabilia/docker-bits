@@ -9,9 +9,9 @@ services:
     image: lscr.io/linuxserver/calligra:latest
     container_name: calligra
     environment:
-      # Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1024}
-      # Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
       - PGID=${PGID:-100}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Europe/Amsterdam}

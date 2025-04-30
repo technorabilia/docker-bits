@@ -7,8 +7,8 @@
 docker run -d \
   --name=duckdns \
   --net=host `# optional` `# Use host networking for IPv6 detection` \
-  -e PUID=${PUID:-1024} `# optional` `# Run 'id [USER]]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# optional` `# Run 'id [USER]]' for the owner of the host volume directories to get the GID to use here.` \
+  -e PUID=${PUID:-1024} `# optional` `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-100} `# optional` `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Europe/Amsterdam} `# optional` `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e SUBDOMAINS=subdomain1,subdomain2 `# multiple subdomains allowed, comma separated, no spaces, if your domain is user.duckdns.org you put user, not a sub-subdomain` \
   -e TOKEN=token `# DuckDNS token` \
