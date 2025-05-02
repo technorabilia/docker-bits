@@ -8,24 +8,24 @@ services:
     container_name: flexget
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # Set the FlexGet logging level.
       - FG_LOG_LEVEL=info
       # Set the FlexGet log file location.
       - FG_LOG_FILE=/config/flexget.log
       # Set the FlexGet config file location.
       - FG_CONFIG_FILE=/config/.flexget/config.yml
-      # Set the FlexGet webui password. Pay attention to Bash/YAML reserved characters.
-      - FG_WEBUI_PASSWORD=info # optional
+      # Set the FlexGet webui password. Pay attention to Bash/YAML reserved characters. [OPTIONAL]
+      - FG_WEBUI_PASSWORD=info
     volumes:
       # Local path for FlexGet config files.
       - ${BASEDIR:-/volume1/docker}/flexget/config:/config
-      # Default path for downloads.
-      - ${BASEDIR:-/volume1/docker}/flexget/data:/data # optional
+      # Default path for downloads. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/flexget/data:/data
     ports:
       # HTTP port for the WebUI.
       - 5050:5050

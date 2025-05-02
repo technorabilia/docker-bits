@@ -19,32 +19,32 @@ services:
       - SYS_MODULE # optional
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically
-      - SERVERURL=wireguard.domain.com # optional
-      # External port for docker host. Used in server mode.
-      - SERVERPORT=51820 # optional
-      # Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)
-      - PEERS=1 # optional
-      # DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.
-      - PEERDNS=auto # optional
-      # Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode.
-      - INTERNAL_SUBNET=10.13.13.0 # optional
-      # The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.
-      - ALLOWEDIPS=0.0.0.0/0 # optional
-      # Set to `all` or a list of comma separated peers (ie. `1,4,laptop`) for the wireguard server to send keepalive packets to listed peers every 25 seconds. Useful if server is accessed via domain name and has dynamic IP. Used only in server mode.
-      - PERSISTENTKEEPALIVE_PEERS= # optional
-      # Generated QR codes will be displayed in the docker log. Set to `false` to skip log output.
-      - LOG_CONFS=true # optional
+      - TZ=${TZ:-Etc/UTC}
+      # External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically [OPTIONAL]
+      - SERVERURL=wireguard.domain.com
+      # External port for docker host. Used in server mode. [OPTIONAL]
+      - SERVERPORT=51820
+      # Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only) [OPTIONAL]
+      - PEERS=1
+      # DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward. [OPTIONAL]
+      - PEERDNS=auto
+      # Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode. [OPTIONAL]
+      - INTERNAL_SUBNET=10.13.13.0
+      # The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1. [OPTIONAL]
+      - ALLOWEDIPS=0.0.0.0/0
+      # Set to `all` or a list of comma separated peers (ie. `1,4,laptop`) for the wireguard server to send keepalive packets to listed peers every 25 seconds. Useful if server is accessed via domain name and has dynamic IP. Used only in server mode. [OPTIONAL]
+      - PERSISTENTKEEPALIVE_PEERS=
+      # Generated QR codes will be displayed in the docker log. Set to `false` to skip log output. [OPTIONAL]
+      - LOG_CONFS=true
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/wireguard/config:/config
-      # Path to host kernel module for situations where it's not already loaded.
-      - /lib/modules:/lib/modules # optional
+      # Path to host kernel module for situations where it's not already loaded. [OPTIONAL]
+      - /lib/modules:/lib/modules
     ports:
       # wireguard port
       - 51820:51820/udp

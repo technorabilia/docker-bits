@@ -14,14 +14,15 @@ docker run -d \
   --name=kasm \
   --privileged \
   -e KASM_PORT=443 `# Specify the port you bind to the outside for Kasm Workspaces.` \
-  -e DOCKER_HUB_USERNAME=USER `# optional` `# Optionally specify a DockerHub Username to pull private images.` \
-  -e DOCKER_HUB_PASSWORD=PASS `# optional` `# Optionally specify a DockerHub password to pull private images.` \
-  -e DOCKER_MTU=1500 `# optional` `# Optionally specify the mtu options passed to dockerd.` \
+  -e TZ=Europe/London `# Specify a timezone to use EG Europe/London.` \
+  -e DOCKER_HUB_USERNAME=USER `# Optionally specify a DockerHub Username to pull private images. [OPTIONAL]` \
+  -e DOCKER_HUB_PASSWORD=PASS `# Optionally specify a DockerHub password to pull private images. [OPTIONAL]` \
+  -e DOCKER_MTU=1500 `# Optionally specify the mtu options passed to dockerd. [OPTIONAL]` \
   -p 3000:3000 `# Kasm Installation wizard. (https)` \
   -p 443:443 `# Kasm Workspaces interface. (https)` \
   -v ${BASEDIR:-/volume1/docker}/kasm/opt:/opt `# Docker and installation storage.` \
-  -v ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles `# optional` `# Optionally specify a path for persistent profile storage.` \
-  -v /dev/input:/dev/input `# optional` `# Optional for gamepad support.` \
-  -v /run/udev/data:/run/udev/data `# optional` `# Optional for gamepad support.` \
+  -v ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles `# Optionally specify a path for persistent profile storage. [OPTIONAL]` \
+  -v /dev/input:/dev/input `# Optional for gamepad support. [OPTIONAL]` \
+  -v /run/udev/data:/run/udev/data `# Optional for gamepad support. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/kasm:latest

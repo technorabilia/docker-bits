@@ -9,19 +9,19 @@ services:
     container_name: openvscode-server
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Optional security token for accessing the Web UI (ie. `supersecrettoken`).
-      - CONNECTION_TOKEN= # optional
-      # Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`.
-      - CONNECTION_SECRET= # optional
-      # If this optional variable is set, user will have sudo access in the openvscode-server terminal with the specified password.
-      - SUDO_PASSWORD=password # optional
-      # Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.
-      - SUDO_PASSWORD_HASH= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Optional security token for accessing the Web UI (ie. `supersecrettoken`). [OPTIONAL]
+      - CONNECTION_TOKEN=
+      # Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`. [OPTIONAL]
+      - CONNECTION_SECRET=
+      # If this optional variable is set, user will have sudo access in the openvscode-server terminal with the specified password. [OPTIONAL]
+      - SUDO_PASSWORD=password
+      # Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`. [OPTIONAL]
+      - SUDO_PASSWORD_HASH=
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/openvscode-server/config:/config

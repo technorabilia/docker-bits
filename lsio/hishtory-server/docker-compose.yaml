@@ -10,15 +10,15 @@ services:
     container_name: hishtory-server
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Postgres DB [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). Special characters must be [URL encoded](https://en.wikipedia.org/wiki/URL_encoding).
-      - HISHTORY_POSTGRES_DB=postgresql://${HISHTORY_DB_USER}:${HISHTORY_DB_PASS}@hishtory-db:5432/hishtory?sslmode=disable # optional
-      # SQLite database path. Needs to be a mounted volume for persistence. Don't set at the same time as HISHTORY_POSTGRES_DB.
-      - HISHTORY_SQLITE_DB=/config/hishtory.db # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Postgres DB [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). Special characters must be [URL encoded](https://en.wikipedia.org/wiki/URL_encoding). [OPTIONAL]
+      - HISHTORY_POSTGRES_DB=postgresql://${HISHTORY_DB_USER}:${HISHTORY_DB_PASS}@hishtory-db:5432/hishtory?sslmode=disable
+      # SQLite database path. Needs to be a mounted volume for persistence. Don't set at the same time as HISHTORY_POSTGRES_DB. [OPTIONAL]
+      - HISHTORY_SQLITE_DB=/config/hishtory.db
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/hishtory-server/config:/config

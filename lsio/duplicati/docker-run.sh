@@ -7,12 +7,12 @@
 . ./.env
 docker run -d \
   --name=duplicati \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e SETTINGS_ENCRYPTION_KEY= `# Encryption key for settings database. Minimum 8 characters, alphanumeric.` \
-  -e CLI_ARGS= `# optional` `# Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with` \
-  -e DUPLICATI__WEBSERVICE_PASSWORD= `# optional` `# Password for the webui. If left unset will default to `changeme` and can be changed from the webui settings.` \
+  -e CLI_ARGS= `# Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with [OPTIONAL]` \
+  -e DUPLICATI__WEBSERVICE_PASSWORD= `# Password for the webui. If left unset will default to `changeme` and can be changed from the webui settings. [OPTIONAL]` \
   -p 8200:8200 `# http gui` \
   -v ${BASEDIR:-/volume1/docker}/duplicati/config:/config `# Contains all relevant configuration files.` \
   -v ${BASEDIR:-/volume1/docker}/duplicati/backups:/backups `# Path to store local backups.` \

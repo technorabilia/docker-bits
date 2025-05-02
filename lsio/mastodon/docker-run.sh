@@ -5,9 +5,9 @@
 . ./.env
 docker run -d \
   --name=mastodon \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e LOCAL_DOMAIN=example.com `# This is the unique identifier of your server in the network. It cannot be safely changed later.` \
   -e REDIS_HOST=redis `# Redis server hostname` \
   -e REDIS_PORT=6379 `# Redis port` \
@@ -30,21 +30,21 @@ docker run -d \
   -e SMTP_PASSWORD= `# SMTP password` \
   -e SMTP_FROM_ADDRESS=notifications@example.com `# From address for emails send from Mastodon` \
   -e S3_ENABLED=false `# Enable or disable S3 storage of uploaded files` \
-  -e WEB_DOMAIN=mastodon.example.com `# optional` `# This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic)` \
-  -e ES_HOST=es `# optional` `# Elasticsearch server hostname` \
-  -e ES_PORT=9200 `# optional` `# Elasticsearch port` \
-  -e ES_USER=elastic `# optional` `# Elasticsearch username` \
-  -e ES_PASS=elastic `# optional` `# Elasticsearch password` \
-  -e S3_BUCKET= `# optional` `# S3 bucket hostname` \
-  -e AWS_ACCESS_KEY_ID= `# optional` `# S3 bucket access key ID` \
-  -e AWS_SECRET_ACCESS_KEY= `# optional` `# S3 bucket secret access key` \
-  -e S3_ALIAS_HOST= `# optional` `# Alternate hostname for object fetching if you are front the S3 connections.` \
-  -e SIDEKIQ_ONLY=false `# optional` `# Only run the sidekiq service in this container instance. For large scale instances that need better queue handling.` \
-  -e SIDEKIQ_QUEUE= `# optional` `# The name of the sidekiq queue to run in this container. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-queues).` \
-  -e SIDEKIQ_DEFAULT=false `# optional` `# Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue.` \
-  -e SIDEKIQ_THREADS=5 `# optional` `# The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
-  -e DB_POOL=5 `# optional` `# The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).` \
-  -e NO_CHOWN= `# optional` `# Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*.` \
+  -e WEB_DOMAIN=mastodon.example.com `# This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic) [OPTIONAL]` \
+  -e ES_HOST=es `# Elasticsearch server hostname [OPTIONAL]` \
+  -e ES_PORT=9200 `# Elasticsearch port [OPTIONAL]` \
+  -e ES_USER=elastic `# Elasticsearch username [OPTIONAL]` \
+  -e ES_PASS=elastic `# Elasticsearch password [OPTIONAL]` \
+  -e S3_BUCKET= `# S3 bucket hostname [OPTIONAL]` \
+  -e AWS_ACCESS_KEY_ID= `# S3 bucket access key ID [OPTIONAL]` \
+  -e AWS_SECRET_ACCESS_KEY= `# S3 bucket secret access key [OPTIONAL]` \
+  -e S3_ALIAS_HOST= `# Alternate hostname for object fetching if you are front the S3 connections. [OPTIONAL]` \
+  -e SIDEKIQ_ONLY=false `# Only run the sidekiq service in this container instance. For large scale instances that need better queue handling. [OPTIONAL]` \
+  -e SIDEKIQ_QUEUE= `# The name of the sidekiq queue to run in this container. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-queues). [OPTIONAL]` \
+  -e SIDEKIQ_DEFAULT=false `# Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue. [OPTIONAL]` \
+  -e SIDEKIQ_THREADS=5 `# The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]` \
+  -e DB_POOL=5 `# The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]` \
+  -e NO_CHOWN= `# Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*. [OPTIONAL]` \
   -p 80:80 `# Port for web frontend` \
   -p 443:443 `# Port for web frontend` \
   -v ${BASEDIR:-/volume1/docker}/mastodon/config:/config `# Contains all relevant configuration files.` \

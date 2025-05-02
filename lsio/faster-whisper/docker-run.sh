@@ -6,12 +6,12 @@
 . ./.env
 docker run -d \
   --name=faster-whisper \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e WHISPER_MODEL=tiny-int8 `# Whisper model that will be used for transcription. From [here](https://github.com/SYSTRAN/faster-whisper/blob/master/faster_whisper/utils.py#L12-L31), all with `-int8` compressed variants` \
-  -e WHISPER_BEAM=1 `# optional` `# Number of candidates to consider simultaneously during transcription.` \
-  -e WHISPER_LANG=en `# optional` `# Language that you will speak to the add-on.` \
+  -e WHISPER_BEAM=1 `# Number of candidates to consider simultaneously during transcription. [OPTIONAL]` \
+  -e WHISPER_LANG=en `# Language that you will speak to the add-on. [OPTIONAL]` \
   -p 10300:10300 `# Wyoming connection port.` \
   -v ${BASEDIR:-/volume1/docker}/faster-whisper/config:/config `# Local path for Whisper config files.` \
   --restart unless-stopped \

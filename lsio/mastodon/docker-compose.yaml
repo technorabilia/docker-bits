@@ -9,11 +9,11 @@ services:
     container_name: mastodon
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # This is the unique identifier of your server in the network. It cannot be safely changed later.
       - LOCAL_DOMAIN=example.com
       # Redis server hostname
@@ -58,36 +58,36 @@ services:
       - SMTP_FROM_ADDRESS=notifications@example.com
       # Enable or disable S3 storage of uploaded files
       - S3_ENABLED=false
-      # This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic)
-      - WEB_DOMAIN=mastodon.example.com # optional
-      # Elasticsearch server hostname
-      - ES_HOST=es # optional
-      # Elasticsearch port
-      - ES_PORT=9200 # optional
-      # Elasticsearch username
-      - ES_USER=elastic # optional
-      # Elasticsearch password
-      - ES_PASS=elastic # optional
-      # S3 bucket hostname
-      - S3_BUCKET= # optional
-      # S3 bucket access key ID
-      - AWS_ACCESS_KEY_ID= # optional
-      # S3 bucket secret access key
-      - AWS_SECRET_ACCESS_KEY= # optional
-      # Alternate hostname for object fetching if you are front the S3 connections.
-      - S3_ALIAS_HOST= # optional
-      # Only run the sidekiq service in this container instance. For large scale instances that need better queue handling.
-      - SIDEKIQ_ONLY=false # optional
-      # The name of the sidekiq queue to run in this container. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-queues).
-      - SIDEKIQ_QUEUE= # optional
-      # Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue.
-      - SIDEKIQ_DEFAULT=false # optional
-      # The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).
-      - SIDEKIQ_THREADS=5 # optional
-      # The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads).
-      - DB_POOL=5 # optional
-      # Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*.
-      - NO_CHOWN= # optional
+      # This can be set if you want your server identifier to be different to the subdomain hosting Mastodon. See [https://docs.joinmastodon.org/admin/config/#basic](https://docs.joinmastodon.org/admin/config/#basic) [OPTIONAL]
+      - WEB_DOMAIN=mastodon.example.com
+      # Elasticsearch server hostname [OPTIONAL]
+      - ES_HOST=es
+      # Elasticsearch port [OPTIONAL]
+      - ES_PORT=9200
+      # Elasticsearch username [OPTIONAL]
+      - ES_USER=elastic
+      # Elasticsearch password [OPTIONAL]
+      - ES_PASS=elastic
+      # S3 bucket hostname [OPTIONAL]
+      - S3_BUCKET=
+      # S3 bucket access key ID [OPTIONAL]
+      - AWS_ACCESS_KEY_ID=
+      # S3 bucket secret access key [OPTIONAL]
+      - AWS_SECRET_ACCESS_KEY=
+      # Alternate hostname for object fetching if you are front the S3 connections. [OPTIONAL]
+      - S3_ALIAS_HOST=
+      # Only run the sidekiq service in this container instance. For large scale instances that need better queue handling. [OPTIONAL]
+      - SIDEKIQ_ONLY=false
+      # The name of the sidekiq queue to run in this container. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-queues). [OPTIONAL]
+      - SIDEKIQ_QUEUE=
+      # Set to `true` on the main container if you're running additional sidekiq instances. It will run the `default` queue. [OPTIONAL]
+      - SIDEKIQ_DEFAULT=false
+      # The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]
+      - SIDEKIQ_THREADS=5
+      # The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]
+      - DB_POOL=5
+      # Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*. [OPTIONAL]
+      - NO_CHOWN=
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/mastodon/config:/config

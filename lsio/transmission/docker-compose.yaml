@@ -11,30 +11,30 @@ services:
     container_name: transmission
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify the path to an alternative UI folder.
-      - TRANSMISSION_WEB_HOME= # optional
-      # Specify an optional username for the interface
-      - USER= # optional
-      # Specify an optional password for the interface
-      - PASS= # optional
-      # Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.
-      - WHITELIST= # optional
-      # Specify an optional port for torrent TCP/UDP connections. Fills peer-port setting.
-      - PEERPORT= # optional
-      # Specify an optional list of comma separated dns name whitelist. Fills rpc-host-whitelist setting.
-      - HOST_WHITELIST= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify the path to an alternative UI folder. [OPTIONAL]
+      - TRANSMISSION_WEB_HOME=
+      # Specify an optional username for the interface [OPTIONAL]
+      - USER=
+      # Specify an optional password for the interface [OPTIONAL]
+      - PASS=
+      # Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting. [OPTIONAL]
+      - WHITELIST=
+      # Specify an optional port for torrent TCP/UDP connections. Fills peer-port setting. [OPTIONAL]
+      - PEERPORT=
+      # Specify an optional list of comma separated dns name whitelist. Fills rpc-host-whitelist setting. [OPTIONAL]
+      - HOST_WHITELIST=
     volumes:
       # Where transmission should store config files and logs.
       - ${BASEDIR:-/volume1/docker}/transmission/config:/config
-      # Local path for downloads.
-      - ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads # optional
-      # Watch folder for torrent files.
-      - ${BASEDIR:-/volume1/docker}/transmission/watch:/watch # optional
+      # Local path for downloads. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads
+      # Watch folder for torrent files. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/transmission/watch:/watch
     ports:
       # WebUI
       - 9091:9091

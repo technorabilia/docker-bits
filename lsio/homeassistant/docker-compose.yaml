@@ -11,18 +11,18 @@ services:
     network_mode: host
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       # Home Assistant config storage path.
       - ${BASEDIR:-/volume1/docker}/homeassistant/config:/config
     ports:
-      # Application WebUI, only use this if you are not using host mode.
-      - 8123:8123 # optional
+      # Application WebUI, only use this if you are not using host mode. [OPTIONAL]
+      - 8123:8123
     devices:
-      # For passing through USB, serial or gpio devices.
-      - /path/to/device:/path/to/device # optional
+      # For passing through USB, serial or gpio devices. [OPTIONAL]
+      - /path/to/device:/path/to/device
     restart: unless-stopped

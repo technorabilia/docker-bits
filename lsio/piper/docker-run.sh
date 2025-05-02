@@ -5,15 +5,15 @@
 . ./.env
 docker run -d \
   --name=piper \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PIPER_VOICE=en_US-lessac-medium `# The [Piper voice](https://huggingface.co/rhasspy/piper-voices/tree/main) to use, in the format `<language>-<name>-<quality>`` \
-  -e PIPER_LENGTH=1.0 `# optional` `# Voice speaking rate, 1.0 is default with < 1.0 being faster and > 1.0 being slower.` \
-  -e PIPER_NOISE=0.667 `# optional` `# Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio.` \
-  -e PIPER_NOISEW=0.333 `# optional` `# Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses.` \
-  -e PIPER_SPEAKER=0 `# optional` `# Speaker number to use if the voice supports multiple speakers.` \
-  -e PIPER_PROCS=1 `# optional` `# Number of Piper processes to run simultaneously.` \
+  -e PIPER_LENGTH=1.0 `# Voice speaking rate, 1.0 is default with < 1.0 being faster and > 1.0 being slower. [OPTIONAL]` \
+  -e PIPER_NOISE=0.667 `# Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio. [OPTIONAL]` \
+  -e PIPER_NOISEW=0.333 `# Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses. [OPTIONAL]` \
+  -e PIPER_SPEAKER=0 `# Speaker number to use if the voice supports multiple speakers. [OPTIONAL]` \
+  -e PIPER_PROCS=1 `# Number of Piper processes to run simultaneously. [OPTIONAL]` \
   -p 10200:10200 `# Wyoming connection port.` \
   -v ${BASEDIR:-/volume1/docker}/piper/config:/config `# Local path for piper config files.` \
   --restart unless-stopped \

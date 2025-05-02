@@ -6,18 +6,18 @@
 . ./.env
 docker run -d \
   --name=lychee \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e DB_CONNECTION= `# DB type, from `sqlite`, `mysql`, `pqsql`.` \
   -e DB_HOST= `# DB server hostname. For `mysql` and `pgsql` only.` \
   -e DB_PORT= `# DB server port. For `mysql` and `pgsql` only.` \
   -e DB_USERNAME= `# DB user. For `mysql` and `pgsql` only.` \
   -e DB_PASSWORD= `# DB password. For `mysql` and `pgsql` only.` \
   -e DB_DATABASE= `# Path to DB file for `sqlite`. DB name for `mysql` and `pgsql`.` \
-  -e APP_NAME=Lychee `# optional` `# The gallery name.` \
-  -e APP_URL= `# optional` `# The URL you will use to access Lychee including protocol, and port where appropriate.` \
-  -e TRUSTED_PROXIES= `# optional` `# Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`).` \
+  -e APP_NAME=Lychee `# The gallery name. [OPTIONAL]` \
+  -e APP_URL= `# The URL you will use to access Lychee including protocol, and port where appropriate. [OPTIONAL]` \
+  -e TRUSTED_PROXIES= `# Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`). [OPTIONAL]` \
   -p 80:80 `# http gui` \
   -v ${BASEDIR:-/volume1/docker}/lychee/config:/config `# Persistent config files.` \
   -v ${BASEDIR:-/volume1/docker}/lychee/pictures:/pictures `# Where lychee will store uploaded images.` \

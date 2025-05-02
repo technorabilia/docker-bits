@@ -10,11 +10,11 @@ services:
     container_name: lychee
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # DB type, from `sqlite`, `mysql`, `pqsql`.
       - DB_CONNECTION=
       # DB server hostname. For `mysql` and `pgsql` only.
@@ -27,12 +27,12 @@ services:
       - DB_PASSWORD=
       # Path to DB file for `sqlite`. DB name for `mysql` and `pgsql`.
       - DB_DATABASE=
-      # The gallery name.
-      - APP_NAME=Lychee # optional
-      # The URL you will use to access Lychee including protocol, and port where appropriate.
-      - APP_URL= # optional
-      # Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`).
-      - TRUSTED_PROXIES= # optional
+      # The gallery name. [OPTIONAL]
+      - APP_NAME=Lychee
+      # The URL you will use to access Lychee including protocol, and port where appropriate. [OPTIONAL]
+      - APP_URL=
+      # Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`). [OPTIONAL]
+      - TRUSTED_PROXIES=
     volumes:
       # Persistent config files.
       - ${BASEDIR:-/volume1/docker}/lychee/config:/config

@@ -9,13 +9,13 @@ services:
     container_name: pwndrop
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Secret path for admin access. Defaults to `/pwndrop`. This parameter only takes effect during initial install; it can later be changed in the web gui.
-      - SECRET_PATH=/pwndrop # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Secret path for admin access. Defaults to `/pwndrop`. This parameter only takes effect during initial install; it can later be changed in the web gui. [OPTIONAL]
+      - SECRET_PATH=/pwndrop
     volumes:
       # Contains all relevant configuration and data.
       - ${BASEDIR:-/volume1/docker}/pwndrop/config:/config

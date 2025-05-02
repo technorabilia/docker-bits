@@ -9,11 +9,11 @@ services:
     container_name: healthchecks
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000).
       - SITE_ROOT=
       # The site's name (e.g., "Example Corp HealthChecks").
@@ -22,42 +22,42 @@ services:
       - SUPERUSER_EMAIL=
       # Superuser password.
       - SUPERUSER_PASSWORD=
-      # A comma-separated list of valid hostnames for the server. Default is the domain portion of `SITE_ROOT`.
-      - ALLOWED_HOSTS= # optional
-      # Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise).
-      - APPRISE_ENABLED=False # optional
-      # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`.
-      - CSRF_TRUSTED_ORIGINS= # optional
-      # Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security.
-      - DEBUG=True # optional
-      # From email for alerts.
-      - DEFAULT_FROM_EMAIL= # optional
-      # SMTP host.
-      - EMAIL_HOST= # optional
-      # SMTP port.
-      - EMAIL_PORT= # optional
-      # SMTP user.
-      - EMAIL_HOST_USER= # optional
-      # SMTP password.
-      - EMAIL_HOST_PASSWORD= # optional
-      # Use TLS for SMTP (`True` or `False`).
-      - EMAIL_USE_TLS= # optional
-      # Defaults to False. Set to True to allow integrations to connect to private IP addresses.
-      - INTEGRATIONS_ALLOW_PRIVATE_IPS= # optional
-      # The domain to use for generating ping email addresses. Defaults to `localhost`.
-      - PING_EMAIL_DOMAIN= # optional
-      # If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https.
-      - RP_ID= # optional
-      # A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`.
-      - SECRET_KEY= # optional
-      # Full URL to custom site logo.
-      - SITE_LOGO_URL= # optional
+      # A comma-separated list of valid hostnames for the server. Default is the domain portion of `SITE_ROOT`. [OPTIONAL]
+      - ALLOWED_HOSTS=
+      # Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise). [OPTIONAL]
+      - APPRISE_ENABLED=False
+      # A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`. [OPTIONAL]
+      - CSRF_TRUSTED_ORIGINS=
+      # Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security. [OPTIONAL]
+      - DEBUG=True
+      # From email for alerts. [OPTIONAL]
+      - DEFAULT_FROM_EMAIL=
+      # SMTP host. [OPTIONAL]
+      - EMAIL_HOST=
+      # SMTP port. [OPTIONAL]
+      - EMAIL_PORT=
+      # SMTP user. [OPTIONAL]
+      - EMAIL_HOST_USER=
+      # SMTP password. [OPTIONAL]
+      - EMAIL_HOST_PASSWORD=
+      # Use TLS for SMTP (`True` or `False`). [OPTIONAL]
+      - EMAIL_USE_TLS=
+      # Defaults to False. Set to True to allow integrations to connect to private IP addresses. [OPTIONAL]
+      - INTEGRATIONS_ALLOW_PRIVATE_IPS=
+      # The domain to use for generating ping email addresses. Defaults to `localhost`. [OPTIONAL]
+      - PING_EMAIL_DOMAIN=
+      # If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https. [OPTIONAL]
+      - RP_ID=
+      # A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`. [OPTIONAL]
+      - SECRET_KEY=
+      # Full URL to custom site logo. [OPTIONAL]
+      - SITE_LOGO_URL=
     volumes:
       # Persistent config files.
       - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
     ports:
       # Healthchecks Web UI
       - 8000:8000
-      # Port for inbound SMTP pings
-      - 2525:2525 # optional
+      # Port for inbound SMTP pings [OPTIONAL]
+      - 2525:2525
     restart: unless-stopped

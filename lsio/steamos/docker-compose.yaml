@@ -8,47 +8,49 @@ services:
   steamos:
     image: lscr.io/linuxserver/steamos:latest
     container_name: steamos
-    # Specify the hostname of the host, this is useful for keeping a persistent hostname between upgrades and identifying the server in the remote play Steam Client.
-    hostname: hostname # optional
+    # Specify the hostname of the host, this is useful for keeping a persistent hostname between upgrades and identifying the server in the remote play Steam Client. [OPTIONAL]
+    hostname: hostname
     cap_add:
       - NET_ADMIN
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
+      # Specify a timezone to use EG Europe/London.
+      - TZ=Europe/London
       # Specify the render device (GPU) for the contianer to use.
       - DRINODE=/dev/dri/renderD128
-      # Specify the IP of the host, needed for LAN Remote Play.
-      - HOST_IP=192.168.100.10 # optional
-      # KDE to boot into desktop mode, BIGPICTURE to boot into gamescope.
-      - STARTUP=KDE # optional
-      # When booting into BIGPICTURE mode the screen resolution will be bound to this value.
-      - RESOLUTION=1920x1080 # optional
+      # Specify the IP of the host, needed for LAN Remote Play. [OPTIONAL]
+      - HOST_IP=192.168.100.10
+      # KDE to boot into desktop mode, BIGPICTURE to boot into gamescope. [OPTIONAL]
+      - STARTUP=KDE
+      # When booting into BIGPICTURE mode the screen resolution will be bound to this value. [OPTIONAL]
+      - RESOLUTION=1920x1080
     volumes:
       # Users home directory in the container, stores all files and games.
       - ${BASEDIR:-/volume1/docker}/steamos/config:/config
-      # Optional for gamepad support. *Only working for Steam Remote Play
-      - /dev/input:/dev/input # optional
-      # Optional for gamepad support. *Only working for Steam Remote Play
-      - /run/udev/data:/run/udev/data # optional
+      # Optional for gamepad support. *Only working for Steam Remote Play [OPTIONAL]
+      - /dev/input:/dev/input
+      # Optional for gamepad support. *Only working for Steam Remote Play [OPTIONAL]
+      - /run/udev/data:/run/udev/data
     ports:
       # SteamOS desktop gui.
       - 3000:3000
       # HTTPS SteamOS desktop gui.
       - 3001:3001
-      # Steam Remote Play Ports (UDP).
-      - 27031-27036:27031-27036/udp # optional
-      # Steam Remote Play Ports (TCP).
-      - 27031-27036:27031-27036 # optional
-      # Sunshine Ports (TCP).
-      - 47984-47990:47984-47990 # optional
-      # Sunshine Ports (TCP).
-      - 48010-48010:48010-48010 # optional
-      # Sunshine Ports (UDP).
-      - 47998-48000:47998-48000/udp # optional
+      # Steam Remote Play Ports (UDP). [OPTIONAL]
+      - 27031-27036:27031-27036/udp
+      # Steam Remote Play Ports (TCP). [OPTIONAL]
+      - 27031-27036:27031-27036
+      # Sunshine Ports (TCP). [OPTIONAL]
+      - 47984-47990:47984-47990
+      # Sunshine Ports (TCP). [OPTIONAL]
+      - 48010-48010:48010-48010
+      # Sunshine Ports (UDP). [OPTIONAL]
+      - 47998-48000:47998-48000/udp
     devices:
       # Video card passthrough to Steam.
       - /dev/dri:/dev/dri

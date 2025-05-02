@@ -13,11 +13,11 @@ services:
     container_name: bookstack
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # The protocol, IP/URL, and port that your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`
       - APP_URL=
       # Session encryption key. You will need to generate this with `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey`
@@ -32,8 +32,8 @@ services:
       - DB_PASSWORD=
       # Database name
       - DB_DATABASE=
-      # Set to `database` to enable async actions like sending email or triggering webhooks. See [documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/#async-action-handling).
-      - QUEUE_CONNECTION= # optional
+      # Set to `database` to enable async actions like sending email or triggering webhooks. See [documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/#async-action-handling). [OPTIONAL]
+      - QUEUE_CONNECTION=
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/bookstack/config:/config

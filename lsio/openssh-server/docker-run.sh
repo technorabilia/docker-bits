@@ -8,20 +8,20 @@
 . ./.env
 docker run -d \
   --name=openssh-server \
-    --hostname={{ project_name }} `# optional` `# Optionally the hostname can be defined.` \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e PUBLIC_KEY=yourpublickey `# optional` `# Optional ssh public key, which will automatically be added to authorized_keys.` \
-  -e PUBLIC_KEY_FILE=/path/to/file `# optional` `# Optionally specify a file containing the public key (works with docker secrets).` \
-  -e PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys `# optional` `# Optionally specify a directory containing the public keys (works with docker secrets).` \
-  -e PUBLIC_KEY_URL=https://github.com/username.keys `# optional` `# Optionally specify a URL containing the public key.` \
-  -e SUDO_ACCESS=false `# optional` `# Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access.` \
-  -e PASSWORD_ACCESS=false `# optional` `# Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well.` \
-  -e USER_PASSWORD=password `# optional` `# Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access.` \
-  -e USER_PASSWORD_FILE=/path/to/file `# optional` `# Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets).` \
-  -e USER_NAME=linuxserver.io `# optional` `# Optionally specify a user name (Default:`linuxserver.io`)` \
-  -e LOG_STDOUT= `# optional` `# Set to `true` to log to stdout instead of file.` \
+    --hostname={{ project_name }} `# Optionally the hostname can be defined. [OPTIONAL]` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUBLIC_KEY=yourpublickey `# Optional ssh public key, which will automatically be added to authorized_keys. [OPTIONAL]` \
+  -e PUBLIC_KEY_FILE=/path/to/file `# Optionally specify a file containing the public key (works with docker secrets). [OPTIONAL]` \
+  -e PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys `# Optionally specify a directory containing the public keys (works with docker secrets). [OPTIONAL]` \
+  -e PUBLIC_KEY_URL=https://github.com/username.keys `# Optionally specify a URL containing the public key. [OPTIONAL]` \
+  -e SUDO_ACCESS=false `# Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access. [OPTIONAL]` \
+  -e PASSWORD_ACCESS=false `# Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well. [OPTIONAL]` \
+  -e USER_PASSWORD=password `# Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access. [OPTIONAL]` \
+  -e USER_PASSWORD_FILE=/path/to/file `# Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets). [OPTIONAL]` \
+  -e USER_NAME=linuxserver.io `# Optionally specify a user name (Default:`linuxserver.io`) [OPTIONAL]` \
+  -e LOG_STDOUT= `# Set to `true` to log to stdout instead of file. [OPTIONAL]` \
   -p 2222:2222 `# ssh port` \
   -v ${BASEDIR:-/volume1/docker}/openssh-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \

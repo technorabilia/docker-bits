@@ -11,17 +11,17 @@ services:
     container_name: duplicati
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # Encryption key for settings database. Minimum 8 characters, alphanumeric.
       - SETTINGS_ENCRYPTION_KEY=
-      # Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with
-      - CLI_ARGS= # optional
-      # Password for the webui. If left unset will default to `changeme` and can be changed from the webui settings.
-      - DUPLICATI__WEBSERVICE_PASSWORD= # optional
+      # Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with [OPTIONAL]
+      - CLI_ARGS=
+      # Password for the webui. If left unset will default to `changeme` and can be changed from the webui settings. [OPTIONAL]
+      - DUPLICATI__WEBSERVICE_PASSWORD=
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/duplicati/config:/config

@@ -11,18 +11,18 @@ services:
     container_name: sonarr
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       # Database and sonarr configs
       - ${BASEDIR:-/volume1/docker}/sonarr/config:/config
-      # Location of TV library on disk (See note in Application setup)
-      - ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv # optional
-      # Location of download managers output directory (See note in Application setup)
-      - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads # optional
+      # Location of TV library on disk (See note in Application setup) [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv
+      # Location of download managers output directory (See note in Application setup) [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads
     ports:
       # The port for the Sonarr web interface
       - 8989:8989

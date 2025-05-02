@@ -9,11 +9,11 @@ services:
     container_name: emby
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       # Emby data storage location. *This can grow very large, 50gb+ is likely for a large collection.*
       - ${BASEDIR:-/volume1/docker}/emby/config:/config
@@ -21,22 +21,22 @@ services:
       - ${BASEDIR:-/volume1/docker}/emby/data/tvshows:/data/tvshows
       # Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.
       - ${BASEDIR:-/volume1/docker}/emby/data/movies:/data/movies
-      # Path for Raspberry Pi OpenMAX libs *optional*.
-      - /opt/vc/lib:/opt/vc/lib # optional
+      # Path for Raspberry Pi OpenMAX libs *optional*. [OPTIONAL]
+      - /opt/vc/lib:/opt/vc/lib
     ports:
       # Http webUI.
       - 8096:8096
-      # Https webUI (you need to setup your own certificate).
-      - 8920:8920 # optional
+      # Https webUI (you need to setup your own certificate). [OPTIONAL]
+      - 8920:8920
     devices:
-      # Only needed if you want to use your Intel or AMD GPU for hardware accelerated video encoding (vaapi).
-      - /dev/dri:/dev/dri # optional
-      # Only needed if you want to use your Raspberry Pi OpenMax video encoding (Bellagio).
-      - /dev/vchiq:/dev/vchiq # optional
-      # Only needed if you want to use your Raspberry Pi V4L2 video encoding.
-      - /dev/video10:/dev/video10 # optional
-      # Only needed if you want to use your Raspberry Pi V4L2 video encoding.
-      - /dev/video11:/dev/video11 # optional
-      # Only needed if you want to use your Raspberry Pi V4L2 video encoding.
-      - /dev/video12:/dev/video12 # optional
+      # Only needed if you want to use your Intel or AMD GPU for hardware accelerated video encoding (vaapi). [OPTIONAL]
+      - /dev/dri:/dev/dri
+      # Only needed if you want to use your Raspberry Pi OpenMax video encoding (Bellagio). [OPTIONAL]
+      - /dev/vchiq:/dev/vchiq
+      # Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]
+      - /dev/video10:/dev/video10
+      # Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]
+      - /dev/video11:/dev/video11
+      # Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]
+      - /dev/video12:/dev/video12
     restart: unless-stopped

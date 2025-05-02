@@ -11,18 +11,18 @@ services:
     container_name: lidarr
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       # Configuration files for Lidarr.
       - ${BASEDIR:-/volume1/docker}/lidarr/config:/config
-      # Music files (See note in Application setup).
-      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music # optional
-      # Path to your download folder for music (See note in Application setup).
-      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads # optional
+      # Music files (See note in Application setup). [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music
+      # Path to your download folder for music (See note in Application setup). [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads
     ports:
       # Application WebUI
       - 8686:8686

@@ -8,11 +8,11 @@ services:
     container_name: planka
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # The URL you will use to access planka including protocol, and port if not 80/443.
       - BASE_URL=https://planka.example.com
       # Postgres database URL. Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding).

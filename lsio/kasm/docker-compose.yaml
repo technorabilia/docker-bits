@@ -18,21 +18,23 @@ services:
     environment:
       # Specify the port you bind to the outside for Kasm Workspaces.
       - KASM_PORT=443
-      # Optionally specify a DockerHub Username to pull private images.
-      - DOCKER_HUB_USERNAME=USER # optional
-      # Optionally specify a DockerHub password to pull private images.
-      - DOCKER_HUB_PASSWORD=PASS # optional
-      # Optionally specify the mtu options passed to dockerd.
-      - DOCKER_MTU=1500 # optional
+      # Specify a timezone to use EG Europe/London.
+      - TZ=Europe/London
+      # Optionally specify a DockerHub Username to pull private images. [OPTIONAL]
+      - DOCKER_HUB_USERNAME=USER
+      # Optionally specify a DockerHub password to pull private images. [OPTIONAL]
+      - DOCKER_HUB_PASSWORD=PASS
+      # Optionally specify the mtu options passed to dockerd. [OPTIONAL]
+      - DOCKER_MTU=1500
     volumes:
       # Docker and installation storage.
       - ${BASEDIR:-/volume1/docker}/kasm/opt:/opt
-      # Optionally specify a path for persistent profile storage.
-      - ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles # optional
-      # Optional for gamepad support.
-      - /dev/input:/dev/input # optional
-      # Optional for gamepad support.
-      - /run/udev/data:/run/udev/data # optional
+      # Optionally specify a path for persistent profile storage. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles
+      # Optional for gamepad support. [OPTIONAL]
+      - /dev/input:/dev/input
+      # Optional for gamepad support. [OPTIONAL]
+      - /run/udev/data:/run/udev/data
     ports:
       # Kasm Installation wizard. (https)
       - 3000:3000

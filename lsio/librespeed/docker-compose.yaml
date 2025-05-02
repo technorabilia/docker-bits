@@ -9,29 +9,29 @@ services:
     container_name: librespeed
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # Set the password for the results database.
       - PASSWORD=PASSWORD
-      # (optional) set to `true` to enable custom results page in `/config/www/results/index.php`.
-      - CUSTOM_RESULTS=false # optional
-      # Defaults to `sqlite`, can also be set to `mysql` or `postgresql`.
-      - DB_TYPE=sqlite # optional
-      # Database name. Required for mysql and pgsql.
-      - DB_NAME=DB_NAME # optional
-      # Database address. Required for mysql and pgsql.
-      - DB_HOSTNAME=DB_HOSTNAME # optional
-      # Database username. Required for mysql and pgsql.
-      - DB_USERNAME=DB_USERNAME # optional
-      # Database password. Required for mysql and pgsql.
-      - DB_PASSWORD=DB_PASSWORD # optional
-      # Database port. Required for mysql.
-      - DB_PORT=DB_PORT # optional
-      # Access token from ipinfo.io. Required for detailed IP information.
-      - IPINFO_APIKEY=ACCESS_TOKEN # optional
+      # (optional) set to `true` to enable custom results page in `/config/www/results/index.php`. [OPTIONAL]
+      - CUSTOM_RESULTS=false
+      # Defaults to `sqlite`, can also be set to `mysql` or `postgresql`. [OPTIONAL]
+      - DB_TYPE=sqlite
+      # Database name. Required for mysql and pgsql. [OPTIONAL]
+      - DB_NAME=DB_NAME
+      # Database address. Required for mysql and pgsql. [OPTIONAL]
+      - DB_HOSTNAME=DB_HOSTNAME
+      # Database username. Required for mysql and pgsql. [OPTIONAL]
+      - DB_USERNAME=DB_USERNAME
+      # Database password. Required for mysql and pgsql. [OPTIONAL]
+      - DB_PASSWORD=DB_PASSWORD
+      # Database port. Required for mysql. [OPTIONAL]
+      - DB_PORT=DB_PORT
+      # Access token from ipinfo.io. Required for detailed IP information. [OPTIONAL]
+      - IPINFO_APIKEY=ACCESS_TOKEN
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/librespeed/config:/config

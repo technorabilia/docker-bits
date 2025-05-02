@@ -9,11 +9,11 @@ services:
     container_name: pyload-ng
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/pyload-ng/config:/config
@@ -22,6 +22,6 @@ services:
     ports:
       # Allows HTTP access to the application
       - 8000:8000
-      # Click'n'Load port.
-      - 9666:9666 # optional
+      # Click'n'Load port. [OPTIONAL]
+      - 9666:9666
     restart: unless-stopped

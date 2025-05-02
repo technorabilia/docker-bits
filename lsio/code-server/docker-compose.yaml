@@ -13,23 +13,23 @@ services:
     container_name: code-server
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.
-      - PASSWORD=password # optional
-      # Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.
-      - HASHED_PASSWORD= # optional
-      # If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.
-      - SUDO_PASSWORD=password # optional
-      # Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.
-      - SUDO_PASSWORD_HASH= # optional
-      # If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/coder/code-server/blob/main/docs/guide.md#using-a-subdomain)
-      - PROXY_DOMAIN=code-server.my.domain # optional
-      # If this optional variable is set, code-server will open this directory by default
-      - DEFAULT_WORKSPACE=/config/workspace # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth. [OPTIONAL]
+      - PASSWORD=password
+      # Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below. [OPTIONAL]
+      - HASHED_PASSWORD=
+      # If this optional variable is set, user will have sudo access in the code-server terminal with the specified password. [OPTIONAL]
+      - SUDO_PASSWORD=password
+      # Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`. [OPTIONAL]
+      - SUDO_PASSWORD_HASH=
+      # If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/coder/code-server/blob/main/docs/guide.md#using-a-subdomain) [OPTIONAL]
+      - PROXY_DOMAIN=code-server.my.domain
+      # If this optional variable is set, code-server will open this directory by default [OPTIONAL]
+      - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/code-server/config:/config

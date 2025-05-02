@@ -13,15 +13,15 @@ services:
     container_name: jackett
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Allow Jackett to update inside of the container.
-      - AUTO_UPDATE=true # optional
-      # Optionally specify additional arguments to be passed.
-      - RUN_OPTS= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Allow Jackett to update inside of the container. [OPTIONAL]
+      - AUTO_UPDATE=true
+      # Optionally specify additional arguments to be passed. [OPTIONAL]
+      - RUN_OPTS=
     volumes:
       # Where Jackett should store its config file.
       - ${BASEDIR:-/volume1/docker}/jackett/config:/config

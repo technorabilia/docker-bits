@@ -8,27 +8,27 @@ services:
   duckdns:
     image: lscr.io/linuxserver/duckdns:latest
     container_name: duckdns
-    network_mode: host # optional
+    network_mode: host # [OPTIONAL]
     environment:
-      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024} # optional
-      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100} # optional
-      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam} # optional
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here. [OPTIONAL]
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here. [OPTIONAL]
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). [OPTIONAL]
+      - TZ=${TZ:-Etc/UTC}
       # multiple subdomains allowed, comma separated, no spaces, if your domain is user.duckdns.org you put user, not a sub-subdomain
       - SUBDOMAINS=subdomain1,subdomain2
       # DuckDNS token
       - TOKEN=token
-      # Set to `ipv6` or `ipv4` to update  **only** your public IPv4/6 address. Set to `both` to update IPv6 and IPv4 address. This variable makes use of a [third-party service](#notice-regarding-automatic-detection). Omitting this variable uses DuckDNS for detection and only supports IPv4. `both` and `ipv6` modes needs [host networking](#networking-net).
-      - UPDATE_IP=ipv4 # optional
-      # Set to `true` to log to file (also need to map /config).
-      - LOG_FILE=false # optional
+      # Set to `ipv6` or `ipv4` to update  **only** your public IPv4/6 address. Set to `both` to update IPv6 and IPv4 address. This variable makes use of a [third-party service](#notice-regarding-automatic-detection). Omitting this variable uses DuckDNS for detection and only supports IPv4. `both` and `ipv6` modes needs [host networking](#networking-net). [OPTIONAL]
+      - UPDATE_IP=ipv4
+      # Set to `true` to log to file (also need to map /config). [OPTIONAL]
+      - LOG_FILE=false
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/duckdns/config:/config
-      # Persistent config files. Also set `LOG_FILE=true` to keep address history.
-      - ${BASEDIR:-/volume1/docker}/duckdns/config:/config # optional
+      # Persistent config files. Also set `LOG_FILE=true` to keep address history. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/duckdns/config:/config
     ports:
       # Application WebUI
       - 80:80

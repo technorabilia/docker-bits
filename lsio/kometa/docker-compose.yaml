@@ -10,21 +10,21 @@ services:
     container_name: kometa
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify a custom config file to use.
-      - KOMETA_CONFIG=/config/config.yml # optional
-      # Comma-separated list of times to update each day. Format: `HH:MM`.
-      - KOMETA_TIME=03:00 # optional
-      # Set to `True` to run without the scheduler.
-      - KOMETA_RUN=False # optional
-      # Set to `True` to run in debug mode with only collections that have `test: true`.
-      - KOMETA_TEST=False # optional
-      # Set to `True` to run without any of the missing movie/show functions.
-      - KOMETA_NO_MISSING=False # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify a custom config file to use. [OPTIONAL]
+      - KOMETA_CONFIG=/config/config.yml
+      # Comma-separated list of times to update each day. Format: `HH:MM`. [OPTIONAL]
+      - KOMETA_TIME=03:00
+      # Set to `True` to run without the scheduler. [OPTIONAL]
+      - KOMETA_RUN=False
+      # Set to `True` to run in debug mode with only collections that have `test: true`. [OPTIONAL]
+      - KOMETA_TEST=False
+      # Set to `True` to run without any of the missing movie/show functions. [OPTIONAL]
+      - KOMETA_NO_MISSING=False
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/kometa/config:/config

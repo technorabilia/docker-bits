@@ -8,11 +8,11 @@ services:
     container_name: fleet
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES.
       - fleet_admin_authentication_type=DATABASE
       # The full JDBC connection string to the Fleet database
@@ -21,8 +21,8 @@ services:
       - fleet_database_username=fleet_user
       # The database user's password.
       - fleet_database_password=dbuserpassword
-      # A string used as part of the password key derivation process.
-      - fleet_admin_secret=randomstring # optional
+      # A string used as part of the password key derivation process. [OPTIONAL]
+      - fleet_admin_secret=randomstring
     volumes:
       # The primary config file and rolling log files.
       - ${BASEDIR:-/volume1/docker}/fleet/config:/config

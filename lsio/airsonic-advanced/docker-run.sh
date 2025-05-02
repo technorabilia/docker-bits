@@ -7,17 +7,17 @@
 . ./.env
 docker run -d \
   --name=airsonic-advanced \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e CONTEXT_PATH= `# optional` `# For setting url-base in reverse proxy setups.` \
-  -e JAVA_OPTS= `# optional` `# For passing additional java options.` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e CONTEXT_PATH= `# For setting url-base in reverse proxy setups. [OPTIONAL]` \
+  -e JAVA_OPTS= `# For passing additional java options. [OPTIONAL]` \
   -p 4040:4040 `# WebUI` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config `# Configuration file location.` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/music:/music `# Location of music.` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/playlists:/playlists `# Location for playlists to be saved to.` \
   -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/podcasts:/podcasts `# Location of podcasts.` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media `# optional` `# Location of other media.` \
-  --device /dev/snd:/dev/snd `# optional` `# Only needed to pass your host sound device to Airsonic's Java jukebox player.` \
+  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media `# Location of other media. [OPTIONAL]` \
+  --device /dev/snd:/dev/snd `# Only needed to pass your host sound device to Airsonic's Java jukebox player. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/airsonic-advanced:latest

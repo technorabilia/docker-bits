@@ -9,13 +9,15 @@ services:
     container_name: emulatorjs
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify a subfolder for reverse proxies IE '/FOLDER/'
-      - SUBFOLDER=/ # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify a timezone to use EG Europe/London
+      - TZ=Europe/London
+      # Specify a subfolder for reverse proxies IE '/FOLDER/' [OPTIONAL]
+      - SUBFOLDER=/
     volumes:
       # Path to store user profiles
       - ${BASEDIR:-/volume1/docker}/emulatorjs/config:/config
@@ -26,6 +28,6 @@ services:
       - 3000:3000
       # Emulation frontend containing static web files used to browse and launch games
       - 80:80
-      # IPFS peering port, if you want to participate in the P2P network to distribute frontend artwork please forward this to the Internet
-      - 4001:4001 # optional
+      # IPFS peering port, if you want to participate in the P2P network to distribute frontend artwork please forward this to the Internet [OPTIONAL]
+      - 4001:4001
     restart: unless-stopped

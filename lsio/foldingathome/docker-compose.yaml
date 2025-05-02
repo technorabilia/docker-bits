@@ -13,23 +13,23 @@ services:
     container_name: foldingathome
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # Register for an account on `https://app.foldingathome.org` and retrieve account token in settings. Required on first start.
       - ACCOUNT_TOKEN=
       # Assign a friendly name to this instance (no spaces). Required on first start.
       - MACHINE_NAME=
-      # Optionally pass additional cli arguments to `fah-client` on container start.
-      - CLI_ARGS= # optional
+      # Optionally pass additional cli arguments to `fah-client` on container start. [OPTIONAL]
+      - CLI_ARGS=
     volumes:
       # Where Folding@home should store its database and config.
       - ${BASEDIR:-/volume1/docker}/foldingathome/config:/config
     ports:
       # Application WebUI
       - 80:80
-      # Folding@home web gui (redirects to [https://app.foldingathome.org](https://app.foldingathome.org)).
-      - 7396:7396 # optional
+      # Folding@home web gui (redirects to [https://app.foldingathome.org](https://app.foldingathome.org)). [OPTIONAL]
+      - 7396:7396
     restart: unless-stopped

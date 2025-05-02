@@ -7,21 +7,21 @@ services:
   smokeping:
     image: lscr.io/linuxserver/smokeping:latest
     container_name: smokeping
-    # In a master-slave architecture, the hostname of the master node is displayed as its name in the web interface, while the hostname of the slave nodes represents their device aliases. These slave hostnames must match the aliases defined in the master's Slaves file.
-    hostname: {{ project_name }} # optional
+    # In a master-slave architecture, the hostname of the master node is displayed as its name in the web interface, while the hostname of the slave nodes represents their device aliases. These slave hostnames must match the aliases defined in the master's Slaves file. [OPTIONAL]
+    hostname: {{ project_name }}
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify the master url to connect to. Used when in slave mode.
-      - MASTER_URL=http://<master-host-ip>:80/smokeping/ # optional
-      # Specify the master shared secret for this host. Used when in slave mode.
-      - SHARED_SECRET=password # optional
-      # Specify the cache directory for this host. Used when in slave mode.
-      - CACHE_DIR=/tmp # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify the master url to connect to. Used when in slave mode. [OPTIONAL]
+      - MASTER_URL=http://<master-host-ip>:80/smokeping/
+      # Specify the master shared secret for this host. Used when in slave mode. [OPTIONAL]
+      - SHARED_SECRET=password
+      # Specify the cache directory for this host. Used when in slave mode. [OPTIONAL]
+      - CACHE_DIR=/tmp
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/smokeping/config:/config

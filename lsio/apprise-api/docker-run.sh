@@ -9,12 +9,12 @@
 . ./.env
 docker run -d \
   --name=apprise-api \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e APPRISE_ATTACH_SIZE=0 `# optional` `# Max attachment size in Mb. `0` disables attachments. Must have `/attachments` mounted to set to a positive value.` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e APPRISE_ATTACH_SIZE=0 `# Max attachment size in Mb. `0` disables attachments. Must have `/attachments` mounted to set to a positive value. [OPTIONAL]` \
   -p 8000:8000 `# Port for apprise's interface and API.` \
   -v ${BASEDIR:-/volume1/docker}/apprise-api/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/apprise-api/attachments:/attachments `# optional` `# Temporary storage for attachments when sent with notifications.` \
+  -v ${BASEDIR:-/volume1/docker}/apprise-api/attachments:/attachments `# Temporary storage for attachments when sent with notifications. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/apprise-api:latest

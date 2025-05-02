@@ -9,13 +9,13 @@ services:
     container_name: deluge
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # set the loglevel output when running Deluge, default is info for deluged and warning for delgued-web
-      - DELUGE_LOGLEVEL=error # optional
+      - TZ=${TZ:-Etc/UTC}
+      # set the loglevel output when running Deluge, default is info for deluged and warning for delgued-web [OPTIONAL]
+      - DELUGE_LOGLEVEL=error
     volumes:
       # deluge configs
       - ${BASEDIR:-/volume1/docker}/deluge/config:/config
@@ -28,6 +28,6 @@ services:
       - 6881:6881
       # Inbound torrent traffic (See App Setup)
       - 6881:6881/udp
-      # Default deluged port for thin client connectivity
-      - 58846:58846 # optional
+      # Default deluged port for thin client connectivity [OPTIONAL]
+      - 58846:58846
     restart: unless-stopped

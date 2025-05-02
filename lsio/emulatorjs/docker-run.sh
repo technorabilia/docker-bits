@@ -5,13 +5,14 @@
 . ./.env
 docker run -d \
   --name=emulatorjs \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e SUBFOLDER=/ `# optional` `# Specify a subfolder for reverse proxies IE '/FOLDER/'` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e TZ=Europe/London `# Specify a timezone to use EG Europe/London` \
+  -e SUBFOLDER=/ `# Specify a subfolder for reverse proxies IE '/FOLDER/' [OPTIONAL]` \
   -p 3000:3000 `# Rom/artwork management interface, used to generate/manage config files and download artwork` \
   -p 80:80 `# Emulation frontend containing static web files used to browse and launch games` \
-  -p 4001:4001 `# optional` `# IPFS peering port, if you want to participate in the P2P network to distribute frontend artwork please forward this to the Internet` \
+  -p 4001:4001 `# IPFS peering port, if you want to participate in the P2P network to distribute frontend artwork please forward this to the Internet [OPTIONAL]` \
   -v ${BASEDIR:-/volume1/docker}/emulatorjs/config:/config `# Path to store user profiles` \
   -v ${BASEDIR:-/volume1/docker}/emulatorjs/data:/data `# Path to store roms/artwork` \
   --restart unless-stopped \

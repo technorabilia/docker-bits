@@ -10,14 +10,14 @@
 . ./.env
 docker run -d \
   --name=jellyfin \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e JELLYFIN_PublishedServerUrl=http://192.168.0.5 `# optional` `# Set the autodiscovery response domain or IP address, include http(s)://.` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e JELLYFIN_PublishedServerUrl=http://192.168.0.5 `# Set the autodiscovery response domain or IP address, include http(s)://. [OPTIONAL]` \
   -p 8096:8096 `# Http webUI.` \
-  -p 8920:8920 `# optional` `# Optional - Https webUI (you need to set up your own certificate).` \
-  -p 7359:7359/udp `# optional` `# Optional - Allows clients to discover Jellyfin on the local network.` \
-  -p 1900:1900/udp `# optional` `# Optional - Service discovery used by DNLA and clients.` \
+  -p 8920:8920 `# Optional - Https webUI (you need to set up your own certificate). [OPTIONAL]` \
+  -p 7359:7359/udp `# Optional - Allows clients to discover Jellyfin on the local network. [OPTIONAL]` \
+  -p 1900:1900/udp `# Optional - Service discovery used by DNLA and clients. [OPTIONAL]` \
   -v ${BASEDIR:-/volume1/docker}/jellyfin/config:/config `# Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*` \
   -v ${BASEDIR:-/volume1/docker}/jellyfin/data/tvshows:/data/tvshows `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
   -v ${BASEDIR:-/volume1/docker}/jellyfin/data/movies:/data/movies `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \

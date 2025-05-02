@@ -11,15 +11,15 @@ services:
     container_name: airsonic-advanced
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # For setting url-base in reverse proxy setups.
-      - CONTEXT_PATH= # optional
-      # For passing additional java options.
-      - JAVA_OPTS= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # For setting url-base in reverse proxy setups. [OPTIONAL]
+      - CONTEXT_PATH=
+      # For passing additional java options. [OPTIONAL]
+      - JAVA_OPTS=
     volumes:
       # Configuration file location.
       - ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config
@@ -29,12 +29,12 @@ services:
       - ${BASEDIR:-/volume1/docker}/airsonic-advanced/playlists:/playlists
       # Location of podcasts.
       - ${BASEDIR:-/volume1/docker}/airsonic-advanced/podcasts:/podcasts
-      # Location of other media.
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media # optional
+      # Location of other media. [OPTIONAL]
+      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media
     ports:
       # WebUI
       - 4040:4040
     devices:
-      # Only needed to pass your host sound device to Airsonic's Java jukebox player.
-      - /dev/snd:/dev/snd # optional
+      # Only needed to pass your host sound device to Airsonic's Java jukebox player. [OPTIONAL]
+      - /dev/snd:/dev/snd
     restart: unless-stopped

@@ -10,13 +10,13 @@ services:
     container_name: librewolf
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify one or multiple LibreWolf CLI flags, this string will be passed to the application in full.
-      - LIBREWOLF_CLI=https://www.linuxserver.io/ # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify one or multiple LibreWolf CLI flags, this string will be passed to the application in full. [OPTIONAL]
+      - LIBREWOLF_CLI=https://www.linuxserver.io/
     volumes:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/volume1/docker}/librewolf/config:/config

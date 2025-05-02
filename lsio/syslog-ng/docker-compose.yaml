@@ -9,18 +9,18 @@ services:
     container_name: syslog-ng
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # If set to `true` container will log to stdout, otherwise will log to `/config/log/`.
-      - LOG_TO_STDOUT= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # If set to `true` container will log to stdout, otherwise will log to `/config/log/`. [OPTIONAL]
+      - LOG_TO_STDOUT=
     volumes:
       # Stores config and application files
       - ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config
-      # Stores logs collected by the syslog-ng service
-      - /var/log:/var/log # optional
+      # Stores logs collected by the syslog-ng service [OPTIONAL]
+      - /var/log:/var/log
     ports:
       # Syslog UDP
       - 514:5514/udp

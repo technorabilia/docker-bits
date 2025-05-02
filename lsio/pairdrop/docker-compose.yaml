@@ -10,19 +10,19 @@ services:
     container_name: pairdrop
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Set to `true` to limit clients to 100 requests per 5 min
-      - RATE_LIMIT=false # optional
-      # Set to `true` to enable websocket fallback if the peer to peer WebRTC connection is not available to the client (see App Setup notes).
-      - WS_FALLBACK=false # optional
-      # Path to a json file containing custom STUN/TURN config (see App Setup notes)
-      - RTC_CONFIG= # optional
-      # Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production!
-      - DEBUG_MODE=false # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Set to `true` to limit clients to 100 requests per 5 min [OPTIONAL]
+      - RATE_LIMIT=false
+      # Set to `true` to enable websocket fallback if the peer to peer WebRTC connection is not available to the client (see App Setup notes). [OPTIONAL]
+      - WS_FALLBACK=false
+      # Path to a json file containing custom STUN/TURN config (see App Setup notes) [OPTIONAL]
+      - RTC_CONFIG=
+      # Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production! [OPTIONAL]
+      - DEBUG_MODE=false
     volumes:
       # Configuration files.
       - ${BASEDIR:-/volume1/docker}/pairdrop/config:/config

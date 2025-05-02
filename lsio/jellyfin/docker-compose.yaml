@@ -14,13 +14,13 @@ services:
     container_name: jellyfin
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Set the autodiscovery response domain or IP address, include http(s)://.
-      - JELLYFIN_PublishedServerUrl=http://192.168.0.5 # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Set the autodiscovery response domain or IP address, include http(s)://. [OPTIONAL]
+      - JELLYFIN_PublishedServerUrl=http://192.168.0.5
     volumes:
       # Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*
       - ${BASEDIR:-/volume1/docker}/jellyfin/config:/config
@@ -31,10 +31,10 @@ services:
     ports:
       # Http webUI.
       - 8096:8096
-      # Optional - Https webUI (you need to set up your own certificate).
-      - 8920:8920 # optional
-      # Optional - Allows clients to discover Jellyfin on the local network.
-      - 7359:7359/udp # optional
-      # Optional - Service discovery used by DNLA and clients.
-      - 1900:1900/udp # optional
+      # Optional - Https webUI (you need to set up your own certificate). [OPTIONAL]
+      - 8920:8920
+      # Optional - Allows clients to discover Jellyfin on the local network. [OPTIONAL]
+      - 7359:7359/udp
+      # Optional - Service discovery used by DNLA and clients. [OPTIONAL]
+      - 1900:1900/udp
     restart: unless-stopped

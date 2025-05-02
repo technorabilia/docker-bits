@@ -7,11 +7,11 @@
 docker run -d \
   --name=plex \
   --net=host `# Use Host Networking` \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e VERSION=docker `# Set whether to update plex or not - see Application Setup section.` \
-  -e PLEX_CLAIM= `# optional` `# Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.` \
+  -e PLEX_CLAIM= `# Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes. [OPTIONAL]` \
   -p 80:80 `# Application WebUI` \
   -v ${BASEDIR:-/volume1/docker}/plex/config:/config `# Plex library location. *This can grow very large, 50gb+ is likely for a large collection.*` \
   -v ${BASEDIR:-/volume1/docker}/plex/tv:/tv `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \

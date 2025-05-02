@@ -11,11 +11,11 @@ services:
     container_name: hedgedoc
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
+      - TZ=${TZ:-Etc/UTC}
       # Host address of mariadb database
       - DB_HOST=<hostname or ip>
       # Port to access mariadb database default is 3306
@@ -28,16 +28,16 @@ services:
       - DB_NAME=hedgedoc
       # The address the gui will be accessed at (ie. `192.168.1.1` or `hedgedoc.domain.com`).
       - CMD_DOMAIN=localhost
-      # Set to `true` if using a port other than `80` or `443`.
-      - CMD_URL_ADDPORT=false # optional
-      # Set to `true` if accessing over https via reverse proxy.
-      - CMD_PROTOCOL_USESSL=false # optional
-      # If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000).
-      - CMD_PORT=3000 # optional
-      # Comma-separated list of allowed hostnames
-      - CMD_ALLOW_ORIGIN=['localhost'] # optional
-      # This variable allows selecting a database engine (if DB_HOST not set up). Available options are: `mariadb`, `mysql`, `postgres`, `sqlite`.
-      - CMD_DB_DIALECT= # optional
+      # Set to `true` if using a port other than `80` or `443`. [OPTIONAL]
+      - CMD_URL_ADDPORT=false
+      # Set to `true` if accessing over https via reverse proxy. [OPTIONAL]
+      - CMD_PROTOCOL_USESSL=false
+      # If you wish to access hedgedoc at a port different than 80, 443 or 3000, you need to set this to that port (ie. `CMD_PORT=5000`) and change the port mapping accordingly (5000:5000). [OPTIONAL]
+      - CMD_PORT=3000
+      # Comma-separated list of allowed hostnames [OPTIONAL]
+      - CMD_ALLOW_ORIGIN=['localhost']
+      # This variable allows selecting a database engine (if DB_HOST not set up). Available options are: `mariadb`, `mysql`, `postgres`, `sqlite`. [OPTIONAL]
+      - CMD_DB_DIALECT=
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config

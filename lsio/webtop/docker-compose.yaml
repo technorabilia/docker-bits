@@ -9,27 +9,29 @@ services:
     container_name: webtop
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Specify a subfolder to use with reverse proxies, IE `/subfolder/`
-      - SUBFOLDER=/ # optional
-      # String which will be used as page/tab title in the web browser.
-      - TITLE=Webtop # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Specify a timezone to use EG Europe/London
+      - TZ=Europe/London
+      # Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]
+      - SUBFOLDER=/
+      # String which will be used as page/tab title in the web browser. [OPTIONAL]
+      - TITLE=Webtop
     volumes:
       # abc users home directory
       - ${BASEDIR:-/volume1/docker}/webtop/config:/config
-      # Docker Socket on the system, if you want to use Docker in the container
-      - /var/run/docker.sock:/var/run/docker.sock # optional
+      # Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       # Web Desktop GUI
       - 3000:3000
       # Web Desktop GUI HTTPS
       - 3001:3001
     devices:
-      # Add this for GL support (Linux hosts only)
-      - /dev/dri:/dev/dri # optional
-    shm_size: "1gb" # optional
+      # Add this for GL support (Linux hosts only) [OPTIONAL]
+      - /dev/dri:/dev/dri
+    shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped

@@ -10,35 +10,35 @@ services:
   openssh-server:
     image: lscr.io/linuxserver/openssh-server:latest
     container_name: openssh-server
-    # Optionally the hostname can be defined.
-    hostname: {{ project_name }} # optional
+    # Optionally the hostname can be defined. [OPTIONAL]
+    hostname: {{ project_name }}
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
-      - PUID=${PUID:-1024}
+      - PUID=${PUID:-1000}
       # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
-      - PGID=${PGID:-100}
+      - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
-      - TZ=${TZ:-Europe/Amsterdam}
-      # Optional ssh public key, which will automatically be added to authorized_keys.
-      - PUBLIC_KEY=yourpublickey # optional
-      # Optionally specify a file containing the public key (works with docker secrets).
-      - PUBLIC_KEY_FILE=/path/to/file # optional
-      # Optionally specify a directory containing the public keys (works with docker secrets).
-      - PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys # optional
-      # Optionally specify a URL containing the public key.
-      - PUBLIC_KEY_URL=https://github.com/username.keys # optional
-      # Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access.
-      - SUDO_ACCESS=false # optional
-      # Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well.
-      - PASSWORD_ACCESS=false # optional
-      # Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access.
-      - USER_PASSWORD=password # optional
-      # Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets).
-      - USER_PASSWORD_FILE=/path/to/file # optional
-      # Optionally specify a user name (Default:`linuxserver.io`)
-      - USER_NAME=linuxserver.io # optional
-      # Set to `true` to log to stdout instead of file.
-      - LOG_STDOUT= # optional
+      - TZ=${TZ:-Etc/UTC}
+      # Optional ssh public key, which will automatically be added to authorized_keys. [OPTIONAL]
+      - PUBLIC_KEY=yourpublickey
+      # Optionally specify a file containing the public key (works with docker secrets). [OPTIONAL]
+      - PUBLIC_KEY_FILE=/path/to/file
+      # Optionally specify a directory containing the public keys (works with docker secrets). [OPTIONAL]
+      - PUBLIC_KEY_DIR=/path/to/directory/containing/_only_/pubkeys
+      # Optionally specify a URL containing the public key. [OPTIONAL]
+      - PUBLIC_KEY_URL=https://github.com/username.keys
+      # Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access. [OPTIONAL]
+      - SUDO_ACCESS=false
+      # Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well. [OPTIONAL]
+      - PASSWORD_ACCESS=false
+      # Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access. [OPTIONAL]
+      - USER_PASSWORD=password
+      # Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets). [OPTIONAL]
+      - USER_PASSWORD_FILE=/path/to/file
+      # Optionally specify a user name (Default:`linuxserver.io`) [OPTIONAL]
+      - USER_NAME=linuxserver.io
+      # Set to `true` to log to stdout instead of file. [OPTIONAL]
+      - LOG_STDOUT=
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/volume1/docker}/openssh-server/config:/config

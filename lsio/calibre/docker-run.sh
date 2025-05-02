@@ -7,11 +7,11 @@
 . ./.env
 docker run -d \
   --name=calibre \
-  -e PUID=${PUID:-1024} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
-  -e PGID=${PGID:-100} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
-  -e TZ=${TZ:-Europe/Amsterdam} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e PASSWORD= `# optional` `# Optionally set a password for the gui.` \
-  -e CLI_ARGS= `# optional` `# Optionally pass cli start arguments to calibre.` \
+  -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
+  -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
+  -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e PASSWORD= `# Optionally set a password for the gui. [OPTIONAL]` \
+  -e CLI_ARGS= `# Optionally pass cli start arguments to calibre. [OPTIONAL]` \
   -p 8080:8080 `# Calibre desktop gui.` \
   -p 8181:8181 `# Calibre desktop gui HTTPS.` \
   -p 8081:8081 `# Calibre webserver gui.` \
