@@ -1,6 +1,6 @@
 # [Nzbhydra2](https://github.com/theotherp/nzbhydra2) is a meta search
-# application for NZB indexers, the 'spiritual successor' to NZBmegasearcH, and
-# an evolution of the original application
+# application for NZB indexers, the spiritual successor to NZBmegasearcH, and an
+# evolution of the original application
 # [NZBHydra](https://github.com/theotherp/nzbhydra). It provides easy access to
 # a number of raw and newznab based indexers.
 
