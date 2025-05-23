@@ -11,7 +11,6 @@ docker run -d \
   -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=Europe/London `# Specify a timezone to use EG Europe/London.` \
   -e DRINODE=/dev/dri/renderD128 `# Specify the render device (GPU) for the contianer to use.` \
   -e HOST_IP=192.168.100.10 `# Specify the IP of the host, needed for LAN Remote Play. [OPTIONAL]` \
   -e STARTUP=KDE `# KDE to boot into desktop mode, BIGPICTURE to boot into gamescope. [OPTIONAL]` \

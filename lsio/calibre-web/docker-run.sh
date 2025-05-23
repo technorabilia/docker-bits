@@ -10,7 +10,6 @@ docker run -d \
   -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=Europe/London `# Specify a timezone to use EG Europe/London.` \
   -e DOCKER_MODS=linuxserver/mods:universal-calibre `# #optional & **x86-64 only** Adds the ability to perform ebook conversion [OPTIONAL]` \
   -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 `# Optionally set this to allow Google OAUTH to work [OPTIONAL]` \
   -p 8083:8083 `# WebUI` \

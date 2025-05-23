@@ -7,7 +7,6 @@ docker run -d \
   -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e TZ=Europe/London `# Specify a timezone to use EG Europe/London.` \
   -e FEED_LIMIT=5 `# Limit number of RSS entries published at each execution. [OPTIONAL]` \
   -v ${BASEDIR:-/volume1/docker}/feed2toot/config:/config `# Persistent config files` \
   --restart unless-stopped \
