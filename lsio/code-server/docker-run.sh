@@ -18,6 +18,7 @@ docker run -d \
   -e SUDO_PASSWORD_HASH= `# Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`. [OPTIONAL]` \
   -e PROXY_DOMAIN=code-server.my.domain `# If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/coder/code-server/blob/main/docs/guide.md#using-a-subdomain) [OPTIONAL]` \
   -e DEFAULT_WORKSPACE=/config/workspace `# If this optional variable is set, code-server will open this directory by default [OPTIONAL]` \
+  -e PWA_APPNAME=code-server `# If this optional variable is set, the PWA app will the specified name. [OPTIONAL]` \
   -p 8443:8443 `# web gui` \
   -v ${BASEDIR:-/volume1/docker}/code-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
