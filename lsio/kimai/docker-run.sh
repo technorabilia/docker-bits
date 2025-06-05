@@ -18,6 +18,7 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e DATABASE_URL=mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version `# Configure your database connection, see Application Setup instructions.` \
+  -e TRUSTED_PROXIES=127.0.0.1/32 `# If behind a reverse proxy set this to its IP or network CIDR so that Kimai trusts its headers. [OPTIONAL]` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
   -v ${BASEDIR:-/volume1/docker}/kimai/config:/config `# Persistent config files` \
