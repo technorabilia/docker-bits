@@ -18,9 +18,9 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/volume1/docker}/retroarch/config:/config
     ports:
-      # Retroarch desktop gui HTTP must be proxied.
+      # RetroArch desktop gui HTTP must be proxied.
       - 3000:3000
-      # Retroarch desktop gui HTTPS.
+      # RetroArch desktop gui HTTPS.
       - 3001:3001
     shm_size: "1gb"
     restart: unless-stopped
