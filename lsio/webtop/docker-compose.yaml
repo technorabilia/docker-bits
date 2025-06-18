@@ -24,12 +24,9 @@ services:
       # Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      # Web Desktop GUI
+      # Web Desktop GUI HTTP, must be proxied
       - 3000:3000
       # Web Desktop GUI HTTPS
       - 3001:3001
-    devices:
-      # Add this for GL support (Linux hosts only) [OPTIONAL]
-      - /dev/dri:/dev/dri
     shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped
