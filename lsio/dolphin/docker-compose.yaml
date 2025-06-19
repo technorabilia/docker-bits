@@ -1,0 +1,25 @@
+# [Dolphin Emulator](https://dolphin-emu.org/) lets you play GameCube and Wii
+# games with various graphical enhancements and other features are available to
+# improve your game experience.
+
+---
+services:
+  dolphin:
+    image: lscr.io/linuxserver/dolphin:latest
+    container_name: dolphin
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/volume1/docker}/dolphin/config:/config
+    ports:
+      # Dolphin desktop gui HTTP must be proxied.
+      - 3000:3000
+      # Dolphin desktop gui HTTPS.
+      - 3001:3001
+    restart: unless-stopped
