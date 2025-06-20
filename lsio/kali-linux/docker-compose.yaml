@@ -29,8 +29,5 @@ services:
       - 3000:3000
       # Web Desktop GUI HTTPS
       - 3001:3001
-    devices:
-      # Add this for GL support (Linux hosts only) [OPTIONAL]
-      - /dev/dri:/dev/dri
     shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped

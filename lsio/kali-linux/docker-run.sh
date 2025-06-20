@@ -15,7 +15,6 @@ docker run -d \
   -p 3001:3001 `# Web Desktop GUI HTTPS` \
   -v ${BASEDIR:-/volume1/docker}/kali-linux/config:/config `# abc users home directory` \
   -v /var/run/docker.sock:/var/run/docker.sock `# Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]` \
-  --device /dev/dri:/dev/dri `# Add this for GL support (Linux hosts only) [OPTIONAL]` \
   --shm-size="1gb" `# [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/kali-linux:latest
