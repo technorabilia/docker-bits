@@ -13,6 +13,10 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
+      # Set to `true` to enable automatic reloading of confs on change without stopping/restarting nginx. Your filesystem must support inotify. This functionality was previously offered [via mod](https://github.com/linuxserver/docker-mods/tree/swag-auto-reload). [OPTIONAL]
+      - NGINX_AUTORELOAD=
+      # A [pipe](https://en.wikipedia.org/wiki/Vertical_bar)-separated list of additional folders for auto reload to watch in addition to `/config/nginx` [OPTIONAL]
+      - NGINX_AUTORELOAD_WATCHLIST=
     volumes:
       # Persistent config files
       - ${BASEDIR:-/volume1/docker}/nginx/config:/config
