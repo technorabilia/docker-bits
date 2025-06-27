@@ -1,12 +1,11 @@
-# [Chromium](https://www.chromium.org/chromium-projects/) is an open-source
-# browser project that aims to build a safer, faster, and more stable way for
-# all users to experience the web.
+# [DuckStation](https://duckstation.org/) is a PS1 Emulator aiming for the best
+# accuracy and game support.
 
 ---
 services:
-  chromium:
-    image: lscr.io/linuxserver/chromium:latest
-    container_name: chromium
+  duckstation:
+    image: lscr.io/linuxserver/duckstation:latest
+    container_name: duckstation
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1000}
@@ -14,15 +13,13 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
-      # Specify one or multiple Chromium CLI flags, this string will be passed to the application in full. [OPTIONAL]
-      - CHROME_CLI=https://www.linuxserver.io/
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/chromium/config:/config
+      - ${BASEDIR:-/volume1/docker}/duckstation/config:/config
     ports:
-      # HTTP Chromium desktop gui, must be proxied.
+      # HTTP DuckStation desktop gui must be proxied.
       - 3000:3000
-      # HTTPS Chromium desktop gui.
+      # HTTPS DuckStation desktop gui.
       - 3001:3001
     shm_size: "1gb"
     restart: unless-stopped
