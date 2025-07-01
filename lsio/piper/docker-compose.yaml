@@ -28,7 +28,7 @@ services:
       - PIPER_PROCS=1
     volumes:
       # Local path for piper config files.
-      - ${BASEDIR:-/volume1/docker}/piper/config:/config
+      - ${BASEDIR:-/srv/lsio}/piper/config:/config
     ports:
       # Wyoming connection port.
       - 10200:10200

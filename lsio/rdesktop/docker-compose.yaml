@@ -16,11 +16,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/rdesktop/config:/config
+      - ${BASEDIR:-/srv/lsio}/rdesktop/config:/config
       # Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]
       - /var/run/docker.sock:/var/run/docker.sock
       # abc users home directory [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/rdesktop/config:/config
+      - ${BASEDIR:-/srv/lsio}/rdesktop/config:/config
     ports:
       # RDP access port
       - 3389:3389

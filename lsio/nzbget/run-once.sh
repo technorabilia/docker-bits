@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/nzbget/config
-mkdir -p ${BASEDIR:-/volume1/docker}/nzbget/downloads `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/nzbget/config
+mkdir -p ${BASEDIR:-/srv/lsio}/nzbget/downloads `# [OPTIONAL]`

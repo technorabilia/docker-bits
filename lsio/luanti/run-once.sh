@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/luanti/config/.minetest
+mkdir -p ${BASEDIR:-/srv/lsio}/luanti/config/.minetest

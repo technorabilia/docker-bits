@@ -29,7 +29,7 @@ services:
       - TRUSTED_PROXIES=127.0.0.1/32
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/kimai/config:/config
+      - ${BASEDIR:-/srv/lsio}/kimai/config:/config
     ports:
       # http gui
       - 80:80

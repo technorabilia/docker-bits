@@ -12,6 +12,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
-  -v ${BASEDIR:-/volume1/docker}/xbackbone/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/xbackbone/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/xbackbone:latest

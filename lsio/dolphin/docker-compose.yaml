@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/dolphin/config:/config
+      - ${BASEDIR:-/srv/lsio}/dolphin/config:/config
     ports:
       # Dolphin desktop gui HTTP must be proxied.
       - 3000:3000

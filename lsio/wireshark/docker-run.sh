@@ -17,6 +17,6 @@ docker run -d \
   -p 80:80 `# Application WebUI` \
   -p 3000:3000 `# WireShark desktop gui, only use this if you are not using host mode and sniffing Docker network traffic. [OPTIONAL]` \
   -p 3001:3001 `# WireShark desktop gui HTTPS, only use this if you are not using host mode and sniffing Docker network traffic. [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/wireshark/config:/config `# Users home directory in the container, stores program settings and potentially dump files.` \
+  -v ${BASEDIR:-/srv/lsio}/wireshark/config:/config `# Users home directory in the container, stores program settings and potentially dump files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/wireshark:latest

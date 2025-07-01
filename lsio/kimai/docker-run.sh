@@ -21,6 +21,6 @@ docker run -d \
   -e TRUSTED_PROXIES=127.0.0.1/32 `# If behind a reverse proxy set this to its IP or network CIDR so that Kimai trusts its headers. [OPTIONAL]` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
-  -v ${BASEDIR:-/volume1/docker}/kimai/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/kimai/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/kimai:latest

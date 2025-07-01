@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/ungoogled-chromium/config
+mkdir -p ${BASEDIR:-/srv/lsio}/ungoogled-chromium/config

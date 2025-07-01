@@ -12,7 +12,7 @@ docker run -d \
   -e REDIS_URL= `# Redis/Valkey database URL in `redis://<hostname>:<port>/<db number>` format.` \
   -e SECRET_KEY_BASE= `# Browser session secret. Changing it will terminate all active browser sessions.` \
   -p 3214:3214 `# Port for web frontend` \
-  -v ${BASEDIR:-/volume1/docker}/manyfold/config:/config `# Persistent storage for application configuration data.` \
-  -v ${BASEDIR:-/volume1/docker}/manyfold/libraries:/libraries `# Location of your 3D model libraries. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/manyfold/config:/config `# Persistent storage for application configuration data.` \
+  -v ${BASEDIR:-/srv/lsio}/manyfold/libraries:/libraries `# Location of your 3D model libraries. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/manyfold:latest

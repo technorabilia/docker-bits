@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # User's home directory in the container, stores program settings and files.
-      - ${BASEDIR:-/volume1/docker}/openshot/config:/config
+      - ${BASEDIR:-/srv/lsio}/openshot/config:/config
     ports:
       # OpenShot desktop gui.
       - 3000:3000

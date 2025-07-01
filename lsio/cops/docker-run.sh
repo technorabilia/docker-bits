@@ -25,7 +25,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 80:80 `# HTTP WebUI` \
   -p 443:443 `# HTTPS WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/cops/config:/config `# COPS Application Data.` \
-  -v ${BASEDIR:-/volume1/docker}/cops/books:/books `# Calibre metadata.db location.` \
+  -v ${BASEDIR:-/srv/lsio}/cops/config:/config `# COPS Application Data.` \
+  -v ${BASEDIR:-/srv/lsio}/cops/books:/books `# Calibre metadata.db location.` \
   --restart unless-stopped \
   lscr.io/linuxserver/cops:latest

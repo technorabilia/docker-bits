@@ -13,7 +13,7 @@ docker run -d \
   -e PYUSER=myuser `# Specify a basic auth user. [OPTIONAL]` \
   -e PYPASS=mypass `# Specify a basic auth password. [OPTIONAL]` \
   -p 3131:3131 `# The port for the Pylon web interface` \
-  -v ${BASEDIR:-/volume1/docker}/pylon/config:/config `# Configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/pylon/code:/code `# Optionally if you want the bind mount your own code and have changes survive container upgrades. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/pylon/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/pylon/code:/code `# Optionally if you want the bind mount your own code and have changes survive container upgrades. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/pylon:latest

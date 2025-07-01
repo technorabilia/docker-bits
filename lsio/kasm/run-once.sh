@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/kasm/opt
-mkdir -p ${BASEDIR:-/volume1/docker}/kasm/profiles `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/kasm/opt
+mkdir -p ${BASEDIR:-/srv/lsio}/kasm/profiles `# [OPTIONAL]`

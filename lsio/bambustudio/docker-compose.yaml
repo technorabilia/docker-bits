@@ -19,7 +19,7 @@ services:
       - DARK_MODE=true
     volumes:
       # Users home directory in the container, stores program settings and files.
-      - ${BASEDIR:-/volume1/docker}/bambustudio/config:/config
+      - ${BASEDIR:-/srv/lsio}/bambustudio/config:/config
     ports:
       # Bambu Studio desktop gui.
       - 3000:3000

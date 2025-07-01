@@ -15,6 +15,6 @@ docker run -d \
   -p 8080:8080 `# Calibre desktop gui.` \
   -p 8181:8181 `# Calibre desktop gui HTTPS.` \
   -p 8081:8081 `# Calibre webserver gui.` \
-  -v ${BASEDIR:-/volume1/docker}/calibre/config:/config `# Where calibre should store its database and library.` \
+  -v ${BASEDIR:-/srv/lsio}/calibre/config:/config `# Where calibre should store its database and library.` \
   --restart unless-stopped \
   lscr.io/linuxserver/calibre:latest

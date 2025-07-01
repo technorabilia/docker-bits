@@ -17,6 +17,6 @@ docker run -d \
   -e KEYFILE= `# Optionally point this to the private key file, matching the certificate file referred to in CERTFILE [OPTIONAL]` \
   -p 8888:8888 `# the port for ldap auth daemon` \
   -p 9000:9000 `# the port for ldap login page` \
-  -v ${BASEDIR:-/volume1/docker}/ldap-auth/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/ldap-auth/config:/config `# Configuration files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/ldap-auth:latest

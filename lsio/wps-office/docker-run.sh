@@ -11,7 +11,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# WPS Office desktop gui.` \
   -p 3001:3001 `# WPS Office desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/wps-office/config:/config `# Users home directory in the container, stores program settings and documents` \
+  -v ${BASEDIR:-/srv/lsio}/wps-office/config:/config `# Users home directory in the container, stores program settings and documents` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/wps-office:latest

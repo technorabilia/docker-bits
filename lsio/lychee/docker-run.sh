@@ -19,7 +19,7 @@ docker run -d \
   -e APP_URL= `# The URL you will use to access Lychee including protocol, and port where appropriate. [OPTIONAL]` \
   -e TRUSTED_PROXIES= `# Set to the IP or netmask covering your reverse proxy, if running behind one. Set to `*` to trust all IPs (**do not** use `*` if exposed to the internet`). [OPTIONAL]` \
   -p 80:80 `# http gui` \
-  -v ${BASEDIR:-/volume1/docker}/lychee/config:/config `# Persistent config files.` \
-  -v ${BASEDIR:-/volume1/docker}/lychee/pictures:/pictures `# Where lychee will store uploaded images.` \
+  -v ${BASEDIR:-/srv/lsio}/lychee/config:/config `# Persistent config files.` \
+  -v ${BASEDIR:-/srv/lsio}/lychee/pictures:/pictures `# Where lychee will store uploaded images.` \
   --restart unless-stopped \
   lscr.io/linuxserver/lychee:latest

@@ -20,6 +20,6 @@ docker run -d \
   -e DEFAULT_WORKSPACE=/config/workspace `# If this optional variable is set, code-server will open this directory by default [OPTIONAL]` \
   -e PWA_APPNAME=code-server `# If this optional variable is set, the PWA app will the specified name. [OPTIONAL]` \
   -p 8443:8443 `# web gui` \
-  -v ${BASEDIR:-/volume1/docker}/code-server/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/code-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/code-server:latest

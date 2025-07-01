@@ -17,7 +17,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings and documents
-      - ${BASEDIR:-/volume1/docker}/wps-office/config:/config
+      - ${BASEDIR:-/srv/lsio}/wps-office/config:/config
     ports:
       # WPS Office desktop gui.
       - 3000:3000

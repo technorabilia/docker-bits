@@ -17,7 +17,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/heimdall/config:/config
+      - ${BASEDIR:-/srv/lsio}/heimdall/config:/config
     ports:
       # http gui
       - 80:80

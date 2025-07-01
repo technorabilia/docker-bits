@@ -22,11 +22,11 @@ services:
       - PLEX_CLAIM=
     volumes:
       # Plex library location. *This can grow very large, 50gb+ is likely for a large collection.*
-      - ${BASEDIR:-/volume1/docker}/plex/config:/config
+      - ${BASEDIR:-/srv/lsio}/plex/config:/config
       # Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.
-      - ${BASEDIR:-/volume1/docker}/plex/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/plex/tv:/tv
       # Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.
-      - ${BASEDIR:-/volume1/docker}/plex/movies:/movies
+      - ${BASEDIR:-/srv/lsio}/plex/movies:/movies
     ports:
       # Application WebUI
       - 80:80

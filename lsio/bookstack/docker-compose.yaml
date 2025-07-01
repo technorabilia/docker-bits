@@ -36,7 +36,7 @@ services:
       - QUEUE_CONNECTION=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/bookstack/config:/config
+      - ${BASEDIR:-/srv/lsio}/bookstack/config:/config
     ports:
       # http/s web interface.
       - 6875:80

@@ -12,6 +12,6 @@ docker run -d \
   -e DARK_MODE=true `# Set this to true to enable dark mode for Bambu Studio. [OPTIONAL]` \
   -p 3000:3000 `# Bambu Studio desktop gui.` \
   -p 3001:3001 `# Bambu Studio desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/bambustudio/config:/config `# Users home directory in the container, stores program settings and files.` \
+  -v ${BASEDIR:-/srv/lsio}/bambustudio/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/bambustudio:latest

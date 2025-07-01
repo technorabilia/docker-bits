@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/overseerr/config:/config
+      - ${BASEDIR:-/srv/lsio}/overseerr/config:/config
     ports:
       # Port for Overseerr's web interface.
       - 5055:5055

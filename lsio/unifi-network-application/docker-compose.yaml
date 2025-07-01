@@ -34,7 +34,7 @@ services:
       - MONGO_TLS=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config
+      - ${BASEDIR:-/srv/lsio}/unifi-network-application/config:/config
     ports:
       # Unifi web admin port
       - 8443:8443

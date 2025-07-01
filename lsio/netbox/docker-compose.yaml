@@ -59,7 +59,7 @@ services:
       - REMOTE_AUTH_DEFAULT_PERMISSIONS=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/netbox/config:/config
+      - ${BASEDIR:-/srv/lsio}/netbox/config:/config
     ports:
       # will map the container's port 8000 to port 8000 on the host
       - 8000:8000

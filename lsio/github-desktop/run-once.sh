@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/github-desktop/config
+mkdir -p ${BASEDIR:-/srv/lsio}/github-desktop/config

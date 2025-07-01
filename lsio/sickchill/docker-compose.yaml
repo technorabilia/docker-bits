@@ -16,11 +16,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/sickchill/config:/config
+      - ${BASEDIR:-/srv/lsio}/sickchill/config:/config
       # this will store any downloaded data on the docker host [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sickchill/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/sickchill/downloads:/downloads
       # this will allow sickchill to view what you already have [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sickchill/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/sickchill/tv:/tv
     ports:
       # will map the container's port 8081 to port 8081 on the host
       - 8081:8081

@@ -17,5 +17,5 @@ services:
       - FEED_LIMIT=5
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/feed2toot/config:/config
+      - ${BASEDIR:-/srv/lsio}/feed2toot/config:/config
     restart: unless-stopped

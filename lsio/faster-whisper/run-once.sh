@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/faster-whisper/config
+mkdir -p ${BASEDIR:-/srv/lsio}/faster-whisper/config

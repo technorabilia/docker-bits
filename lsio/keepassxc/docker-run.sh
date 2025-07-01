@@ -10,6 +10,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# KeePassXC desktop gui.` \
   -p 3001:3001 `# KeePassXC desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/keepassxc/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/keepassxc/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
   lscr.io/linuxserver/keepassxc:latest

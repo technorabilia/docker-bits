@@ -13,7 +13,7 @@ docker run -d \
   -e TITLE=Kali Linux `# String which will be used as page/tab title in the web browser. [OPTIONAL]` \
   -p 3000:3000 `# Web Desktop GUI` \
   -p 3001:3001 `# Web Desktop GUI HTTPS` \
-  -v ${BASEDIR:-/volume1/docker}/kali-linux/config:/config `# abc users home directory` \
+  -v ${BASEDIR:-/srv/lsio}/kali-linux/config:/config `# abc users home directory` \
   -v /var/run/docker.sock:/var/run/docker.sock `# Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]` \
   --shm-size="1gb" `# [OPTIONAL]` \
   --restart unless-stopped \

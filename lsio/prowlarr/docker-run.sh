@@ -12,6 +12,6 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 9696:9696 `# The port for the Prowlarr web UI` \
-  -v ${BASEDIR:-/volume1/docker}/prowlarr/config:/config `# Database and Prowlarr configs` \
+  -v ${BASEDIR:-/srv/lsio}/prowlarr/config:/config `# Database and Prowlarr configs` \
   --restart unless-stopped \
   lscr.io/linuxserver/prowlarr:latest

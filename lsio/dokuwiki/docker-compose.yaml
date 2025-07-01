@@ -20,7 +20,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/dokuwiki/config:/config
+      - ${BASEDIR:-/srv/lsio}/dokuwiki/config:/config
     ports:
       # Application HTTP Port
       - 80:80

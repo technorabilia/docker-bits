@@ -14,8 +14,8 @@ docker run -d \
   -p 22000:22000/tcp `# Listening port (TCP)` \
   -p 22000:22000/udp `# Listening port (UDP)` \
   -p 21027:21027/udp `# Protocol discovery` \
-  -v ${BASEDIR:-/volume1/docker}/syncthing/config:/config `# Configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/syncthing/data1:/data1 `# Data1` \
-  -v ${BASEDIR:-/volume1/docker}/syncthing/data2:/data2 `# Data2` \
+  -v ${BASEDIR:-/srv/lsio}/syncthing/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/syncthing/data1:/data1 `# Data1` \
+  -v ${BASEDIR:-/srv/lsio}/syncthing/data2:/data2 `# Data2` \
   --restart unless-stopped \
   lscr.io/linuxserver/syncthing:latest

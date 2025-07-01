@@ -11,9 +11,9 @@ docker run -d \
   -e MAXMEM= `# To set the maximum memory. ( ex: set '1024' for 1GB ) [OPTIONAL]` \
   -p 2202:2202 `# The library port.` \
   -p 2203:2203 `# The admin port.` \
-  -v ${BASEDIR:-/volume1/docker}/ubooquity/config:/config `# Config files and database for ubooquity.` \
-  -v ${BASEDIR:-/volume1/docker}/ubooquity/books:/books `# Location of books.` \
-  -v ${BASEDIR:-/volume1/docker}/ubooquity/comics:/comics `# Location of comics.` \
-  -v ${BASEDIR:-/volume1/docker}/ubooquity/files:/files `# Location of raw files.` \
+  -v ${BASEDIR:-/srv/lsio}/ubooquity/config:/config `# Config files and database for ubooquity.` \
+  -v ${BASEDIR:-/srv/lsio}/ubooquity/books:/books `# Location of books.` \
+  -v ${BASEDIR:-/srv/lsio}/ubooquity/comics:/comics `# Location of comics.` \
+  -v ${BASEDIR:-/srv/lsio}/ubooquity/files:/files `# Location of raw files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/ubooquity:latest

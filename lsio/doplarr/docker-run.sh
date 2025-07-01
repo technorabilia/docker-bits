@@ -26,6 +26,6 @@ docker run -d \
   -e LOG_LEVEL=:info `# The log level for the logging backend. This can be changed for debugging purposes. One of trace `:debug` `:info` `:warn` `:error` `:fatal` `:report` [OPTIONAL]` \
   -e JAVA_OPTS= `# For passing additional java options. [OPTIONAL]` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/doplarr/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/doplarr/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/doplarr:latest

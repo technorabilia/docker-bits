@@ -21,6 +21,6 @@ docker run -d \
   -e DB_DATABASE= `# Database name` \
   -e QUEUE_CONNECTION= `# Set to `database` to enable async actions like sending email or triggering webhooks. See [documentation](https://www.bookstackapp.com/docs/admin/email-webhooks/#async-action-handling). [OPTIONAL]` \
   -p 6875:80 `# http/s web interface.` \
-  -v ${BASEDIR:-/volume1/docker}/bookstack/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/bookstack/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/bookstack:latest

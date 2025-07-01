@@ -10,7 +10,7 @@ docker run -d \
   -e CHROME_CLI=https://www.linuxserver.io/ `# Specify one or multiple Chromium CLI flags, this string will be passed to the application in full. [OPTIONAL]` \
   -p 3000:3000 `# Ungoogled Chromium desktop gui.` \
   -p 3001:3001 `# HTTPS Ungoogled Chromium desktop gui.` \
-  -v ${BASEDIR:-/volume1/docker}/ungoogled-chromium/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/ungoogled-chromium/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/ungoogled-chromium:latest

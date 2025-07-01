@@ -18,9 +18,9 @@ services:
       - DELUGE_LOGLEVEL=error
     volumes:
       # deluge configs
-      - ${BASEDIR:-/volume1/docker}/deluge/config:/config
+      - ${BASEDIR:-/srv/lsio}/deluge/config:/config
       # torrent download directory
-      - ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/deluge/downloads:/downloads
     ports:
       # Port for webui
       - 8112:8112

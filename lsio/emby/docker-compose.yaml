@@ -16,11 +16,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Emby data storage location. *This can grow very large, 50gb+ is likely for a large collection.*
-      - ${BASEDIR:-/volume1/docker}/emby/config:/config
+      - ${BASEDIR:-/srv/lsio}/emby/config:/config
       # Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.
-      - ${BASEDIR:-/volume1/docker}/emby/data/tvshows:/data/tvshows
+      - ${BASEDIR:-/srv/lsio}/emby/data/tvshows:/data/tvshows
       # Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.
-      - ${BASEDIR:-/volume1/docker}/emby/data/movies:/data/movies
+      - ${BASEDIR:-/srv/lsio}/emby/data/movies:/data/movies
       # Path for Raspberry Pi OpenMAX libs *optional*. [OPTIONAL]
       - /opt/vc/lib:/opt/vc/lib
     ports:

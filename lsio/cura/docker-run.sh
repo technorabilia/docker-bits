@@ -10,6 +10,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Cura desktop gui.` \
   -p 3001:3001 `# Cura desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/cura/config:/config `# Users home directory in the container, stores program settings and files.` \
+  -v ${BASEDIR:-/srv/lsio}/cura/config:/config `# Users home directory in the container, stores program settings and files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/cura:latest

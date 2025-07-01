@@ -31,7 +31,7 @@ services:
       - TRUST_PROXY=0
     volumes:
       # Local path for planka config files.
-      - ${BASEDIR:-/volume1/docker}/planka/config:/config
+      - ${BASEDIR:-/srv/lsio}/planka/config:/config
     ports:
       # Planka web UI.
       - 1337:1337

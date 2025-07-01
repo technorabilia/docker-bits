@@ -51,7 +51,7 @@ services:
       - JAVA_OPTS=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/doplarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/doplarr/config:/config
     ports:
       # Application WebUI
       - 80:80

@@ -22,9 +22,9 @@ services:
       - APPRISE_ATTACH_SIZE=0
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/apprise-api/config:/config
+      - ${BASEDIR:-/srv/lsio}/apprise-api/config:/config
       # Temporary storage for attachments when sent with notifications. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/apprise-api/attachments:/attachments
+      - ${BASEDIR:-/srv/lsio}/apprise-api/attachments:/attachments
     ports:
       # Port for apprise's interface and API.
       - 8000:8000

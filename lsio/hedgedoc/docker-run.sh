@@ -22,6 +22,6 @@ docker run -d \
   -e CMD_ALLOW_ORIGIN=['localhost'] `# Comma-separated list of allowed hostnames [OPTIONAL]` \
   -e CMD_DB_DIALECT= `# This variable allows selecting a database engine (if DB_HOST not set up). Available options are: `mariadb`, `mysql`, `postgres`, `sqlite`. [OPTIONAL]` \
   -p 3000:3000 `# Web gui port (internal port also needs to be changed if accessing at port other than 80, 443 and 3000).` \
-  -v ${BASEDIR:-/volume1/docker}/hedgedoc/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/hedgedoc/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/hedgedoc:latest

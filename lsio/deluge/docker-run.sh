@@ -13,7 +13,7 @@ docker run -d \
   -p 6881:6881 `# Inbound torrent traffic (See App Setup)` \
   -p 6881:6881/udp `# Inbound torrent traffic (See App Setup)` \
   -p 58846:58846 `# Default deluged port for thin client connectivity [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/deluge/config:/config `# deluge configs` \
-  -v ${BASEDIR:-/volume1/docker}/deluge/downloads:/downloads `# torrent download directory` \
+  -v ${BASEDIR:-/srv/lsio}/deluge/config:/config `# deluge configs` \
+  -v ${BASEDIR:-/srv/lsio}/deluge/downloads:/downloads `# torrent download directory` \
   --restart unless-stopped \
   lscr.io/linuxserver/deluge:latest

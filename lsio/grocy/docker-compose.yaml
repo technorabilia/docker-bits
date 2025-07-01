@@ -18,7 +18,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/grocy/config:/config
+      - ${BASEDIR:-/srv/lsio}/grocy/config:/config
     ports:
       # will map the container's port 80 to port 9283 on the host
       - 9283:80

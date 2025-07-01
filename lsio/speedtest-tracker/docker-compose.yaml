@@ -40,7 +40,7 @@ services:
       - PRUNE_RESULTS_OLDER_THAN=0
     volumes:
       # Contains speedtest-tracker config and database, if using sqlite.
-      - ${BASEDIR:-/volume1/docker}/speedtest-tracker/config:/config
+      - ${BASEDIR:-/srv/lsio}/speedtest-tracker/config:/config
     ports:
       # Web UI
       - 80:80

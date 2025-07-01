@@ -13,7 +13,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# WebCord desktop gui.` \
   -p 3001:3001 `# WebCord desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/webcord/config:/config `# Users home directory in the container, stores program settings.` \
+  -v ${BASEDIR:-/srv/lsio}/webcord/config:/config `# Users home directory in the container, stores program settings.` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/webcord:latest

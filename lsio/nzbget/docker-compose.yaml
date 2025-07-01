@@ -20,9 +20,9 @@ services:
       - NZBGET_PASS=tegbzn6789
     volumes:
       # Persistent config
-      - ${BASEDIR:-/volume1/docker}/nzbget/config:/config
+      - ${BASEDIR:-/srv/lsio}/nzbget/config:/config
       # Location of downloads on disk. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/nzbget/downloads:/downloads
     ports:
       # WebUI
       - 6789:6789

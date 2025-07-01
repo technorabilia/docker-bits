@@ -9,8 +9,8 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8081:8081 `# The port for the Medusa webui` \
-  -v ${BASEDIR:-/volume1/docker}/medusa/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/medusa/downloads:/downloads `# Download location` \
-  -v ${BASEDIR:-/volume1/docker}/medusa/tv:/tv `# TV Shows location` \
+  -v ${BASEDIR:-/srv/lsio}/medusa/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/medusa/downloads:/downloads `# Download location` \
+  -v ${BASEDIR:-/srv/lsio}/medusa/tv:/tv `# TV Shows location` \
   --restart unless-stopped \
   lscr.io/linuxserver/medusa:latest

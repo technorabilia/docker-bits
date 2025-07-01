@@ -17,7 +17,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where yaak should store its config and data.
-      - ${BASEDIR:-/volume1/docker}/yaak/config:/config
+      - ${BASEDIR:-/srv/lsio}/yaak/config:/config
     ports:
       # Yaak desktop gui.
       - 3000:3000

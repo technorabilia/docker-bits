@@ -21,9 +21,9 @@ services:
       - RUN_OPTS=
     volumes:
       # Where TVHeadend show store it's config files.
-      - ${BASEDIR:-/volume1/docker}/tvheadend/config:/config
+      - ${BASEDIR:-/srv/lsio}/tvheadend/config:/config
       # Where you want the PVR to store recordings.
-      - ${BASEDIR:-/volume1/docker}/tvheadend/recordings:/recordings
+      - ${BASEDIR:-/srv/lsio}/tvheadend/recordings:/recordings
     ports:
       # WebUI
       - 9981:9981

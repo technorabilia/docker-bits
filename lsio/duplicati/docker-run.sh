@@ -14,8 +14,8 @@ docker run -d \
   -e CLI_ARGS= `# Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with [OPTIONAL]` \
   -e DUPLICATI__WEBSERVICE_PASSWORD= `# Password for the webui. If left unset will default to `changeme` and can be changed from the webui settings. [OPTIONAL]` \
   -p 8200:8200 `# http gui` \
-  -v ${BASEDIR:-/volume1/docker}/duplicati/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/duplicati/backups:/backups `# Path to store local backups.` \
-  -v ${BASEDIR:-/volume1/docker}/duplicati/source:/source `# Path to source for files to backup.` \
+  -v ${BASEDIR:-/srv/lsio}/duplicati/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/duplicati/backups:/backups `# Path to store local backups.` \
+  -v ${BASEDIR:-/srv/lsio}/duplicati/source:/source `# Path to source for files to backup.` \
   --restart unless-stopped \
   lscr.io/linuxserver/duplicati:latest

@@ -18,13 +18,13 @@ services:
       - MAXMEM=
     volumes:
       # Config files and database for ubooquity.
-      - ${BASEDIR:-/volume1/docker}/ubooquity/config:/config
+      - ${BASEDIR:-/srv/lsio}/ubooquity/config:/config
       # Location of books.
-      - ${BASEDIR:-/volume1/docker}/ubooquity/books:/books
+      - ${BASEDIR:-/srv/lsio}/ubooquity/books:/books
       # Location of comics.
-      - ${BASEDIR:-/volume1/docker}/ubooquity/comics:/comics
+      - ${BASEDIR:-/srv/lsio}/ubooquity/comics:/comics
       # Location of raw files.
-      - ${BASEDIR:-/volume1/docker}/ubooquity/files:/files
+      - ${BASEDIR:-/srv/lsio}/ubooquity/files:/files
     ports:
       # The library port.
       - 2202:2202

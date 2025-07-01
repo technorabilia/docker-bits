@@ -15,7 +15,7 @@ docker run -d \
   -e UPDATE_IP=ipv4 `# Set to `ipv6` or `ipv4` to update  **only** your public IPv4/6 address. Set to `both` to update IPv6 and IPv4 address. This variable makes use of a [third-party service](#notice-regarding-automatic-detection). Omitting this variable uses DuckDNS for detection and only supports IPv4. `both` and `ipv6` modes needs [host networking](#networking-net). [OPTIONAL]` \
   -e LOG_FILE=false `# Set to `true` to log to file (also need to map /config). [OPTIONAL]` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# Configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/duckdns/config:/config `# Persistent config files. Also set `LOG_FILE=true` to keep address history. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/duckdns/config:/config `# Configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/duckdns/config:/config `# Persistent config files. Also set `LOG_FILE=true` to keep address history. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/duckdns:latest

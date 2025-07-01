@@ -17,7 +17,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/znc/config:/config
+      - ${BASEDIR:-/srv/lsio}/znc/config:/config
     ports:
       # Port ZNC listens on.
       - 6501:6501

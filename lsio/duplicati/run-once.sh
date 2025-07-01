@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/duplicati/config
-mkdir -p ${BASEDIR:-/volume1/docker}/duplicati/backups
-mkdir -p ${BASEDIR:-/volume1/docker}/duplicati/source
+mkdir -p ${BASEDIR:-/srv/lsio}/duplicati/config
+mkdir -p ${BASEDIR:-/srv/lsio}/duplicati/backups
+mkdir -p ${BASEDIR:-/srv/lsio}/duplicati/source

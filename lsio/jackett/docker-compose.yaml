@@ -24,9 +24,9 @@ services:
       - RUN_OPTS=
     volumes:
       # Where Jackett should store its config file.
-      - ${BASEDIR:-/volume1/docker}/jackett/config:/config
+      - ${BASEDIR:-/srv/lsio}/jackett/config:/config
       # Path to torrent blackhole.
-      - ${BASEDIR:-/volume1/docker}/jackett/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/jackett/downloads:/downloads
     ports:
       # WebUI
       - 9117:9117

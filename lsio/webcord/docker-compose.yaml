@@ -19,7 +19,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings.
-      - ${BASEDIR:-/volume1/docker}/webcord/config:/config
+      - ${BASEDIR:-/srv/lsio}/webcord/config:/config
     ports:
       # WebCord desktop gui.
       - 3000:3000

@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/inkscape/config:/config
+      - ${BASEDIR:-/srv/lsio}/inkscape/config:/config
     ports:
       # Inkscape desktop gui.
       - 3000:3000

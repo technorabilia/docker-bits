@@ -33,7 +33,7 @@ services:
       - APP_DISABLE_SIGNUP=true
     volumes:
       # Persistent config files.
-      - ${BASEDIR:-/volume1/docker}/monica/config:/config
+      - ${BASEDIR:-/srv/lsio}/monica/config:/config
     ports:
       # http gui
       - 80:80

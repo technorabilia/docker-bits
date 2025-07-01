@@ -11,7 +11,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Obsidian desktop gui.` \
   -p 3001:3001 `# Obsidian desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/obsidian/config:/config `# Users home directory in the container, stores program settings and files.` \
+  -v ${BASEDIR:-/srv/lsio}/obsidian/config:/config `# Users home directory in the container, stores program settings and files.` \
   --device /dev/dri:/dev/dri `# Add this for GL support (Linux hosts only) [OPTIONAL]` \
   --shm-size="1gb" \
   --restart unless-stopped \

@@ -24,9 +24,9 @@ services:
       - CACHE_DIR=/tmp
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/smokeping/config:/config
+      - ${BASEDIR:-/srv/lsio}/smokeping/config:/config
       # Storage location for db and application data (graphs etc)
-      - ${BASEDIR:-/volume1/docker}/smokeping/data:/data
+      - ${BASEDIR:-/srv/lsio}/smokeping/data:/data
     ports:
       # Allows HTTP access to the internal webserver.
       - 80:80

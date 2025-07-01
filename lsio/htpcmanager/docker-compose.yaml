@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/htpcmanager/config:/config
+      - ${BASEDIR:-/srv/lsio}/htpcmanager/config:/config
     ports:
       # Application WebUI
       - 8085:8085

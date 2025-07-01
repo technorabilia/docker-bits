@@ -20,7 +20,7 @@ services:
       - PASSWORD=
     volumes:
       # Where BOINC should store its database and config.
-      - ${BASEDIR:-/volume1/docker}/boinc/config:/config
+      - ${BASEDIR:-/srv/lsio}/boinc/config:/config
     ports:
       # Boinc desktop gui.
       - 8080:8080

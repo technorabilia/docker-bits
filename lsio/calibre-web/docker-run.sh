@@ -13,7 +13,7 @@ docker run -d \
   -e DOCKER_MODS=linuxserver/mods:universal-calibre `# #optional & **x86-64 only** Adds the ability to perform ebook conversion [OPTIONAL]` \
   -e OAUTHLIB_RELAX_TOKEN_SCOPE=1 `# Optionally set this to allow Google OAUTH to work [OPTIONAL]` \
   -p 8083:8083 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \
-  -v ${BASEDIR:-/volume1/docker}/calibre-web/books:/books `# Where your preexisting calibre database is located.` \
+  -v ${BASEDIR:-/srv/lsio}/calibre-web/config:/config `# Where calibre-web stores the internal database and config.` \
+  -v ${BASEDIR:-/srv/lsio}/calibre-web/books:/books `# Where your preexisting calibre database is located.` \
   --restart unless-stopped \
   lscr.io/linuxserver/calibre-web:latest

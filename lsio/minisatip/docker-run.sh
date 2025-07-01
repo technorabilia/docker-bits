@@ -12,7 +12,7 @@ docker run -d \
   -p 8875:8875 `# Status Page WebUI` \
   -p 554:554 `# RTSP Port` \
   -p 1900:1900/udp `# App Discovery` \
-  -v ${BASEDIR:-/volume1/docker}/minisatip/config:/config `# Configuration files and minisatip data` \
+  -v ${BASEDIR:-/srv/lsio}/minisatip/config:/config `# Configuration files and minisatip data` \
   --device /dev/dvb:/dev/dvb `# For passing through Tv-cards` \
   --restart unless-stopped \
   lscr.io/linuxserver/minisatip:latest

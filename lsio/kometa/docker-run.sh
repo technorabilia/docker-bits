@@ -15,6 +15,6 @@ docker run -d \
   -e KOMETA_TEST=False `# Set to `True` to run in debug mode with only collections that have `test: true`. [OPTIONAL]` \
   -e KOMETA_NO_MISSING=False `# Set to `True` to run without any of the missing movie/show functions. [OPTIONAL]` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/kometa/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/kometa/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/kometa:latest

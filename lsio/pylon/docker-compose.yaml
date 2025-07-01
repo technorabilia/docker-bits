@@ -23,9 +23,9 @@ services:
       - PYPASS=mypass
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/pylon/config:/config
+      - ${BASEDIR:-/srv/lsio}/pylon/config:/config
       # Optionally if you want the bind mount your own code and have changes survive container upgrades. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/pylon/code:/code
+      - ${BASEDIR:-/srv/lsio}/pylon/code:/code
     ports:
       # The port for the Pylon web interface
       - 3131:3131

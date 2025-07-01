@@ -18,9 +18,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/webgrabplus/config:/config
+      - ${BASEDIR:-/srv/lsio}/webgrabplus/config:/config
       # Where webgrabplus should store it's data files.
-      - ${BASEDIR:-/volume1/docker}/webgrabplus/data:/data
+      - ${BASEDIR:-/srv/lsio}/webgrabplus/data:/data
     ports:
       # Application WebUI
       - 80:80

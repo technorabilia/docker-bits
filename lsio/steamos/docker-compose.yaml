@@ -29,7 +29,7 @@ services:
       - RESOLUTION=1920x1080
     volumes:
       # Users home directory in the container, stores all files and games.
-      - ${BASEDIR:-/volume1/docker}/steamos/config:/config
+      - ${BASEDIR:-/srv/lsio}/steamos/config:/config
       # Optional for gamepad support. *Only working for Steam Remote Play [OPTIONAL]
       - /dev/input:/dev/input
       # Optional for gamepad support. *Only working for Steam Remote Play [OPTIONAL]

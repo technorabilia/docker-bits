@@ -17,11 +17,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/sabnzbd/config:/config
+      - ${BASEDIR:-/srv/lsio}/sabnzbd/config:/config
       # Local path for incomplete-downloads. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sabnzbd/incomplete-downloads:/incomplete-downloads
+      - ${BASEDIR:-/srv/lsio}/sabnzbd/incomplete-downloads:/incomplete-downloads
       # Local path for finished downloads. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sabnzbd/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/sabnzbd/downloads:/downloads
     ports:
       # HTTP port for the WebUI.
       - 8080:8080

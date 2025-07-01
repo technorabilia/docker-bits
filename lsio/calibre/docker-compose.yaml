@@ -22,7 +22,7 @@ services:
       - CLI_ARGS=
     volumes:
       # Where calibre should store its database and library.
-      - ${BASEDIR:-/volume1/docker}/calibre/config:/config
+      - ${BASEDIR:-/srv/lsio}/calibre/config:/config
     ports:
       # Calibre desktop gui.
       - 8080:8080

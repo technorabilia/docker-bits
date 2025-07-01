@@ -31,9 +31,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # COPS Application Data.
-      - ${BASEDIR:-/volume1/docker}/cops/config:/config
+      - ${BASEDIR:-/srv/lsio}/cops/config:/config
       # Calibre metadata.db location.
-      - ${BASEDIR:-/volume1/docker}/cops/books:/books
+      - ${BASEDIR:-/srv/lsio}/cops/books:/books
     ports:
       # HTTP WebUI
       - 80:80

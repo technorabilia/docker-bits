@@ -26,6 +26,6 @@ docker run -d \
   -p 8880:8880 `# Unifi guest portal HTTP redirect port [OPTIONAL]` \
   -p 6789:6789 `# For mobile throughput test [OPTIONAL]` \
   -p 5514:5514/udp `# Remote syslog port [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/unifi-network-application/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/unifi-network-application/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/unifi-network-application:latest

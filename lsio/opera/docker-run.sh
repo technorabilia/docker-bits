@@ -12,7 +12,7 @@ docker run -d \
   -e OPERA_CLI=https://www.linuxserver.io/ `# Specify one or multiple Chromium CLI flags, this string will be passed to the application in full. [OPTIONAL]` \
   -p 3000:3000 `# Opera desktop gui.` \
   -p 3001:3001 `# HTTPS Opera desktop gui.` \
-  -v ${BASEDIR:-/volume1/docker}/opera/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/opera/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/opera:latest

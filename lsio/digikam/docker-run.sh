@@ -10,6 +10,6 @@ docker run -d \
   -e SUBFOLDER=/ `# Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]` \
   -p 3000:3000 `# digiKam desktop gui [OPTIONAL]` \
   -p 3001:3001 `# digiKam desktop gui HTTPS [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/digikam/config:/config `# Users home directory in the container, stores database.` \
+  -v ${BASEDIR:-/srv/lsio}/digikam/config:/config `# Users home directory in the container, stores database.` \
   --restart unless-stopped \
   lscr.io/linuxserver/digikam:latest

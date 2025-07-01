@@ -18,7 +18,7 @@ services:
       - SECRET_PATH=/pwndrop
     volumes:
       # Contains all relevant configuration and data.
-      - ${BASEDIR:-/volume1/docker}/pwndrop/config:/config
+      - ${BASEDIR:-/srv/lsio}/pwndrop/config:/config
     ports:
       # web gui
       - 8080:8080

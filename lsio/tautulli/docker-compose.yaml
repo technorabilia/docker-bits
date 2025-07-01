@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/tautulli/config:/config
+      - ${BASEDIR:-/srv/lsio}/tautulli/config:/config
     ports:
       # WebUI
       - 8181:8181

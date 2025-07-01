@@ -16,9 +16,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # mStream config
-      - ${BASEDIR:-/volume1/docker}/mstream/config:/config
+      - ${BASEDIR:-/srv/lsio}/mstream/config:/config
       # Music location
-      - ${BASEDIR:-/volume1/docker}/mstream/music:/music
+      - ${BASEDIR:-/srv/lsio}/mstream/music:/music
     ports:
       # The port for the mStream web interface
       - 3000:3000

@@ -17,9 +17,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/projectsend/config:/config
+      - ${BASEDIR:-/srv/lsio}/projectsend/config:/config
       # Where to store files to share.
-      - ${BASEDIR:-/volume1/docker}/projectsend/data:/data
+      - ${BASEDIR:-/srv/lsio}/projectsend/data:/data
     ports:
       # WebUI
       - 80:80

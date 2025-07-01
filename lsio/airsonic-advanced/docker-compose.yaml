@@ -22,15 +22,15 @@ services:
       - JAVA_OPTS=
     volumes:
       # Configuration file location.
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config
+      - ${BASEDIR:-/srv/lsio}/airsonic-advanced/config:/config
       # Location of music.
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/music:/music
+      - ${BASEDIR:-/srv/lsio}/airsonic-advanced/music:/music
       # Location for playlists to be saved to.
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/playlists:/playlists
+      - ${BASEDIR:-/srv/lsio}/airsonic-advanced/playlists:/playlists
       # Location of podcasts.
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/podcasts:/podcasts
+      - ${BASEDIR:-/srv/lsio}/airsonic-advanced/podcasts:/podcasts
       # Location of other media. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media
+      - ${BASEDIR:-/srv/lsio}/airsonic-advanced/media:/media
     ports:
       # WebUI
       - 4040:4040

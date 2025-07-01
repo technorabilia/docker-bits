@@ -20,9 +20,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/nextcloud/config:/config
+      - ${BASEDIR:-/srv/lsio}/nextcloud/config:/config
       # Your personal data.
-      - ${BASEDIR:-/volume1/docker}/nextcloud/data:/data
+      - ${BASEDIR:-/srv/lsio}/nextcloud/data:/data
     ports:
       # WebUI
       - 443:443

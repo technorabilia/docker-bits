@@ -18,7 +18,7 @@ services:
       - SUBFOLDER=/
     volumes:
       # Users home directory in the container, stores data and application config files.
-      - ${BASEDIR:-/volume1/docker}/ardour/config:/config
+      - ${BASEDIR:-/srv/lsio}/ardour/config:/config
     ports:
       # Ardour desktop gui [OPTIONAL]
       - 3000:3000

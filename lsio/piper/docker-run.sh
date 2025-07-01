@@ -15,6 +15,6 @@ docker run -d \
   -e PIPER_SPEAKER=0 `# Speaker number to use if the voice supports multiple speakers. [OPTIONAL]` \
   -e PIPER_PROCS=1 `# Number of Piper processes to run simultaneously. [OPTIONAL]` \
   -p 10200:10200 `# Wyoming connection port.` \
-  -v ${BASEDIR:-/volume1/docker}/piper/config:/config `# Local path for piper config files.` \
+  -v ${BASEDIR:-/srv/lsio}/piper/config:/config `# Local path for piper config files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/piper:latest

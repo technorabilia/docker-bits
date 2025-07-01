@@ -13,6 +13,6 @@ docker run -d \
   -e WHISPER_BEAM=1 `# Number of candidates to consider simultaneously during transcription. [OPTIONAL]` \
   -e WHISPER_LANG=en `# Language that you will speak to the add-on. [OPTIONAL]` \
   -p 10300:10300 `# Wyoming connection port.` \
-  -v ${BASEDIR:-/volume1/docker}/faster-whisper/config:/config `# Local path for Whisper config files.` \
+  -v ${BASEDIR:-/srv/lsio}/faster-whisper/config:/config `# Local path for Whisper config files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/faster-whisper:latest

@@ -29,6 +29,6 @@ docker run -d \
   -e SITE_LOGO_URL= `# Full URL to custom site logo. [OPTIONAL]` \
   -p 8000:8000 `# Healthchecks Web UI` \
   -p 2525:2525 `# Port for inbound SMTP pings [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/healthchecks/config:/config `# Persistent config files.` \
+  -v ${BASEDIR:-/srv/lsio}/healthchecks/config:/config `# Persistent config files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/healthchecks:latest

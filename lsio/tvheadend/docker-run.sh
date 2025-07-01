@@ -14,8 +14,8 @@ docker run -d \
   -e RUN_OPTS= `# Optionally specify additional arguments to be passed. See Additional runtime parameters. [OPTIONAL]` \
   -p 9981:9981 `# WebUI` \
   -p 9982:9982 `# HTSP server port.` \
-  -v ${BASEDIR:-/volume1/docker}/tvheadend/config:/config `# Where TVHeadend show store it's config files.` \
-  -v ${BASEDIR:-/volume1/docker}/tvheadend/recordings:/recordings `# Where you want the PVR to store recordings.` \
+  -v ${BASEDIR:-/srv/lsio}/tvheadend/config:/config `# Where TVHeadend show store it's config files.` \
+  -v ${BASEDIR:-/srv/lsio}/tvheadend/recordings:/recordings `# Where you want the PVR to store recordings.` \
   --device /dev/dri:/dev/dri `# Only needed if you want to use your AMD/Intel GPU for hardware accelerated video encoding (vaapi). [OPTIONAL]` \
   --device /dev/dvb:/dev/dvb `# Only needed if you want to pass through a DVB card to the container. If you use IPTV or HDHomeRun you can leave it out. [OPTIONAL]` \
   --restart unless-stopped \

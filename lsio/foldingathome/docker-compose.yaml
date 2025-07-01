@@ -26,7 +26,7 @@ services:
       - CLI_ARGS=
     volumes:
       # Where Folding@home should store its database and config.
-      - ${BASEDIR:-/volume1/docker}/foldingathome/config:/config
+      - ${BASEDIR:-/srv/lsio}/foldingathome/config:/config
     ports:
       # Application WebUI
       - 80:80

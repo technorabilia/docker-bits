@@ -10,8 +10,8 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8337:8337 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/beets/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/beets/music:/music `# Music library` \
-  -v ${BASEDIR:-/volume1/docker}/beets/downloads:/downloads `# Non processed music` \
+  -v ${BASEDIR:-/srv/lsio}/beets/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/beets/music:/music `# Music library` \
+  -v ${BASEDIR:-/srv/lsio}/beets/downloads:/downloads `# Non processed music` \
   --restart unless-stopped \
   lscr.io/linuxserver/beets:latest

@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where oscam should store config files and logs.
-      - ${BASEDIR:-/volume1/docker}/oscam/config:/config
+      - ${BASEDIR:-/srv/lsio}/oscam/config:/config
     ports:
       # WebUI
       - 8888:8888

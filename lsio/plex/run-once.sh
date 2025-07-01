@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/plex/config
-mkdir -p ${BASEDIR:-/volume1/docker}/plex/tv
-mkdir -p ${BASEDIR:-/volume1/docker}/plex/movies
+mkdir -p ${BASEDIR:-/srv/lsio}/plex/config
+mkdir -p ${BASEDIR:-/srv/lsio}/plex/tv
+mkdir -p ${BASEDIR:-/srv/lsio}/plex/movies

@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/apprise-api/config
-mkdir -p ${BASEDIR:-/volume1/docker}/apprise-api/attachments `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/apprise-api/config
+mkdir -p ${BASEDIR:-/srv/lsio}/apprise-api/attachments `# [OPTIONAL]`

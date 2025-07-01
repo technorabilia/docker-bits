@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/grav/config:/config
+      - ${BASEDIR:-/srv/lsio}/grav/config:/config
     ports:
       # Port for web frontend
       - 80:80

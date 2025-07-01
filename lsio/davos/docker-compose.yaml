@@ -19,9 +19,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # davos's config location. This is where it stores its database file and logs.
-      - ${BASEDIR:-/volume1/docker}/davos/config:/config
+      - ${BASEDIR:-/srv/lsio}/davos/config:/config
       # davos's file download location
-      - ${BASEDIR:-/volume1/docker}/davos/download:/download
+      - ${BASEDIR:-/srv/lsio}/davos/download:/download
     ports:
       # This is the default port that davos runs under
       - 8080:8080

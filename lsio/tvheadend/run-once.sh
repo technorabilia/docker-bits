@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/tvheadend/config
-mkdir -p ${BASEDIR:-/volume1/docker}/tvheadend/recordings
+mkdir -p ${BASEDIR:-/srv/lsio}/tvheadend/config
+mkdir -p ${BASEDIR:-/srv/lsio}/tvheadend/recordings

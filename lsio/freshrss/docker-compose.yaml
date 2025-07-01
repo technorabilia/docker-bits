@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/freshrss/config:/config
+      - ${BASEDIR:-/srv/lsio}/freshrss/config:/config
     ports:
       # WebUI
       - 80:80

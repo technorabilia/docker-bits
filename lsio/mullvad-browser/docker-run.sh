@@ -14,7 +14,7 @@ docker run -d \
   -e LOCAL_NET=192.168.0.0/16 `# If using a VPN, set this to your local LAN IP range using CIDR notation. Without it you will be unable to access the web interface. If you have multiple ranges or a complex LAN setup you will need to manage this yourself in the wg0.conf, see the App Setup section for details. [OPTIONAL]` \
   -p 3000:3000 `# Mullvad Browser GUI.` \
   -p 3001:3001 `# Mullvad Browser GUI HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/mullvad-browser/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/mullvad-browser/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/mullvad-browser:latest

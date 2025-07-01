@@ -18,7 +18,7 @@ services:
       - RUN_OPTS=
     volumes:
       # Configuration files and minisatip data
-      - ${BASEDIR:-/volume1/docker}/minisatip/config:/config
+      - ${BASEDIR:-/srv/lsio}/minisatip/config:/config
     ports:
       # Status Page WebUI
       - 8875:8875

@@ -17,11 +17,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/rsnapshot/config:/config
+      - ${BASEDIR:-/srv/lsio}/rsnapshot/config:/config
       # Storage location for all snapshots. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/rsnapshot/.snapshots:/.snapshots
+      - ${BASEDIR:-/srv/lsio}/rsnapshot/.snapshots:/.snapshots
       # Storage location for data to be backed up. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/rsnapshot/data:/data
+      - ${BASEDIR:-/srv/lsio}/rsnapshot/data:/data
     ports:
       # Application WebUI
       - 80:80

@@ -20,7 +20,7 @@ services:
       - PMA_ABSOLUTE_URI=https://phpmyadmin.example.com
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/phpmyadmin/config:/config
+      - ${BASEDIR:-/srv/lsio}/phpmyadmin/config:/config
     ports:
       # Port for web frontend
       - 80:80

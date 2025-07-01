@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings and files.
-      - ${BASEDIR:-/volume1/docker}/kicad/config:/config
+      - ${BASEDIR:-/srv/lsio}/kicad/config:/config
     ports:
       # KiCad desktop gui.
       - 3000:3000

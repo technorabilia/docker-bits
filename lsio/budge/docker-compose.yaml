@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/budge/config:/config
+      - ${BASEDIR:-/srv/lsio}/budge/config:/config
     ports:
       # http gui
       - 80:80

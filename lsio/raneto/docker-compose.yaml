@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Raneto config and Markdown files
-      - ${BASEDIR:-/volume1/docker}/raneto/config:/config
+      - ${BASEDIR:-/srv/lsio}/raneto/config:/config
     ports:
       # The port for the Raneto web interface
       - 3000:3000

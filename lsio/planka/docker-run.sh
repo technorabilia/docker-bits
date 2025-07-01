@@ -16,6 +16,6 @@ docker run -d \
   -e SECRET_KEY=notasecretkey `# Session encryption key, recommended 32-64 character alphanumeric.` \
   -e TRUST_PROXY=0 `# Set to `1` to trust upstream proxies if reverse proxying.` \
   -p 1337:1337 `# Planka web UI.` \
-  -v ${BASEDIR:-/volume1/docker}/planka/config:/config `# Local path for planka config files.` \
+  -v ${BASEDIR:-/srv/lsio}/planka/config:/config `# Local path for planka config files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/planka:latest

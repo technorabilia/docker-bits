@@ -11,6 +11,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Calligra desktop gui.` \
   -p 3001:3001 `# Calligra desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/calligra/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/calligra/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
   lscr.io/linuxserver/calligra:latest

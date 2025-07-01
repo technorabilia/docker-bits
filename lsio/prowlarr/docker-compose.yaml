@@ -19,7 +19,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Database and Prowlarr configs
-      - ${BASEDIR:-/volume1/docker}/prowlarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/prowlarr/config:/config
     ports:
       # The port for the Prowlarr web UI
       - 9696:9696

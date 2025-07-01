@@ -19,11 +19,11 @@ services:
       - DOCKER_MODS=linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg
     volumes:
       # LazyLibrarian config
-      - ${BASEDIR:-/volume1/docker}/lazylibrarian/config:/config
+      - ${BASEDIR:-/srv/lsio}/lazylibrarian/config:/config
       # Download location
-      - ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/lazylibrarian/downloads:/downloads
       # Books location [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books
+      - ${BASEDIR:-/srv/lsio}/lazylibrarian/books:/books
     ports:
       # The port for the LazyLibrarian webinterface
       - 5299:5299

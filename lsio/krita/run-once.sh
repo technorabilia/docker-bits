@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/krita/config
+mkdir -p ${BASEDIR:-/srv/lsio}/krita/config

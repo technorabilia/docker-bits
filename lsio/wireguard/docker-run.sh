@@ -26,7 +26,7 @@ docker run -d \
   -e PERSISTENTKEEPALIVE_PEERS= `# Set to `all` or a list of comma separated peers (ie. `1,4,laptop`) for the wireguard server to send keepalive packets to listed peers every 25 seconds. Useful if server is accessed via domain name and has dynamic IP. Used only in server mode. [OPTIONAL]` \
   -e LOG_CONFS=true `# Generated QR codes will be displayed in the docker log. Set to `false` to skip log output. [OPTIONAL]` \
   -p 51820:51820/udp `# wireguard port` \
-  -v ${BASEDIR:-/volume1/docker}/wireguard/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/wireguard/config:/config `# Contains all relevant configuration files.` \
   -v /lib/modules:/lib/modules `# Path to host kernel module for situations where it's not already loaded. [OPTIONAL]` \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
   --restart unless-stopped \

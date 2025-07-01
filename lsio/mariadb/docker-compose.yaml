@@ -25,7 +25,7 @@ services:
       - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/mariadb/config:/config
+      - ${BASEDIR:-/srv/lsio}/mariadb/config:/config
     ports:
       # MariaDB listens on this port.
       - 3306:3306

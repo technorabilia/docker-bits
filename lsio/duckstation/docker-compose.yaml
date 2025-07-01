@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/duckstation/config:/config
+      - ${BASEDIR:-/srv/lsio}/duckstation/config:/config
     ports:
       # HTTP DuckStation desktop gui must be proxied.
       - 3000:3000

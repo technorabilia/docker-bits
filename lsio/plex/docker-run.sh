@@ -13,8 +13,8 @@ docker run -d \
   -e VERSION=docker `# Set whether to update plex or not - see Application Setup section.` \
   -e PLEX_CLAIM= `# Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes. [OPTIONAL]` \
   -p 80:80 `# Application WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/plex/config:/config `# Plex library location. *This can grow very large, 50gb+ is likely for a large collection.*` \
-  -v ${BASEDIR:-/volume1/docker}/plex/tv:/tv `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
-  -v ${BASEDIR:-/volume1/docker}/plex/movies:/movies `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
+  -v ${BASEDIR:-/srv/lsio}/plex/config:/config `# Plex library location. *This can grow very large, 50gb+ is likely for a large collection.*` \
+  -v ${BASEDIR:-/srv/lsio}/plex/tv:/tv `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
+  -v ${BASEDIR:-/srv/lsio}/plex/movies:/movies `# Media goes here. Add as many as needed e.g. `/movies`, `/tv`, etc.` \
   --restart unless-stopped \
   lscr.io/linuxserver/plex:latest

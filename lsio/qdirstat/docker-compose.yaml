@@ -16,9 +16,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores qdirstat settings and scans.
-      - ${BASEDIR:-/volume1/docker}/qdirstat/config:/config
+      - ${BASEDIR:-/srv/lsio}/qdirstat/config:/config
       # Data you want to analyze disk usage information of.
-      - ${BASEDIR:-/volume1/docker}/qdirstat/data:/data
+      - ${BASEDIR:-/srv/lsio}/qdirstat/data:/data
     ports:
       # QdirStat desktop gui.
       - 3000:3000

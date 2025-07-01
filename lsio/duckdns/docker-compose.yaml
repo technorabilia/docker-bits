@@ -26,9 +26,9 @@ services:
       - LOG_FILE=false
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/duckdns/config:/config
+      - ${BASEDIR:-/srv/lsio}/duckdns/config:/config
       # Persistent config files. Also set `LOG_FILE=true` to keep address history. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/duckdns/config:/config
+      - ${BASEDIR:-/srv/lsio}/duckdns/config:/config
     ports:
       # Application WebUI
       - 80:80

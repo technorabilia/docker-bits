@@ -17,11 +17,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/beets/config:/config
+      - ${BASEDIR:-/srv/lsio}/beets/config:/config
       # Music library
-      - ${BASEDIR:-/volume1/docker}/beets/music:/music
+      - ${BASEDIR:-/srv/lsio}/beets/music:/music
       # Non processed music
-      - ${BASEDIR:-/volume1/docker}/beets/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/beets/downloads:/downloads
     ports:
       # Application WebUI
       - 8337:8337

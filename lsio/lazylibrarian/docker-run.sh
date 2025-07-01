@@ -11,8 +11,8 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e DOCKER_MODS=linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg `# Allows additional functionality to be added, e.g. the Calibredb import program (optional, more info below) [OPTIONAL]` \
   -p 5299:5299 `# The port for the LazyLibrarian webinterface` \
-  -v ${BASEDIR:-/volume1/docker}/lazylibrarian/config:/config `# LazyLibrarian config` \
-  -v ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads:/downloads `# Download location` \
-  -v ${BASEDIR:-/volume1/docker}/lazylibrarian/books:/books `# Books location [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/lazylibrarian/config:/config `# LazyLibrarian config` \
+  -v ${BASEDIR:-/srv/lsio}/lazylibrarian/downloads:/downloads `# Download location` \
+  -v ${BASEDIR:-/srv/lsio}/lazylibrarian/books:/books `# Books location [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/lazylibrarian:latest

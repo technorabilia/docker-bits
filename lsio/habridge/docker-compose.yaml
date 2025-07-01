@@ -20,7 +20,7 @@ services:
       - SEC_KEY=
     volumes:
       # Where HABridge stores config files and data.
-      - ${BASEDIR:-/volume1/docker}/habridge/config:/config
+      - ${BASEDIR:-/srv/lsio}/habridge/config:/config
     ports:
       # WebUI
       - 8080:8080

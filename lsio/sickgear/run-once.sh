@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/sickgear/config
-mkdir -p ${BASEDIR:-/volume1/docker}/sickgear/tv
-mkdir -p ${BASEDIR:-/volume1/docker}/sickgear/downloads
+mkdir -p ${BASEDIR:-/srv/lsio}/sickgear/config
+mkdir -p ${BASEDIR:-/srv/lsio}/sickgear/tv
+mkdir -p ${BASEDIR:-/srv/lsio}/sickgear/downloads

@@ -21,7 +21,7 @@ services:
       - HISHTORY_SQLITE_DB=/config/hishtory.db
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/hishtory-server/config:/config
+      - ${BASEDIR:-/srv/lsio}/hishtory-server/config:/config
     ports:
       # API port
       - 8080:8080

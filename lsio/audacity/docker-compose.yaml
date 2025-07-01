@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings and images
-      - ${BASEDIR:-/volume1/docker}/audacity/config:/config
+      - ${BASEDIR:-/srv/lsio}/audacity/config:/config
     ports:
       # Audacity desktop gui.
       - 3000:3000

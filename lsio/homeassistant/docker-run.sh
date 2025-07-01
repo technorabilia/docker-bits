@@ -11,7 +11,7 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8123:8123 `# Application WebUI, only use this if you are not using host mode. [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/homeassistant/config:/config `# Home Assistant config storage path.` \
+  -v ${BASEDIR:-/srv/lsio}/homeassistant/config:/config `# Home Assistant config storage path.` \
   --device /path/to/device:/path/to/device `# For passing through USB, serial or gpio devices. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/homeassistant:latest

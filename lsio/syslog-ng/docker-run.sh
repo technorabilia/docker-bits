@@ -12,7 +12,7 @@ docker run -d \
   -p 514:5514/udp `# Syslog UDP` \
   -p 601:6601/tcp `# Syslog TCP` \
   -p 6514:6514/tcp `# Syslog TLS` \
-  -v ${BASEDIR:-/volume1/docker}/syslog-ng/config:/config `# Stores config and application files` \
+  -v ${BASEDIR:-/srv/lsio}/syslog-ng/config:/config `# Stores config and application files` \
   -v /var/log:/var/log `# Stores logs collected by the syslog-ng service [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/syslog-ng:latest

@@ -15,11 +15,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Database and Radarr configs
-      - ${BASEDIR:-/volume1/docker}/radarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/radarr/config:/config
       # Location of Movie library on disk (See note in Application setup) [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/radarr/movies:/movies
+      - ${BASEDIR:-/srv/lsio}/radarr/movies:/movies
       # Location of download managers output directory (See note in Application setup) [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/radarr/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/radarr/downloads:/downloads
     ports:
       # The port for the Radarr Web UI
       - 7878:7878

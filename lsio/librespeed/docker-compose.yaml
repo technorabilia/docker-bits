@@ -34,7 +34,7 @@ services:
       - IPINFO_APIKEY=ACCESS_TOKEN
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/librespeed/config:/config
+      - ${BASEDIR:-/srv/lsio}/librespeed/config:/config
     ports:
       # web gui
       - 80:80

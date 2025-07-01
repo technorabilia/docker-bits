@@ -12,8 +12,8 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8888:8888 `# WebUI` \
   -p 55555:55555 `# Sync Port.` \
-  -v ${BASEDIR:-/volume1/docker}/resilio-sync/config:/config `# Where resilio-sync should store its config file.` \
-  -v ${BASEDIR:-/volume1/docker}/resilio-sync/downloads:/downloads `# Folder for downloads/cache.` \
-  -v ${BASEDIR:-/volume1/docker}/resilio-sync/sync:/sync `# Sync folders root.` \
+  -v ${BASEDIR:-/srv/lsio}/resilio-sync/config:/config `# Where resilio-sync should store its config file.` \
+  -v ${BASEDIR:-/srv/lsio}/resilio-sync/downloads:/downloads `# Folder for downloads/cache.` \
+  -v ${BASEDIR:-/srv/lsio}/resilio-sync/sync:/sync `# Sync folders root.` \
   --restart unless-stopped \
   lscr.io/linuxserver/resilio-sync:latest

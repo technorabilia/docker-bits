@@ -22,9 +22,9 @@ services:
       - SECRET_KEY_BASE=
     volumes:
       # Persistent storage for application configuration data.
-      - ${BASEDIR:-/volume1/docker}/manyfold/config:/config
+      - ${BASEDIR:-/srv/lsio}/manyfold/config:/config
       # Location of your 3D model libraries. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/manyfold/libraries:/libraries
+      - ${BASEDIR:-/srv/lsio}/manyfold/libraries:/libraries
     ports:
       # Port for web frontend
       - 3214:3214

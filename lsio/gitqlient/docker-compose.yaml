@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/gitqlient/config:/config
+      - ${BASEDIR:-/srv/lsio}/gitqlient/config:/config
     ports:
       # GitQlient desktop gui.
       - 3000:3000

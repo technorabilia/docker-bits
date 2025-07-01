@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/limnoria/config:/config
+      - ${BASEDIR:-/srv/lsio}/limnoria/config:/config
     ports:
       # Port for Limnoria's web interface.
       - 8080:8080

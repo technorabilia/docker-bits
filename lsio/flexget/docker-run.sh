@@ -12,7 +12,7 @@ docker run -d \
   -e FG_CONFIG_FILE=/config/.flexget/config.yml `# Set the FlexGet config file location.` \
   -e FG_WEBUI_PASSWORD=info `# Set the FlexGet webui password. Pay attention to Bash/YAML reserved characters. [OPTIONAL]` \
   -p 5050:5050 `# HTTP port for the WebUI.` \
-  -v ${BASEDIR:-/volume1/docker}/flexget/config:/config `# Local path for FlexGet config files.` \
-  -v ${BASEDIR:-/volume1/docker}/flexget/data:/data `# Default path for downloads. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/flexget/config:/config `# Local path for FlexGet config files.` \
+  -v ${BASEDIR:-/srv/lsio}/flexget/data:/data `# Default path for downloads. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/flexget:latest

@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/thelounge/config:/config
+      - ${BASEDIR:-/srv/lsio}/thelounge/config:/config
     ports:
       # Application WebUI
       - 9000:9000

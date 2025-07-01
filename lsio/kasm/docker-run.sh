@@ -19,8 +19,8 @@ docker run -d \
   -e DOCKER_MTU=1500 `# Optionally specify the mtu options passed to dockerd. [OPTIONAL]` \
   -p 3000:3000 `# Kasm Installation wizard. (https)` \
   -p 443:443 `# Kasm Workspaces interface. (https)` \
-  -v ${BASEDIR:-/volume1/docker}/kasm/opt:/opt `# Docker and installation storage.` \
-  -v ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles `# Optionally specify a path for persistent profile storage. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/kasm/opt:/opt `# Docker and installation storage.` \
+  -v ${BASEDIR:-/srv/lsio}/kasm/profiles:/profiles `# Optionally specify a path for persistent profile storage. [OPTIONAL]` \
   -v /dev/input:/dev/input `# Optional for gamepad support. [OPTIONAL]` \
   -v /run/udev/data:/run/udev/data `# Optional for gamepad support. [OPTIONAL]` \
   --restart unless-stopped \

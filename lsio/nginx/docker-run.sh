@@ -11,6 +11,6 @@ docker run -d \
   -e NGINX_AUTORELOAD_WATCHLIST= `# A [pipe](https://en.wikipedia.org/wiki/Vertical_bar)-separated list of additional folders for auto reload to watch in addition to `/config/nginx` [OPTIONAL]` \
   -p 80:80 `# http` \
   -p 443:443 `# https` \
-  -v ${BASEDIR:-/volume1/docker}/nginx/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/nginx/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/nginx:latest

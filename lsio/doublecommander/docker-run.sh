@@ -10,7 +10,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Double Commander desktop gui.` \
   -p 3001:3001 `# Double Commander desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/doublecommander/config:/config `# Users home directory in the container, stores program settings.` \
-  -v ${BASEDIR:-/volume1/docker}/doublecommander/data:/data `# Host data directories, mount as many as needed.` \
+  -v ${BASEDIR:-/srv/lsio}/doublecommander/config:/config `# Users home directory in the container, stores program settings.` \
+  -v ${BASEDIR:-/srv/lsio}/doublecommander/data:/data `# Host data directories, mount as many as needed.` \
   --restart unless-stopped \
   lscr.io/linuxserver/doublecommander:latest

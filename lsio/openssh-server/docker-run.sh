@@ -23,6 +23,6 @@ docker run -d \
   -e USER_NAME=linuxserver.io `# Optionally specify a user name (Default:`linuxserver.io`) [OPTIONAL]` \
   -e LOG_STDOUT= `# Set to `true` to log to stdout instead of file. [OPTIONAL]` \
   -p 2222:2222 `# ssh port` \
-  -v ${BASEDIR:-/volume1/docker}/openssh-server/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/openssh-server/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/openssh-server:latest

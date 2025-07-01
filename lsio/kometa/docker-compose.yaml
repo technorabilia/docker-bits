@@ -27,7 +27,7 @@ services:
       - KOMETA_NO_MISSING=False
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/kometa/config:/config
+      - ${BASEDIR:-/srv/lsio}/kometa/config:/config
     ports:
       # Application WebUI
       - 80:80

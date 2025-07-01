@@ -18,11 +18,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Database and sonarr configs
-      - ${BASEDIR:-/volume1/docker}/sonarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/sonarr/config:/config
       # Location of TV library on disk (See note in Application setup) [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/sonarr/tv:/tv
       # Location of download managers output directory (See note in Application setup) [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/sonarr/downloads:/downloads
     ports:
       # The port for the Sonarr web interface
       - 8989:8989

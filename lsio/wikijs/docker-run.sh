@@ -14,7 +14,7 @@ docker run -d \
   -e DB_USER= `# DB username (postgres only) [OPTIONAL]` \
   -e DB_PASS= `# DB password (postgres only) [OPTIONAL]` \
   -p 3000:3000 `# Port for Wiki.js's web interface.` \
-  -v ${BASEDIR:-/volume1/docker}/wikijs/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/wikijs/data:/data `# Where Wiki.js data is stored.` \
+  -v ${BASEDIR:-/srv/lsio}/wikijs/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/wikijs/data:/data `# Where Wiki.js data is stored.` \
   --restart unless-stopped \
   lscr.io/linuxserver/wikijs:latest

@@ -17,11 +17,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/bazarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/bazarr/config:/config
       # Location of your movies [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/bazarr/movies:/movies
+      - ${BASEDIR:-/srv/lsio}/bazarr/movies:/movies
       # Location of your TV Shows [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/bazarr/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/bazarr/tv:/tv
     ports:
       # Allows HTTP access to the internal webserver.
       - 6767:6767

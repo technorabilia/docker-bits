@@ -1,3 +1,3 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/shotcut/config
+mkdir -p ${BASEDIR:-/srv/lsio}/shotcut/config

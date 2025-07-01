@@ -16,11 +16,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/medusa/config:/config
+      - ${BASEDIR:-/srv/lsio}/medusa/config:/config
       # Download location
-      - ${BASEDIR:-/volume1/docker}/medusa/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/medusa/downloads:/downloads
       # TV Shows location
-      - ${BASEDIR:-/volume1/docker}/medusa/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/medusa/tv:/tv
     ports:
       # The port for the Medusa webui
       - 8081:8081

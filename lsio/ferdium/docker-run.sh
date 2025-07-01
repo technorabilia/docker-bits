@@ -9,7 +9,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Ferdium desktop gui.` \
   -p 3001:3001 `# Ferdium desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/ferdium/config:/config `# Users home directory in the container, stores program settings and files.` \
+  -v ${BASEDIR:-/srv/lsio}/ferdium/config:/config `# Users home directory in the container, stores program settings and files.` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/ferdium:latest

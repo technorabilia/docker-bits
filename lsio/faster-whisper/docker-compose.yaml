@@ -23,7 +23,7 @@ services:
       - WHISPER_LANG=en
     volumes:
       # Local path for Whisper config files.
-      - ${BASEDIR:-/volume1/docker}/faster-whisper/config:/config
+      - ${BASEDIR:-/srv/lsio}/faster-whisper/config:/config
     ports:
       # Wyoming connection port.
       - 10300:10300

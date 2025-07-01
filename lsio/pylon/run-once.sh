@@ -1,4 +1,4 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/pylon/config
-mkdir -p ${BASEDIR:-/volume1/docker}/pylon/code `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/pylon/config
+mkdir -p ${BASEDIR:-/srv/lsio}/pylon/code `# [OPTIONAL]`

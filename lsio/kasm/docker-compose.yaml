@@ -26,9 +26,9 @@ services:
       - DOCKER_MTU=1500
     volumes:
       # Docker and installation storage.
-      - ${BASEDIR:-/volume1/docker}/kasm/opt:/opt
+      - ${BASEDIR:-/srv/lsio}/kasm/opt:/opt
       # Optionally specify a path for persistent profile storage. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/kasm/profiles:/profiles
+      - ${BASEDIR:-/srv/lsio}/kasm/profiles:/profiles
       # Optional for gamepad support. [OPTIONAL]
       - /dev/input:/dev/input
       # Optional for gamepad support. [OPTIONAL]

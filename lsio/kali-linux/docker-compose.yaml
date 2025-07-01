@@ -21,7 +21,7 @@ services:
       - TITLE=Kali Linux
     volumes:
       # abc users home directory
-      - ${BASEDIR:-/volume1/docker}/kali-linux/config:/config
+      - ${BASEDIR:-/srv/lsio}/kali-linux/config:/config
       # Docker Socket on the system, if you want to use Docker in the container [OPTIONAL]
       - /var/run/docker.sock:/var/run/docker.sock
     ports:

@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings and files.
-      - ${BASEDIR:-/volume1/docker}/freecad/config:/config
+      - ${BASEDIR:-/srv/lsio}/freecad/config:/config
     ports:
       # FreeCAD desktop gui.
       - 3000:3000

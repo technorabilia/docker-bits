@@ -10,7 +10,7 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 5000:5000 `# web gui` \
-  -v ${BASEDIR:-/volume1/docker}/kavita/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/kavita/data:/data `# Media library containing manga, comics and books. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/kavita/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/kavita/data:/data `# Media library containing manga, comics and books. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/kavita:latest

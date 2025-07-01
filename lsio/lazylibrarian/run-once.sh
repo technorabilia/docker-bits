@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/lazylibrarian/config
-mkdir -p ${BASEDIR:-/volume1/docker}/lazylibrarian/downloads
-mkdir -p ${BASEDIR:-/volume1/docker}/lazylibrarian/books `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/lazylibrarian/config
+mkdir -p ${BASEDIR:-/srv/lsio}/lazylibrarian/downloads
+mkdir -p ${BASEDIR:-/srv/lsio}/lazylibrarian/books `# [OPTIONAL]`

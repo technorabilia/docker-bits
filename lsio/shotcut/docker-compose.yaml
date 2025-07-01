@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where Shotcut should store its config.
-      - ${BASEDIR:-/volume1/docker}/shotcut/config:/config
+      - ${BASEDIR:-/srv/lsio}/shotcut/config:/config
     ports:
       # Shotcut desktop gui.
       - 3000:3000

@@ -10,7 +10,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# Github Desktop gui.` \
   -p 3001:3001 `# HTTPS Github Desktop gui.` \
-  -v ${BASEDIR:-/volume1/docker}/github-desktop/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/github-desktop/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/github-desktop:latest

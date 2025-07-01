@@ -17,7 +17,7 @@ services:
       - CONFIGFILE=/config/adguardhome-sync.yaml
     volumes:
       # Contains all relevant configuration files.
-      - ${BASEDIR:-/volume1/docker}/adguardhome-sync/config:/config
+      - ${BASEDIR:-/srv/lsio}/adguardhome-sync/config:/config
     ports:
       # Port for AdGuardHome Sync's web API.
       - 8080:8080

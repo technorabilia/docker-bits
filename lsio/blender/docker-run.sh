@@ -13,6 +13,6 @@ docker run -d \
   -e SUBFOLDER=/ `# Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]` \
   -p 3000:3000 `# Blender desktop gui` \
   -p 3001:3001 `# Blender desktop gui HTTPS` \
-  -v ${BASEDIR:-/volume1/docker}/blender/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/blender/config:/config `# Users home directory in the container, stores local files and settings` \
   --restart unless-stopped \
   lscr.io/linuxserver/blender:latest

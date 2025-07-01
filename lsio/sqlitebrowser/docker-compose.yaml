@@ -16,7 +16,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores program settings and potentially dump files.
-      - ${BASEDIR:-/volume1/docker}/sqlitebrowser/config:/config
+      - ${BASEDIR:-/srv/lsio}/sqlitebrowser/config:/config
     ports:
       # Sqlitebrowser desktop gui.
       - 3000:3000

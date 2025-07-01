@@ -11,7 +11,7 @@ docker run -d \
   -e SUBFOLDER=/ `# Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]` \
   -p 3000:3000 `# Kdenlive desktop gui` \
   -p 3001:3001 `# Kdenlive desktop gui HTTPS` \
-  -v ${BASEDIR:-/volume1/docker}/kdenlive/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/kdenlive/config:/config `# Users home directory in the container, stores local files and settings` \
   --device /dev/dri:/dev/dri `# Add this for hardware acceleration (Linux hosts only) [OPTIONAL]` \
   --shm-size="1gb" `# [OPTIONAL]` \
   --restart unless-stopped \

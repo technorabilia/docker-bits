@@ -19,7 +19,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where `ngircd.conf` is stored
-      - ${BASEDIR:-/volume1/docker}/ngircd/config:/config
+      - ${BASEDIR:-/srv/lsio}/ngircd/config:/config
     ports:
       # ngircd port
       - 6667:6667

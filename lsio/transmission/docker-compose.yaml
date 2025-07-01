@@ -30,11 +30,11 @@ services:
       - HOST_WHITELIST=
     volumes:
       # Where transmission should store config files and logs.
-      - ${BASEDIR:-/volume1/docker}/transmission/config:/config
+      - ${BASEDIR:-/srv/lsio}/transmission/config:/config
       # Local path for downloads. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/transmission/downloads:/downloads
       # Watch folder for torrent files. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/transmission/watch:/watch
+      - ${BASEDIR:-/srv/lsio}/transmission/watch:/watch
     ports:
       # WebUI
       - 9091:9091

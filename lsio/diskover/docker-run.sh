@@ -11,7 +11,7 @@ docker run -d \
   -e ES_HOST=elasticsearch `# ElasticSearch host (optional)` \
   -e ES_PORT=9200 `# ElasticSearch port (optional)` \
   -p 80:80 `# diskover Web UI` \
-  -v ${BASEDIR:-/volume1/docker}/diskover/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/diskover/data:/data `# Default mount point to crawl` \
+  -v ${BASEDIR:-/srv/lsio}/diskover/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/diskover/data:/data `# Default mount point to crawl` \
   --restart unless-stopped \
   lscr.io/linuxserver/diskover:latest

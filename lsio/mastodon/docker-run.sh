@@ -47,6 +47,6 @@ docker run -d \
   -e NO_CHOWN= `# Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*. [OPTIONAL]` \
   -p 80:80 `# Port for web frontend` \
   -p 443:443 `# Port for web frontend` \
-  -v ${BASEDIR:-/volume1/docker}/mastodon/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/mastodon/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/mastodon:latest

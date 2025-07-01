@@ -13,7 +13,7 @@ docker run -d \
   -p 8080:8080 `# WebUI` \
   -p 6881:6881 `# tcp connection port` \
   -p 6881:6881/udp `# udp connection port` \
-  -v ${BASEDIR:-/volume1/docker}/qbittorrent/config:/config `# Contains all relevant configuration files.` \
-  -v ${BASEDIR:-/volume1/docker}/qbittorrent/downloads:/downloads `# Location of downloads on disk. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/qbittorrent/config:/config `# Contains all relevant configuration files.` \
+  -v ${BASEDIR:-/srv/lsio}/qbittorrent/downloads:/downloads `# Location of downloads on disk. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:latest

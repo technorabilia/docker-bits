@@ -13,7 +13,7 @@ docker run -d \
   -e FIREFOX_CLI=https://www.linuxserver.io/ `# Specify one or multiple Firefox CLI flags, this string will be passed to the application in full. [OPTIONAL]` \
   -p 3000:3000 `# Firefox desktop gui.` \
   -p 3001:3001 `# Firefox desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/firefox/config:/config `# Users home directory in the container, stores local files and settings` \
+  -v ${BASEDIR:-/srv/lsio}/firefox/config:/config `# Users home directory in the container, stores local files and settings` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/firefox:latest

@@ -22,9 +22,9 @@ services:
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1
     volumes:
       # Where calibre-web stores the internal database and config.
-      - ${BASEDIR:-/volume1/docker}/calibre-web/config:/config
+      - ${BASEDIR:-/srv/lsio}/calibre-web/config:/config
       # Where your preexisting calibre database is located.
-      - ${BASEDIR:-/volume1/docker}/calibre-web/books:/books
+      - ${BASEDIR:-/srv/lsio}/calibre-web/books:/books
     ports:
       # WebUI
       - 8083:8083

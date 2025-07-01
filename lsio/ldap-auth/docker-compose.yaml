@@ -26,7 +26,7 @@ services:
       - KEYFILE=
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/ldap-auth/config:/config
+      - ${BASEDIR:-/srv/lsio}/ldap-auth/config:/config
     ports:
       # the port for ldap auth daemon
       - 8888:8888

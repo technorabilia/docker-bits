@@ -10,6 +10,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,https://babybuddy.domain.com `# Add any address you'd like to access babybuddy at (comma separated, no spaces)` \
   -p 8000:8000 `# the port for the web ui` \
-  -v ${BASEDIR:-/volume1/docker}/babybuddy/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/babybuddy/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/babybuddy:latest

@@ -20,7 +20,7 @@ services:
       - FIREFOX_CLI=https://www.linuxserver.io/
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/firefox/config:/config
+      - ${BASEDIR:-/srv/lsio}/firefox/config:/config
     ports:
       # Firefox desktop gui.
       - 3000:3000

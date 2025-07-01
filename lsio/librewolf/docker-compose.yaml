@@ -19,7 +19,7 @@ services:
       - LIBREWOLF_CLI=https://www.linuxserver.io/
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/librewolf/config:/config
+      - ${BASEDIR:-/srv/lsio}/librewolf/config:/config
     ports:
       # LibreWolf desktop gui.
       - 3000:3000

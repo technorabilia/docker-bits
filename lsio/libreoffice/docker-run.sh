@@ -11,6 +11,6 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 3000:3000 `# LibreOffice desktop gui.` \
   -p 3001:3001 `# LibreOffice desktop gui HTTPS.` \
-  -v ${BASEDIR:-/volume1/docker}/libreoffice/config:/config `# Users home directory in the container, stores program settings and documents` \
+  -v ${BASEDIR:-/srv/lsio}/libreoffice/config:/config `# Users home directory in the container, stores program settings and documents` \
   --restart unless-stopped \
   lscr.io/linuxserver/libreoffice:latest

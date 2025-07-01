@@ -21,6 +21,6 @@ docker run -d \
   -e DISPLAY_TIMEZONE=Etc/UTC `# Timezone for the UI. [OPTIONAL]` \
   -e PRUNE_RESULTS_OLDER_THAN=0 `# Days to keep test results. [OPTIONAL]` \
   -p 80:80 `# Web UI` \
-  -v ${BASEDIR:-/volume1/docker}/speedtest-tracker/config:/config `# Contains speedtest-tracker config and database, if using sqlite.` \
+  -v ${BASEDIR:-/srv/lsio}/speedtest-tracker/config:/config `# Contains speedtest-tracker config and database, if using sqlite.` \
   --restart unless-stopped \
   lscr.io/linuxserver/speedtest-tracker:latest

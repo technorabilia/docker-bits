@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/zotero/config:/config
+      - ${BASEDIR:-/srv/lsio}/zotero/config:/config
     ports:
       # Zotero gui.
       - 3000:3000

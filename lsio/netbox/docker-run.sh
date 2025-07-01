@@ -32,6 +32,6 @@ docker run -d \
   -e REMOTE_AUTH_DEFAULT_GROUPS= `# The list of groups to assign a new user account when created using remote authentication (optional, default: []) [OPTIONAL]` \
   -e REMOTE_AUTH_DEFAULT_PERMISSIONS= `# A mapping of permissions to assign a new user account when created using remote authentication (optional, default: {}) [OPTIONAL]` \
   -p 8000:8000 `# will map the container's port 8000 to port 8000 on the host` \
-  -v ${BASEDIR:-/volume1/docker}/netbox/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/netbox/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/netbox:latest

@@ -16,11 +16,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/mylar3/config:/config
+      - ${BASEDIR:-/srv/lsio}/mylar3/config:/config
       # Map to your comics folder.
-      - ${BASEDIR:-/volume1/docker}/mylar3/comics:/comics
+      - ${BASEDIR:-/srv/lsio}/mylar3/comics:/comics
       # Map to your downloads folder.
-      - ${BASEDIR:-/volume1/docker}/mylar3/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/mylar3/downloads:/downloads
     ports:
       # WebUI
       - 8090:8090

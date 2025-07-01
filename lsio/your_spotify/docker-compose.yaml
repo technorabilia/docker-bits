@@ -28,7 +28,7 @@ services:
       - MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/your_spotify/config:/config
+      - ${BASEDIR:-/srv/lsio}/your_spotify/config:/config
     ports:
       # your_spotify HTTP webui
       - 80:80

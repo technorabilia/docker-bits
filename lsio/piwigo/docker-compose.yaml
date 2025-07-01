@@ -16,9 +16,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/piwigo/config:/config
+      - ${BASEDIR:-/srv/lsio}/piwigo/config:/config
       # Image storage for Piwigo
-      - ${BASEDIR:-/volume1/docker}/piwigo/gallery:/gallery
+      - ${BASEDIR:-/srv/lsio}/piwigo/gallery:/gallery
     ports:
       # Application WebUI
       - 80:80

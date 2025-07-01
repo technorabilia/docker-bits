@@ -18,6 +18,6 @@ docker run -d \
   -e DB_PORT=DB_PORT `# Database port. Required for mysql. [OPTIONAL]` \
   -e IPINFO_APIKEY=ACCESS_TOKEN `# Access token from ipinfo.io. Required for detailed IP information. [OPTIONAL]` \
   -p 80:80 `# web gui` \
-  -v ${BASEDIR:-/volume1/docker}/librespeed/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/librespeed/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/librespeed:latest

@@ -25,7 +25,7 @@ services:
       - DEBUG_MODE=false
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/pairdrop/config:/config
+      - ${BASEDIR:-/srv/lsio}/pairdrop/config:/config
     ports:
       # http gui
       - 3000:3000

@@ -11,7 +11,7 @@ services:
       - AUTH_LIST=plexuser1,plexuser2,email1,machineid1
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/synclounge/config:/config
+      - ${BASEDIR:-/srv/lsio}/synclounge/config:/config
     ports:
       # Web app and server port
       - 8088:8088

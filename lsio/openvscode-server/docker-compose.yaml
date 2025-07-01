@@ -24,7 +24,7 @@ services:
       - SUDO_PASSWORD_HASH=
     volumes:
       # Contains all relevant configuration files.
-      - ${BASEDIR:-/volume1/docker}/openvscode-server/config:/config
+      - ${BASEDIR:-/srv/lsio}/openvscode-server/config:/config
     ports:
       # Web UI port.
       - 3000:3000

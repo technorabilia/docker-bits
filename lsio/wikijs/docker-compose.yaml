@@ -27,9 +27,9 @@ services:
       - DB_PASS=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/wikijs/config:/config
+      - ${BASEDIR:-/srv/lsio}/wikijs/config:/config
       # Where Wiki.js data is stored.
-      - ${BASEDIR:-/volume1/docker}/wikijs/data:/data
+      - ${BASEDIR:-/srv/lsio}/wikijs/data:/data
     ports:
       # Port for Wiki.js's web interface.
       - 3000:3000

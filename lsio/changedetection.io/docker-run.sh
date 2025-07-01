@@ -10,6 +10,6 @@ docker run -d \
   -e BASE_URL= `# Specify the full URL (including protocol) when running behind a reverse proxy [OPTIONAL]` \
   -e PLAYWRIGHT_DRIVER_URL= `# Specify the full URL to your chrome driver instance. See the [wiki](https://github.com/dgtlmoon/changedetection.io/wiki/Playwright-content-fetcher) for details. [OPTIONAL]` \
   -p 5000:5000 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/changedetection.io/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/changedetection.io/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/changedetection.io:latest

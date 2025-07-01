@@ -22,7 +22,7 @@ services:
       - SERVER_IP=0.0.0.0
     volumes:
       # All the config files reside here.
-      - ${BASEDIR:-/volume1/docker}/pydio-cells/config:/config
+      - ${BASEDIR:-/srv/lsio}/pydio-cells/config:/config
     ports:
       # Http port
       - 8080:8080

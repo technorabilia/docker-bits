@@ -23,9 +23,9 @@ services:
       - FG_WEBUI_PASSWORD=info
     volumes:
       # Local path for FlexGet config files.
-      - ${BASEDIR:-/volume1/docker}/flexget/config:/config
+      - ${BASEDIR:-/srv/lsio}/flexget/config:/config
       # Default path for downloads. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/flexget/data:/data
+      - ${BASEDIR:-/srv/lsio}/flexget/data:/data
     ports:
       # HTTP port for the WebUI.
       - 5050:5050

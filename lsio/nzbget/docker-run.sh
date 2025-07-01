@@ -11,7 +11,7 @@ docker run -d \
   -e NZBGET_USER=nzbget `# Specify the user for web authentication. [OPTIONAL]` \
   -e NZBGET_PASS=tegbzn6789 `# Specify the password for web authentication. [OPTIONAL]` \
   -p 6789:6789 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/nzbget/config:/config `# Persistent config` \
-  -v ${BASEDIR:-/volume1/docker}/nzbget/downloads:/downloads `# Location of downloads on disk. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/nzbget/config:/config `# Persistent config` \
+  -v ${BASEDIR:-/srv/lsio}/nzbget/downloads:/downloads `# Location of downloads on disk. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/nzbget:latest

@@ -10,7 +10,7 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -p 8000:8000 `# Allows HTTP access to the application` \
   -p 9666:9666 `# Click'n'Load port. [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/pyload-ng/config:/config `# Persistent config files` \
-  -v ${BASEDIR:-/volume1/docker}/pyload-ng/downloads:/downloads `# Destination of pyLoad downloads` \
+  -v ${BASEDIR:-/srv/lsio}/pyload-ng/config:/config `# Persistent config files` \
+  -v ${BASEDIR:-/srv/lsio}/pyload-ng/downloads:/downloads `# Destination of pyLoad downloads` \
   --restart unless-stopped \
   lscr.io/linuxserver/pyload-ng:latest

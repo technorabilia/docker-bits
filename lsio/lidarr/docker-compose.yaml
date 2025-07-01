@@ -18,11 +18,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Configuration files for Lidarr.
-      - ${BASEDIR:-/volume1/docker}/lidarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/lidarr/config:/config
       # Music files (See note in Application setup). [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/lidarr/music:/music
+      - ${BASEDIR:-/srv/lsio}/lidarr/music:/music
       # Path to your download folder for music (See note in Application setup). [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/lidarr/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/lidarr/downloads:/downloads
     ports:
       # Application WebUI
       - 8686:8686

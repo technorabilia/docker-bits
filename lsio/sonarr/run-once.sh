@@ -1,5 +1,5 @@
 ln -s ../docker-env.cfg ./.env
 . ./.env
-mkdir -p ${BASEDIR:-/volume1/docker}/sonarr/config
-mkdir -p ${BASEDIR:-/volume1/docker}/sonarr/tv `# [OPTIONAL]`
-mkdir -p ${BASEDIR:-/volume1/docker}/sonarr/downloads `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/sonarr/config
+mkdir -p ${BASEDIR:-/srv/lsio}/sonarr/tv `# [OPTIONAL]`
+mkdir -p ${BASEDIR:-/srv/lsio}/sonarr/downloads `# [OPTIONAL]`

@@ -18,9 +18,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where nzbhydra2 should store config data.
-      - ${BASEDIR:-/volume1/docker}/nzbhydra2/config:/config
+      - ${BASEDIR:-/srv/lsio}/nzbhydra2/config:/config
       # NZB download folder. [OPTIONAL]
-      - ${BASEDIR:-/volume1/docker}/nzbhydra2/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/nzbhydra2/downloads:/downloads
     ports:
       # WebUI
       - 5076:5076

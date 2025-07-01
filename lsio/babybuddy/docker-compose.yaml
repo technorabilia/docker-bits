@@ -18,7 +18,7 @@ services:
       - CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,https://babybuddy.domain.com
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/babybuddy/config:/config
+      - ${BASEDIR:-/srv/lsio}/babybuddy/config:/config
     ports:
       # the port for the web ui
       - 8000:8000

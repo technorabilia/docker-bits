@@ -13,6 +13,6 @@ docker run -d \
   -e SEC_KEY= `# Key used to secure communication.` \
   -p 8080:8080 `# WebUI` \
   -p 50000:50000 `# HABridge communication port.` \
-  -v ${BASEDIR:-/volume1/docker}/habridge/config:/config `# Where HABridge stores config files and data.` \
+  -v ${BASEDIR:-/srv/lsio}/habridge/config:/config `# Where HABridge stores config files and data.` \
   --restart unless-stopped \
   lscr.io/linuxserver/habridge:latest

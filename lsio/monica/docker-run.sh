@@ -18,6 +18,6 @@ docker run -d \
   -e APP_DISABLE_SIGNUP=true `# Set to `false` to enable new account sign-ups. [OPTIONAL]` \
   -p 80:80 `# http gui` \
   -p 443:443 `# https gui` \
-  -v ${BASEDIR:-/volume1/docker}/monica/config:/config `# Persistent config files.` \
+  -v ${BASEDIR:-/srv/lsio}/monica/config:/config `# Persistent config files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/monica:latest

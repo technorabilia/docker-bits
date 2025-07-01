@@ -54,7 +54,7 @@ services:
       - SITE_LOGO_URL=
     volumes:
       # Persistent config files.
-      - ${BASEDIR:-/volume1/docker}/healthchecks/config:/config
+      - ${BASEDIR:-/srv/lsio}/healthchecks/config:/config
     ports:
       # Healthchecks Web UI
       - 8000:8000

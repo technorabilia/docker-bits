@@ -16,9 +16,9 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/pyload-ng/config:/config
+      - ${BASEDIR:-/srv/lsio}/pyload-ng/config:/config
       # Destination of pyLoad downloads
-      - ${BASEDIR:-/volume1/docker}/pyload-ng/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/pyload-ng/downloads:/downloads
     ports:
       # Allows HTTP access to the application
       - 8000:8000

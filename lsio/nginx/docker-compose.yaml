@@ -19,7 +19,7 @@ services:
       - NGINX_AUTORELOAD_WATCHLIST=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/nginx/config:/config
+      - ${BASEDIR:-/srv/lsio}/nginx/config:/config
     ports:
       # http
       - 80:80

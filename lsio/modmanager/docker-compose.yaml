@@ -13,7 +13,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Configuration files.
-      - ${BASEDIR:-/volume1/docker}/modmanager/config:/config
+      - ${BASEDIR:-/srv/lsio}/modmanager/config:/config
     ports:
       # Application WebUI
       - 80:80

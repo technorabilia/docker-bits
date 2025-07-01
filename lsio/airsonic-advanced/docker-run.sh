@@ -13,11 +13,11 @@ docker run -d \
   -e CONTEXT_PATH= `# For setting url-base in reverse proxy setups. [OPTIONAL]` \
   -e JAVA_OPTS= `# For passing additional java options. [OPTIONAL]` \
   -p 4040:4040 `# WebUI` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/config:/config `# Configuration file location.` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/music:/music `# Location of music.` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/playlists:/playlists `# Location for playlists to be saved to.` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/podcasts:/podcasts `# Location of podcasts.` \
-  -v ${BASEDIR:-/volume1/docker}/airsonic-advanced/media:/media `# Location of other media. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/airsonic-advanced/config:/config `# Configuration file location.` \
+  -v ${BASEDIR:-/srv/lsio}/airsonic-advanced/music:/music `# Location of music.` \
+  -v ${BASEDIR:-/srv/lsio}/airsonic-advanced/playlists:/playlists `# Location for playlists to be saved to.` \
+  -v ${BASEDIR:-/srv/lsio}/airsonic-advanced/podcasts:/podcasts `# Location of podcasts.` \
+  -v ${BASEDIR:-/srv/lsio}/airsonic-advanced/media:/media `# Location of other media. [OPTIONAL]` \
   --device /dev/snd:/dev/snd `# Only needed to pass your host sound device to Airsonic's Java jukebox player. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/airsonic-advanced:latest

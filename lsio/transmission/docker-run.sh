@@ -19,8 +19,8 @@ docker run -d \
   -p 9091:9091 `# WebUI` \
   -p 51413:51413 `# Torrent Port TCP` \
   -p 51413:51413/udp `# Torrent Port UDP` \
-  -v ${BASEDIR:-/volume1/docker}/transmission/config:/config `# Where transmission should store config files and logs.` \
-  -v ${BASEDIR:-/volume1/docker}/transmission/downloads:/downloads `# Local path for downloads. [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/transmission/watch:/watch `# Watch folder for torrent files. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/transmission/config:/config `# Where transmission should store config files and logs.` \
+  -v ${BASEDIR:-/srv/lsio}/transmission/downloads:/downloads `# Local path for downloads. [OPTIONAL]` \
+  -v ${BASEDIR:-/srv/lsio}/transmission/watch:/watch `# Watch folder for torrent files. [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/transmission:latest

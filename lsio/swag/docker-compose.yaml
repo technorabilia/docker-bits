@@ -46,7 +46,7 @@ services:
       - SWAG_AUTORELOAD_WATCHLIST=
     volumes:
       # Persistent config files
-      - ${BASEDIR:-/volume1/docker}/swag/config:/config
+      - ${BASEDIR:-/srv/lsio}/swag/config:/config
     ports:
       # HTTPS port
       - 443:443

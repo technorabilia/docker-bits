@@ -15,7 +15,7 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/volume1/docker}/rpcs3/config:/config
+      - ${BASEDIR:-/srv/lsio}/rpcs3/config:/config
     ports:
       # HTTP RPCS3 desktop gui must be proxied.
       - 3000:3000

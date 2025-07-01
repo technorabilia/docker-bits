@@ -18,8 +18,8 @@ docker run -d \
   -p 8920:8920 `# Optional - Https webUI (you need to set up your own certificate). [OPTIONAL]` \
   -p 7359:7359/udp `# Optional - Allows clients to discover Jellyfin on the local network. [OPTIONAL]` \
   -p 1900:1900/udp `# Optional - Service discovery used by DNLA and clients. [OPTIONAL]` \
-  -v ${BASEDIR:-/volume1/docker}/jellyfin/config:/config `# Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*` \
-  -v ${BASEDIR:-/volume1/docker}/jellyfin/data/tvshows:/data/tvshows `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
-  -v ${BASEDIR:-/volume1/docker}/jellyfin/data/movies:/data/movies `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
+  -v ${BASEDIR:-/srv/lsio}/jellyfin/config:/config `# Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*` \
+  -v ${BASEDIR:-/srv/lsio}/jellyfin/data/tvshows:/data/tvshows `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
+  -v ${BASEDIR:-/srv/lsio}/jellyfin/data/movies:/data/movies `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
   --restart unless-stopped \
   lscr.io/linuxserver/jellyfin:latest

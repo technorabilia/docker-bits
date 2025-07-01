@@ -18,11 +18,11 @@ services:
       - TZ=${TZ:-Etc/UTC}
     volumes:
       # Where resilio-sync should store its config file.
-      - ${BASEDIR:-/volume1/docker}/resilio-sync/config:/config
+      - ${BASEDIR:-/srv/lsio}/resilio-sync/config:/config
       # Folder for downloads/cache.
-      - ${BASEDIR:-/volume1/docker}/resilio-sync/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/resilio-sync/downloads:/downloads
       # Sync folders root.
-      - ${BASEDIR:-/volume1/docker}/resilio-sync/sync:/sync
+      - ${BASEDIR:-/srv/lsio}/resilio-sync/sync:/sync
     ports:
       # WebUI
       - 8888:8888
