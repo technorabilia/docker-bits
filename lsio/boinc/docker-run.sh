@@ -11,7 +11,7 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PASSWORD= `# Optionally set a password for the gui. [OPTIONAL]` \
-  -p 8080:8080 `# Boinc desktop gui.` \
+  -p 8080:8080 `# Boinc desktop gui HTTP (only to be used by reverse proxies and not direct access).` \
   -p 8181:8181 `# Boinc desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/boinc/config:/config `# Where BOINC should store its database and config.` \
   --device /dev/dri:/dev/dri `# Only needed if you want to use your Intel GPU (vaapi). [OPTIONAL]` \

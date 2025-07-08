@@ -22,7 +22,7 @@ services:
       # Where BOINC should store its database and config.
       - ${BASEDIR:-/srv/lsio}/boinc/config:/config
     ports:
-      # Boinc desktop gui.
+      # Boinc desktop gui HTTP (only to be used by reverse proxies and not direct access).
       - 8080:8080
       # Boinc desktop gui HTTPS.
       - 8181:8181
