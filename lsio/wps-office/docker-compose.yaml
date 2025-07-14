@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores program settings and documents
       - ${BASEDIR:-/srv/lsio}/wps-office/config:/config
     ports:
-      # WPS Office desktop gui.
+      # WPS Office desktop gui, must be proxied.
       - 3000:3000
       # WPS Office desktop gui HTTPS.
       - 3001:3001
