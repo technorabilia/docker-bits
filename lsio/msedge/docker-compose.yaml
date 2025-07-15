@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/msedge/config:/config
     ports:
-      # Edge desktop gui.
+      # HTTP Edge desktop gui, needs to be proxied.
       - 3000:3000
       # HTTPS Edge desktop gui.
       - 3001:3001

@@ -1,11 +1,13 @@
-# [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium)
-# is Google Chromium, sans dependency on Google web services.
+# [DOGWALK](https://studio.blender.org/projects/dogwalk/) is Blender Studio's
+# long awaited second game project, focused on creating a bite-sized interactive
+# storytelling playground. Play as a big adorable dog and explore the winter
+# woods with a little kid.
 
 ---
 services:
-  ungoogled-chromium:
-    image: lscr.io/linuxserver/ungoogled-chromium:latest
-    container_name: ungoogled-chromium
+  dogwalk:
+    image: lscr.io/linuxserver/dogwalk:latest
+    container_name: dogwalk
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1000}
@@ -13,15 +15,13 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
-      # Specify one or multiple Chromium CLI flags, this string will be passed to the application in full. [OPTIONAL]
-      - CHROME_CLI=https://www.linuxserver.io/
     volumes:
       # Users home directory in the container, stores local files and settings
-      - ${BASEDIR:-/srv/lsio}/ungoogled-chromium/config:/config
+      - ${BASEDIR:-/srv/lsio}/dogwalk/config:/config
     ports:
-      # HTTP Ungoogled Chromium desktop gui, must be proxied.
+      # HTTP DOGWALK desktop gui, must be proxied.
       - 3000:3000
-      # HTTPS Ungoogled Chromium desktop gui.
+      # HTTPS DOGWALK desktop gui.
       - 3001:3001
     shm_size: "1gb"
     restart: unless-stopped
