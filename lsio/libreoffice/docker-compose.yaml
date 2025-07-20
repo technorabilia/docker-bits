@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores program settings and documents
       - ${BASEDIR:-/srv/lsio}/libreoffice/config:/config
     ports:
-      # LibreOffice desktop gui.
+      # LibreOffice desktop gui HTTP, must be proxied.
       - 3000:3000
       # LibreOffice desktop gui HTTPS.
       - 3001:3001

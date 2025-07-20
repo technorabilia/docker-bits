@@ -18,7 +18,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/krita/config:/config
     ports:
-      # Krita desktop gui.
+      # HTTP Krita desktop gui, must be proxied.
       - 3000:3000
       # Krita desktop gui HTTPS.
       - 3001:3001
