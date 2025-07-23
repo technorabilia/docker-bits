@@ -53,5 +53,5 @@ services:
       # HTTP port (required for HTTP validation and HTTP -> HTTPS redirect) [OPTIONAL]
       - 80:80
       # QUIC (HTTP/3) port. Must be enabled in the default and proxy confs. [OPTIONAL]
-      - 443/udp:443/udp
+      - 443:443/udp
     restart: unless-stopped

@@ -26,7 +26,7 @@ docker run -d \
   -e SWAG_AUTORELOAD_WATCHLIST= `# A [pipe](https://en.wikipedia.org/wiki/Vertical_bar)-separated list of additional folders for auto reload to watch in addition to `/config/nginx` [OPTIONAL]` \
   -p 443:443 `# HTTPS port` \
   -p 80:80 `# HTTP port (required for HTTP validation and HTTP -> HTTPS redirect) [OPTIONAL]` \
-  -p 443/udp:443/udp `# QUIC (HTTP/3) port. Must be enabled in the default and proxy confs. [OPTIONAL]` \
+  -p 443:443/udp `# QUIC (HTTP/3) port. Must be enabled in the default and proxy confs. [OPTIONAL]` \
   -v ${BASEDIR:-/srv/lsio}/swag/config:/config `# Persistent config files` \
   --restart unless-stopped \
   lscr.io/linuxserver/swag:latest
