@@ -17,7 +17,7 @@ services:
       # Users home directory in the container, stores settings and downloaded metadata for music.
       - ${BASEDIR:-/srv/lsio}/lollypop/config:/config
     ports:
-      # Lollypop desktop gui.
+      # Lollypop desktop gui HTTP, must be proxied.
       - 3000:3000
       # Lollypop desktop gui HTTPS.
       - 3001:3001

@@ -20,7 +20,7 @@ services:
       # Host data directories, mount as many as needed.
       - ${BASEDIR:-/srv/lsio}/doublecommander/data:/data
     ports:
-      # Double Commander desktop gui.
+      # Double Commander desktop gui HTTP, must be proxied.
       - 3000:3000
       # Double Commander desktop gui HTTPS.
       - 3001:3001

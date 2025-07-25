@@ -17,7 +17,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/rustdesk/config:/config
     ports:
-      # RustDesk desktop gui.
+      # HTTP RustDesk desktop gui, must be proxied.
       - 3000:3000
       # HTTPS Rustdesk desktop gui.
       - 3001:3001

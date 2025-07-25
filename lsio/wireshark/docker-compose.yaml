@@ -27,7 +27,7 @@ services:
     ports:
       # Application WebUI
       - 80:80
-      # WireShark desktop gui, only use this if you are not using host mode and sniffing Docker network traffic. [OPTIONAL]
+      # WireShark desktop gui HTTPS, must be proxied. [OPTIONAL]
       - 3000:3000
       # WireShark desktop gui HTTPS, only use this if you are not using host mode and sniffing Docker network traffic. [OPTIONAL]
       - 3001:3001

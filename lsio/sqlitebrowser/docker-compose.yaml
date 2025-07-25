@@ -18,7 +18,7 @@ services:
       # Users home directory in the container, stores program settings and potentially dump files.
       - ${BASEDIR:-/srv/lsio}/sqlitebrowser/config:/config
     ports:
-      # Sqlitebrowser desktop gui.
+      # Sqlitebrowser desktop gui HTTP, must be proxied.
       - 3000:3000
       # Sqlitebrowser desktop gui HTTPS.
       - 3001:3001

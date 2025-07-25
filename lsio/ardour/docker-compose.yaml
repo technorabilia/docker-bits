@@ -20,7 +20,7 @@ services:
       # Users home directory in the container, stores data and application config files.
       - ${BASEDIR:-/srv/lsio}/ardour/config:/config
     ports:
-      # Ardour desktop gui [OPTIONAL]
+      # Ardour desktop gui HTTP, must be proxied [OPTIONAL]
       - 3000:3000
       # Ardour desktop gui HTTPS [OPTIONAL]
       - 3001:3001

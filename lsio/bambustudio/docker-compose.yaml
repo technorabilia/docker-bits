@@ -21,7 +21,7 @@ services:
       # Users home directory in the container, stores program settings and files.
       - ${BASEDIR:-/srv/lsio}/bambustudio/config:/config
     ports:
-      # Bambu Studio desktop gui.
+      # Bambu Studio desktop gui HTTP, must be proxied.
       - 3000:3000
       # Bambu Studio desktop gui HTTPS.
       - 3001:3001

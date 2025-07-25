@@ -21,7 +21,7 @@ services:
       # Users home directory in the container, stores program settings.
       - ${BASEDIR:-/srv/lsio}/webcord/config:/config
     ports:
-      # WebCord desktop gui.
+      # WebCord desktop gui HTTP, must be proxied.
       - 3000:3000
       # WebCord desktop gui HTTPS.
       - 3001:3001

@@ -17,7 +17,7 @@ services:
       # Where Shotcut should store its config.
       - ${BASEDIR:-/srv/lsio}/shotcut/config:/config
     ports:
-      # Shotcut desktop gui.
+      # Shotcut desktop gui HTTP, must be proxied.
       - 3000:3000
       # Shotcut desktop gui HTTPS.
       - 3001:3001

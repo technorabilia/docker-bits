@@ -18,7 +18,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/gitqlient/config:/config
     ports:
-      # GitQlient desktop gui.
+      # HTTP GitQlient desktop gui, must be proxied.
       - 3000:3000
       # HTTPS GitQlient desktop gui.
       - 3001:3001

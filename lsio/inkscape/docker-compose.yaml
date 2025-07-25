@@ -17,7 +17,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/inkscape/config:/config
     ports:
-      # Inkscape desktop gui.
+      # Inkscape desktop gui HTTP, must be proxied.
       - 3000:3000
       # Inkscape desktop gui HTTPS.
       - 3001:3001

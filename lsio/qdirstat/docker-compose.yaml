@@ -20,7 +20,7 @@ services:
       # Data you want to analyze disk usage information of.
       - ${BASEDIR:-/srv/lsio}/qdirstat/data:/data
     ports:
-      # QdirStat desktop gui.
+      # QdirStat desktop gui HTTP, must be proxied.
       - 3000:3000
       # QdirStat desktop gui HTTPS.
       - 3001:3001

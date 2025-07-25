@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/github-desktop/config:/config
     ports:
-      # Github Desktop gui.
+      # HTTP Github Desktop gui, must be proxied.
       - 3000:3000
       # HTTPS Github Desktop gui.
       - 3001:3001

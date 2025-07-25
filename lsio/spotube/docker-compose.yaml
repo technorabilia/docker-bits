@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/spotube/config:/config
     ports:
-      # Spotube desktop gui.
+      # HTTP Spotube desktop gui, must be proxied.
       - 3000:3000
       # HTTPS Spotube desktop gui.
       - 3001:3001

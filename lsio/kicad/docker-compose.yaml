@@ -17,7 +17,7 @@ services:
       # Users home directory in the container, stores program settings and files.
       - ${BASEDIR:-/srv/lsio}/kicad/config:/config
     ports:
-      # KiCad desktop gui.
+      # KiCad desktop gui HTTP, must be proxied.
       - 3000:3000
       # KiCad desktop gui HTTPS.
       - 3001:3001

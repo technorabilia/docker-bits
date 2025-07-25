@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores database.
       - ${BASEDIR:-/srv/lsio}/digikam/config:/config
     ports:
-      # digiKam desktop gui [OPTIONAL]
+      # digiKam desktop gui HTTP, must be proxied [OPTIONAL]
       - 3000:3000
       # digiKam desktop gui HTTPS [OPTIONAL]
       - 3001:3001

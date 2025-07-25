@@ -20,7 +20,7 @@ services:
       # Users home directory in the container, stores program settings and images
       - ${BASEDIR:-/srv/lsio}/darktable/config:/config
     ports:
-      # Darktable desktop gui.
+      # Darktable desktop gui HTTP, must be proxied.
       - 3000:3000
       # Darktable desktop gui HTTPS.
       - 3001:3001
