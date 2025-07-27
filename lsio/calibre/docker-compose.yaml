@@ -24,10 +24,10 @@ services:
       # Where calibre should store its database and library.
       - ${BASEDIR:-/srv/lsio}/calibre/config:/config
     ports:
-      # Calibre desktop gui.
+      # Calibre desktop gui (only for reverse proxy access).
       - 8080:8080
       # Calibre desktop gui HTTPS.
       - 8181:8181
-      # Calibre webserver gui.
+      # Calibre webserver gui (needs to be enabled in gui settings first).
       - 8081:8081
     restart: unless-stopped

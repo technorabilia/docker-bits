@@ -19,7 +19,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/gimp/config:/config
     ports:
-      # GIMP desktop gui.
+      # GIMP desktop gui HTTP, must be proxied.
       - 3000:3000
       # GIMP desktop gui HTTPS.
       - 3001:3001

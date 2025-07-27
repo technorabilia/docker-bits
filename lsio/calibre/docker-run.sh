@@ -12,9 +12,9 @@ docker run -d \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PASSWORD= `# Optionally set a password for the gui. [OPTIONAL]` \
   -e CLI_ARGS= `# Optionally pass cli start arguments to calibre. [OPTIONAL]` \
-  -p 8080:8080 `# Calibre desktop gui.` \
+  -p 8080:8080 `# Calibre desktop gui (only for reverse proxy access).` \
   -p 8181:8181 `# Calibre desktop gui HTTPS.` \
-  -p 8081:8081 `# Calibre webserver gui.` \
+  -p 8081:8081 `# Calibre webserver gui (needs to be enabled in gui settings first).` \
   -v ${BASEDIR:-/srv/lsio}/calibre/config:/config `# Where calibre should store its database and library.` \
   --restart unless-stopped \
   lscr.io/linuxserver/calibre:latest
