@@ -19,7 +19,7 @@ services:
       # Where yaak should store its config and data.
       - ${BASEDIR:-/srv/lsio}/yaak/config:/config
     ports:
-      # Yaak desktop gui.
+      # Yaak desktop gui (for reverse proxy only).
       - 3000:3000
       # Yaak desktop gui HTTPS.
       - 3001:3001

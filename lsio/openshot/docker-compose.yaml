@@ -18,7 +18,7 @@ services:
       # User's home directory in the container, stores program settings and files.
       - ${BASEDIR:-/srv/lsio}/openshot/config:/config
     ports:
-      # OpenShot desktop gui.
+      # OpenShot desktop gui (for reverse proxy only).
       - 3000:3000
       # OpenShot desktop gui HTTPS.
       - 3001:3001
