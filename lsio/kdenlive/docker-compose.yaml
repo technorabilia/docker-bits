@@ -14,18 +14,13 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
-      # Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]
-      - SUBFOLDER=/
     volumes:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/kdenlive/config:/config
     ports:
-      # Kdenlive desktop gui
+      # Kdenlive desktop gui HTTP, must be proxied.
       - 3000:3000
-      # Kdenlive desktop gui HTTPS
+      # Kdenlive desktop gui HTTPS.
       - 3001:3001
-    devices:
-      # Add this for hardware acceleration (Linux hosts only) [OPTIONAL]
-      - /dev/dri:/dev/dri
     shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped
