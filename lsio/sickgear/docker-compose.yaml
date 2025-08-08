@@ -16,7 +16,7 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
     volumes:
-      # Persistent configuration files.
+      # Persistent config files.
       - ${BASEDIR:-/srv/lsio}/sickgear/config:/config
       # where you store your tv shows
       - ${BASEDIR:-/srv/lsio}/sickgear/tv:/tv

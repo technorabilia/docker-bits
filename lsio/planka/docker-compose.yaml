@@ -17,14 +17,6 @@ services:
       - BASE_URL=https://planka.example.com
       # Postgres database URL. Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding).
       - DATABASE_URL=postgresql://user:password@planka-db:5432/planka
-      # Email address for default user.
-      - DEFAULT_ADMIN_EMAIL=demo@demo.demo
-      # Username for default user.
-      - DEFAULT_ADMIN_USERNAME=demo
-      # Password for default user.
-      - DEFAULT_ADMIN_PASSWORD=demo
-      # Display name for default user.
-      - DEFAULT_ADMIN_NAME=Demo User
       # Session encryption key, recommended 32-64 character alphanumeric.
       - SECRET_KEY=notasecretkey
       # Set to `1` to trust upstream proxies if reverse proxying.
