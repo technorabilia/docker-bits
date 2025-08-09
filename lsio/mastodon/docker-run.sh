@@ -21,9 +21,9 @@ docker run -d \
   -e ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY= `# Deterministic key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files).` \
   -e ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT= `# Derivation salt for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files).` \
   -e SECRET_KEY_BASE= `# Browser session secret. Changing it will break all active browser sessions.` \
-  -e OTP_SECRET= `# MFA secret. Changing it will break two-factor authentication.` \
-  -e VAPID_PRIVATE_KEY= `# Push notification private key. Changing it will break push notifications.` \
-  -e VAPID_PUBLIC_KEY= `# Push notification public key. Changing it will break push notifications.` \
+  -e OTP_SECRET= `# MFA secret. Changing it after initial setup will break two-factor authentication.` \
+  -e VAPID_PRIVATE_KEY= `# Push notification private key. Changing it after initial setup will break push notifications.` \
+  -e VAPID_PUBLIC_KEY= `# Push notification public key. Changing it after initial setup will break push notifications.` \
   -e SMTP_SERVER=mail.example.com `# SMTP server for email notifications` \
   -e SMTP_PORT=25 `# SMTP server port` \
   -e SMTP_LOGIN= `# SMTP username` \

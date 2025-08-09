@@ -22,7 +22,7 @@ services:
       # Users home directory in the container, stores local files and settings
       - ${BASEDIR:-/srv/lsio}/firefox/config:/config
     ports:
-      # Firefox desktop gui.
+      # Firefox desktop gui HTTP, must be proxied.
       - 3000:3000
       # Firefox desktop gui HTTPS.
       - 3001:3001
