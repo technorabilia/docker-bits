@@ -26,6 +26,8 @@ services:
       - PIPER_SPEAKER=0
       # Number of Piper processes to run simultaneously. [OPTIONAL]
       - PIPER_PROCS=1
+      # Setting to `true`, or any other value, will enable support for streaming audio on sentence boundaries. [OPTIONAL]
+      - STREAMING=
     volumes:
       # Local path for piper config files.
       - ${BASEDIR:-/srv/lsio}/piper/config:/config
