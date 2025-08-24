@@ -17,6 +17,8 @@ services:
       - TZ=${TZ:-Etc/UTC}
       # Whisper model that will be used for transcription. From [here](https://github.com/SYSTRAN/faster-whisper/blob/master/faster_whisper/utils.py#L12-L31), all with `-int8` compressed variants
       - WHISPER_MODEL=tiny-int8
+      # If set to `true`, or any other value, the container will not attempt to download models from HuggingFace and will only use locally-provided models. [OPTIONAL]
+      - LOCAL_ONLY=
       # Number of candidates to consider simultaneously during transcription. [OPTIONAL]
       - WHISPER_BEAM=1
       # Language that you will speak to the add-on. [OPTIONAL]
