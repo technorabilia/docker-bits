@@ -1,0 +1,28 @@
+# [ScummVM](https://www.scummvm.org/) is a program which allows you to run
+# certain classic graphical adventure and role-playing games, provided you
+# already have their data files. The clever part about this: ScummVM just
+# replaces the executables shipped with the games, allowing you to play them on
+# systems for which they were never designed! ScummVM is a complete rewrite of
+# these games' executables and is not an emulator.
+
+---
+services:
+  scummvm:
+    image: lscr.io/linuxserver/scummvm:latest
+    container_name: scummvm
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/srv/lsio}/scummvm/config:/config
+    ports:
+      # HTTP ScummVM desktop gui must be proxied.
+      - 3000:3000
+      # HTTPS ScummVM desktop gui.
+      - 3001:3001
+    restart: unless-stopped
