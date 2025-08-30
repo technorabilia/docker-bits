@@ -9,6 +9,7 @@ docker run -d \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
   -e PIPER_VOICE=en_US-lessac-medium `# The [Piper voice](https://huggingface.co/rhasspy/piper-voices/tree/main) to use, in the format `<language>-<name>-<quality>`` \
+  -e LOCAL_ONLY= `# If set to `true`, or any other value, the container will not attempt to download models from HuggingFace and will only use locally-provided models. [OPTIONAL]` \
   -e PIPER_LENGTH=1.0 `# Voice speaking rate, 1.0 is default with < 1.0 being faster and > 1.0 being slower. [OPTIONAL]` \
   -e PIPER_NOISE=0.667 `# Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio. [OPTIONAL]` \
   -e PIPER_NOISEW=0.333 `# Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses. [OPTIONAL]` \
