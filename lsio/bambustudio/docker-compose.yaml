@@ -25,4 +25,5 @@ services:
       - 3000:3000
       # Bambu Studio desktop gui HTTPS.
       - 3001:3001
+    shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped
