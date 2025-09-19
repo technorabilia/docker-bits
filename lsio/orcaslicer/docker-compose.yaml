@@ -20,8 +20,9 @@ services:
       # Users home directory in the container, stores program settings and files.
       - ${BASEDIR:-/srv/lsio}/orcaslicer/config:/config
     ports:
-      # Orca Slicer desktop gui.
+      # Orca Slicer desktop gui HTTP, must be proxied.
       - 3000:3000
       # Orca Slicer desktop gui HTTPS.
       - 3001:3001
+    shm_size: "1gb" # [OPTIONAL]
     restart: unless-stopped
