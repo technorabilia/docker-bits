@@ -1,0 +1,27 @@
+# [Bitcoin Knots](https://bitcoinknots.org/) can be used as a desktop client for
+# regular payments or as a full node server utility for merchants and other
+# payment services.
+
+---
+services:
+  bitcoin-knots:
+    image: lscr.io/linuxserver/bitcoin-knots:latest
+    container_name: bitcoin-knots
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores all data.
+      - ${BASEDIR:-/srv/lsio}/bitcoin-knots/config:/config
+    ports:
+      # Bitcoin Knots desktop gui HTTP, must be proxied.
+      - 3000:3000
+      # Bitcoin Knots desktop gui HTTPS.
+      - 3001:3001
+      # Bitcoin Knots node port.
+      - 8333:8333
+    restart: unless-stopped
