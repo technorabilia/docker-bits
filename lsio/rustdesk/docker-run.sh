@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# HTTP RustDesk desktop gui, must be proxied.` \
   -p 3001:3001 `# HTTPS Rustdesk desktop gui.` \
   -v ${BASEDIR:-/srv/lsio}/rustdesk/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/rustdesk:latest

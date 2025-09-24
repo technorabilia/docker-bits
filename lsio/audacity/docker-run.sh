@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# Audacity desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Audacity desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/audacity/config:/config `# Users home directory in the container, stores program settings and images` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/audacity:latest

@@ -12,5 +12,6 @@ docker run -d \
   -p 3001:3001 `# Double Commander desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/doublecommander/config:/config `# Users home directory in the container, stores program settings.` \
   -v ${BASEDIR:-/srv/lsio}/doublecommander/data:/data `# Host data directories, mount as many as needed.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/doublecommander:latest

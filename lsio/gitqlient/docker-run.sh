@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# HTTP GitQlient desktop gui, must be proxied.` \
   -p 3001:3001 `# HTTPS GitQlient desktop gui.` \
   -v ${BASEDIR:-/srv/lsio}/gitqlient/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/gitqlient:latest

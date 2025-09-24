@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# Inkscape desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Inkscape desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/inkscape/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/inkscape:latest

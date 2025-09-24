@@ -13,5 +13,6 @@ docker run -d \
   -p 3000:3000 `# Remmina desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Remmina desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/remmina/config:/config `# Users home directory in the container, stores program settings.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/remmina:latest

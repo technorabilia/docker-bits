@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# HTTP Krita desktop gui, must be proxied.` \
   -p 3001:3001 `# Krita desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/krita/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/krita:latest

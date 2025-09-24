@@ -14,14 +14,13 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
-      # Specify a subfolder to use with reverse proxies, IE `/subfolder/` [OPTIONAL]
-      - SUBFOLDER=/
     volumes:
       # Users home directory in the container, stores data and application config files.
       - ${BASEDIR:-/srv/lsio}/ardour/config:/config
     ports:
-      # Ardour desktop gui HTTP, must be proxied [OPTIONAL]
+      # Ardour desktop gui HTTP, must be proxied.
       - 3000:3000
-      # Ardour desktop gui HTTPS [OPTIONAL]
+      # Ardour desktop gui HTTPS.
       - 3001:3001
+    shm_size: "1gb"
     restart: unless-stopped

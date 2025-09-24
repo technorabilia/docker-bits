@@ -18,5 +18,6 @@ docker run -d \
   -p 3000:3000 `# WireShark desktop gui HTTPS, must be proxied. [OPTIONAL]` \
   -p 3001:3001 `# WireShark desktop gui HTTPS, only use this if you are not using host mode and sniffing Docker network traffic. [OPTIONAL]` \
   -v ${BASEDIR:-/srv/lsio}/wireshark/config:/config `# Users home directory in the container, stores program settings and potentially dump files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/wireshark:latest

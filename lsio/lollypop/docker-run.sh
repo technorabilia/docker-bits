@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# Lollypop desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Lollypop desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/lollypop/config:/config `# Users home directory in the container, stores settings and downloaded metadata for music.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/lollypop:latest

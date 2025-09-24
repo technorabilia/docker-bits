@@ -12,7 +12,6 @@ docker run -d \
   -p 3000:3000 `# Obsidian desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Obsidian desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/obsidian/config:/config `# Users home directory in the container, stores program settings and files.` \
-  --device /dev/dri:/dev/dri `# Add this for GL support (Linux hosts only) [OPTIONAL]` \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/obsidian:latest

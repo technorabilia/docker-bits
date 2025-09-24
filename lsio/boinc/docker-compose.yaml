@@ -29,4 +29,5 @@ services:
     devices:
       # Only needed if you want to use your Intel GPU (vaapi). [OPTIONAL]
       - /dev/dri:/dev/dri
+    shm_size: "1gb"
     restart: unless-stopped

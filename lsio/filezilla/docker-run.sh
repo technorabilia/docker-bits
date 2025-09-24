@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# FileZilla desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# FileZilla desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/filezilla/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/filezilla:latest

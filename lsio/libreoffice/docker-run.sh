@@ -12,5 +12,6 @@ docker run -d \
   -p 3000:3000 `# LibreOffice desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# LibreOffice desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/libreoffice/config:/config `# Users home directory in the container, stores program settings and documents` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/libreoffice:latest

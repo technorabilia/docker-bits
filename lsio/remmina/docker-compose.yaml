@@ -24,4 +24,5 @@ services:
       - 3000:3000
       # Remmina desktop gui HTTPS.
       - 3001:3001
+    shm_size: "1gb"
     restart: unless-stopped

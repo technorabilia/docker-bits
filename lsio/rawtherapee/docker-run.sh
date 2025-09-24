@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# RawTherapee desktop gui (only for reverse proxy access).` \
   -p 3001:3001 `# RawTherapee desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/rawtherapee/config:/config `# User's home directory in the container, stores program settings and files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/rawtherapee:latest

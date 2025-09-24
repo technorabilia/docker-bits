@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# Cura desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Cura desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/cura/config:/config `# Users home directory in the container, stores program settings and files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/cura:latest

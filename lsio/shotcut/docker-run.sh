@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# Shotcut desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Shotcut desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/shotcut/config:/config `# Where Shotcut should store its config.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/shotcut:latest

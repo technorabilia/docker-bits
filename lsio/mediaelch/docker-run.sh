@@ -12,5 +12,6 @@ docker run -d \
   -p 3000:3000 `# MediaElch desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# MediaElch desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/mediaelch/config:/config `# Users home directory in the container, stores program settings and files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/mediaelch:latest

@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# KeePassXC desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# KeePassXC desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/keepassxc/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/keepassxc:latest

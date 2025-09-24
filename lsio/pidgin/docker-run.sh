@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# Pidgin desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Pidgin desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/pidgin/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/pidgin:latest

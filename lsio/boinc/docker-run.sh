@@ -15,5 +15,6 @@ docker run -d \
   -p 8181:8181 `# Boinc desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/boinc/config:/config `# Where BOINC should store its database and config.` \
   --device /dev/dri:/dev/dri `# Only needed if you want to use your Intel GPU (vaapi). [OPTIONAL]` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/boinc:latest

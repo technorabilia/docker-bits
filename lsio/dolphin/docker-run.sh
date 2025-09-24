@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# Dolphin desktop gui HTTP must be proxied.` \
   -p 3001:3001 `# Dolphin desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/dolphin/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/dolphin:latest

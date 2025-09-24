@@ -12,5 +12,6 @@ docker run -d \
   -p 3001:3001 `# QdirStat desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/qdirstat/config:/config `# Users home directory in the container, stores qdirstat settings and scans.` \
   -v ${BASEDIR:-/srv/lsio}/qdirstat/data:/data `# Data you want to analyze disk usage information of.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/qdirstat:latest

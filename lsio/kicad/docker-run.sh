@@ -10,5 +10,6 @@ docker run -d \
   -p 3000:3000 `# KiCad desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# KiCad desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/kicad/config:/config `# Users home directory in the container, stores program settings and files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/kicad:latest

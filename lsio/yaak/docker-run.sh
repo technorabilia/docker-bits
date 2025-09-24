@@ -12,5 +12,6 @@ docker run -d \
   -p 3000:3000 `# Yaak desktop gui (for reverse proxy only).` \
   -p 3001:3001 `# Yaak desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/yaak/config:/config `# Where yaak should store its config and data.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/yaak:latest

@@ -12,5 +12,6 @@ docker run -d \
   -p 3000:3000 `# Calligra desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Calligra desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/calligra/config:/config `# Users home directory in the container, stores local files and settings` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/calligra:latest

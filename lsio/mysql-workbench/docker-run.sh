@@ -13,5 +13,6 @@ docker run -d \
   -p 3000:3000 `# Mysql Workbench desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Mysql Workbench desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/mysql-workbench/config:/config `# Users home directory in the container, stores program settings.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/mysql-workbench:latest

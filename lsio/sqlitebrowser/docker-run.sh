@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# Sqlitebrowser desktop gui HTTP, must be proxied.` \
   -p 3001:3001 `# Sqlitebrowser desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/sqlitebrowser/config:/config `# Users home directory in the container, stores program settings and potentially dump files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/sqlitebrowser:latest
