@@ -11,5 +11,6 @@ docker run -d \
   -p 3000:3000 `# OpenShot desktop gui (for reverse proxy only).` \
   -p 3001:3001 `# OpenShot desktop gui HTTPS.` \
   -v ${BASEDIR:-/srv/lsio}/openshot/config:/config `# User's home directory in the container, stores program settings and files.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/openshot:latest
