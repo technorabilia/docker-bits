@@ -18,7 +18,7 @@ services:
       - DATABASE_URL=
       # Redis/Valkey database URL in `redis://<hostname>:<port>/<db number>` format.
       - REDIS_URL=
-      # Browser session secret. Changing it will terminate all active browser sessions.
+      # Browser session and database encryption key. If unset a random one will be generated on init, the database is locked to this key.
       - SECRET_KEY_BASE=
     volumes:
       # Persistent storage for application configuration data.
