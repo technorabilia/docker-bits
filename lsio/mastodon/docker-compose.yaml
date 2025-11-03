@@ -88,6 +88,8 @@ services:
       - DB_POOL=5
       # Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*. [OPTIONAL]
       - NO_CHOWN=
+      # If set to `true`, Mastodon’s Ruby processes (web & Sidekiq) will enable the Prometheus instrumentation. [OPTIONAL]
+      - MASTODON_PROMETHEUS_EXPORTER_ENABLED=
     volumes:
       # Contains all relevant configuration files.
       - ${BASEDIR:-/srv/lsio}/mastodon/config:/config
@@ -96,4 +98,6 @@ services:
       - 80:80
       # Port for web frontend
       - 443:443
+      # Port for Prometheus metrics [OPTIONAL]
+      - 9394:9394
     restart: unless-stopped

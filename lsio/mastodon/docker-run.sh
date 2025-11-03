@@ -45,8 +45,10 @@ docker run -d \
   -e SIDEKIQ_THREADS=5 `# The number of threads for sidekiq to use. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]` \
   -e DB_POOL=5 `# The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads). [OPTIONAL]` \
   -e NO_CHOWN= `# Set to `true` to skip chown of /config on init. *READ THE APPLICATION NOTES BEFORE SETTING THIS*. [OPTIONAL]` \
+  -e MASTODON_PROMETHEUS_EXPORTER_ENABLED= `# If set to `true`, Mastodon’s Ruby processes (web & Sidekiq) will enable the Prometheus instrumentation. [OPTIONAL]` \
   -p 80:80 `# Port for web frontend` \
   -p 443:443 `# Port for web frontend` \
+  -p 9394:9394 `# Port for Prometheus metrics [OPTIONAL]` \
   -v ${BASEDIR:-/srv/lsio}/mastodon/config:/config `# Contains all relevant configuration files.` \
   --restart unless-stopped \
   lscr.io/linuxserver/mastodon:latest
