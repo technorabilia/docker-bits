@@ -14,7 +14,6 @@ docker run -d \
   -e PIPER_NOISE=0.667 `# Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio. [OPTIONAL]` \
   -e PIPER_NOISEW=0.333 `# Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses. [OPTIONAL]` \
   -e PIPER_SPEAKER=0 `# Speaker number to use if the voice supports multiple speakers. [OPTIONAL]` \
-  -e PIPER_PROCS=1 `# Number of Piper processes to run simultaneously. [OPTIONAL]` \
   -e STREAMING= `# Setting to `true`, or any other value, will enable support for streaming audio on sentence boundaries. [OPTIONAL]` \
   -p 10200:10200 `# Wyoming connection port.` \
   -v ${BASEDIR:-/srv/lsio}/piper/config:/config `# Local path for piper config files.` \
