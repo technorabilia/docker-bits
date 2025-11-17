@@ -1,0 +1,33 @@
+# [Sealskin](https://github.com/selkies-project/sealskin/) is a self-hosted,
+# client-server platform that enables users to run powerful, containerized
+# desktop applications streamed directly to a web browser. It uses a browser
+# extension to intercept user actions—such as clicking a link or downloading a
+# file and redirects them to a secure, isolated application environment running
+# on a remote server.
+
+---
+services:
+  sealskin:
+    image: lscr.io/linuxserver/sealskin:latest
+    container_name: sealskin
+    network_mode: bridge
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # All configuration files and metadata for the application.
+      - ${BASEDIR:-/srv/lsio}/sealskin/config:/config
+      # All file storage for home directories and ephemeral mounts.
+      - ${BASEDIR:-/srv/lsio}/sealskin/storage:/storage
+      # Docker socket, required to spin up application containers.
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      # API communication port.
+      - 8000:8000
+      # App session port.
+      - 8443:8443
+    restart: unless-stopped
