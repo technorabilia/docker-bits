@@ -1,0 +1,25 @@
+# [Weixin](https://weixin.qq.com/) (WeChat) is an instant messaging, social
+# media, and mobile payment app developed by Tencent.
+
+---
+services:
+  weixin:
+    image: lscr.io/linuxserver/weixin:latest
+    container_name: weixin
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/srv/lsio}/weixin/config:/config
+    ports:
+      # HTTP Weixin desktop gui, must be proxied.
+      - 3000:3000
+      # HTTPS Weixin desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
