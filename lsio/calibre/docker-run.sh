@@ -16,5 +16,6 @@ docker run -d \
   -p 8181:8181 `# Calibre desktop gui HTTPS.` \
   -p 8081:8081 `# Calibre webserver gui (needs to be enabled in gui settings first).` \
   -v ${BASEDIR:-/srv/lsio}/calibre/config:/config `# Where calibre should store its database and library.` \
+  --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/calibre:latest

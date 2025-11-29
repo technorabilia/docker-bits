@@ -30,4 +30,5 @@ services:
       - 8181:8181
       # Calibre webserver gui (needs to be enabled in gui settings first).
       - 8081:8081
+    shm_size: "1gb"
     restart: unless-stopped
