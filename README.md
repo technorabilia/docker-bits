@@ -100,9 +100,9 @@ services:
       - PGID=${PGID:-1000}
       - TZ=${TZ:-Etc/UTC}
     volumes:
-      - ${BASEDIR:-/volume1/docker}/sonarr/config:/config
-      - ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv
-      - ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads
+      - ${BASEDIR:-/srv/lsio}/sonarr/config:/config
+      - ${BASEDIR:-/srv/lsio}/sonarr/tv:/tv
+      - ${BASEDIR:-/srv/lsio}/sonarr/downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -127,9 +127,9 @@ docker run -d \
   -e PGID=${PGID:-1000} \
   -e TZ=${TZ:-Etc/UTC} \
   -p 8989:8989 \
-  -v ${BASEDIR:-/volume1/docker}/sonarr/config:/config \
-  -v ${BASEDIR:-/volume1/docker}/sonarr/tv:/tv \
-  -v ${BASEDIR:-/volume1/docker}/sonarr/downloads:/downloads \
+  -v ${BASEDIR:-/srv/lsio}/sonarr/config:/config \
+  -v ${BASEDIR:-/srv/lsio}/sonarr/tv:/tv \
+  -v ${BASEDIR:-/srv/lsio}/sonarr/downloads:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/sonarr:latest
 ```
@@ -161,9 +161,7 @@ For `docker run`:
 ```bash
 $ sh docker-run.sh
 2d27e4520e57420c12742cbc152aa8bd849f82fcad6aa32bd77f1017f0e15f95
-$ docker stop sonarr
-sonarr
-$ docker rm sonarr
+$ docker rm -f sonarr
 sonarr
 $
 ```
