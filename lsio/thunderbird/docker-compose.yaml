@@ -1,0 +1,26 @@
+# [Thunderbird](https://www.thunderbird.net/) is a free and open-source personal
+# information manager primarily used as an e-mail client with a calendar and
+# contactbook, as well as an RSS feed reader, chat client, and news client.
+
+---
+services:
+  thunderbird:
+    image: lscr.io/linuxserver/thunderbird:latest
+    container_name: thunderbird
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/srv/lsio}/thunderbird/config:/config
+    ports:
+      # Thunderbird desktop gui HTTP, must be proxied.
+      - 3000:3000
+      # Thunderbird desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
