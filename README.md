@@ -111,7 +111,7 @@ sh run-once.sh
 As the name suggests, you only need to run this once. You can delete the script afterwards if you like.
 
 ### docker-compose.yaml
-You can use the `docker-compose.yaml` file with [docker-compose](https://docs.docker.com/compose/reference/overview/):
+You can use the `docker-compose.yaml` file with `docker compose`:
 
 ```yaml
 ---
@@ -135,10 +135,10 @@ services:
 Start the Sonarr container:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
-Using `docker-compose` is the recommended approach.
+Using `docker compose` is the recommended approach.
 
 ### docker-run.sh
 Alternatively, you can use `docker run` through the provided `docker-run.sh` script:
@@ -165,24 +165,25 @@ sh docker-run.sh
 ```
 
 ### Example output
-For `docker-compose`:
+For `docker compose`:
 
 ```bash
-$ cd ./docker-bits/lsio/sonarr
-$ sh run-once.sh
-$ docker-compose up -d
-Creating network "sonarr_default" with the default driver
-Creating sonarr ... done
-$ docker-compose down
-Stopping sonarr ... done
-Removing sonarr ... done
-Removing network sonarr_default
+$ cd /srv/lsio/sonarr
+$ docker compose up -d 
+[+] Running 2/2
+ ✔ Network sonarr_default  Created                                                                                 0.0s 
+ ✔ Container sonarr        Started                                                                                 0.1s 
+$ docker compose down
+[+] Running 2/2
+ ✔ Container sonarr        Removed                                                                                 3.2s 
+ ✔ Network sonarr_default  Removed                                                                                 0.1s 
 $
 ```
 
 For `docker run`:
 
 ```bash
+$ cd /srv/lsio/sonarr
 $ sh docker-run.sh
 2d27e4520e57420c12742cbc152aa8bd849f82fcad6aa32bd77f1017f0e15f95
 $ docker rm -f sonarr
