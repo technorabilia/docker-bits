@@ -9,21 +9,45 @@ Please keep the following in mind:
 
 ## Prerequisites
 - A server with Docker installed  
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed  
-
-If you do not have Git installed, you can download the ZIP file directly from the GitHub repository.
 
 ## Install the scripts
-Clone the repository (or download the ZIP from [here](https://github.com/technorabilia/docker-bits/archive/refs/heads/main.zip)):
+Execute the following to install the scripts in `/srv/lsio`.
 
 ```bash
-git clone https://github.com/technorabilia/docker-bits.git
-````
+#!/bin/bash
 
-After cloning the repository, navigate to the `lsio` directory:
+URL="https://github.com/technorabilia/docker-bits/archive/refs/heads/main.zip"
+DEST_DIR="/srv/lsio"
+TMP_ZIP="$(mktemp)"
+
+# Exit if destination already exists
+if [ -d "$DEST_DIR" ]; then
+    echo "Error: $DEST_DIR already exists. Exiting."
+    exit 1
+fi
+
+# Create destination directory and set ownership
+sudo mkdir -p "$DEST_DIR"
+sudo chown -R $USER:$USER "$DEST_DIR"
+
+# Download and unzip the archive
+curl -sL "$URL" -o "$TMP_ZIP"
+unzip -q "$TMP_ZIP" -d "$DEST_DIR"
+
+# Move extracted lsio content to DEST_DIR
+mv -f "$DEST_DIR/docker-bits-main/lsio/"* "$DEST_DIR/."
+
+# Clean up
+rm -rf "$DEST_DIR/docker-bits-main"
+rm "$TMP_ZIP"
+
+echo "Scripts extracted to $DEST_DIR."
+```
+
+After installing the scripts, navigate to the `/srv/lsio` directory:
 
 ```bash
-cd docker-bits/lsio
+cd /srv/lsio
 ```
 
 You will find one file `docker-env.cfg` and multiple directories. Each directory represents a supported application.
@@ -53,10 +77,10 @@ All applications listed [here](https://www.linuxserver.io/our-images) are availa
 ## How to use the scripts
 As an example, we will look at the scripts for Sonarr.
 
-After cloning the repository, change into the Sonarr directory:
+After installing the scripts, change into the Sonarr directory:
 
 ```bash
-cd docker-bits/lsio/sonarr
+cd /srv/lsio/sonarr
 ```
 
 You will see three files:
@@ -84,7 +108,7 @@ Run the script:
 sh run-once.sh
 ```
 
-As the name implies, this only needs to be executed once. You may delete the script afterwards if desired.
+As the name suggests, you only need to run this once. You can delete the script afterwards if you like.
 
 ### docker-compose.yaml
 You can use the `docker-compose.yaml` file with [docker-compose](https://docs.docker.com/compose/reference/overview/):
