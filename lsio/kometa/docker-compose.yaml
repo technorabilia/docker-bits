@@ -18,11 +18,11 @@ services:
       # Specify a custom config file to use. [OPTIONAL]
       - KOMETA_CONFIG=/config/config.yml
       # Comma-separated list of times to update each day. Format: `HH:MM`. [OPTIONAL]
-      - KOMETA_TIME=03:00
+      - KOMETA_TIMES=03:00
       # Set to `True` to run without the scheduler. [OPTIONAL]
       - KOMETA_RUN=False
       # Set to `True` to run in debug mode with only collections that have `test: true`. [OPTIONAL]
-      - KOMETA_TEST=False
+      - KOMETA_TESTS=False
       # Set to `True` to run without any of the missing movie/show functions. [OPTIONAL]
       - KOMETA_NO_MISSING=False
     volumes:
