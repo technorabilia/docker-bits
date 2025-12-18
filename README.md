@@ -65,7 +65,7 @@ When modifying a variable, ensure you uncomment the line by removing the `#`.
 If no values are set, the Docker scripts will fall back to the defaults shown below:
 
 ```bash
-#BASEDIR=/volume1/docker
+#BASEDIR=/srv/lsio
 #PUID=1000
 #PGID=1000
 #TZ=Etc/UTC
