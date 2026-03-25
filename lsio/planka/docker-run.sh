@@ -14,7 +14,8 @@ docker run -d \
   -e DEFAULT_ADMIN_PASSWORD=demo `# Password for default user.` \
   -e DEFAULT_ADMIN_NAME=Demo User `# Display name for default user.` \
   -e SECRET_KEY=notasecretkey `# Session encryption key, recommended 32-64 character alphanumeric.` \
-  -e TRUST_PROXY=0 `# Set to `1` to trust upstream proxies if reverse proxying.` \
+  -e TRUST_PROXY=false `# Set to `true` to trust upstream proxies if reverse proxying.` \
+  -e DEFAULT_LANGUAGE=en-US `# This sets the default language for sending notifications per user (if a user hasn't selected a language) and per board. [OPTIONAL]` \
   -p 1337:1337 `# Planka web UI.` \
   -v ${BASEDIR:-/srv/lsio}/planka/config:/config `# Local path for planka config files.` \
   --restart unless-stopped \

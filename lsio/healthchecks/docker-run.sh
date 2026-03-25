@@ -8,6 +8,7 @@ docker run -d \
   -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
+  -e SECRET_KEY= `# A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`.` \
   -e SITE_ROOT= `# The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000).` \
   -e SITE_NAME= `# The site's name (e.g., "Example Corp HealthChecks").` \
   -e SUPERUSER_EMAIL= `# Superuser email.` \
@@ -25,7 +26,6 @@ docker run -d \
   -e INTEGRATIONS_ALLOW_PRIVATE_IPS= `# Defaults to False. Set to True to allow integrations to connect to private IP addresses. [OPTIONAL]` \
   -e PING_EMAIL_DOMAIN= `# The domain to use for generating ping email addresses. Defaults to `localhost`. [OPTIONAL]` \
   -e RP_ID= `# If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https. [OPTIONAL]` \
-  -e SECRET_KEY= `# A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`. [OPTIONAL]` \
   -e SITE_LOGO_URL= `# Full URL to custom site logo. [OPTIONAL]` \
   -p 8000:8000 `# Healthchecks Web UI` \
   -p 2525:2525 `# Port for inbound SMTP pings [OPTIONAL]` \

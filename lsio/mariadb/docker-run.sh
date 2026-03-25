@@ -12,6 +12,7 @@ docker run -d \
   -e MYSQL_USER=MYSQL_USER `# This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here). (valid only for first run) [OPTIONAL]` \
   -e MYSQL_PASSWORD=DATABASE_PASSWORD `# Set this to the password you want to use for you MYSQL_USER (minimum 4 characters & non-alphanumeric passwords must be properly escaped). (valid only for first run) [OPTIONAL]` \
   -e REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql `# Set this to ingest sql files from an http/https endpoint (comma seperated array). [OPTIONAL]` \
+  -e CLI_OPTS= `# Pass CLI options to mariadbd via mariadbd-safe. Use with caution as mariadbd option precedence is complex. [OPTIONAL]` \
   -p 3306:3306 `# MariaDB listens on this port.` \
   -v ${BASEDIR:-/srv/lsio}/mariadb/config:/config `# Persistent config files` \
   --restart unless-stopped \

@@ -14,6 +14,8 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
+      # A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`.
+      - SECRET_KEY=
       # The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000).
       - SITE_ROOT=
       # The site's name (e.g., "Example Corp HealthChecks").
@@ -48,8 +50,6 @@ services:
       - PING_EMAIL_DOMAIN=
       # If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https. [OPTIONAL]
       - RP_ID=
-      # A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`. [OPTIONAL]
-      - SECRET_KEY=
       # Full URL to custom site logo. [OPTIONAL]
       - SITE_LOGO_URL=
     volumes:

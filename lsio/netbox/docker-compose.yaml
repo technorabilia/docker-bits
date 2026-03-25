@@ -21,7 +21,7 @@ services:
       - SUPERUSER_EMAIL=
       # Password for `admin` account
       - SUPERUSER_PASSWORD=
-      # The hostname you will use to access the app (i.e., netbox.example.com)
+      # The hostname you will use to access the app (e.g., netbox.example.com)
       - ALLOWED_HOST=
       # Database name (default: netbox)
       - DB_NAME=
@@ -37,25 +37,29 @@ services:
       - REDIS_HOST=
       # Redis port number (default: 6379)
       - REDIS_PORT=
+      # Redis username (default: none)
+      - REDIS_USERNAME=
       # Redis password (default: none)
       - REDIS_PASSWORD=
       # Redis database ID for tasks (default: 0)
       - REDIS_DB_TASK=
       # Redis database ID for caching (default: 1)
       - REDIS_DB_CACHE=
-      # The path you will use to access the app (i.e., /netbox, optional, default: none) [OPTIONAL]
+      # The path you will use to access the app (i.e., /netbox, default: none) [OPTIONAL]
       - BASE_PATH=
-      # Enable remote authentication (optional, default: False) [OPTIONAL]
+      # List of comma-separated, single quoted, trusted origins. Must include protocol, and port if applicable (default: []) [OPTIONAL]
+      - CSRF_TRUSTED_ORIGINS=
+      # Enable remote authentication (default: False) [OPTIONAL]
       - REMOTE_AUTH_ENABLED=
-      # Python path to the custom Django authentication backend to use for external user authentication (optional, default: netbox.authentication.RemoteUserBackend) [OPTIONAL]
+      # Python path to the custom Django authentication backend to use for external user authentication (default: netbox.authentication.RemoteUserBackend) [OPTIONAL]
       - REMOTE_AUTH_BACKEND=
-      # Name of the HTTP header which informs NetBox of the currently authenticated user. (optional, default: HTTP_REMOTE_USER) [OPTIONAL]
+      # Name of the HTTP header which informs NetBox of the currently authenticated user. (default: HTTP_REMOTE_USER) [OPTIONAL]
       - REMOTE_AUTH_HEADER=
-      # If true, NetBox will automatically create local accounts for users authenticated via a remote service (optional, default: False) [OPTIONAL]
+      # If true, NetBox will automatically create local accounts for users authenticated via a remote service (default: False) [OPTIONAL]
       - REMOTE_AUTH_AUTO_CREATE_USER=
-      # The list of groups to assign a new user account when created using remote authentication (optional, default: []) [OPTIONAL]
+      # The list of groups to assign a new user account when created using remote authentication (default: []) [OPTIONAL]
       - REMOTE_AUTH_DEFAULT_GROUPS=
-      # A mapping of permissions to assign a new user account when created using remote authentication (optional, default: {}) [OPTIONAL]
+      # A mapping of permissions to assign a new user account when created using remote authentication (default: {}) [OPTIONAL]
       - REMOTE_AUTH_DEFAULT_PERMISSIONS=
     volumes:
       # Persistent config files

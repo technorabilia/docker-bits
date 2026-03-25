@@ -1,11 +1,11 @@
-# [Overseerr](https://overseerr.dev/) is a request management and media
-# discovery tool built to work with your existing Plex ecosystem.
+# [shadPS4](https://shadps4.net/) is an early PlayStation 4 emulator for
+# Windows, Linux and macOS written in C++.
 
 ---
 services:
-  overseerr:
-    image: lscr.io/linuxserver/overseerr:latest
-    container_name: overseerr
+  shadps4:
+    image: lscr.io/linuxserver/shadps4:latest
+    container_name: shadps4
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1000}
@@ -14,9 +14,12 @@ services:
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
     volumes:
-      # Persistent config files
-      - ${BASEDIR:-/srv/lsio}/overseerr/config:/config
+      # Users home directory in the container, stores all files and games.
+      - ${BASEDIR:-/srv/lsio}/shadps4/config:/config
     ports:
-      # Port for Overseerr's web interface.
-      - 5055:5055
+      # shadPS4 desktop gui HTTP must be proxied.
+      - 3000:3000
+      # shadPS4 desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
     restart: unless-stopped

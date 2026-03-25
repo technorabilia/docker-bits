@@ -27,8 +27,10 @@ services:
       - DEFAULT_ADMIN_NAME=Demo User
       # Session encryption key, recommended 32-64 character alphanumeric.
       - SECRET_KEY=notasecretkey
-      # Set to `1` to trust upstream proxies if reverse proxying.
-      - TRUST_PROXY=0
+      # Set to `true` to trust upstream proxies if reverse proxying.
+      - TRUST_PROXY=false
+      # This sets the default language for sending notifications per user (if a user hasn't selected a language) and per board. [OPTIONAL]
+      - DEFAULT_LANGUAGE=en-US
     volumes:
       # Local path for planka config files.
       - ${BASEDIR:-/srv/lsio}/planka/config:/config

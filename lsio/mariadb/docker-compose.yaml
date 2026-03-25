@@ -23,6 +23,8 @@ services:
       - MYSQL_PASSWORD=DATABASE_PASSWORD
       # Set this to ingest sql files from an http/https endpoint (comma seperated array). [OPTIONAL]
       - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql
+      # Pass CLI options to mariadbd via mariadbd-safe. Use with caution as mariadbd option precedence is complex. [OPTIONAL]
+      - CLI_OPTS=
     volumes:
       # Persistent config files
       - ${BASEDIR:-/srv/lsio}/mariadb/config:/config

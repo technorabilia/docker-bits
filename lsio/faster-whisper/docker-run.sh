@@ -9,10 +9,11 @@ docker run -d \
   -e PUID=${PUID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.` \
   -e PGID=${PGID:-1000} `# Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.` \
   -e TZ=${TZ:-Etc/UTC} `# specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).` \
-  -e WHISPER_MODEL=tiny-int8 `# Whisper model that will be used for transcription. From [here](https://github.com/SYSTRAN/faster-whisper/blob/master/faster_whisper/utils.py#L12-L31), all with `-int8` compressed variants` \
+  -e DEBUG= `# If set to `true`, or any other value, the container will output debug logs. [OPTIONAL]` \
   -e LOCAL_ONLY= `# If set to `true`, or any other value, the container will not attempt to download models from HuggingFace and will only use locally-provided models. [OPTIONAL]` \
   -e WHISPER_BEAM=1 `# Number of candidates to consider simultaneously during transcription. [OPTIONAL]` \
-  -e WHISPER_LANG=en `# Language that you will speak to the add-on. [OPTIONAL]` \
+  -e WHISPER_LANG=auto `# Two character code for the language that you will speak to the add-on. [OPTIONAL]` \
+  -e WHISPER_MODEL=auto `# Whisper model that will be used for transcription. From [here](https://github.com/SYSTRAN/faster-whisper/blob/master/faster_whisper/utils.py#L11-L31). [OPTIONAL]` \
   -p 10300:10300 `# Wyoming connection port.` \
   -v ${BASEDIR:-/srv/lsio}/faster-whisper/config:/config `# Local path for Whisper config files.` \
   --restart unless-stopped \

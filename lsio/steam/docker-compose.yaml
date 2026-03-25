@@ -1,0 +1,25 @@
+# [Steam](https://store.steampowered.com/) is the ultimate destination for
+# playing, discussing, and creating games.
+
+---
+services:
+  steam:
+    image: lscr.io/linuxserver/steam:latest
+    container_name: steam
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores all files and games.
+      - ${BASEDIR:-/srv/lsio}/steam/config:/config
+    ports:
+      # Steam desktop gui HTTP must be proxied.
+      - 3000:3000
+      # Steam desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped

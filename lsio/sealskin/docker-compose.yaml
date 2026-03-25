@@ -10,7 +10,6 @@ services:
   sealskin:
     image: lscr.io/linuxserver/sealskin:latest
     container_name: sealskin
-    network_mode: bridge
     environment:
       # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
       - PUID=${PUID:-1000}
@@ -18,6 +17,8 @@ services:
       - PGID=${PGID:-1000}
       # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
       - TZ=${TZ:-Etc/UTC}
+      # On initial setup this will be used to fill in the default admin configuration file in the `/config` directory, if unset the string HOST_URL will need to be replaced. [OPTIONAL]
+      - HOST_URL=IP or subdomain.doman.com
     volumes:
       # All configuration files and metadata for the application.
       - ${BASEDIR:-/srv/lsio}/sealskin/config:/config
@@ -26,8 +27,8 @@ services:
       # Docker socket, required to spin up application containers.
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      # API communication port.
-      - 8000:8000
-      # App session port.
+      # HTTPS Sessions and API communication port.
       - 8443:8443
+      # HTTP Fallback API communication port. [OPTIONAL]
+      - 8000:8000
     restart: unless-stopped
