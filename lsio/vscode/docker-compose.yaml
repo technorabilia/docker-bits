@@ -1,0 +1,29 @@
+# [VS Code](https://code.visualstudio.com/) is an integrated development
+# environment developed by Microsoft. This container runs the full desktop
+# application, for a web native version see [Code
+# Server](https://github.com/linuxserver/docker-code-server).
+
+---
+services:
+  vscode:
+    image: lscr.io/linuxserver/vscode:latest
+    container_name: vscode
+    cap_add:
+      - IPC_LOCK
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores local files and settings
+      - ${BASEDIR:-/srv/lsio}/vscode/config:/config
+    ports:
+      # VS Code desktop gui.
+      - 3000:3000
+      # HTTPS VS Code desktop gui.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
