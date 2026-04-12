@@ -1,4 +1,4 @@
-# [Mylar3](https://github.com/mylar3/mylar3) is an automated Comic Book
+# [Mylar3](https://github.com/MylarComics/mylar3) is an automated Comic Book
 # downloader (cbr/cbz) for use with NZB and torrents written in python. It
 # supports SABnzbd, NZBGET, and many torrent clients in addition to DDL.
 
