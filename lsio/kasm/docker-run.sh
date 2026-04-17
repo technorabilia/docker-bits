@@ -23,5 +23,6 @@ docker run -d \
   -v ${BASEDIR:-/srv/lsio}/kasm/profiles:/profiles `# Optionally specify a path for persistent profile storage. [OPTIONAL]` \
   -v /dev/input:/dev/input `# Optional for gamepad support. [OPTIONAL]` \
   -v /run/udev/data:/run/udev/data `# Optional for gamepad support. [OPTIONAL]` \
+  --stop-timeout="90s" `# [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/kasm:latest
