@@ -1,6 +1,6 @@
-# The [Qbittorrent](https://www.qbittorrent.org/) project aims to provide an
-# open-source software alternative to µTorrent. qBittorrent is based on the Qt
-# toolkit and libtorrent-rasterbar library.
+# The [Qbittorrent](https://www.qbittorrent.org/) is a bittorrent client
+# programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-
+# rasterbar) by Arvid Norberg.
 
 . ./.env
 docker run -d \
