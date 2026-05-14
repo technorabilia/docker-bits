@@ -30,4 +30,5 @@ services:
       - 6881:6881
       # udp connection port
       - 6881:6881/udp
+    stop_grace_period: "10s" # [OPTIONAL]
     restart: unless-stopped

@@ -15,5 +15,6 @@ docker run -d \
   -p 6881:6881/udp `# udp connection port` \
   -v ${BASEDIR:-/srv/lsio}/qbittorrent/config:/config `# Contains all relevant configuration files.` \
   -v ${BASEDIR:-/srv/lsio}/qbittorrent/downloads:/downloads `# Location of downloads on disk. [OPTIONAL]` \
+  --stop-timeout="10s" `# [OPTIONAL]` \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:latest
