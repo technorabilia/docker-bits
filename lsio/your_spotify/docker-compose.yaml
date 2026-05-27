@@ -22,6 +22,8 @@ services:
       - SPOTIFY_PUBLIC=
       # Your Spotify application secret.
       - SPOTIFY_SECRET=
+      # Minimum delay in milliseconds between each spotify request. Can help with hitting 429 when importing data.
+      - SPOTIFY_API_DELAY_MS=2000
       # Allowed CORS sources, set to `all` to allow any source.
       - CORS=http://localhost:80,https://localhost:443
       # Set mongodb endpoint address/port.

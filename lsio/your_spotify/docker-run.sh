@@ -13,6 +13,7 @@ docker run -d \
   -e APP_URL=http://localhost `# The protocol and hostname where the app will be accessed.` \
   -e SPOTIFY_PUBLIC= `# Your Spotify application client ID.` \
   -e SPOTIFY_SECRET= `# Your Spotify application secret.` \
+  -e SPOTIFY_API_DELAY_MS=2000 `# Minimum delay in milliseconds between each spotify request. Can help with hitting 429 when importing data.` \
   -e CORS=http://localhost:80,https://localhost:443 `# Allowed CORS sources, set to `all` to allow any source.` \
   -e MONGO_ENDPOINT=mongodb://mongo:27017/your_spotify `# Set mongodb endpoint address/port.` \
   -p 80:80 `# your_spotify HTTP webui` \
