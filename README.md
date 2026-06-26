@@ -16,30 +16,15 @@ Execute the following to install the scripts in `/srv/lsio`.
 ```bash
 #!/bin/bash
 
-URL="https://github.com/technorabilia/docker-bits/archive/refs/heads/main.zip"
-DEST_DIR="/srv/lsio"
-TMP_ZIP="$(mktemp)"
+DEST=/srv/lsio
 
-# Exit if destination already exists
-if [ -d "$DEST_DIR" ]; then
-    echo "Error: $DEST_DIR already exists. Exiting."
-    exit 1
-fi
+[[ -d $DEST ]] && { echo "$DEST already exists"; exit 1; }
 
-# Create destination directory and set ownership
-sudo mkdir -p "$DEST_DIR"
-sudo chown -R $USER:$USER "$DEST_DIR"
-
-# Download and unzip the archive
-curl -sL "$URL" -o "$TMP_ZIP"
-unzip -q "$TMP_ZIP" -d "$DEST_DIR"
-
-# Move extracted lsio content to DEST_DIR
-mv -f "$DEST_DIR/docker-bits-main/lsio/"* "$DEST_DIR/."
-
-# Clean up
-rm -rf "$DEST_DIR/docker-bits-main"
-rm "$TMP_ZIP"
+git clone --depth=1 https://github.com/technorabilia/docker-bits.git /tmp/docker-bits &&
+sudo mkdir "$DEST" &&
+sudo chown "$USER:$USER" "$DEST" &&
+mv /tmp/docker-bits/lsio/* "$DEST" &&
+rm -rf /tmp/docker-bits
 
 echo "Scripts extracted to $DEST_DIR."
 ```
