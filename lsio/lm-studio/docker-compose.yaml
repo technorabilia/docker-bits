@@ -1,0 +1,25 @@
+# [LM Studio](https://lmstudio.ai/) can run local AI models like gpt-oss, Llama,
+# Gemma, Qwen, and DeepSeek privately on your computer.
+
+---
+services:
+  lm-studio:
+    image: lscr.io/linuxserver/lm-studio:latest
+    container_name: lm-studio
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Users home directory in the container, stores program settings and files.
+      - ${BASEDIR:-/srv/lsio}/lm-studio/config:/config
+    ports:
+      # LM Studio desktop gui HTTP, must be proxied.
+      - 3000:3000
+      # LM Studio desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb" # [OPTIONAL]
+    restart: unless-stopped
