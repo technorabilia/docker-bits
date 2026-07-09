@@ -1,5 +1,5 @@
-# [Nginx](https://nginx.org/) is a simple webserver with php support. The config
-# files reside in `/config` for easy user customization.
+# [Nginx](https://nginx.org/) is an HTTP web server, reverse proxy, content
+# cache, load balancer, TCP/UDP proxy server, and mail proxy server.
 
 . ./.env
 docker run -d \
