@@ -1,0 +1,22 @@
+# [Doplarr_rs](https://github.com/activexray/doplarr_rs) is a Discord bot for
+# requesting media through *arr backends, written in Rust.
+
+---
+services:
+  doplarr_rs:
+    image: lscr.io/linuxserver/doplarr_rs:latest
+    container_name: doplarr_rs
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # Persistent config files
+      - ${BASEDIR:-/srv/lsio}/doplarr_rs/config:/config
+    ports:
+      # Application WebUI
+      - 80:80
+    restart: unless-stopped
