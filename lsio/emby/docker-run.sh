@@ -15,7 +15,6 @@ docker run -d \
   -v ${BASEDIR:-/srv/lsio}/emby/data/movies:/data/movies `# Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc.` \
   -v /opt/vc/lib:/opt/vc/lib `# Path for Raspberry Pi OpenMAX libs *optional*. [OPTIONAL]` \
   --device /dev/dri:/dev/dri `# Only needed if you want to use your Intel or AMD GPU for hardware accelerated video encoding (vaapi). [OPTIONAL]` \
-  --device /dev/vchiq:/dev/vchiq `# Only needed if you want to use your Raspberry Pi OpenMax video encoding (Bellagio). [OPTIONAL]` \
   --device /dev/video10:/dev/video10 `# Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]` \
   --device /dev/video11:/dev/video11 `# Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]` \
   --device /dev/video12:/dev/video12 `# Only needed if you want to use your Raspberry Pi V4L2 video encoding. [OPTIONAL]` \
