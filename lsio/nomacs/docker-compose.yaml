@@ -1,0 +1,26 @@
+# [Nomacs](https://github.com/nomacs/nomacs) is a free, open source image
+# viewer, which supports multiple platforms. You can use it for viewing all
+# common image formats including RAW and psd images.
+
+---
+services:
+  nomacs:
+    image: lscr.io/linuxserver/nomacs:latest
+    container_name: nomacs
+    environment:
+      # Run 'id [USER]' for the owner of the host volume directories to get the UID to use here.
+      - PUID=${PUID:-1000}
+      # Run 'id [USER]' for the owner of the host volume directories to get the GID to use here.
+      - PGID=${PGID:-1000}
+      # specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
+      - TZ=${TZ:-Etc/UTC}
+    volumes:
+      # User's home directory in the container, stores program settings and images
+      - ${BASEDIR:-/srv/lsio}/nomacs/config:/config
+    ports:
+      # Nomacs desktop gui HTTP, must be proxied.
+      - 3000:3000
+      # Nomacs desktop gui HTTPS.
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
