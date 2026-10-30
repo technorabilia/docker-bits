@@ -1,7 +1,7 @@
 # [Lazylibrarian](https://lazylibrarian.gitlab.io/) is a program to follow
 # authors and grab metadata for all your digital reading needs. It uses a
-# combination of Goodreads Librarything and optionally GoogleBooks as sources
-# for author info and book info. This container is based on the DobyTang fork.
+# combination of HardCover, OpenLibrary, Librarything, GoodReads, and optionally
+# GoogleBooks as sources for author info and book info.
 
 . ./.env
 docker run -d \
